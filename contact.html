@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Enterprises - Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ink-black': '#0B0B0C',
+                        'brand-gold': '#C9A961',
+                        'warm-grey': '#BDBAB2',
+                        'muted-grey': '#6B6862',
+                        'brand-cream': '#F5F2EC',
+                    },
+                    fontFamily: {
+                        'display': ['"Source Serif 4"', 'serif'],
+                        'body': ['Arimo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0B0B0C; color: #FFFFFF; font-family: 'Arimo', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Source Serif 4', serif; font-style: italic; }
+    </style>
+</head>
+<body class="antialiased p-4 md:p-8">
+
+    <!-- Navbar Shared -->
+    <div class="mb-12 border border-muted-grey p-4 sticky top-0 bg-ink-black z-50">
+        <div class="flex justify-between items-center">
+            <div class="font-bold text-xl tracking-widest"><a href="index.html">AK ENTERPRISES</a></div>
+            <div class="hidden md:flex items-center space-x-6 text-sm">
+                <a href="what-we-build.html" class="hover:text-brand-gold uppercase tracking-wider">What We Build</a>
+                <a href="case-studies.html" class="hover:text-brand-gold uppercase tracking-wider">Case Studies</a>
+                <a href="demo.html" class="hover:text-brand-gold uppercase tracking-wider">The Demo</a>
+                <a href="about.html" class="hover:text-brand-gold uppercase tracking-wider">About</a>
+                <a href="contact.html" class="bg-brand-gold text-ink-black px-6 py-2 rounded font-bold hover:bg-white transition uppercase tracking-wider">Book a Free Audit</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 1 & 2: Hero & Form -->
+    <section class="py-24">
+        <div class="flex flex-col md:flex-row gap-16">
+            <div class="flex-1">
+                <h1 class="text-5xl md:text-6xl mb-6">Book your free business audit.</h1>
+                <p class="text-warm-grey text-lg mb-8 leading-relaxed">20 minutes. We show you exactly what your business is missing and what it is costing you. The findings are yours regardless of whether we work together.</p>
+                
+                <div class="bg-[#111112] border-l-4 border-brand-gold p-6 mb-12">
+                    <p class="italic text-white">If we cannot find a single gap in your business that is costing you money, we will tell you honestly and you owe us nothing. We have never left an audit empty-handed.</p>
+                </div>
+                
+                <div class="pt-12 border-t border-muted-grey mt-12">
+                    <h3 class="text-brand-gold tracking-widest uppercase text-sm font-bold mb-4">Direct Contact</h3>
+                    <p class="text-white font-bold text-xl mb-2">office@akmarketing.agency</p>
+                    <p class="text-warm-grey">UK: +44 7931 537545</p>
+                </div>
+            </div>
+            
+            <div class="flex-1 bg-[#111112] border border-muted-grey p-8 rounded-lg shadow-2xl">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">Full Name</label>
+                        <input type="text" class="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">Business Name</label>
+                        <input type="text" class="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">Email Address</label>
+                            <input type="email" class="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">Phone Number</label>
+                            <input type="tel" class="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">Country</label>
+                            <select class="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition">
+                                <option>UK</option>
+                                <option>USA</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">Industry / Business Type</label>
+                            <input type="text" class="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">Monthly Revenue Range</label>
+                        <select class="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition">
+                            <option>Under £3,000</option>
+                            <option>£3,000 to £10,000</option>
+                            <option>£10,000 to £50,000</option>
+                            <option>Over £50,000</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">Biggest operational challenge right now</label>
+                        <textarea rows="3" class="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">How did you hear about AK Enterprises?</label>
+                        <select class="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition">
+                            <option>Please select...</option>
+                            <option>Social Media</option>
+                            <option>Referral</option>
+                            <option>Event</option>
+                            <option>Search</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <button type="button" class="w-full bg-brand-gold text-ink-black py-5 rounded font-bold text-xl hover:bg-white transition shadow-lg">Book My Free Audit</button>
+                        <p class="text-center text-xs text-brand-gold uppercase tracking-widest mt-6 font-bold">We take on a maximum of 4 new clients per month. Current availability: [X] slots. We confirm within 24 hours.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHARED FOOTER -->
+    <div class="border-t border-muted-grey pt-16 pb-12 mt-24">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-12 max-w-6xl mx-auto px-4">
+            <div class="text-center md:text-left mb-8 md:mb-0">
+                <div class="font-bold text-3xl tracking-[0.2em] mb-2 text-white"><a href="index.html">AK ENTERPRISES</a></div>
+                <div class="text-brand-gold italic text-lg">We build the systems that run your business.</div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8 text-sm uppercase tracking-widest text-warm-grey font-bold">
+                <a href="what-we-build.html" class="hover:text-white transition">What We Build</a>
+                <a href="case-studies.html" class="hover:text-white transition">Case Studies</a>
+                <a href="demo.html" class="hover:text-white transition">The Demo</a>
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="contact.html" class="hover:text-white transition text-white">Contact</a>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-muted-grey border-t border-[#1a1a1a] pt-8">
+                <div class="mb-6 md:mb-0 text-center md:text-left leading-relaxed">
+                    AK Marketing Consulting Ltd. Registered in England and Wales. Company No. 17128177.<br>
+                    Trading as AK Enterprises.
+                </div>
+                <div class="flex gap-6 uppercase tracking-widest font-bold text-warm-grey text-xs">
+                    <a href="#" class="hover:text-brand-gold transition">[KEEP FROM CURRENT SITE: Instagram]</a>
+                    <a href="#" class="hover:text-brand-gold transition">[Facebook]</a>
+                    <a href="#" class="hover:text-brand-gold transition">[LinkedIn]</a>
+                    <a href="#" class="hover:text-brand-gold transition">[WhatsApp]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
