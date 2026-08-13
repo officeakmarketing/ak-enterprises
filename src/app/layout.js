@@ -13,11 +13,12 @@ const sourceSerif4 = Source_Serif_4({
 
 export const metadata = {
   title: "AK Enterprises | Business Operating Systems",
-  description: "AK Enterprises builds Business Operating Systems for service businesses — the complete infrastructure that captures every lead, follows up automatically, and runs without the owner.",
+  description: "AK Enterprises builds Business Operating Systems for service businesses  the complete infrastructure that captures every lead, follows up automatically, and runs without the owner.",
 };
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export default function RootLayout({ children }) {
   return (
@@ -25,10 +26,12 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${arimo.variable} ${sourceSerif4.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="min-h-full flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black overflow-x-hidden">
+        <SmoothScroll>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

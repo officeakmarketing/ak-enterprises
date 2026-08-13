@@ -51,17 +51,17 @@ export default function About() {
                   AK Marketing
                 </td>
                 <td className="py-6 px-4">
-                  Services division — bespoke Business Operating System builds for
+                  Services division  bespoke Business Operating System builds for
                   clients
                 </td>
                 <td className="py-6 px-4 text-white">
-                  Active — live clients across UK and USA
+                  Active  live clients across UK and USA
                 </td>
               </tr>
               <tr>
                 <td className="py-6 px-4 font-bold text-white text-lg">Nova</td>
                 <td className="py-6 px-4">
-                  AI-native operating system — productised version of what we
+                  AI-native operating system  productised version of what we
                   build manually
                 </td>
                 <td className="py-6 px-4 text-brand-gold font-bold">
@@ -91,7 +91,7 @@ export default function About() {
           <div className="space-y-6">
             <div className="border-b border-muted-grey pb-6">
               <div className="font-bold text-xl mb-2 text-white">
-                Business Lounge Romania — Cover Feature
+                Business Lounge Romania  Cover Feature
               </div>
               <div className="text-warm-grey">
                 National business magazine. Cover and 5-page editorial. October
@@ -153,7 +153,7 @@ export default function About() {
         </div>
 
         <h2 className="text-4xl mb-12 font-serif italic">
-          If you are a business owner, investor, or partner — let us talk.
+          If you are a business owner, investor, or partner  let us talk.
         </h2>
         <Link
           href="/contact"

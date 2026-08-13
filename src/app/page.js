@@ -4,49 +4,48 @@ import Carousel from "@/components/Carousel";
 import AnimatedHeadline from "@/components/AnimatedHeadline";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FAQItem from "@/components/FAQItem";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
-    <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+    <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Section 1: Hero */}
-      <section className="relative py-32 md:py-48 border-b border-muted-grey/30 overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-brand-gold/10 rounded-full blur-[150px] -z-10 pointer-events-none"></div>
-        
-        <div className="flex flex-col md:flex-row gap-16 items-center z-10 relative">
-          <div className="flex-1">
-            <div className="inline-block border border-brand-gold/30 bg-brand-gold/5 px-4 py-1 rounded-full text-brand-gold tracking-[0.2em] uppercase text-xs mb-8 font-bold backdrop-blur-sm">
+      <section className="relative pt-10 pb-16 lg:pt-4 lg:pb-16 2xl:pt-8 2xl:pb-24 border-b border-muted-grey/30 overflow-hidden">
+        {/* Background Effects Removed */}
+
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 2xl:gap-16 items-center z-10 relative">
+          <div className="flex-1 w-full lg:max-w-xl 2xl:max-w-[640px]">
+            <div className="inline-block border border-brand-gold/30 bg-brand-gold/5 px-3 py-1 2xl:px-4 2xl:py-1.5 rounded-full text-brand-gold tracking-[0.2em] uppercase text-[10px] sm:text-xs 2xl:text-sm mb-3 2xl:mb-5 font-bold ">
               Business Operating Systems
             </div>
-            <AnimatedHeadline 
+            <AnimatedHeadline
               text="Your business is losing clients right now. Not to your competitors. To your own broken systems."
-              className="text-5xl md:text-7xl mb-8 leading-[1.1] font-serif italic text-white" 
+              className="text-3xl md:text-4xl lg:text-[2.75rem] 2xl:text-[3.25rem] mb-3 2xl:mb-5 leading-[1.15] font-serif italic text-white"
             />
-            <p className="text-warm-grey/80 text-xl md:text-2xl mb-12 leading-relaxed max-w-2xl font-light">
+            <p className="text-warm-grey/80 text-base md:text-lg 2xl:text-xl mb-6 2xl:mb-8 leading-relaxed font-light">
               AK Enterprises builds Business Operating Systems for service
               businesses — the complete infrastructure that captures every lead,
               automates every booking, and manages every client interaction
               without manual input.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-8 py-4 rounded font-bold uppercase tracking-wider overflow-hidden transition-all hover:scale-105 active:scale-95"
+                className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 py-3 rounded text-sm font-bold uppercase tracking-wider overflow-hidden transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
               >
                 <span className="absolute inset-0 bg-white/20 translate-y-full transition-transform group-hover:translate-y-0"></span>
                 <span className="relative z-10">Book a Free Audit</span>
               </Link>
               <Link
                 href="/demo"
-                className="group inline-flex items-center justify-center border border-brand-gold/50 text-brand-gold px-8 py-4 rounded font-bold uppercase tracking-wider transition-all hover:bg-brand-gold hover:text-ink-black hover:border-brand-gold hover:scale-105 active:scale-95"
+                className="group inline-flex items-center justify-center border border-brand-gold/50 text-brand-gold px-6 py-3 rounded text-sm font-bold uppercase tracking-wider transition-all hover:bg-brand-gold hover:text-ink-black hover:border-brand-gold hover:scale-105 active:scale-95 w-full sm:w-auto"
               >
                 See the Live Demo
               </Link>
             </div>
           </div>
           <div className="flex-1 w-full">
-            <div className="bg-[#1a1a1a] border border-muted-grey aspect-video flex flex-col items-center justify-center text-warm-grey p-8 text-center rounded">
+            <div className="bg-[#111112] border border-muted-grey aspect-video flex flex-col items-center justify-center text-warm-grey p-8 text-center rounded">
               <svg
                 className="w-12 h-12 mb-4"
                 fill="currentColor"
@@ -72,148 +71,203 @@ export default function Home() {
       </section>
 
       {/* Section 2: The Pain */}
-      <section className="py-24 border-b border-muted-grey max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl mb-8 font-serif italic">
-          Every day without a system is a day your business is leaking revenue.
-        </h2>
-        <div className="text-warm-grey text-lg leading-relaxed space-y-6">
-          <p>
-            The average service business loses between £40,000 and £120,000 per
-            year in leads that went cold, bookings that never happened, and clients
-            who chose whoever responded first. Not because the owner is bad at
-            their job. Because there is no system capturing what the business
-            generates.
-          </p>
-          <p>
-            A missed call at 7pm. A lead that submitted a form on Sunday and got
-            a reply on Tuesday. A prospect who went with a competitor because they
-            responded in 3 minutes and you responded in 3 hours.
-          </p>
-          <p>
-            This is happening in your business right now. Most owners never find
-            out exactly how much it is costing them because there is no system
-            tracking it.
-          </p>
-          <p className="font-bold text-white">The audit shows you.</p>
+      <section className="py-32 border-b border-muted-grey/30 relative">
+        <div className="max-w-6xl mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-6xl mb-16 font-serif italic text-center max-w-4xl mx-auto leading-tight text-white">
+              Every day without a system is a day your business is leaking revenue.
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <ScrollReveal delay={0.1}>
+              <div className="bg-[#111112] border border-muted-grey/30 p-8 rounded-2xl h-full shadow-lg hover:border-brand-gold/50 transition-colors duration-500 group">
+                <div className="w-12 h-12 bg-red-900/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-red-500 font-bold">01</span>
+                </div>
+                <p className="text-warm-grey/90 text-lg leading-relaxed">
+                  The average service business loses between £40,000 and £120,000 per
+                  year in leads that went cold, bookings that never happened, and clients
+                  who chose whoever responded first.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <div className="bg-[#111112] border border-muted-grey/30 p-8 rounded-2xl h-full shadow-lg hover:border-brand-gold/50 transition-colors duration-500 group">
+                <div className="w-12 h-12 bg-red-900/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-red-500 font-bold">02</span>
+                </div>
+                <p className="text-warm-grey/90 text-lg leading-relaxed">
+                  A missed call at 7pm. A lead that submitted a form on Sunday and got
+                  a reply on Tuesday. A prospect who went with a competitor because they
+                  responded in 3 minutes and you responded in 3 hours.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.3}>
+              <div className="bg-[#111112] border border-muted-grey/30 p-8 rounded-2xl h-full shadow-lg hover:border-brand-gold/50 transition-colors duration-500 group relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="w-12 h-12 bg-brand-gold/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-brand-gold font-bold">03</span>
+                </div>
+                <p className="text-warm-grey/90 text-lg leading-relaxed mb-4">
+                  This is happening in your business right now. Most owners never find
+                  out exactly how much it is costing them because there is no system
+                  tracking it.
+                </p>
+                <p className="font-bold text-brand-gold uppercase tracking-widest text-sm">The audit shows you.</p>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          <ScrollReveal delay={0.4} className="text-center mt-12">
+            <Link
+              href="/contact"
+              className="inline-block text-brand-gold border-b border-brand-gold/30 pb-1 font-bold hover:text-white hover:border-white transition-all uppercase tracking-widest text-sm"
+            >
+              Find out what your business is losing &rarr;
+            </Link>
+          </ScrollReveal>
         </div>
-        <Link
-          href="/contact"
-          className="inline-block mt-8 text-brand-gold border-b border-brand-gold pb-1 font-bold hover:text-white hover:border-white transition"
-        >
-          Find out what your business is losing — book a free audit &rarr;
-        </Link>
       </section>
 
       {/* Section 3: The Proof */}
-      <section className="py-24 border-b border-muted-grey">
-        <div className="bg-[#111112] border border-muted-grey p-8 md:p-12 rounded-lg flex flex-col md:flex-row gap-12">
-          <div className="flex-1">
-            <div className="text-brand-gold text-sm tracking-widest uppercase mb-4 font-bold">
-              Case Study — Central London Barbershop
+      <section className="py-32 border-b border-muted-grey/30 overflow-hidden relative">
+        <ScrollReveal>
+          <div className="bg-[#111112]/80 border border-muted-grey/30 p-8 md:p-16 rounded-3xl flex flex-col md:flex-row gap-16 relative">
+
+            <div className="flex-1 relative z-10">
+              <div className="inline-block border border-brand-gold/30 bg-brand-gold/5 px-3 py-1 rounded-full text-brand-gold text-xs tracking-widest uppercase mb-6 font-bold">
+                Case Study  Central London Barbershop
+              </div>
+              <h2 className="text-4xl md:text-5xl mb-8 font-serif italic text-white leading-tight">
+                From pen and paper to £237,355 in 14 months.
+              </h2>
+              <p className="text-warm-grey/80 mb-6 leading-relaxed text-lg font-light">
+                Bright Face Barber was running entirely on manual processes. Phone
+                bookings. No follow-up. No automation. No visibility into what was
+                happening in the business.
+              </p>
+              <p className="text-warm-grey/80 mb-10 leading-relaxed text-lg font-light">
+                We installed a complete Business Operating System. Automated
+                booking. Instant follow-up. CRM pipeline. Google Business Profile
+                ranking. Review generation. Reporting dashboard. 7,208 bookings
+                processed automatically. £237,355 in verified revenue. The owner
+                stopped answering the phone. The system did it for him.
+              </p>
+
+              <div className="grid grid-cols-2 gap-8 mb-8 border-t border-muted-grey/30 pt-8">
+                <div>
+                  <div className="text-4xl text-brand-gold font-serif italic mb-1 flex items-baseline">
+                    <span className="text-2xl mr-1">£</span>
+                    <AnimatedCounter value="237355" />
+                  </div>
+                  <div className="text-xs text-warm-grey uppercase tracking-widest font-bold">
+                    Verified revenue
+                  </div>
+                </div>
+                <div>
+                  <div className="text-4xl text-brand-gold font-serif italic mb-1">
+                    <AnimatedCounter value="7208" />
+                  </div>
+                  <div className="text-xs text-warm-grey uppercase tracking-widest font-bold">
+                    Automated bookings
+                  </div>
+                </div>
+                <div>
+                  <div className="text-4xl text-brand-gold font-serif italic mb-1">
+                    <AnimatedCounter value="14" />
+                  </div>
+                  <div className="text-xs text-warm-grey uppercase tracking-widest font-bold">
+                    Months
+                  </div>
+                </div>
+              </div>
+
+              <blockquote className="border-l-2 border-brand-gold/50 pl-6 py-2 text-white italic mb-8 relative">
+                "Since launching the new site, people are booking nonstop. No more
+                missed calls. It just works."
+                <footer className="text-brand-gold text-sm mt-3 not-italic font-bold tracking-widest uppercase">
+                  Talib M, CEO, Bright Face Barber
+                </footer>
+              </blockquote>
+
+              <Link
+                href="/case-studies"
+                className="inline-block mt-4 text-brand-gold border-b border-brand-gold/30 pb-1 font-bold hover:text-white hover:border-white transition-all uppercase tracking-widest text-sm"
+              >
+                Read the full case study &rarr;
+              </Link>
             </div>
-            <h2 className="text-4xl mb-6 font-serif italic">
-              From pen and paper to £237,355 in 14 months.
-            </h2>
-            <p className="text-warm-grey mb-8 leading-relaxed">
-              Bright Face Barber was running entirely on manual processes. Phone
-              bookings. No follow-up. No automation. No visibility into what was
-              happening in the business.
-            </p>
-            <p className="text-warm-grey mb-8 leading-relaxed">
-              We installed a complete Business Operating System. Automated
-              booking. Instant follow-up. CRM pipeline. Google Business Profile
-              ranking. Review generation. Reporting dashboard. 7,208 bookings
-              processed automatically. £237,355 in verified revenue. The owner
-              stopped answering the phone. The system did it for him.
-            </p>
 
-            <div className="space-y-4 mb-8">
-              <div>
-                <div className="text-3xl text-brand-gold font-serif italic">
-                  £237,355
-                </div>
-                <div className="text-sm text-warm-grey uppercase tracking-wider">
-                  Verified revenue
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl text-brand-gold font-serif italic">
-                  7,208
-                </div>
-                <div className="text-sm text-warm-grey uppercase tracking-wider">
-                  Automated bookings
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl text-brand-gold font-serif italic">
-                  14 months
-                </div>
-                <div className="text-sm text-warm-grey uppercase tracking-wider">
-                  Time to result
-                </div>
+            <div className="flex-1 flex items-center justify-center relative z-10 w-full">
+              <div className="bg-[#111112] w-full flex flex-col items-center justify-center border border-muted-grey/30 rounded-2xl shadow-2xl overflow-hidden group p-2">
+                <Image src="/bright-face-dashboard.png" alt="Revenue Dashboard" width={800} height={500} className="object-contain w-full h-auto rounded-xl shadow-inner group-hover:scale-[1.02] transition-transform duration-700" />
               </div>
             </div>
-
-            <blockquote className="border-l-2 border-brand-gold pl-4 text-white italic mb-8">
-              "Since launching the new site, people are booking nonstop. No more
-              missed calls. It just works."
-              <footer className="text-warm-grey text-sm mt-2 not-italic">
-                — Talib M, CEO, Bright Face Barber
-              </footer>
-            </blockquote>
-
-            <Link
-              href="/case-studies"
-              className="text-brand-gold border-b border-brand-gold pb-1 font-bold hover:text-white transition"
-            >
-              Read the full case study &rarr;
-            </Link>
           </div>
-          <div className="flex-1">
-            <div className="bg-[#1a1a1a] aspect-square flex items-center justify-center border border-muted-grey rounded text-warm-grey text-center p-8">
-              [Revenue Dashboard Screenshot Pending]
-            </div>
-          </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Section 4: How It Works */}
-      <section className="py-24 border-b border-muted-grey">
-        <h2 className="text-4xl text-center mb-16 font-serif italic">
-          A proven process. From audit to activation in 4 to 6 weeks.
-        </h2>
-        <div className="grid md:grid-cols-3 gap-12">
-          <div>
-            <div className="text-brand-gold font-bold text-xl mb-4 tracking-widest uppercase">
-              Step 1 — Audit
+      <section className="py-32 border-b border-muted-grey/30 relative">
+        <ScrollReveal>
+          <h2 className="text-4xl md:text-5xl text-center mb-20 font-serif italic text-white">
+            A proven process. From audit to activation in 4 to 6 weeks.
+          </h2>
+        </ScrollReveal>
+
+        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 relative">
+          {/* Subtle connecting line for desktop */}
+          <div className="hidden lg:block absolute top-1/2 left-10 right-10 h-px bg-gradient-to-r from-transparent via-brand-gold/20 to-transparent -translate-y-1/2 -z-10"></div>
+
+          <ScrollReveal delay={0.1}>
+            <div className="bg-[#111112]/90  border border-muted-grey/30 p-10 rounded-2xl h-full shadow-2xl hover:-translate-y-2 transition-transform duration-500 relative group overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold/50 to-brand-gold/0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="text-6xl font-serif italic text-brand-gold/20 mb-6 group-hover:text-brand-gold/40 transition-colors">01</div>
+              <div className="text-brand-gold font-bold text-2xl mb-4 tracking-widest uppercase">
+                Audit
+              </div>
+              <p className="text-warm-grey/90 leading-relaxed text-lg font-light">
+                We analyse your current setup  lead capture, follow-up, operations,
+                and reporting. We show you exactly what is broken and what it is
+                costing you. The audit is free. You own the findings regardless of
+                whether we work together.
+              </p>
             </div>
-            <p className="text-warm-grey leading-relaxed">
-              We analyse your current setup — lead capture, follow-up, operations,
-              and reporting. We show you exactly what is broken and what it is
-              costing you. The audit is free. You own the findings regardless of
-              whether we work together.
-            </p>
-          </div>
-          <div>
-            <div className="text-brand-gold font-bold text-xl mb-4 tracking-widest uppercase">
-              Step 2 — Build
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.2}>
+            <div className="bg-[#111112]/90  border border-muted-grey/30 p-10 rounded-2xl h-full shadow-2xl hover:-translate-y-2 transition-transform duration-500 relative group overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold/50 to-brand-gold/0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="text-6xl font-serif italic text-brand-gold/20 mb-6 group-hover:text-brand-gold/40 transition-colors">02</div>
+              <div className="text-brand-gold font-bold text-2xl mb-4 tracking-widest uppercase">
+                Build
+              </div>
+              <p className="text-warm-grey/90 leading-relaxed text-lg font-light">
+                We design and deploy your Business Operating System  bespoke to
+                your business, connected end to end, built to run without manual
+                input. Not a template. Not a subscription. Yours.
+              </p>
             </div>
-            <p className="text-warm-grey leading-relaxed">
-              We design and deploy your Business Operating System — bespoke to
-              your business, connected end to end, built to run without manual
-              input. Not a template. Not a subscription. Yours.
-            </p>
-          </div>
-          <div>
-            <div className="text-brand-gold font-bold text-xl mb-4 tracking-widest uppercase">
-              Step 3 — Operate
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.3}>
+            <div className="bg-[#111112]/90  border border-muted-grey/30 p-10 rounded-2xl h-full shadow-2xl hover:-translate-y-2 transition-transform duration-500 relative group overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold/50 to-brand-gold/0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="text-6xl font-serif italic text-brand-gold/20 mb-6 group-hover:text-brand-gold/40 transition-colors">03</div>
+              <div className="text-brand-gold font-bold text-2xl mb-4 tracking-widest uppercase">
+                Operate
+              </div>
+              <p className="text-warm-grey/90 leading-relaxed text-lg font-light">
+                Your system goes live. We maintain it on an ongoing basis. You keep
+                what you generate. The focus shifts to scaling your operation, not
+                managing chaos.
+              </p>
             </div>
-            <p className="text-warm-grey leading-relaxed">
-              Your system goes live. We maintain it on an ongoing basis. You keep
-              full ownership. The system compounds over time — more data, better
-              performance, higher conversion.
-            </p>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -228,7 +282,7 @@ export default function Home() {
               <AnimatedCounter prefix="£" value="237355" />
             </div>
             <div className="text-warm-grey text-sm uppercase tracking-widest">
-              Verified revenue — one client, 14 months
+              Verified revenue  one client, 14 months
             </div>
           </div>
           <div>
@@ -236,7 +290,7 @@ export default function Home() {
               <AnimatedCounter value="7208" />
             </div>
             <div className="text-warm-grey text-sm uppercase tracking-widest">
-              Automated bookings — zero manual input
+              Automated bookings  zero manual input
             </div>
           </div>
           <div>
@@ -289,6 +343,7 @@ export default function Home() {
             src="https://getguaranteedrent.co.uk/"
             className="w-full h-[600px] border-none"
             title="Interactive Almass AI Lead Acquisition Demo"
+            scrolling="no"
           />
         </div>
 
@@ -309,7 +364,7 @@ export default function Home() {
       {/* Section 7: More Proof */}
       <section className="py-24 border-b border-muted-grey">
         <div className="text-brand-gold text-sm tracking-widest uppercase mb-4 font-bold">
-          Case Study — Luxury Events, London UK
+          Case Study  Luxury Events, London UK
         </div>
         <h2 className="text-4xl mb-6 max-w-3xl font-serif italic">
           2 million simultaneous users. One platform. Built and deployed by AK
@@ -318,7 +373,7 @@ export default function Home() {
         <p className="text-warm-grey leading-relaxed max-w-3xl mb-12">
           The Grace and Power Gala is an invitation-only luxury awards ceremony in
           London. We designed and deployed the complete official digital platform
-          — handling organiser coordination, partner access, and guest experience
+          handling organiser coordination, partner access, and guest experience
           across one connected infrastructure.
           <br />
           <br />
@@ -333,7 +388,7 @@ export default function Home() {
           "Extremely professional and highly effective. Very happy with the
           results."
           <footer className="text-warm-grey text-sm mt-2 not-italic">
-            — Mario Paunica, Organiser, Grace and Power Gala
+            Mario Paunica, Organiser, Grace and Power Gala
           </footer>
         </blockquote>
       </section>
@@ -350,7 +405,7 @@ export default function Home() {
         <div className="space-y-6">
           <div className="border-b border-muted-grey pb-6 flex flex-col md:flex-row md:items-center justify-between">
             <div className="font-bold text-xl mb-2 md:mb-0">
-              Business Lounge Romania — Cover Feature
+              Business Lounge Romania  Cover Feature
             </div>
             <div className="text-warm-grey md:text-right max-w-md">
               National business magazine. Cover and 5-page editorial. October
@@ -359,7 +414,7 @@ export default function Home() {
           </div>
           <div className="border-b border-muted-grey pb-6 flex flex-col md:flex-row md:items-center justify-between">
             <div className="font-bold text-xl mb-2 md:mb-0">
-              The Business Show London — Exhibitor
+              The Business Show London  Exhibitor
             </div>
             <div className="text-warm-grey md:text-right max-w-md">
               Stand B1354. ExCeL London. 25,000 decision makers. November 2026.
@@ -367,7 +422,7 @@ export default function Home() {
           </div>
           <div className="border-b border-muted-grey pb-6 flex flex-col md:flex-row md:items-center justify-between">
             <div className="font-bold text-xl mb-2 md:mb-0">
-              Grace and Power Gala — Technology Partner
+              Grace and Power Gala  Technology Partner
             </div>
             <div className="text-warm-grey md:text-right max-w-md">
               Invitation-only London luxury awards ceremony.
@@ -375,7 +430,7 @@ export default function Home() {
           </div>
           <div className="border-b border-muted-grey pb-6 flex flex-col md:flex-row md:items-center justify-between">
             <div className="font-bold text-xl mb-2 md:mb-0">
-              Legacy and Power Gala — Technology Partner
+              Legacy and Power Gala  Technology Partner
             </div>
             <div className="text-warm-grey md:text-right max-w-md">
               Second event in the series.
@@ -401,7 +456,7 @@ export default function Home() {
                 £237,355 in verified revenue
               </div>
               <div className="text-brand-gold text-sm uppercase tracking-widest mb-4">
-                Talib M — CEO, Bright Face Barber
+                Talib M  CEO, Bright Face Barber
               </div>
               <p className="text-warm-grey italic">
                 "Since launching the new site, people are booking nonstop. No more
@@ -417,7 +472,7 @@ export default function Home() {
                 Built our infrastructure
               </div>
               <div className="text-brand-gold text-sm uppercase tracking-widest mb-4">
-                Halima Shaker — CEO, Kima Group
+                Halima Shaker  CEO, Kima Group
               </div>
               <p className="text-warm-grey italic">
                 "AK Marketing were attentive, thoughtful, and intentional in building our website. The guidance we received made a real difference."
@@ -432,7 +487,7 @@ export default function Home() {
                 Official Technology Partner
               </div>
               <div className="text-brand-gold text-sm uppercase tracking-widest mb-4">
-                Mario Paunica — Grace & Power Gala Organizer
+                Mario Paunica  Grace & Power Gala Organizer
               </div>
               <p className="text-warm-grey italic">
                 "Extremely professional and highly effective. Very happy with the results."
@@ -447,7 +502,7 @@ export default function Home() {
                 Faster than promised
               </div>
               <div className="text-brand-gold text-sm uppercase tracking-widest mb-4">
-                Alexandra — Alla Nails & Beauty
+                Alexandra  Alla Nails & Beauty
               </div>
               <p className="text-warm-grey italic">
                 "They delivered exactly what I had in mind. The site was completed faster than promised."
@@ -462,7 +517,7 @@ export default function Home() {
                 Perfectly captured the vision
               </div>
               <div className="text-brand-gold text-sm uppercase tracking-widest mb-4">
-                Raluca Uta — CEO, Strategos Analytica
+                Raluca Uta  CEO, Strategos Analytica
               </div>
               <p className="text-warm-grey italic">
                 "They perfectly captured the vision of the event and created a beautiful, user-friendly site that made ticket purchasing easy. Professional and incredibly talented."
@@ -476,7 +531,7 @@ export default function Home() {
                 Delivering real results
               </div>
               <div className="text-brand-gold text-sm uppercase tracking-widest mb-4">
-                Sebastian — Sebastian Pop Photography
+                Sebastian  Sebastian Pop Photography
               </div>
               <p className="text-warm-grey italic">
                 "Their professionalism and commitment to delivering real results truly stood out."
@@ -499,7 +554,7 @@ export default function Home() {
             <p className="text-warm-grey leading-relaxed">
               You run a service business generating consistent revenue. You are
               doing too much manually and you know it. You have tried ads, hired
-              staff, or bought software — and the problem is still there. You are
+              staff, or bought software  and the problem is still there. You are
               ready to fix the infrastructure, not add another tool.
             </p>
           </div>
