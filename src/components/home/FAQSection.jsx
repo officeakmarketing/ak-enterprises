@@ -14,7 +14,7 @@ export default function FAQSection() {
       question: "How is this different from a normal website or SaaS tool?",
       answer: [
         "A normal website simply displays static information, and SaaS tools add more disconnected subscriptions.",
-        "Our Business Operating Systems connect your lead capture, follow-up, and booking workflows end-to-end. You own the infrastructure permanently — not another monthly template.",
+        "Our Business Operating Systems connect your lead capture, follow-up, and booking workflows end-to-end. You own the infrastructure permanently  not another monthly template.",
       ],
     },
     {

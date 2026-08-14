@@ -4,7 +4,7 @@ import { Check, X, ShieldCheck } from "lucide-react";
 export default function TargetAudienceVariation1() {
   const rightFitPoints = [
     "You run an established service business with active, consistent revenue.",
-    "You are losing leads, missed calls, or manual time — and you know it.",
+    "You are losing leads, missed calls, or manual time  and you know it.",
     "You have tried ads, staff, or SaaS tools and the operational bottlenecks remain.",
     "You are ready to install bespoke infrastructure and own it completely.",
   ];

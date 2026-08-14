@@ -14,7 +14,7 @@ export default function TargetAudienceVariation4() {
     },
     {
       title: "Ready for Infrastructure Ownership",
-      desc: "You want a bespoke Business Operating System that you own permanently — not another monthly SaaS tool.",
+      desc: "You want a bespoke Business Operating System that you own permanently  not another monthly SaaS tool.",
     },
   ];
 

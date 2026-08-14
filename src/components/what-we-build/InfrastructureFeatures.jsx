@@ -44,47 +44,76 @@ export default function InfrastructureFeatures() {
     },
     {
       title: "CRM Integration",
-      does: "Integrates with your existing CRM  no replacement required unless wanted",
+      does: "Integrates with your existing CRM \u2014 no replacement required unless wanted",
       solves: "Your tools do not talk to each other and data lives in silos"
     }
   ];
 
   return (
-    <section className="py-32 border-b border-muted-grey/30 relative">
+    <section className="py-12 sm:py-16 lg:py-20 border-b border-muted-grey/20 relative bg-ink-black">
       <ScrollReveal>
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif italic text-white mb-4">Core Infrastructure</h2>
-          <p className="text-warm-grey text-lg">Every component works together to capture and convert revenue.</p>
+        <div className="mb-10 md:mb-16 px-4 sm:px-6 lg:px-8 xl:px-12 max-w-[1536px] mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-white mb-4 sm:mb-6">The Components</h2>
+          <p className="text-warm-grey text-base sm:text-lg max-w-2xl font-light leading-relaxed">
+            Outcome framing over feature lists. Every component installed in your business is designed to solve a specific operational bottleneck and drive revenue.
+          </p>
         </div>
       </ScrollReveal>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {components.map((component, index) => (
-          <ScrollReveal key={index} delay={index * 0.1}>
-            <div className="bg-[#111112]/90  border border-muted-grey/30 p-8 rounded-2xl h-full shadow-lg hover:-translate-y-2 hover:border-brand-gold/50 transition-all duration-500 group relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold/30 to-brand-gold/0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <h3 className="font-bold text-white text-2xl mb-6 flex items-center justify-between">
-                {component.title}
-                <span className="text-brand-gold/20 group-hover:text-brand-gold/80 transition-colors">✦</span>
-              </h3>
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        {/* Desktop Table Header */}
+        <div className="hidden lg:flex border-b border-brand-gold/30 pb-4 mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
+          <div className="w-[28%] pr-6">Component</div>
+          <div className="w-[35%] pr-6">What It Does</div>
+          <div className="w-[37%]">Problem It Solves</div>
+        </div>
 
-              <div className="space-y-6">
-                <div>
-                  <div className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2">What It Does</div>
-                  <p className="text-warm-grey/90 text-sm leading-relaxed">
-                    {component.does}
-                  </p>
+        <div className="flex flex-col">
+          {components.map((component, index) => (
+            <ScrollReveal key={index} delay={index * 0.05}>
+              <div className="flex flex-col lg:flex-row lg:border-b lg:border-white/[0.06] py-0 lg:py-8 group hover:bg-white/[0.02] transition-colors duration-300">
+                
+                {/* Mobile Card Layout vs Desktop Row Layout */}
+                <div className="flex flex-col lg:contents bg-[#111112] lg:bg-transparent border border-white/5 lg:border-none rounded-2xl lg:rounded-none p-6 lg:p-0 mb-4 lg:mb-0 relative overflow-hidden">
+                  
+                  {/* Subtle mobile top highlight */}
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold/20 to-brand-gold/0 lg:hidden"></div>
+                  
+                  {/* Header: Component Name */}
+                  <div className="lg:w-[28%] lg:pr-8 mb-5 lg:mb-0 flex items-center">
+                    <h3 className="text-white font-serif text-2xl italic group-hover:text-brand-gold transition-colors duration-300">
+                      {component.title}
+                    </h3>
+                  </div>
+
+                  {/* Middle Column: What it does */}
+                  <div className="lg:w-[35%] lg:pr-10 mb-6 lg:mb-0 flex flex-col justify-center">
+                    <div className="lg:hidden text-[10px] font-bold uppercase tracking-[0.2em] text-warm-grey/50 mb-2">The Mechanism</div>
+                    <p className="text-warm-grey text-[0.95rem] font-light leading-[1.65]">
+                      {component.does}
+                    </p>
+                  </div>
+
+                  {/* Right Column: Problem It Solves */}
+                  <div className="lg:w-[37%] flex flex-col justify-center">
+                    <div className="lg:hidden text-[10px] font-bold uppercase tracking-[0.2em] text-brand-gold/90 mb-2 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse shadow-[0_0_8px_rgba(201,169,97,0.5)]"></span>
+                      The Problem It Solves
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-brand-gold text-lg mt-[1px] hidden lg:block opacity-60 group-hover:opacity-100 transition-opacity">↳</span>
+                      <p className="text-white/95 text-[0.95rem] sm:text-base leading-[1.65] font-normal">
+                        {component.solves}
+                      </p>
+                    </div>
+                  </div>
+
                 </div>
-                <div className="pt-4 border-t border-muted-grey/20">
-                  <div className="text-red-500/80 text-xs font-bold uppercase tracking-widest mb-2">The Leak It Fixes</div>
-                  <p className="text-warm-grey/70 text-sm italic">
-                    "{component.solves}"
-                  </p>
-                </div>
+
               </div>
-            </div>
-          </ScrollReveal>
-        ))}
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   );
