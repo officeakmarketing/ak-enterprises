@@ -3,31 +3,7 @@
 import { motion } from "framer-motion";
 
 export default function AnimatedHeadline({ text, className, highlightWords = [] }) {
-  const words = text.split(" ");
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
-    },
-  };
-
-  const child = {
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        damping: 18,
-        stiffness: 90,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      y: "100%", // Slide up from below the mask
-    },
-  };
+  const lines = text.split("\n");
 
   // Helper to determine if a word should be highlighted
   const isHighlighted = (word) => {
@@ -35,41 +11,64 @@ export default function AnimatedHeadline({ text, className, highlightWords = [] 
     return highlightWords.some((hw) => hw.toLowerCase() === cleanWord);
   };
 
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.02,
+        delayChildren: 0,
+      },
+    },
+  };
+
+  const child = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 6,
+    },
+  };
+
   return (
     <motion.h1
-      className={`${className} relative overflow-hidden`}
+      className={`${className} relative text-balance`}
       variants={container}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      initial="visible"
+      animate="visible"
     >
-      {/* Gold Shimmer Sweep */}
-      <div 
-        className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer mix-blend-overlay" 
-        style={{ animationDelay: '1.2s' }}
-      ></div>
+      {lines.map((line, lineIdx) => (
+        <span key={lineIdx} className={lineIdx > 0 ? "block mt-1 sm:mt-1.5" : "inline"}>
+          {line.split(" ").map((word, wordIdx) => {
+            const highlight = isHighlighted(word);
 
-      {words.map((word, index) => {
-        const highlight = isHighlighted(word);
-        
-        return (
-          <span 
-            key={index} 
-            className="inline-block overflow-hidden pb-[0.1em] -mb-[0.1em] mr-[0.25em]"
-          >
-            <motion.span
-              variants={child}
-              className={`inline-block ${
-                highlight 
-                  ? 'text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-yellow-200 to-brand-gold font-bold drop-shadow-lg' 
-                  : ''
-              }`}
-            >
-              {word}
-            </motion.span>
-          </span>
-        );
-      })}
+            return (
+              <span
+                key={`${lineIdx}-${wordIdx}`}
+                className="inline-block mr-[0.22em] sm:mr-[0.25em]"
+              >
+                <motion.span
+                  variants={child}
+                  className={`inline-block ${
+                    highlight
+                      ? "text-brand-gold font-bold drop-shadow-[0_1px_3px_rgba(201,169,97,0.12)]"
+                      : ""
+                  }`}
+                >
+                  {word}
+                </motion.span>
+              </span>
+            );
+          })}
+        </span>
+      ))}
     </motion.h1>
   );
 }

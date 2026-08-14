@@ -14,7 +14,7 @@ import FAQSection from "@/components/home/FAQSection";
 
 export default function Home() {
   return (
-    <main className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+    <main className="w-full max-w-[1536px] mx-auto px-0 sm:px-6 lg:px-8 xl:px-12">
       <HeroSection />
       <TrustBar />
       <PainSection />

@@ -6,7 +6,7 @@ export default function MoreProofSection() {
   return (
     <section className="py-24 border-b border-muted-grey/30 relative">
       <ScrollReveal>
-        <div className="bg-[#111112]/80 border border-muted-grey/30 p-8 md:p-12 lg:p-16 lg:-mx-12 xl:-mx-24 rounded-3xl flex flex-col lg:flex-row gap-12 lg:gap-16 relative items-center">
+        <div className="bg-[#111112]/80 border border-muted-grey/30 p-8 md:p-12 lg:p-16 rounded-3xl flex flex-col lg:flex-row gap-12 lg:gap-16 relative items-center w-full">
           {/* Content (Left) */}
           <div className="flex-1 relative z-10 w-full">
             <div className="inline-block border border-brand-gold/30 bg-brand-gold/5 px-3 py-1 rounded-full text-brand-gold text-xs tracking-widest uppercase mb-6 font-bold">
