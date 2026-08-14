@@ -2,19 +2,22 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function CaseStudiesHero() {
   return (
-    <section className="relative py-24 md:py-32 border-b border-muted-grey/30">
-      <ScrollReveal>
-        <div className="inline-block border border-brand-gold/30 bg-brand-gold/5 px-3 py-1 rounded-full text-brand-gold tracking-[0.2em] uppercase text-xs mb-8 font-bold ">
-          Case Studies
-        </div>
-        <h1 className="text-5xl md:text-7xl mb-8 max-w-4xl font-serif italic text-white leading-tight">
-          Real systems. Documented results. Every number verified.
-        </h1>
-        <p className="text-warm-grey/90 text-xl max-w-3xl font-light leading-relaxed">
-          We do not estimate. We do not project. We do not round up. Every
-          figure below comes from a real client, a real system, and a real result.
-        </p>
-      </ScrollReveal>
+    <section className="w-screen relative left-1/2 -translate-x-1/2 flex flex-col border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-4 sm:pt-6 md:pt-8 lg:pt-4 xl:pt-6 pb-16 lg:pb-16 xl:pb-20">
+        <ScrollReveal>
+          {/* HEADLINE */}
+          <h1 className="text-[2rem] sm:text-[2.5rem] md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-serif italic text-white leading-[1.2] lg:leading-[1.15] max-w-4xl mb-4 lg:mb-3 xl:mb-5">
+            Real systems. Documented results.<br />
+            Every number verified.
+          </h1>
+
+          {/* BODY */}
+          <p className="text-warm-grey/85 text-[0.95rem] sm:text-base lg:text-base xl:text-[1.1rem] font-light leading-relaxed max-w-3xl mb-8 lg:mb-5 xl:mb-8">
+            We do not estimate. We do not project. We do not round up. Every
+            figure below comes from a real client, a real system, and a real result.
+          </p>
+        </ScrollReveal>
+      </div>
     </section>
   );
 }

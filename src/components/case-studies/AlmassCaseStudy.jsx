@@ -13,13 +13,10 @@ export default function AlmassCaseStudy() {
   ];
 
   return (
-    <section className="w-screen relative left-1/2 -translate-x-1/2 py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-screen relative left-1/2 -translate-x-1/2 py-12 sm:py-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <ScrollReveal>
-          <div className="inline-flex items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-6 font-bold">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
-            <span>Case Study • Almass Estates</span>
-          </div>
+
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] mb-12 sm:mb-14 max-w-5xl leading-tight font-serif italic text-white">
             Zero staff. Instant AI-generated offers. Every landlord lead captured automatically.
