@@ -32,9 +32,28 @@
       transform: translate(0px, 0px) scale(1);
     }
   }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+
+  @keyframes breathe {
+    0%, 100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); }
+  }
 }
 
 @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animate-shimmer {
+    animation: shimmer 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  .animate-breathe {
+    animation: breathe 3s ease-in-out infinite;
+  }
   .hide-scrollbar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */

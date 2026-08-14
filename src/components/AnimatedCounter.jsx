@@ -10,11 +10,11 @@ export default function AnimatedCounter({
   className,
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" }); // Removed -100px margin so it triggers earlier
   
-  // The value can be a string like "237,355" or "2M" or "6".
-  // Let's strip non-digits to animate the core number.
-  const rawNumber = parseFloat(value.replace(/[^0-9.]/g, ""));
+  // Safely handle if value is passed as number or string
+  const stringValue = String(value);
+  const rawNumber = parseFloat(stringValue.replace(/[^0-9.]/g, "")) || 0;
   
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {
@@ -31,13 +31,20 @@ export default function AnimatedCounter({
   }, [isInView, motionValue, rawNumber]);
 
   useEffect(() => {
-    return springValue.on("change", (latest) => {
-      // Format back with commas if necessary
+    // Listen to spring value changes
+    const unsubscribe = springValue.on("change", (latest) => {
       const formatted = Intl.NumberFormat("en-GB", {
         maximumFractionDigits: 0,
       }).format(Math.floor(latest));
       setDisplay(formatted);  
     });
+    
+    return () => {
+      // Safely unsubscribe based on Framer Motion version
+      if (typeof unsubscribe === "function") {
+        unsubscribe();
+      }
+    };
   }, [springValue]);
 
   return (
