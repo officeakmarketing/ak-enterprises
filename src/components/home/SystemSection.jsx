@@ -1,59 +1,116 @@
 import ScrollReveal from "@/components/ScrollReveal";
+import { Search, Layers, Activity } from "lucide-react";
 
 export default function SystemSection() {
+  const steps = [
+    {
+      number: "01",
+      step: "STEP 1",
+      title: "AUDIT",
+      heading: "We analyse & pinpoint your exact revenue leaks.",
+      description:
+        "We analyse your current setup  lead capture, follow-up, operations, and reporting. We show you exactly what is broken and what it is costing you. The audit is free. You own the findings regardless of whether we work together.",
+      icon: Search,
+    },
+    {
+      number: "02",
+      step: "STEP 2",
+      title: "BUILD",
+      heading: "We design & deploy your Business Operating System.",
+      description:
+        "We design and deploy your Business Operating System  bespoke to your business, connected end to end, built to run without manual input. Not a template. Not a subscription. Yours.",
+      icon: Layers,
+    },
+    {
+      number: "03",
+      step: "STEP 3",
+      title: "OPERATE",
+      heading: "Live execution, maintenance & compounding growth.",
+      description:
+        "Your system goes live. We maintain it on an ongoing basis. You keep full ownership. The system compounds over time  more data, better performance, higher conversion.",
+      icon: Activity,
+    },
+  ];
+
   return (
-    <section className="py-32 border-b border-muted-grey/30 relative">
-      <ScrollReveal>
-        <h2 className="text-4xl md:text-5xl text-center mb-20 font-serif italic text-white">
-          How the system is built.
-        </h2>
-      </ScrollReveal>
-
-      <div className="grid lg:grid-cols-3 gap-8">
-        <ScrollReveal delay={0.1}>
-          <div className="bg-[#111112]/90  border border-muted-grey/30 p-10 rounded-2xl h-full shadow-2xl hover:-translate-y-2 transition-transform duration-500 relative group overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold/50 to-brand-gold/0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div className="text-6xl font-serif italic text-brand-gold/20 mb-6 group-hover:text-brand-gold/40 transition-colors">01</div>
-            <div className="text-brand-gold font-bold text-2xl mb-4 tracking-widest uppercase">
-              Audit
+    <section className="w-screen relative left-1/2 -translate-x-1/2 py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <ScrollReveal>
+          <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-18">
+            <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-4 font-bold">
+              How It Works
             </div>
-            <p className="text-warm-grey/90 leading-relaxed text-lg font-light">
-              We review every step of your current operational flow. We map exactly
-              where leads are dropping off, where staff are wasting time, and
-              whether we work together.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-white leading-tight mb-3">
+              How the system is built.
+            </h2>
+            <p className="text-warm-grey/80 text-sm sm:text-base font-light">
+              From audit to live activation, every step installs a fully automated infrastructure.
             </p>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.2}>
-          <div className="bg-[#111112]/90  border border-muted-grey/30 p-10 rounded-2xl h-full shadow-2xl hover:-translate-y-2 transition-transform duration-500 relative group overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold/50 to-brand-gold/0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div className="text-6xl font-serif italic text-brand-gold/20 mb-6 group-hover:text-brand-gold/40 transition-colors">02</div>
-            <div className="text-brand-gold font-bold text-2xl mb-4 tracking-widest uppercase">
-              Build
-            </div>
-            <p className="text-warm-grey/90 leading-relaxed text-lg font-light">
-              We design and deploy your Business Operating System  bespoke to
-              your business, connected end to end, built to run without manual
-              input. Not a template. Not a subscription. Yours.
-            </p>
-          </div>
-        </ScrollReveal>
+        {/* Unique Vertical Circuit Timeline */}
+        <div className="relative pl-7 sm:pl-12 md:pl-14">
+          {/* Vertical Connecting Gold Circuit Line */}
+          <div className="absolute left-[13px] sm:left-[23px] md:left-[27px] top-10 bottom-10 w-[2px] bg-gradient-to-b from-brand-gold/60 via-brand-gold/35 to-brand-gold/10"></div>
 
-        <ScrollReveal delay={0.3}>
-          <div className="bg-[#111112]/90  border border-muted-grey/30 p-10 rounded-2xl h-full shadow-2xl hover:-translate-y-2 transition-transform duration-500 relative group overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold/50 to-brand-gold/0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div className="text-6xl font-serif italic text-brand-gold/20 mb-6 group-hover:text-brand-gold/40 transition-colors">03</div>
-            <div className="text-brand-gold font-bold text-2xl mb-4 tracking-widest uppercase">
-              Operate
-            </div>
-            <p className="text-warm-grey/90 leading-relaxed text-lg font-light">
-              Your system goes live. We maintain it on an ongoing basis. You keep
-              what you generate. The focus shifts to scaling your operation, not
-              managing chaos.
-            </p>
+          <div className="space-y-8 sm:space-y-10">
+            {steps.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <ScrollReveal key={idx} delay={idx * 0.1}>
+                  <div className="relative group">
+                    {/* Horizontal Circuit Connector from Spine to Card */}
+                    <div className="absolute -left-7 sm:-left-12 md:-left-14 top-9 w-7 sm:w-12 md:w-14 h-[2px] bg-gradient-to-r from-brand-gold/50 to-brand-gold/20 group-hover:from-brand-gold group-hover:to-brand-gold/80 transition-all duration-300"></div>
+
+                    {/* Glowing Timeline Beacon Node */}
+                    <div className="absolute -left-[35px] sm:-left-[54px] md:-left-[62px] top-[29px] flex items-center justify-center z-20">
+                      <div className="w-4 h-4 rounded-full bg-[#0B0B0C] border-2 border-brand-gold flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_10px_rgba(201,169,97,0.8)]">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>
+                      </div>
+                    </div>
+
+                    {/* Luxury Obsidian Card */}
+                    <div className="bg-gradient-to-br from-[#121214] to-[#0a0a0b] border border-muted-grey/25 hover:border-brand-gold/50 rounded-2xl p-6 sm:p-8 md:p-9 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                      {/* Subtle Ambient Gold Corner Bloom on Hover */}
+                      <div className="absolute top-0 right-0 w-48 h-48 bg-[radial-gradient(circle,rgba(201,169,97,0.06),transparent_70%)] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                      {/* Header Row: Icon + Large Numeral + Single-Line Step Badge */}
+                      <div className="flex items-center justify-between gap-3 mb-4 flex-wrap sm:flex-nowrap">
+                        <div className="flex items-center gap-3.5">
+                          <div className="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-ink-black transition-colors duration-300">
+                            <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                          </div>
+                          <span className="text-2xl sm:text-3xl font-serif italic font-normal text-white">
+                            {item.number}
+                          </span>
+                        </div>
+
+                        {/* Single-line step badge */}
+                        <div className="whitespace-nowrap shrink-0">
+                          <span className="text-[10px] sm:text-xs font-mono font-bold tracking-[0.18em] text-brand-gold bg-brand-gold/10 border border-brand-gold/30 px-3 py-1 rounded-md uppercase inline-block">
+                            {item.step}  {item.title}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Heading */}
+                      <h3 className="text-lg sm:text-xl font-serif italic text-white mb-3 leading-snug">
+                        {item.heading}
+                      </h3>
+
+                      {/* Body Description */}
+                      <p className="text-warm-grey/90 text-sm sm:text-base leading-relaxed font-light">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
           </div>
-        </ScrollReveal>
+        </div>
       </div>
     </section>
   );

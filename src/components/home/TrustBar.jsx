@@ -180,10 +180,7 @@ export default function TrustBar() {
         {/* Metric 4 */}
         <div className="flex flex-col items-center text-center group transition-transform duration-300 hover:scale-105">
           <div className="flex items-center gap-1.5 sm:gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
-            </span>
+           
             <span className="text-xl sm:text-2xl lg:text-xl xl:text-[1.45rem] 2xl:text-2xl font-serif font-black text-brand-gold tracking-tight leading-none">
               Live
             </span>

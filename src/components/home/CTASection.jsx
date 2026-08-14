@@ -1,47 +1,64 @@
 import Link from "next/link";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function CTASection() {
   return (
-    <section className="py-24 border-b border-muted-grey bg-[#111112] px-8 text-center rounded-lg mt-12">
-      <h2 className="text-4xl md:text-5xl text-brand-gold mb-8 max-w-3xl mx-auto font-serif italic">
-        Start with a free business audit. No pitch. No pressure. Just clarity.
-      </h2>
+    <section className="w-screen relative left-1/2 -translate-x-1/2 py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <ScrollReveal>
+          {/* Header Badge */}
+          <div className="inline-flex items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-6 font-bold">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
+            <span>Free Operational Audit</span>
+          </div>
 
-      <div className="text-warm-grey text-lg leading-relaxed max-w-3xl mx-auto space-y-6 mb-12">
-        <p>
-          We look at your lead capture, follow-up process, operational
-          workflows, and reporting visibility. We identify every gap and
-          quantify exactly what it is costing you. We show you what a Business
-          Operating System would look like for your specific business.
-        </p>
-        <p>
-          The audit takes 20 minutes. The findings are yours to keep regardless
-          of whether we work together.
-        </p>
+          {/* Headline */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] text-white mb-6 sm:mb-8 font-serif italic leading-tight max-w-3xl mx-auto">
+            Start with a free business audit. No pitch. No pressure. Just clarity.
+          </h2>
+
+          {/* Body Narrative */}
+          <div className="text-warm-grey/90 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto space-y-4 mb-8 sm:mb-10 font-light">
+            <p>
+              We look at your lead capture, follow-up process, operational workflows, and reporting visibility. We identify every gap and quantify exactly what it is costing you. We show you what a Business Operating System would look like for your specific business.
+            </p>
+            <p className="text-white font-medium">
+              The audit takes 20 minutes. The findings are yours to keep regardless of whether we work together.
+            </p>
+          </div>
+
+          {/* Guarantee Card */}
+          <div className="bg-[#0e0e10]/95 border border-brand-gold/30 p-5 sm:p-7 max-w-2xl mx-auto rounded-2xl mb-8 sm:mb-10 shadow-lg">
+            <p className="italic text-warm-grey/85 text-xs sm:text-sm leading-relaxed">
+              "If we cannot find a single gap in your business that is costing you money, we will tell you honestly and you owe us nothing. We have never left an audit empty-handed."
+            </p>
+          </div>
+
+          {/* Client Limit Scarcity Banner */}
+          <div className="mb-8">
+            <span className="inline-block text-[10px] sm:text-xs font-mono font-bold tracking-[0.16em] sm:tracking-widest text-brand-gold uppercase bg-brand-gold/10 border border-brand-gold/25 px-3.5 py-1.5 rounded-md">
+              Limited to 4 New Client Deployments Per Month
+            </span>
+          </div>
+
+          {/* CTA Button (Responsive Full-Width on Mobile) */}
+          <div className="w-full flex justify-center mb-4">
+            <Link
+              href="/contact"
+              className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-8 sm:px-12 py-4 sm:py-5 rounded-xl text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto text-center shadow-lg"
+            >
+              {/* White specular glare sweep */}
+              <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>
+              <span className="relative z-10">Book Your Free Audit &rarr;</span>
+            </Link>
+          </div>
+
+          {/* Sub-Notice */}
+          <p className="text-warm-grey/60 text-[11px] sm:text-xs font-mono">
+            Takes 60 seconds to book • Confirmed within 24 hours
+          </p>
+        </ScrollReveal>
       </div>
-
-      <div className="bg-[#1a1a1a] border border-muted-grey p-6 max-w-2xl mx-auto rounded-lg mb-8">
-        <p className="italic text-warm-grey">
-          If we cannot find a single gap in your business that is costing you
-          money, we will tell you honestly and you owe us nothing. We have never
-          left an audit empty-handed.
-        </p>
-      </div>
-
-      <p className="text-brand-gold font-bold uppercase tracking-widest mb-8 text-sm">
-        We take on a maximum of 4 new clients per month. Current availability:
-        [X] slots remaining. Next available audit: [DATE].
-      </p>
-
-      <Link
-        href="/contact"
-        className="inline-block bg-brand-gold text-ink-black px-12 py-5 rounded font-bold text-xl hover:bg-white transition mb-4"
-      >
-        Book Your Free Audit
-      </Link>
-      <p className="text-warm-grey text-sm">
-        Takes 60 seconds to book. We will confirm within 24 hours.
-      </p>
     </section>
   );
 }

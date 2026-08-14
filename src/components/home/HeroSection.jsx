@@ -6,7 +6,7 @@ import HeroVideoPlayer from "./HeroVideoPlayer";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-ink-black px-4 sm:px-6 lg:px-0 pt-8 pb-14 sm:pt-10 sm:pb-16 lg:py-0 lg:min-h-[calc(100vh-5.5rem)] 2xl:min-h-[calc(100vh-6.5rem)] flex items-center border-b border-muted-grey/20 overflow-hidden">
+    <section className="relative bg-ink-black px-4 sm:px-6 lg:px-0 pt-8 pb-14 sm:pt-10 sm:pb-16 lg:py-0 lg:h-[calc(100vh-4.25rem)] lg:min-h-[calc(100vh-4.25rem)] 2xl:h-[calc(100vh-4.75rem)] 2xl:min-h-[calc(100vh-4.75rem)] flex items-center border-b border-muted-grey/20 overflow-hidden">
       <div className="w-full flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-8 xl:gap-12 2xl:gap-16 items-center justify-between z-10 relative">
         {/* Left Column: Copy & Actions */}
         <div className="flex-1 w-full lg:max-w-[490px] xl:max-w-[580px] 2xl:max-w-[680px]">
@@ -47,9 +47,9 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Right Column: Clean Luxury Obsidian Video Frame (Zero Outer Glow) */}
+        {/* Right Column: Clean Gold Hairline Border Video Container */}
         <div className="flex-1 w-full lg:max-w-[460px] xl:max-w-[530px] 2xl:max-w-[620px]">
-          <div className="relative bg-[#0d0d0f] border border-brand-gold/35 aspect-video rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] overflow-hidden transition-colors duration-300 hover:border-brand-gold/60">
+          <div className="relative aspect-video rounded-2xl overflow-hidden border border-brand-gold/40">
             <HeroVideoPlayer src="/demo.mp4" />
           </div>
         </div>

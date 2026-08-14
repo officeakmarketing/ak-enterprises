@@ -8,30 +8,35 @@ export default function FAQItem({ question, answer }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-[#111112] border border-muted-grey/30 rounded-lg overflow-hidden mb-4">
+    <div className="bg-[#0e0e10]/95 border border-muted-grey/25 hover:border-brand-gold/40 rounded-xl overflow-hidden transition-colors duration-200">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold transition-colors hover:bg-[#1a1a1a]"
+        className="w-full flex justify-between items-center px-4 py-4 sm:px-6 sm:py-4.5 text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold transition-colors hover:bg-white/[0.02] cursor-pointer"
+        aria-expanded={isOpen}
       >
-        <span className="font-bold text-lg text-white">{question}</span>
+        <span className="font-serif italic text-sm sm:text-base md:text-lg text-white pr-4 leading-snug">
+          {question}
+        </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="text-warm-grey"
+          transition={{ duration: 0.25, ease: "easeInOut" }}
+          className={`shrink-0 transition-colors ${
+            isOpen ? "text-brand-gold" : "text-warm-grey/60"
+          }`}
         >
-          <ChevronDown size={24} />
+          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />
         </motion.div>
       </button>
-      
-      <AnimatePresence>
+
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
           >
-            <div className="p-6 pt-0 text-warm-grey/80 leading-relaxed space-y-4">
+            <div className="px-4 pb-4 sm:px-6 sm:pb-5 pt-1 text-warm-grey/85 text-xs sm:text-sm leading-relaxed space-y-2.5 font-light border-t border-muted-grey/15">
               {answer.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
