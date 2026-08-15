@@ -1,112 +1,169 @@
+'use client';
+
+import { useState } from 'react';
+import ScrollReveal from "@/components/ScrollReveal";
+
 export default function ContactForm() {
+  const [step, setStep] = useState(1);
+  const totalSteps = 2;
+
+  const nextStep = (e) => {
+    e.preventDefault();
+    if (step < totalSteps) setStep(step + 1);
+  };
+
+  const prevStep = () => {
+    if (step > 1) setStep(step - 1);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Submission logic here
+    alert("Form submitted! (Demo)");
+  };
+
   return (
-    <div className="flex-1 bg-[#111112] border border-muted-grey p-8 rounded-lg shadow-2xl">
-      <form className="space-y-6">
-        <div>
-          <label className="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">
-            Full Name
-          </label>
-          <input
-            type="text"
-            className="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition"
-          />
-        </div>
-        <div>
-          <label className="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">
-            Business Name
-          </label>
-          <input
-            type="text"
-            className="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition"
-          />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">
-              Email Address
-            </label>
-            <input
-              type="email"
-              className="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition"
-            />
-          </div>
-          <div>
-            <label className="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              className="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition"
-            />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">
-              Country
-            </label>
-            <select className="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition">
-              <option>UK</option>
-              <option>USA</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">
-              Industry / Business Type
-            </label>
-            <input
-              type="text"
-              className="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition"
-            />
-          </div>
-        </div>
-        <div>
-          <label className="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">
-            Monthly Revenue Range
-          </label>
-          <select className="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition">
-            <option>Under £3,000</option>
-            <option>£3,000 to £10,000</option>
-            <option>£10,000 to £50,000</option>
-            <option>Over £50,000</option>
-          </select>
-        </div>
-        <div>
-          <label className="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">
-            Biggest operational challenge right now
-          </label>
-          <textarea
-            rows={3}
-            className="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition"
-          ></textarea>
-        </div>
-        <div>
-          <label className="block text-sm text-warm-grey uppercase tracking-widest mb-2 font-bold">
-            How did you hear about AK Enterprises?
-          </label>
-          <select className="w-full bg-[#1a1a1a] border border-muted-grey rounded p-4 text-white focus:border-brand-gold outline-none transition">
-            <option>Please select...</option>
-            <option>Social Media</option>
-            <option>Referral</option>
-            <option>Event</option>
-            <option>Search</option>
-          </select>
+    <ScrollReveal delay={0.2}>
+      <div className="w-full bg-[#0a0a0b] border border-brand-gold/40 p-4 sm:p-8 lg:p-12 relative overflow-hidden">
+        
+        {/* Header Area */}
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-2 mb-4 relative z-10">
+          <h3 className="text-white font-bold text-lg sm:text-xl leading-tight">
+            {step === 1 ? 'About you and your business' : 'Business context'}
+          </h3>
+          <span className="text-brand-gold text-sm font-medium whitespace-nowrap">
+            Step {step} of {totalSteps}
+          </span>
         </div>
 
-        <div className="mt-8">
-          <button
-            type="button"
-            className="w-full bg-brand-gold text-ink-black py-5 rounded font-bold text-xl hover:bg-white transition shadow-lg"
-          >
-            Book My Free Audit
-          </button>
-          <p className="text-center text-xs text-brand-gold uppercase tracking-widest mt-6 font-bold">
-            We take on a maximum of 4 new clients per month. Current
-            availability: [X] slots. We confirm within 24 hours.
-          </p>
+        {/* Progress indicator */}
+        <div className="w-full h-[2px] bg-white/5 rounded-full overflow-hidden mb-10 relative z-10">
+          <div 
+            className="h-full bg-brand-gold transition-all duration-500 ease-out"
+            style={{ width: `${(step / totalSteps) * 100}%` }}
+          ></div>
         </div>
-      </form>
-    </div>
+
+        <form onSubmit={step === totalSteps ? handleSubmit : nextStep} className="space-y-4 relative z-10">
+          
+          {/* STEP 1: BASIC DETAILS */}
+          {step === 1 && (
+            <div className="space-y-4 animate-in fade-in duration-500">
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  required
+                  className="w-full bg-transparent border border-white/10 rounded-sm p-4 text-white text-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all placeholder:text-warm-grey/50 font-light"
+                  placeholder="Full Name"
+                />
+                <input
+                  type="text"
+                  required
+                  className="w-full bg-transparent border border-white/10 rounded-sm p-4 text-white text-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all placeholder:text-warm-grey/50 font-light"
+                  placeholder="Business Name (e.g. Acme Corp)"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input
+                  type="email"
+                  required
+                  className="w-full bg-transparent border border-white/10 rounded-sm p-4 text-white text-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all placeholder:text-warm-grey/50 font-light"
+                  placeholder="Email Address"
+                />
+                <input
+                  type="tel"
+                  required
+                  className="w-full bg-transparent border border-white/10 rounded-sm p-4 text-white text-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all placeholder:text-warm-grey/50 font-light"
+                  placeholder="Phone Number"
+                />
+              </div>
+
+            </div>
+          )}
+
+          {/* STEP 2: BUSINESS CONTEXT */}
+          {step === 2 && (
+            <div className="space-y-4 animate-in fade-in duration-500">
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="relative">
+                  <select required className="w-full bg-transparent border border-white/10 rounded-sm p-4 text-white text-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all appearance-none cursor-pointer font-light">
+                    <option value="" disabled selected className="text-warm-grey/50">Country</option>
+                    <option value="UK" className="bg-[#0a0a0b]">United Kingdom</option>
+                    <option value="USA" className="bg-[#0a0a0b]">United States</option>
+                    <option value="Other" className="bg-[#0a0a0b]">Other</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-brand-gold">
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <input
+                  type="text"
+                  required
+                  className="w-full bg-transparent border border-white/10 rounded-sm p-4 text-white text-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all placeholder:text-warm-grey/50 font-light"
+                  placeholder="Industry (e.g. Real Estate)"
+                />
+              </div>
+
+              <div className="relative">
+                <select required className="w-full bg-transparent border border-white/10 rounded-sm p-4 text-white text-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all appearance-none cursor-pointer font-light">
+                  <option value="" disabled selected className="text-warm-grey/50">Monthly Revenue Range</option>
+                  <option value="under_3k" className="bg-[#0a0a0b]">Under £3,000</option>
+                  <option value="3k_10k" className="bg-[#0a0a0b]">£3,000 to £10,000</option>
+                  <option value="10k_50k" className="bg-[#0a0a0b]">£10,000 to £50,000</option>
+                  <option value="over_50k" className="bg-[#0a0a0b]">Over £50,000</option>
+                </select>
+                <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-brand-gold">
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+
+              <textarea
+                required
+                rows={3}
+                className="w-full bg-transparent border border-white/10 rounded-sm p-4 text-white text-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all resize-none placeholder:text-warm-grey/50 font-light"
+                placeholder="Biggest operational challenge right now?"
+              ></textarea>
+              
+            </div>
+          )}
+
+          {/* FORM CONTROLS */}
+          <div className="pt-4 flex flex-col gap-4">
+            
+            {step > 1 && (
+              <button
+                type="button"
+                onClick={prevStep}
+                className="text-warm-grey hover:text-white text-sm font-light text-left transition-colors"
+              >
+                ← Back
+              </button>
+            )}
+
+            <button
+              type="submit"
+              className="w-full bg-[#c2a35a] hover:bg-[#d6b566] text-ink-black py-4 px-8 font-semibold text-[15px] transition-colors"
+            >
+              {step === totalSteps ? 'Book My Free Audit' : 'Next Step'}
+            </button>
+          </div>
+          
+          <div className="text-center mt-6">
+            <span className="text-[#5a5a5a] text-[11px] font-medium tracking-wide">
+              We take on a maximum of 4 new clients per month. Current availability: 2 slots. We confirm within 24 hours.
+            </span>
+          </div>
+          
+        </form>
+      </div>
+    </ScrollReveal>
   );
 }

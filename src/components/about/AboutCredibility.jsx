@@ -1,6 +1,6 @@
 export default function AboutCredibility() {
   return (
-    <section className="py-24 border-b border-muted-grey">
+    <section className="py-8 sm:py-12 lg:py-16 border-b border-muted-grey/20">
       <h2 className="text-4xl mb-12 font-serif italic">
         Where AK Enterprises has been.
       </h2>

@@ -6,7 +6,7 @@ export default function GalaCaseStudy() {
     <section className="py-10 sm:py-12 lg:py-16 border-b border-muted-grey/30 relative">
       <ScrollReveal>
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-          
+
           {/* HEADER ROW */}
           <div className="mb-10 md:mb-14">
             <h2 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-serif italic text-white max-w-4xl leading-[1.15]">
@@ -16,7 +16,7 @@ export default function GalaCaseStudy() {
 
           {/* TWO COLUMN CONTENT */}
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            
+
             {/* LEFT COLUMN: Narrative & Testimonial */}
             <div className="lg:col-span-7 space-y-12 lg:space-y-16">
               <div className="group">
@@ -26,7 +26,7 @@ export default function GalaCaseStudy() {
                 <p className="text-warm-grey/90 leading-relaxed text-base sm:text-lg font-light pl-6 sm:pl-8 border-l border-brand-gold/20">
                   An invitation-only luxury awards ceremony in London needed a complete
                   digital platform managing organiser coordination, partner access,
-                  sponsor visibility, and guest experience — across one connected
+                  sponsor visibility, and guest experience  across one connected
                   infrastructure.
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default function GalaCaseStudy() {
 
             {/* RIGHT COLUMN: Media & Results */}
             <div className="lg:col-span-5 flex flex-col gap-8 lg:gap-10">
-              
+
               {/* Media component */}
               <div className="relative w-full rounded-2xl overflow-hidden border border-brand-gold/40">
                 <Carousel />
