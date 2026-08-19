@@ -60,7 +60,7 @@ export default function AnimatedHeadline({ text, className, highlightWords = [] 
                   variants={child}
                   className={`inline-block ${
                     highlight
-                      ? "text-brand-gold font-bold drop-shadow-[0_1px_3px_rgba(201,169,97,0.12)]"
+                      ? "text-gradient-gold-high-contrast font-bold"
                       : ""
                   }`}
                 >

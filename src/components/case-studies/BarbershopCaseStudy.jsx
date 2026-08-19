@@ -1,7 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import Image from "next/image";
+import Lightbox from "@/components/Lightbox";
 
 export default function BarbershopCaseStudy() {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
   return (
     <section className="py-10 sm:py-12 lg:py-16 border-b border-muted-grey/30 relative">
       <ScrollReveal>
@@ -36,7 +42,7 @@ export default function BarbershopCaseStudy() {
                   <span className="w-6 sm:w-8 h-px bg-brand-gold/50 group-hover:w-16 transition-all duration-300"></span> What Was Built
                 </h3>
                 <p className="text-warm-grey/90 leading-relaxed text-base sm:text-lg font-light pl-6 sm:pl-8 border-l border-brand-gold/20">
-                  A complete Business Operating System  automated booking, CRM
+                  A complete Business Operating System — automated booking, CRM
                   pipeline, instant follow-up sequences, Google Business Profile
                   optimisation, automated review generation, and a reporting
                   dashboard. Installed once. Running continuously.
@@ -59,9 +65,20 @@ export default function BarbershopCaseStudy() {
             <div className="lg:col-span-5 flex flex-col gap-8 lg:gap-10">
 
               {/* Media component */}
-              <div className="bg-[#111112]/80 w-full flex flex-col items-center justify-center border border-brand-gold/20 rounded-2xl p-2 relative overflow-hidden group">
+              <button 
+                onClick={() => setIsLightboxOpen(true)}
+                className="bg-[#111112]/80 w-full flex flex-col items-center justify-center border border-brand-gold/20 rounded-2xl p-2 relative overflow-hidden group cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 focus:ring-offset-ink-black"
+                aria-label="Enlarge image"
+              >
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors z-10 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <div className="bg-black/60 text-white backdrop-blur-md rounded-full p-3 border border-white/10 shadow-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                    </svg>
+                  </div>
+                </div>
                 <Image src="/bright-face-dashboard.png" alt="Revenue Dashboard" width={800} height={500} className="object-contain w-full h-auto rounded-xl shadow-inner group-hover:scale-[1.02] transition-transform duration-700" />
-              </div>
+              </button>
 
               {/* Results Block - Under the Image */}
               <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-6 border-t border-brand-gold/20">
@@ -104,6 +121,14 @@ export default function BarbershopCaseStudy() {
           </div>
         </div>
       </ScrollReveal>
+
+      {/* Full Screen Lightbox Overlay */}
+      {isLightboxOpen && (
+        <Lightbox 
+          images={["/bright-face-dashboard.png"]} 
+          onClose={() => setIsLightboxOpen(false)} 
+        />
+      )}
     </section>
   );
 }

@@ -2,7 +2,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function AboutHero() {
   return (
-    <section className="w-screen relative left-1/2 -translate-x-1/2 flex flex-col border-b border-muted-grey/20 bg-ink-black overflow-hidden -mt-12">
+    <section className="w-full flex flex-col border-b border-muted-grey/20 bg-ink-black overflow-hidden -mt-12">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-8 sm:pt-12 lg:pt-16 xl:pt-20 pb-10 sm:pb-12 lg:pb-16 flex flex-col justify-start">
         <ScrollReveal>
           {/* HEADLINE */}

@@ -24,12 +24,12 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${arimo.variable} ${sourceSerif4.variable} h-full antialiased overflow-x-hidden`}
+      className={`${arimo.variable} ${sourceSerif4.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black overflow-x-hidden">
+      <body className="min-h-full flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black">
         <SmoothScroll>
           <Navbar />
-          <main className="flex-1 overflow-x-hidden">{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </SmoothScroll>
       </body>

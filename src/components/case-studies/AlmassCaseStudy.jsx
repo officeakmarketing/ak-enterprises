@@ -13,7 +13,7 @@ export default function AlmassCaseStudy() {
   ];
 
   return (
-    <section className="w-screen relative left-1/2 -translate-x-1/2 py-12 sm:py-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-12 sm:py-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <ScrollReveal>
 

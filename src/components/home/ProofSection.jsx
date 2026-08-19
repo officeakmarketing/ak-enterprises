@@ -1,11 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import Lightbox from "@/components/Lightbox";
 
 export default function ProofSection() {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   return (
-    <section className="w-screen relative left-1/2 -translate-x-1/2 py-10 sm:py-16 lg:py-20 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-10 sm:py-16 lg:py-20 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <ScrollReveal>
         <div className="w-full 2xl:max-w-[1536px] 2xl:mx-auto bg-[#0e0e10]/95 border-y 2xl:border border-muted-grey/25 2xl:rounded-3xl px-4 py-7 sm:px-8 sm:py-10 md:p-10 lg:p-12 xl:p-14 2xl:p-16 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-8 lg:gap-10 xl:gap-14 items-center">
@@ -34,8 +39,8 @@ export default function ProofSection() {
               {/* RESULT BLOCK (Responsive Multi-Column Serif Italic Gold Numbers) */}
               <div className="grid grid-cols-3 gap-2 sm:gap-4 py-4 sm:py-5 border-t border-muted-grey/25 mb-5 sm:mb-8">
                 <div>
-                  <div className="text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-serif italic font-normal text-brand-gold leading-tight mb-0.5 sm:mb-1 flex items-baseline">
-                    <span className="text-sm sm:text-lg mr-0.5 font-serif italic">£</span>
+                  <div className="text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-serif italic font-normal text-gradient-gold-high-contrast leading-tight mb-0.5 sm:mb-1 flex items-baseline">
+                    <span className="text-sm sm:text-lg mr-0.5 font-serif italic text-brand-gold">£</span>
                     <AnimatedCounter value="237355" />
                   </div>
                   <div className="text-[8.5px] sm:text-[10px] lg:text-[11px] text-warm-grey uppercase tracking-wider font-semibold leading-tight">
@@ -44,7 +49,7 @@ export default function ProofSection() {
                 </div>
 
                 <div>
-                  <div className="text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-serif italic font-normal text-brand-gold leading-tight mb-0.5 sm:mb-1 flex items-center">
+                  <div className="text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-serif italic font-normal text-gradient-gold-high-contrast leading-tight mb-0.5 sm:mb-1 flex items-center">
                     <AnimatedCounter value="7208" />
                   </div>
                   <div className="text-[8.5px] sm:text-[10px] lg:text-[11px] text-warm-grey uppercase tracking-wider font-semibold leading-tight">
@@ -53,9 +58,9 @@ export default function ProofSection() {
                 </div>
 
                 <div>
-                  <div className="text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-serif italic font-normal text-brand-gold leading-tight mb-0.5 sm:mb-1 flex items-baseline">
+                  <div className="text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-serif italic font-normal text-gradient-gold-high-contrast leading-tight mb-0.5 sm:mb-1 flex items-baseline">
                     <AnimatedCounter value="14" />
-                    <span className="text-xs sm:text-base ml-0.5 sm:ml-1 font-serif italic text-brand-gold/90">mo</span>
+                    <span className="text-xs sm:text-base ml-0.5 sm:ml-1 font-serif italic text-brand-gold">mo</span>
                   </div>
                   <div className="text-[8.5px] sm:text-[10px] lg:text-[11px] text-warm-grey uppercase tracking-wider font-semibold leading-tight">
                     Time to result
@@ -77,17 +82,28 @@ export default function ProofSection() {
 
             {/* Right Column: Clean Gold Hairline Border Dashboard Image + Testimonial Block */}
             <div className="lg:col-span-5 w-full max-w-lg mx-auto lg:max-w-none flex flex-col gap-3.5 sm:gap-5 relative z-10">
-              {/* Clean Gold Hairline Border Dashboard Image */}
-              <div className="relative w-full rounded-2xl overflow-hidden border border-brand-gold/40">
+              {/* Clean Gold Hairline Border Dashboard Image with Lightbox */}
+              <button 
+                onClick={() => setIsLightboxOpen(true)}
+                className="relative w-full rounded-2xl overflow-hidden border border-brand-gold/40 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 focus:ring-offset-ink-black block"
+                aria-label="Enlarge image"
+              >
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors z-10 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <div className="bg-black/60 text-white backdrop-blur-md rounded-full p-3 border border-white/10 shadow-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                    </svg>
+                  </div>
+                </div>
                 <Image
                   src="/bright-face-dashboard.png"
                   alt="Bright Face Barber Revenue Dashboard"
                   width={800}
                   height={500}
-                  className="object-contain w-full h-auto"
+                  className="object-contain w-full h-auto group-hover:scale-[1.02] transition-transform duration-700"
                   priority={false}
                 />
-              </div>
+              </button>
 
               {/* TESTIMONIAL Glass Card */}
               <div className="bg-[#141416]/90 border-l-2 border-brand-gold border-y border-r border-muted-grey/25 p-3.5 sm:p-5 rounded-r-xl">
@@ -102,6 +118,14 @@ export default function ProofSection() {
           </div>
         </div>
       </ScrollReveal>
+
+      {/* Full Screen Lightbox Overlay */}
+      {isLightboxOpen && (
+        <Lightbox 
+          images={["/bright-face-dashboard.png"]} 
+          onClose={() => setIsLightboxOpen(false)} 
+        />
+      )}
     </section>
   );
 }

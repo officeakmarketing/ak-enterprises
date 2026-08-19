@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="w-screen relative left-1/2 -translate-x-1/2 py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
         <ScrollReveal>

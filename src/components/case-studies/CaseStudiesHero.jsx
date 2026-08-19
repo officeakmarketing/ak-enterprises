@@ -2,7 +2,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function CaseStudiesHero() {
   return (
-    <section className="w-screen relative left-1/2 -translate-x-1/2 flex flex-col border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full flex flex-col border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-16 sm:pt-20 lg:pt-24 pb-16 lg:pb-16 xl:pb-20">
         <ScrollReveal>
           {/* HEADLINE */}

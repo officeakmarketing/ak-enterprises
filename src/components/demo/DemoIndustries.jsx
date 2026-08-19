@@ -26,7 +26,7 @@ export default function DemoIndustries() {
   ];
 
   return (
-    <section className="w-screen relative left-1/2 -translate-x-1/2 py-8 sm:py-12 lg:py-16 border-t border-muted-grey/20 bg-[#0a0a0b] overflow-hidden">
+    <section className="w-full py-8 sm:py-12 lg:py-16 border-t border-muted-grey/20 bg-[#0a0a0b] overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <ScrollReveal>
 

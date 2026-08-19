@@ -61,17 +61,40 @@
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  
+  /* Premium Metallic Gold Text Gradients */
+  .text-gradient-gold-classic {
+    @apply bg-gradient-to-r from-[#ffe8a8] via-[#c9a961] to-[#dfb455] bg-clip-text text-transparent;
+  }
+  .text-gradient-gold-high-contrast {
+    @apply bg-gradient-to-r from-[#FFF0C2] via-[#8A6327] to-[#DFB555] bg-clip-text text-transparent drop-shadow-[0_1px_4px_rgba(201,169,97,0.05)];
+  }
+  .text-gradient-gold-warm {
+    @apply bg-gradient-to-r from-[#F9E5C9] via-[#B88655] to-[#E3BA85] bg-clip-text text-transparent;
+  }
+  
+  /* Neumorphic Extruded Shadow (Raised) - Dark Mode */
+  .shadow-neo-raised {
+    box-shadow: 
+      -4px -4px 10px rgba(255, 255, 255, 0.03), 
+      4px 4px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Neumorphic Inset Shadow (Pressed) - Dark Mode */
+  .shadow-neo-pressed {
+    box-shadow: 
+      inset -4px -4px 10px rgba(255, 255, 255, 0.03), 
+      inset 4px 4px 10px rgba(0, 0, 0, 0.6);
+  }
 }
 
 html {
-  overflow-x: hidden;
   max-width: 100%;
 }
 
 body {
   background-color: var(--color-ink-black);
   color: #ffffff;
-  overflow-x: hidden;
   max-width: 100%;
   width: 100%;
 }

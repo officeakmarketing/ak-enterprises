@@ -1,6 +1,5 @@
 import HeroSection from "@/components/home/HeroSection";
 import TrustBar from "@/components/home/TrustBar";
-import PainSection from "@/components/home/PainSection";
 import ProofSection from "@/components/home/ProofSection";
 import SystemSection from "@/components/home/SystemSection";
 import NumbersSection from "@/components/home/NumbersSection";
@@ -11,13 +10,20 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import TargetAudienceSection from "@/components/home/TargetAudienceSection";
 import CTASection from "@/components/home/CTASection";
 import FAQSection from "@/components/home/FAQSection";
+import PainSectionFinal from "@/components/home/PainSectionFinal";
+import PainSection from "@/components/home/PainSection";
+
+
 
 export default function Home() {
   return (
-    <main className="w-full max-w-[1536px] mx-auto px-0 sm:px-6 lg:px-8 xl:px-12">
+    <main className="w-full">
       <HeroSection />
+
+
       <TrustBar />
       <PainSection />
+      <PainSectionFinal />
       <ProofSection />
       <SystemSection />
       <NumbersSection />
@@ -26,6 +32,7 @@ export default function Home() {
       <CredibilitySection />
       <TestimonialsSection />
       <TargetAudienceSection />
+    
       <CTASection />
       <FAQSection />
     </main>

@@ -3,7 +3,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function CTASection() {
   return (
-    <section className="w-screen relative left-1/2 -translate-x-1/2 py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <ScrollReveal>
           {/* Header Badge */}

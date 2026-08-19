@@ -3,7 +3,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 export default function WhatWeBuildHero() {
   return (
-    <section className="w-screen relative left-1/2 -translate-x-1/2 min-h-[calc(100vh-4.25rem)] 2xl:min-h-[calc(100vh-4.75rem)] flex flex-col border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full min-h-[calc(100vh-4.25rem)] 2xl:min-h-[calc(100vh-4.75rem)] flex flex-col border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 my-auto lg:mt-0 lg:mb-auto pt-8 sm:pt-12 lg:pt-8 xl:pt-10 pb-16 lg:pb-12 xl:pb-20">
         <ScrollReveal>
           {/* HEADLINE */}

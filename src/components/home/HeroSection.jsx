@@ -6,8 +6,8 @@ import HeroVideoPlayer from "./HeroVideoPlayer";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-ink-black px-4 sm:px-6 lg:px-0 pt-8 pb-14 sm:pt-10 sm:pb-16 lg:py-0 lg:h-[calc(100vh-4.25rem)] lg:min-h-[calc(100vh-4.25rem)] 2xl:h-[calc(100vh-4.75rem)] 2xl:min-h-[calc(100vh-4.75rem)] flex items-center border-b border-muted-grey/20 overflow-hidden">
-      <div className="w-full flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-8 xl:gap-12 2xl:gap-16 items-center justify-between z-10 relative">
+    <section className="relative bg-ink-black lg:h-[calc(100vh-4.25rem)] lg:min-h-[calc(100vh-4.25rem)] 2xl:h-[calc(100vh-4.75rem)] 2xl:min-h-[calc(100vh-4.75rem)] flex items-center border-b border-muted-grey/20 overflow-hidden">
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-8 pb-14 sm:pt-10 sm:pb-16 lg:py-0 flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-8 xl:gap-12 2xl:gap-16 items-center justify-between z-10 relative">
         {/* Left Column: Copy & Actions */}
         <div className="flex-1 w-full lg:max-w-[490px] xl:max-w-[580px] 2xl:max-w-[680px]">
           {/* Refined Glowing Badge */}
@@ -47,12 +47,15 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Right Column: Clean Gold Hairline Border Video Container */}
-        <div className="flex-1 w-full lg:max-w-[460px] xl:max-w-[530px] 2xl:max-w-[620px]">
-          <div className="relative aspect-video rounded-2xl overflow-hidden border border-brand-gold/40">
-            <HeroVideoPlayer src="/demo.mp4" />
-          </div>
-        </div>
+       {/* Right Column: Embedded Video */}
+              <div className="flex-1 w-full lg:max-w-[460px] xl:max-w-[530px] 2xl:max-w-[620px] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
+                {/* Container without shadows */}
+                <div className="relative aspect-video rounded-3xl overflow-hidden p-2 bg-white/5 backdrop-blur-sm transition-transform duration-700 hover:scale-[1.02]">
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                    <HeroVideoPlayer src="/demo.mp4" />
+                  </div>
+                </div>
+              </div>
       </div>
     </section>
   );

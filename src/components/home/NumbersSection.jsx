@@ -30,7 +30,7 @@ export default function NumbersSection() {
   ];
 
   return (
-    <section className="w-screen relative left-1/2 -translate-x-1/2 py-14 sm:py-18 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-14 sm:py-18 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 text-center">
         {/* Section Headline */}
         <ScrollReveal>
@@ -45,7 +45,7 @@ export default function NumbersSection() {
             <ScrollReveal key={idx} delay={idx * 0.08}>
               <div className="flex flex-col items-center justify-start group">
                 {/* Large Serif Italic Gold Stat */}
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-brand-gold font-serif italic font-normal mb-2 leading-tight flex items-baseline justify-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-gradient-gold-high-contrast font-serif italic font-normal mb-2 leading-tight flex items-baseline justify-center">
                   {item.prefix && (
                     <span className="text-xl sm:text-2xl md:text-3xl font-serif italic mr-0.5">
                       {item.prefix}
