@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import BackgroundSparkles from "@/components/BackgroundSparkles";
 
 export default function TrustBar() {
   const metrics = [
@@ -11,8 +12,13 @@ export default function TrustBar() {
   ];
 
   return (
-    <div className="w-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#1c1c1f] via-[#0B0B0C] to-[#050505] py-8 md:py-10 border-y border-white/5 overflow-hidden">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6">
+    <div className="w-full bg-[#050505] py-8 md:py-10 border-y border-white/5 overflow-hidden relative">
+      <BackgroundSparkles count={30} />
+      
+      {/* Subtle Centered White Spotlight Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-[200px] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.03),transparent_70%)] pointer-events-none"></div>
+
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 relative z-10">
         {/* Horizontal Scroll on Mobile, Centered on Desktop */}
         <div className="flex items-center justify-start lg:justify-center gap-6 sm:gap-8 lg:gap-12 overflow-x-auto hide-scrollbar whitespace-nowrap mask-edges">
           {metrics.map((metric, idx) => (

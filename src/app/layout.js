@@ -24,9 +24,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${arimo.variable} ${sourceSerif4.variable} h-full antialiased`}
+      className={`${arimo.variable} ${sourceSerif4.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black">
+      <body className="flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black">
         <SmoothScroll>
           <Navbar />
           <main className="flex-1">{children}</main>

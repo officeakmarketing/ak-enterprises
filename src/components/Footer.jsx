@@ -1,12 +1,23 @@
 import Link from "next/link";
+import BackgroundSparkles from "@/components/BackgroundSparkles";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-muted-grey/30 pt-16 pb-12 w-full overflow-hidden">
-      <div className="flex flex-col md:flex-row justify-between items-center mb-12 max-w-6xl mx-auto px-4 sm:px-6">
+    <footer className="relative border-t border-muted-grey/30 pt-16 pb-12 w-full overflow-hidden bg-ink-black">
+      <BackgroundSparkles count={40} />
+      {/* Subtle Bottom-Center Spotlight Glow (Variation 1: Warm Gold) */}
+      {/* <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[radial-gradient(ellipse_at_bottom,rgba(201,169,97,0.08),transparent_70%)] pointer-events-none"></div> */}
+
+      {/* Subtle Bottom-Center Spotlight Glow (Variation 2: Pure Studio White/Silver - As seen in your screenshot) */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-[radial-gradient(ellipse_at_bottom,rgba(255,255,255,0.04),transparent_70%)] pointer-events-none"></div>
+      
+      <div className="relative z-10 flex flex-col md:flex-row justify-between items-center mb-12 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center md:text-left mb-8 md:mb-0">
-          <div className="font-bold text-2xl sm:text-3xl tracking-[0.15em] sm:tracking-[0.2em] mb-2 text-white font-serif italic">
-            <Link href="/">AK ENTERPRISES</Link>
+          <div className="mb-2 flex justify-center md:justify-start">
+            <Link href="/" aria-label="AK Enterprises Home">
+              <Logo />
+            </Link>
           </div>
           <div className="text-brand-gold italic text-base sm:text-lg font-serif">
             We build the systems that run your business.
@@ -30,7 +41,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-muted-grey border-t border-[#1a1a1a] pt-8 gap-6 md:gap-0">
           <div className="text-center md:text-left leading-relaxed text-[11px] sm:text-xs">
             AK Marketing Consulting Ltd. Registered in England and Wales.

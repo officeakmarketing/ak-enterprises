@@ -1,10 +1,16 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import BackgroundSparkles from "@/components/BackgroundSparkles";
 
 export default function CTASection() {
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
-      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden relative">
+      <BackgroundSparkles count={50} />
+      
+      {/* Subtle Bottom-Center Spotlight Glow to match Footer */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-[radial-gradient(ellipse_at_bottom,rgba(255,255,255,0.04),transparent_70%)] pointer-events-none"></div>
+
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <ScrollReveal>
           {/* Header Badge */}
           <div className="inline-flex items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-6 font-bold">

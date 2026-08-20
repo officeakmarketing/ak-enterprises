@@ -26,7 +26,7 @@ export default function FAQSection() {
     {
       question: "How long does deployment take?",
       answer: [
-        "Most bespoke systems are fully architected, tested, and deployed live within 3 to 5 weeks depending on operational complexity.",
+        "Most bespoke systems are fully architected, tested, and deployed live within 4 to 6 weeks depending on operational complexity.",
       ],
     },
     {

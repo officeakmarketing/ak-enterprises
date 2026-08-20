@@ -24,7 +24,7 @@ export default function TargetAudienceSection() {
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-4 font-bold">
               <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Selectivity & Fit • Option 1</span>
+              <span>Selectivity & Fit</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-white leading-tight mb-3">
               This is not for everyone.
