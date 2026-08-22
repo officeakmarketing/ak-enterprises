@@ -24,16 +24,16 @@ export default function Home() {
 
 
       <TrustBar />
-      <PainSection />
+      {/* <PainSection /> */}
       <PainSectionFinal />
-      <ProofSection />
+      {/* <ProofSection /> */}
       <ProofVarNeumorphic />
 
       <SystemSection />
 
       <NumbersSection />
       <DemoSection />
-      <MoreProofSection />
+      {/* <MoreProofSection /> */}
       <MoreProofVarNeumorphic />
       <CredibilityVarNeumorphic />
       <TestimonialsSection />

@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full sticky top-0 z-50 bg-[#0b0b0c]/85 backdrop-blur-xl border-b border-muted-grey/20">
+      <nav className="w-full sticky top-0 z-50 bg-[#0b0b0c]/95 border-b border-muted-grey/20">
         <div className="w-full max-w-[1536px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-12 py-3.5 md:py-4">
           {/* Left side Logo */}
           <div className="flex items-center">

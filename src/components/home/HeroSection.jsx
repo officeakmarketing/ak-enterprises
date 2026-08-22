@@ -50,7 +50,7 @@ export default function HeroSection() {
        {/* Right Column: Embedded Video */}
               <div className="flex-1 w-full lg:max-w-[460px] xl:max-w-[530px] 2xl:max-w-[620px] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
                 {/* Container without shadows */}
-                <div className="relative aspect-video rounded-3xl overflow-hidden p-2 bg-white/5 backdrop-blur-sm transition-transform duration-700 hover:scale-[1.02]">
+                <div className="relative aspect-video rounded-3xl overflow-hidden p-2 bg-white/5 transition-transform duration-700 hover:scale-[1.02]">
                   <div className="relative w-full h-full rounded-2xl overflow-hidden">
                     <HeroVideoPlayer src="/demo.mp4" />
                   </div>

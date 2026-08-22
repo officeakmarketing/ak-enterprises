@@ -158,7 +158,7 @@ export default function Carousel() {
               
               {/* Expand icon hover overlay */}
               <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors z-10 flex items-center justify-center opacity-0 hover:opacity-100 pointer-events-none md:hidden">
-                <div className="bg-black/60 text-white backdrop-blur-md rounded-full p-3 border border-white/10 shadow-xl pointer-events-auto">
+                <div className="bg-black/80 text-white rounded-full p-3 border border-white/10 shadow-xl pointer-events-auto">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
                   </svg>
@@ -175,7 +175,7 @@ export default function Carousel() {
             prevSlide();
             resetAutoPlay();
           }}
-          className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-md border border-white/10 opacity-0 group-hover:opacity-100 transition-all hover:bg-brand-gold hover:text-black z-10 cursor-pointer focus:opacity-100"
+          className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-black/80 text-white border border-white/10 opacity-0 group-hover:opacity-100 transition-all hover:bg-brand-gold hover:text-black z-10 cursor-pointer focus:opacity-100"
           aria-label="Previous slide"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
@@ -189,7 +189,7 @@ export default function Carousel() {
             nextSlide();
             resetAutoPlay();
           }}
-          className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-md border border-white/10 opacity-0 group-hover:opacity-100 transition-all hover:bg-brand-gold hover:text-black z-10 cursor-pointer focus:opacity-100"
+          className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-black/80 text-white border border-white/10 opacity-0 group-hover:opacity-100 transition-all hover:bg-brand-gold hover:text-black z-10 cursor-pointer focus:opacity-100"
           aria-label="Next slide"
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">

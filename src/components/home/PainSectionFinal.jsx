@@ -74,7 +74,7 @@ export default function PainSectionFinal() {
             {/* Neumorphic Pull-Quote */}
             <ScrollReveal delay={0.2}>
               <div className="shadow-neo-pressed rounded-2xl p-6 sm:p-8 lg:p-10 border border-white/5 bg-ink-black relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold opacity-[0.03] blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold opacity-[0.03] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
                 <h3 className="text-[10px] font-mono text-brand-gold uppercase tracking-[0.2em] mb-6">The Timeline of Loss</h3>
                 <p className="text-base sm:text-lg text-white/90 font-light leading-relaxed">
                   A missed call at 7pm. A lead that submitted a form on Sunday and got a reply on Tuesday. A prospect who went with a competitor because they responded in <span className="text-gradient-gold-high-contrast font-medium">3 minutes</span> and you responded in <span className="text-gradient-gold-high-contrast font-medium">3 hours</span>.

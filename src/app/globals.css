@@ -67,7 +67,7 @@
     @apply bg-gradient-to-r from-[#ffe8a8] via-[#c9a961] to-[#dfb455] bg-clip-text text-transparent;
   }
   .text-gradient-gold-high-contrast {
-    @apply bg-gradient-to-r from-[#FFF0C2] via-[#8A6327] to-[#DFB555] bg-clip-text text-transparent drop-shadow-[0_1px_4px_rgba(201,169,97,0.05)];
+    @apply bg-gradient-to-r from-[#FFF0C2] via-[#8A6327] to-[#DFB555] bg-clip-text text-transparent;
   }
   .text-gradient-gold-warm {
     @apply bg-gradient-to-r from-[#F9E5C9] via-[#B88655] to-[#E3BA85] bg-clip-text text-transparent;

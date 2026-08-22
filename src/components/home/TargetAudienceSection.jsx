@@ -43,9 +43,9 @@ export default function TargetAudienceSection() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-muted-grey/20">
               {/* Left Vault: The Right Fit */}
-              <div className="p-7 sm:p-10 lg:p-12 flex flex-col justify-between relative group">
+              <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-between relative group">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold shrink-0">
                         <Check className="w-5 h-5" />
@@ -59,7 +59,7 @@ export default function TargetAudienceSection() {
                         </h3>
                       </div>
                     </div>
-                    <span className="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 border border-brand-gold/30 px-2.5 py-1 rounded">
+                    <span className="self-start sm:self-auto text-[10px] sm:text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 border border-brand-gold/30 px-2.5 py-1 rounded">
                       ACCEPTED
                     </span>
                   </div>
@@ -78,16 +78,16 @@ export default function TargetAudienceSection() {
                   </ul>
                 </div>
 
-                <div className="pt-4 border-t border-muted-grey/15 flex items-center justify-between text-xs font-mono text-brand-gold">
+                <div className="pt-4 border-t border-muted-grey/15 flex items-center justify-between text-[10px] sm:text-xs font-mono text-brand-gold">
                   <span>DEPLOYMENT READY</span>
                   <span>FULL OWNERSHIP</span>
                 </div>
               </div>
 
               {/* Right Vault: Not The Right Fit */}
-              <div className="p-7 sm:p-10 lg:p-12 flex flex-col justify-between bg-[#080809]/80 relative group">
+              <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-between bg-[#080809]/80 relative group">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-muted-grey/15 border border-muted-grey/30 flex items-center justify-center text-muted-grey shrink-0">
                         <X className="w-5 h-5" />
@@ -101,7 +101,7 @@ export default function TargetAudienceSection() {
                         </h3>
                       </div>
                     </div>
-                    <span className="text-xs font-mono font-bold text-muted-grey bg-muted-grey/10 border border-muted-grey/25 px-2.5 py-1 rounded">
+                    <span className="self-start sm:self-auto text-[10px] sm:text-xs font-mono font-bold text-muted-grey bg-muted-grey/10 border border-muted-grey/25 px-2.5 py-1 rounded">
                       DECLINED
                     </span>
                   </div>
@@ -120,7 +120,7 @@ export default function TargetAudienceSection() {
                   </ul>
                 </div>
 
-                <div className="pt-4 border-t border-muted-grey/15 flex items-center justify-between text-xs font-mono text-muted-grey/70">
+                <div className="pt-4 border-t border-muted-grey/15 flex items-center justify-between text-[10px] sm:text-xs font-mono text-muted-grey/70">
                   <span>OUT OF SCOPE</span>
                   <span>DO NOT APPLY</span>
                 </div>

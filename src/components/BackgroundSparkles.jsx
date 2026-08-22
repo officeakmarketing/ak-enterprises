@@ -22,8 +22,8 @@ export default function BackgroundSparkles({ count = 40 }) {
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes customTwinkle {
-          0%, 100% { opacity: 0; transform: translateY(0) scale(0.8); }
-          50% { opacity: 0.8; transform: translateY(-10px) scale(1.2); }
+          0%, 100% { opacity: 0; }
+          50% { opacity: 0.6; }
         }
         .sparkle-dot {
           position: absolute;
@@ -36,7 +36,7 @@ export default function BackgroundSparkles({ count = 40 }) {
       {sparkles.map((sparkle) => (
         <div
           key={sparkle.id}
-          className="sparkle-dot shadow-[0_0_4px_rgba(255,255,255,0.8)]"
+          className="sparkle-dot"
           style={{
             left: sparkle.left,
             top: sparkle.top,
@@ -44,7 +44,7 @@ export default function BackgroundSparkles({ count = 40 }) {
             height: `${sparkle.size}px`,
             animationDuration: sparkle.animationDuration,
             animationDelay: sparkle.animationDelay,
-            opacity: 0, // Starts invisible until animation kicks in
+            opacity: 0,
           }}
         />
       ))}

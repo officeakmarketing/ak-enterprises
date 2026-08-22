@@ -31,7 +31,7 @@ export default function HeroVideoPlayer({ src = "/demo.mp4" }) {
       <button
         onClick={toggleMute}
         aria-label={isMuted ? "Unmute video" : "Mute video"}
-        className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 flex items-center gap-1.5 px-3 py-2 rounded-full bg-black/60 hover:bg-black/80 border border-brand-gold/40 hover:border-brand-gold text-brand-gold backdrop-blur-md transition-all duration-300 shadow-lg hover:scale-105 active:scale-95 cursor-pointer"
+        className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 flex items-center gap-1.5 px-3 py-2 rounded-full bg-black/80 hover:bg-black/90 border border-brand-gold/40 hover:border-brand-gold text-brand-gold transition-all duration-300 shadow-lg hover:scale-105 active:scale-95 cursor-pointer"
       >
         {isMuted ? (
           <>

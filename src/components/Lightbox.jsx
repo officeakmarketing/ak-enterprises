@@ -45,7 +45,7 @@ export default function Lightbox({ images, initialIndex = 0, onClose }) {
 
   return createPortal(
     <div 
-      className="fixed inset-0 z-[100000] flex items-center justify-center bg-black/95 backdrop-blur-xl animate-in fade-in duration-300"
+      className="fixed inset-0 z-[100000] flex items-center justify-center bg-black/95 animate-in fade-in duration-300"
       onClick={onClose}
     >
       {/* Top Bar with Cancel Button */}

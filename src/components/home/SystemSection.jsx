@@ -51,28 +51,28 @@ export default function SystemSection() {
         </ScrollReveal>
 
         {/* Unique Vertical Circuit Timeline */}
-        <div className="relative pl-7 sm:pl-12 md:pl-14">
-          {/* Vertical Connecting Gold Circuit Line */}
-          <div className="absolute left-[13px] sm:left-[23px] md:left-[27px] top-10 bottom-10 w-[2px] bg-gradient-to-b from-brand-gold/60 via-brand-gold/35 to-brand-gold/10"></div>
+        <div className="relative px-2 sm:px-8 md:px-0 md:pl-14">
+          {/* Vertical Connecting Gold Circuit Line (Centered on mobile, left on desktop) */}
+          <div className="absolute left-1/2 md:left-[27px] top-4 md:top-10 bottom-4 md:bottom-10 w-[2px] -translate-x-1/2 md:translate-x-0 bg-gradient-to-b from-brand-gold/60 via-brand-gold/35 to-brand-gold/10 z-0"></div>
 
           <div className="space-y-8 sm:space-y-10">
             {steps.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <ScrollReveal key={idx} delay={idx * 0.1}>
-                  <div className="relative group">
-                    {/* Horizontal Circuit Connector from Spine to Card */}
-                    <div className="absolute -left-7 sm:-left-12 md:-left-14 top-9 w-7 sm:w-12 md:w-14 h-[2px] bg-gradient-to-r from-brand-gold/50 to-brand-gold/20 group-hover:from-brand-gold group-hover:to-brand-gold/80 transition-all duration-300"></div>
+                  <div className="relative group z-10 w-full mt-4 md:mt-0">
+                    {/* Horizontal Circuit Connector from Spine to Card (Desktop only) */}
+                    <div className="hidden md:block absolute -left-14 top-9 w-14 h-[2px] bg-gradient-to-r from-brand-gold/50 to-brand-gold/20 group-hover:from-brand-gold group-hover:to-brand-gold/80 transition-all duration-300"></div>
 
-                    {/* Glowing Timeline Beacon Node */}
-                    <div className="absolute -left-[35px] sm:-left-[54px] md:-left-[62px] top-[29px] flex items-center justify-center z-20">
+                    {/* Glowing Timeline Beacon Node (Top center on mobile, left side on desktop) */}
+                    <div className={`absolute left-1/2 md:left-auto md:-left-[62px] -top-3 md:top-[29px] -translate-x-1/2 md:translate-x-0 ${idx === 0 ? 'hidden md:flex' : 'flex'} items-center justify-center z-20`}>
                       <div className="w-4 h-4 rounded-full bg-[#0B0B0C] border-2 border-brand-gold flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_10px_rgba(201,169,97,0.8)]">
                         <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>
                       </div>
                     </div>
 
                     {/* Luxury Obsidian Card */}
-                    <div className="bg-gradient-to-br from-[#121214] to-[#0a0a0b] border border-muted-grey/25 hover:border-brand-gold/50 rounded-2xl p-6 sm:p-8 md:p-9 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                    <div className="w-full bg-gradient-to-br from-[#121214] to-[#0a0a0b] border border-muted-grey/25 hover:border-brand-gold/50 rounded-2xl p-6 sm:p-8 md:p-9 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
                       {/* Subtle Ambient Gold Corner Bloom on Hover */}
                       <div className="absolute top-0 right-0 w-48 h-48 bg-[radial-gradient(circle,rgba(201,169,97,0.06),transparent_70%)] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 

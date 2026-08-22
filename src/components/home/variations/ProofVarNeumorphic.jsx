@@ -23,7 +23,7 @@ export default function ProofVarNeumorphic() {
                 
                 {/* LABEL */}
                 <div className="inline-block self-start shadow-neo-pressed bg-[#0a0a0c] border border-white/5 px-3.5 py-1.5 rounded-md text-brand-gold text-[9px] sm:text-[10px] tracking-[0.2em] uppercase mb-6 font-bold">
-                  Theme 1: Deep Neumorphism
+                  Case Study Central London Barbershop
                 </div>
 
                 {/* HEADLINE */}
@@ -42,42 +42,43 @@ export default function ProofVarNeumorphic() {
                 </div>
 
                 {/* RESULT BLOCK (Physical engraved lines) */}
-                <div className="grid grid-cols-3 gap-4 sm:gap-6 py-6 border-t border-t-white/10 border-b border-b-black mb-8 shadow-[0_1px_0_rgba(255,255,255,0.05)_inset]">
+                <div className="grid grid-cols-3 gap-2 sm:gap-4 py-4 sm:py-5 border-t border-t-white/10 border-b border-b-black mb-5 sm:mb-8 shadow-[0_1px_0_rgba(255,255,255,0.05)_inset]">
                   <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-serif italic font-normal text-brand-gold leading-tight mb-1 flex items-baseline drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                      <span className="text-lg mr-1">£</span>
+                    <div className="text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-serif italic font-normal text-gradient-gold-high-contrast leading-tight mb-0.5 sm:mb-1 flex items-baseline">
+                      <span className="text-sm sm:text-lg mr-0.5 font-serif italic text-brand-gold">£</span>
                       <AnimatedCounter value="237355" />
                     </div>
-                    <div className="text-[9px] sm:text-[11px] text-warm-grey/60 uppercase tracking-widest font-semibold leading-tight">
+                    <div className="text-[8.5px] sm:text-[10px] lg:text-[11px] text-warm-grey uppercase tracking-wider font-semibold leading-tight">
                       Verified revenue
                     </div>
                   </div>
                   <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-serif italic font-normal text-white leading-tight mb-1 flex items-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    <div className="text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-serif italic font-normal text-gradient-gold-high-contrast leading-tight mb-0.5 sm:mb-1 flex items-center">
                       <AnimatedCounter value="7208" />
                     </div>
-                    <div className="text-[9px] sm:text-[11px] text-warm-grey/60 uppercase tracking-widest font-semibold leading-tight">
+                    <div className="text-[8.5px] sm:text-[10px] lg:text-[11px] text-warm-grey uppercase tracking-wider font-semibold leading-tight">
                       Automated bookings
                     </div>
                   </div>
                   <div>
-                    <div className="text-2xl sm:text-3xl lg:text-4xl font-serif italic font-normal text-white leading-tight mb-1 flex items-baseline drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    <div className="text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-serif italic font-normal text-gradient-gold-high-contrast leading-tight mb-0.5 sm:mb-1 flex items-baseline">
                       <AnimatedCounter value="14" />
-                      <span className="text-sm ml-1 text-white">mo</span>
+                      <span className="text-xs sm:text-base ml-0.5 sm:ml-1 font-serif italic text-brand-gold">mo</span>
                     </div>
-                    <div className="text-[9px] sm:text-[11px] text-warm-grey/60 uppercase tracking-widest font-semibold leading-tight">
+                    <div className="text-[8.5px] sm:text-[10px] lg:text-[11px] text-warm-grey uppercase tracking-wider font-semibold leading-tight">
                       Time to result
                     </div>
                   </div>
                 </div>
 
                 {/* LINK */}
-                <div>
+                <div className="mb-2 sm:mb-0">
                   <Link
                     href="/case-studies"
-                    className="group inline-flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-[0.2em] transition-transform hover:scale-105"
+                    className="group inline-flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-widest hover:text-white transition-colors border-b border-brand-gold/30 pb-0.5"
                   >
                     <span>Read the full case study</span>
+                    <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                   </Link>
                 </div>
               </div>
@@ -104,7 +105,7 @@ export default function ProofVarNeumorphic() {
 
                 {/* TESTIMONIAL Hardware Engraved Pill */}
                 <div className="bg-[#050506] shadow-neo-pressed border border-white/5 p-5 rounded-2xl">
-                  <p className="text-warm-grey text-sm italic leading-relaxed mb-3">
+                  <p className="text-white/90 font-medium text-xs sm:text-sm italic leading-relaxed mb-3">
                     "Since launching the new site, people are booking nonstop. No more missed calls. It just works."
                   </p>
                   <div className="text-brand-gold/60 text-[10px] not-italic font-bold tracking-[0.15em] uppercase">
