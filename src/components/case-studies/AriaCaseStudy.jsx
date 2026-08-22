@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 
-export default function AlmassCaseStudy() {
+export default function AriaCaseStudy() {
   const architectures = [
     "Conversion-optimised landing page with dynamic property intake form",
     "AI valuation engine using live market data within 0.25 miles",

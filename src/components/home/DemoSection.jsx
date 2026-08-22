@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import { ExternalLink } from "lucide-react";
+import AriaDemoWidget from "@/components/home/AriaDemoWidget";
 
 export default function DemoSection() {
   const industries = [
@@ -20,7 +21,7 @@ export default function DemoSection() {
           <div className="max-w-3xl mb-10 sm:mb-12">
             <div className="inline-flex items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-4 font-bold">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
-              <span>Live Deployment • Almass Estates</span>
+              <span>Live Deployment • Aria Estates</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] font-serif italic text-white leading-tight mb-5">
@@ -41,47 +42,20 @@ export default function DemoSection() {
           </div>
         </ScrollReveal>
 
-        {/* Live Interactive Browser Frame */}
+        {/* Live Interactive Widget Frame */}
         <ScrollReveal delay={0.1}>
-          <div className="relative w-full rounded-2xl overflow-hidden border border-brand-gold/40 bg-[#0e0e10] shadow-2xl mb-8 group">
-            {/* Obsidian Browser Header Bar */}
-            <div className="bg-[#141416] border-b border-muted-grey/25 px-4 py-3 flex items-center justify-between gap-3 select-none">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
-                <span className="hidden sm:inline-block text-[11px] font-mono text-warm-grey/60 ml-2">
-                  almass-estates-ai-engine.live
-                </span>
-              </div>
+          <div className="relative -mx-4 sm:mx-0 rounded-none sm:rounded-2xl overflow-hidden border-y sm:border border-brand-gold/40 bg-[#0a0a0c] shadow-[0_20px_50px_rgba(0,0,0,0.5)] mb-8 group">
 
-              <div className="flex items-center gap-3">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-[10px] font-mono font-bold text-brand-gold uppercase tracking-wider">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-ping"></span>
-                  Live System
-                </span>
-                <a
-                  href="https://getguaranteedrent.co.uk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] font-sans font-bold text-warm-grey hover:text-white transition-colors"
-                  aria-label="Open live demo in new tab"
-                >
-                  <span className="hidden md:inline">Open Full Screen</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+            {/* Frame Body (Widget Container) */}
+            <div className="relative w-full py-10 sm:py-16 md:py-20 px-3 sm:px-6 lg:px-8 bg-[radial-gradient(ellipse_at_top,rgba(201,169,97,0.05),transparent_70%)]">
+              {/* Subtle grid pattern background */}
+              <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5 pointer-events-none"></div>
+
+              <div className="relative z-10 w-full max-w-full overflow-hidden flex justify-center">
+                <AriaDemoWidget />
               </div>
             </div>
 
-            {/* Embedded Live Web Application */}
-            <div className="relative w-full h-[460px] sm:h-[540px] md:h-[620px] lg:h-[680px] bg-white">
-              <iframe
-                src="https://getguaranteedrent.co.uk/"
-                className="w-full h-full border-none overscroll-contain"
-                title="Interactive Almass AI Lead Acquisition Live System"
-                loading="lazy"
-              />
-            </div>
           </div>
         </ScrollReveal>
 

@@ -11,7 +11,7 @@ export default function LiveDemoIframe() {
           <iframe
             src="https://getguaranteedrent.co.uk/"
             className="w-full h-[700px] border-none"
-            title="Interactive Almass AI Lead Acquisition Demo"
+            title="Interactive Aria AI Lead Acquisition Demo"
             scrolling="no"
           />
         </div>

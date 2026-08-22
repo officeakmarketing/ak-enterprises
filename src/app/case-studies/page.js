@@ -1,7 +1,7 @@
 import CaseStudiesHero from "@/components/case-studies/CaseStudiesHero";
 import BarbershopCaseStudy from "@/components/case-studies/BarbershopCaseStudy";
 import GalaCaseStudy from "@/components/case-studies/GalaCaseStudy";
-import AlmassCaseStudy from "@/components/case-studies/AlmassCaseStudy";
+import AriaCaseStudy from "@/components/case-studies/AriaCaseStudy";
 
 export default function CaseStudies() {
   return (
@@ -9,7 +9,7 @@ export default function CaseStudies() {
       <CaseStudiesHero />
       <BarbershopCaseStudy />
       <GalaCaseStudy />
-      <AlmassCaseStudy />
+      <AriaCaseStudy />
     </main>
   );
 }
