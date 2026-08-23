@@ -131,6 +131,21 @@ export default function ContactForm() {
                 className="w-full bg-transparent border border-white/10 rounded-sm p-4 text-white text-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all resize-none placeholder:text-warm-grey/50 font-light"
                 placeholder="Biggest operational challenge right now?"
               ></textarea>
+
+              <div className="relative">
+                <select required className="w-full bg-transparent border border-white/10 rounded-sm p-4 text-white text-sm focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none transition-all appearance-none cursor-pointer font-light">
+                  <option value="" disabled selected className="text-warm-grey/50">How did you hear about AK Enterprises?</option>
+                  <option value="search" className="bg-[#0a0a0b]">Google Search</option>
+                  <option value="social" className="bg-[#0a0a0b]">Social Media</option>
+                  <option value="referral" className="bg-[#0a0a0b]">Referral</option>
+                  <option value="other" className="bg-[#0a0a0b]">Other</option>
+                </select>
+                <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-brand-gold">
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </div>
               
             </div>
           )}
@@ -150,7 +165,7 @@ export default function ContactForm() {
 
             <button
               type="submit"
-              className="w-full bg-[#c2a35a] hover:bg-[#d6b566] text-ink-black py-4 px-8 font-semibold text-[15px] transition-colors"
+              className="w-full bg-brand-gold hover:bg-[#d6b566] text-ink-black py-4 px-8 font-semibold text-[15px] transition-colors"
             >
               {step === totalSteps ? 'Book My Free Audit' : 'Next Step'}
             </button>

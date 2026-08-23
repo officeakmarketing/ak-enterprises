@@ -6,9 +6,9 @@ export default function CTAVarMinimal() {
     <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-white/20 bg-black overflow-hidden font-sans">
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <ScrollReveal>
-          
+
           <div className="border border-white/20 p-8 sm:p-12 lg:p-16 xl:p-20 relative bg-black">
-            
+
             {/* Header Badge */}
             <div className="inline-block border border-white px-3 py-1 text-white text-[9px] sm:text-[10px] tracking-[0.25em] uppercase mb-8 font-bold mx-auto">
               Theme 3: Absolute Minimalism
@@ -54,7 +54,7 @@ export default function CTAVarMinimal() {
 
             {/* Sub-Notice */}
             <p className="text-white/50 text-[10px] sm:text-xs font-mono uppercase tracking-widest">
-              Takes 60 seconds to book <span className="mx-2">—</span> Confirmed within 24 hours
+              Takes 60 seconds to book <span className="mx-2"></span> Confirmed within 24 hours
             </p>
           </div>
 

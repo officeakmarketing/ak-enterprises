@@ -2,6 +2,7 @@ import CaseStudiesHero from "@/components/case-studies/CaseStudiesHero";
 import BarbershopCaseStudy from "@/components/case-studies/BarbershopCaseStudy";
 import GalaCaseStudy from "@/components/case-studies/GalaCaseStudy";
 import AriaCaseStudy from "@/components/case-studies/AriaCaseStudy";
+import CTASection from "@/components/home/CTASection";
 
 export default function CaseStudies() {
   return (
@@ -10,6 +11,7 @@ export default function CaseStudies() {
       <BarbershopCaseStudy />
       <GalaCaseStudy />
       <AriaCaseStudy />
+      <CTASection />
     </main>
   );
 }

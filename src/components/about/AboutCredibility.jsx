@@ -4,7 +4,7 @@ export default function AboutCredibility() {
       <h2 className="text-4xl mb-12 font-serif italic">
         Where AK Enterprises has been.
       </h2>
-      <div className="grid md:grid-cols-2 gap-12">
+      <div className="max-w-3xl space-y-6">
         <div className="space-y-6">
           <div className="border-b border-muted-grey pb-6">
             <div className="font-bold text-xl mb-2 text-white">
@@ -34,13 +34,6 @@ export default function AboutCredibility() {
               Legacy and Power Gala
             </div>
             <div className="text-warm-grey">Official technology partner.</div>
-          </div>
-        </div>
-        <div>
-          <div className="bg-[#1a1a1a] h-full min-h-[300px] border border-muted-grey rounded flex items-center justify-center text-center p-8 text-warm-grey">
-            <p className="font-mono text-sm">
-              [Business Lounge Romania Cover Photo Pending]
-            </p>
           </div>
         </div>
       </div>

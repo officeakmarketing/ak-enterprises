@@ -47,9 +47,7 @@ export default function CredibilitySection() {
           </div>
         </div>
 
-        <div className="mt-8 sm:mt-12 bg-[#0e0e10] border border-muted-grey/20 rounded-xl p-8 sm:p-12 md:p-16 text-center text-warm-grey/70 text-xs sm:text-sm font-mono tracking-wider">
-          [Business Lounge Romania Cover Photo Pending]
-        </div>
+
       </div>
     </section>
   );

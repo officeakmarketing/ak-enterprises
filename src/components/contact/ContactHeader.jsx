@@ -1,4 +1,5 @@
 import ScrollReveal from "@/components/ScrollReveal";
+import RiskReversal from "@/components/RiskReversal";
 
 export default function ContactHeader() {
   return (
@@ -16,11 +17,9 @@ export default function ContactHeader() {
 
         <div className="bg-[#111112]/80 border-l-4 border-brand-gold p-6 sm:p-8 rounded-r-2xl mb-12 shadow-lg relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-brand-gold/5 to-transparent pointer-events-none"></div>
-          <p className="text-white italic leading-relaxed text-sm sm:text-base relative z-10">
-            If we cannot find a single gap in your business that is costing
-            you money, we will tell you honestly and you owe us nothing. We
-            have never left an audit empty-handed.
-          </p>
+          <div className="relative z-10">
+            <RiskReversal className="text-white italic text-sm sm:text-base" />
+          </div>
         </div>
 
         <div className="pt-10 border-t border-muted-grey/20">
@@ -31,7 +30,12 @@ export default function ContactHeader() {
           <p className="text-white font-medium text-lg sm:text-xl mb-1 hover:text-brand-gold transition-colors cursor-pointer inline-block">
             office@akmarketing.agency
           </p>
-          <p className="text-warm-grey/70 text-sm font-light">UK: +44 7931 537545</p>
+          <p className="text-warm-grey/70 text-sm font-light mb-6">UK: +44 7931 537545</p>
+          
+          <h4 className="text-warm-grey text-xs font-bold uppercase tracking-wider mb-2">For Investors and Partners</h4>
+          <p className="text-warm-grey/70 text-sm font-light">
+            Use the same email and mark your message accordingly. We read everything.
+          </p>
         </div>
       </ScrollReveal>
     </div>

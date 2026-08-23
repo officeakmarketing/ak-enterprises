@@ -48,20 +48,7 @@ export default function Footer() {
             Company No. 17128177.<br />
             Trading as AK Enterprises.
           </div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-3 sm:gap-6 uppercase tracking-wider sm:tracking-widest font-bold text-warm-grey text-[10px] sm:text-xs">
-            <Link href="#" className="hover:text-brand-gold transition whitespace-nowrap">
-              [Instagram - Pending]
-            </Link>
-            <Link href="#" className="hover:text-brand-gold transition whitespace-nowrap">
-              [Facebook - Pending]
-            </Link>
-            <Link href="#" className="hover:text-brand-gold transition whitespace-nowrap">
-              [LinkedIn - Pending]
-            </Link>
-            <Link href="#" className="hover:text-brand-gold transition whitespace-nowrap">
-              [WhatsApp - Pending]
-            </Link>
-          </div>
+
         </div>
       </div>
     </footer>

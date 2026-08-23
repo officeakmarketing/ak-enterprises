@@ -36,13 +36,7 @@ export default function WhatWeBuildHero() {
               className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 py-4 lg:px-6 lg:py-3.5 xl:px-8 xl:py-4 rounded-lg sm:rounded-xl text-xs sm:text-sm lg:text-xs xl:text-sm font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] text-center shadow-md"
             >
               <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>
-              <span className="relative z-10">Book a Free Business Audit &rarr;</span>
-            </Link>
-            <Link
-              href="/demo"
-              className="inline-flex items-center justify-center border border-brand-gold/40 hover:border-brand-gold bg-[#111112] text-brand-gold px-6 py-4 lg:px-6 lg:py-3.5 xl:px-8 xl:py-4 rounded-lg sm:rounded-xl text-xs sm:text-sm lg:text-xs xl:text-sm font-bold uppercase tracking-wider transition-all duration-200 hover:bg-brand-gold hover:text-ink-black text-center"
-            >
-              See the Live Demo
+              <span className="relative z-10">Book a Free Audit</span>
             </Link>
           </div>
         </ScrollReveal>

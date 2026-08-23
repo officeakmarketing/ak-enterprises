@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aria  AK Enterprises</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#080808;
+  --card:#131313;
+  --card2:#181818;
+  --border:rgba(200,169,110,0.12);
+  --border2:rgba(255,255,255,0.06);
+  --gold:#C8A96E;
+  --gold-dim:rgba(200,169,110,0.07);
+  --white:#EDEAE4;
+  --muted:#6B6A66;
+  --muted2:#9A9890;
+  --green:#34D399;
+  --radius:14px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased}
+
+/* PREVIEW WRAPPER */
+.preview{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:48px 24px;background:var(--black)}
+.preview-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;text-align:center}
+.preview-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,48px);font-weight:600;color:var(--white);margin-bottom:6px;text-align:center;line-height:1.05}
+.preview-title em{color:var(--gold);font-style:italic}
+.preview-sub{font-size:13px;color:var(--muted2);margin-bottom:40px;text-align:center;font-weight:300;max-width:360px;line-height:1.6}
+
+/* DEMO */
+.aria-demo{width:100%;max-width:520px}
+
+/* TOP BAR */
+.aria-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding:0 4px}
+.aria-brand{display:flex;align-items:center;gap:10px}
+.aria-orb{width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 38% 38%,rgba(200,169,110,0.95),rgba(200,169,110,0.2));flex-shrink:0;position:relative}
+.aria-orb::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(200,169,110,0.15);animation:orbring 3s ease-in-out infinite}
+@keyframes orbring{0%,100%{opacity:0.4;transform:scale(1)}50%{opacity:0.8;transform:scale(1.1)}}
+.aria-wordmark{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--white);letter-spacing:0.03em}
+.aria-pill{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--muted2);font-weight:500;letter-spacing:0.04em}
+.aria-pill-dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:blink 2.5s infinite}
+@keyframes blink{0%,80%,100%{opacity:1}40%{opacity:0.3}}
+
+/* CARD */
+.aria-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;position:relative}
+.aria-card::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,110,0.45),transparent)}
+
+/* ARIA MESSAGE BAR */
+.aria-msg{padding:16px 20px;border-bottom:1px solid var(--border2);display:flex;align-items:flex-start;gap:12px;background:rgba(200,169,110,0.03)}
+.aria-msg-orb{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 38% 38%,rgba(200,169,110,0.9),rgba(200,169,110,0.25));flex-shrink:0;margin-top:1px}
+.aria-msg-text{font-size:13px;color:var(--muted2);font-weight:300;line-height:1.6;font-style:italic}
+.aria-msg-text strong{color:var(--white);font-weight:500;font-style:normal}
+
+/* PROGRESS */
+.aria-prog{padding:18px 20px 0}
+.prog-track{height:1.5px;background:rgba(255,255,255,0.05);border-radius:100px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,rgba(200,169,110,0.5),var(--gold));border-radius:100px;transition:width 0.5s cubic-bezier(0.4,0,0.2,1)}
+.prog-row{display:flex;align-items:center;justify-content:space-between;margin-top:10px;margin-bottom:18px}
+.prog-label{font-size:11px;font-weight:500;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
+.prog-step{font-size:11px;color:var(--gold);font-weight:600;letter-spacing:0.08em}
+
+/* FORM */
+.aria-form{padding:0 20px 20px}
+.field{margin-bottom:12px}
+.field-label{font-size:10px;font-weight:600;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;display:block}
+.field-input,.field-select{width:100%;background:rgba(255,255,255,0.025);border:1px solid var(--border2);border-radius:8px;padding:10px 13px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;transition:border-color 0.2s,background 0.2s;outline:none;appearance:none;-webkit-appearance:none}
+.field-input:focus,.field-select:focus{border-color:rgba(200,169,110,0.28);background:rgba(255,255,255,0.035)}
+.field-input::placeholder{color:rgba(255,255,255,0.15)}
+.field-select option{background:#131313;color:var(--white)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.apt-only{display:none}
+.apt-only.show{display:block}
+
+/* ACTIONS */
+.aria-actions{display:flex;gap:8px;margin-top:4px}
+.btn-main{flex:1;background:var(--gold);color:#080808;border:none;border-radius:8px;padding:12px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.18s;letter-spacing:0.01em}
+.btn-main:hover{background:#d4b87a;transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,169,110,0.18)}
+.btn-ghost{background:transparent;border:1px solid var(--border2);color:var(--muted2);border-radius:8px;padding:12px 14px;font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:all 0.18s}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.1);color:var(--white)}
+.aria-footnote{text-align:center;font-size:11px;color:rgba(107,106,102,0.55);margin-top:11px;letter-spacing:0.02em;font-weight:300}
+
+/* LOADING */
+.aria-loading{display:none;padding:48px 20px 40px;text-align:center}
+.aria-loading.on{display:block}
+.load-orb{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 38% 38%,rgba(200,169,110,0.85),rgba(200,169,110,0.15));margin:0 auto 6px;animation:think 1.6s ease-in-out infinite}
+@keyframes think{0%,100%{box-shadow:0 0 0 0 rgba(200,169,110,0.35);transform:scale(1)}50%{box-shadow:0 0 0 14px rgba(200,169,110,0);transform:scale(1.06)}}
+.load-label{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.load-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--white);margin-bottom:24px;line-height:1.2}
+.load-steps{list-style:none;border-top:1px solid var(--border2)}
+.load-step{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--muted);padding:12px 0;border-bottom:1px solid var(--border2);font-weight:300;opacity:0;animation:fin 0.4s forwards;max-width:260px;margin:0 auto;width:100%}
+.load-step:last-child{border-bottom:none}
+.load-step:nth-child(1){animation-delay:0.4s}
+.load-step:nth-child(2){animation-delay:1.5s}
+.load-step:nth-child(3){animation-delay:2.6s}
+@keyframes fin{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:translateX(0)}}
+.ls-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* RESULT */
+.aria-result{display:none}
+.aria-result.on{display:block}
+
+.result-msg{padding:16px 20px;border-bottom:1px solid var(--border2);display:flex;align-items:flex-start;gap:12px;background:rgba(52,211,153,0.03)}
+.result-msg-orb{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 38% 38%,rgba(52,211,153,0.8),rgba(52,211,153,0.2));flex-shrink:0;margin-top:1px}
+.result-msg-text{font-size:13px;color:var(--muted2);font-weight:300;line-height:1.6;font-style:italic}
+.result-msg-text strong{color:var(--white);font-weight:500;font-style:normal}
+
+.offer-block{margin:20px 20px 16px;background:linear-gradient(135deg,rgba(200,169,110,0.07),rgba(200,169,110,0.02));border:1px solid rgba(200,169,110,0.16);border-radius:12px;padding:22px;text-align:center;position:relative;overflow:hidden}
+.offer-block::after{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;background:radial-gradient(circle,rgba(200,169,110,0.07),transparent);border-radius:50%}
+.offer-ey{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.offer-fig{font-family:'Cormorant Garamond',serif;font-size:50px;font-weight:600;color:var(--white);line-height:1;margin-bottom:3px}
+.offer-per{font-size:12px;color:var(--muted2);font-weight:300}
+.offer-yr{display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:3px 12px;background:rgba(200,169,110,0.05);border:1px solid rgba(200,169,110,0.1);border-radius:100px;font-size:11px;color:var(--gold);font-weight:500}
+
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 20px 14px}
+.rg-card{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-radius:9px;padding:13px 14px}
+.rg-label{font-size:10px;color:var(--muted);font-weight:500;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:5px}
+.rg-val{font-size:14px;font-weight:600;color:var(--white)}
+.conf-row{display:flex;align-items:center;gap:7px;margin-top:6px}
+.conf-track{flex:1;height:2px;background:rgba(255,255,255,0.05);border-radius:100px;overflow:hidden}
+.conf-bar{height:100%;background:var(--green);border-radius:100px;width:0;transition:width 1.3s cubic-bezier(0.4,0,0.2,1) 0.2s}
+.conf-num{font-size:11px;color:var(--green);font-weight:600}
+
+.result-note{margin:0 20px 14px;padding:13px 15px;background:rgba(255,255,255,0.02);border-radius:9px;border-left:2px solid rgba(200,169,110,0.28);font-size:12px;color:var(--muted2);line-height:1.75;font-weight:300}
+
+.result-disc{margin:0 20px;padding:12px 0;border-top:1px solid var(--border2);font-size:10px;color:rgba(107,106,102,0.45);line-height:1.65;text-align:center}
+
+.result-btns{display:flex;gap:8px;margin:14px 20px 20px}
+.btn-cta{flex:1;background:var(--gold);color:#080808;border:none;border-radius:8px;padding:12px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.18s}
+.btn-cta:hover{background:#d4b87a;transform:translateY(-1px)}
+.btn-again{background:transparent;border:1px solid var(--border2);color:var(--muted2);border-radius:8px;padding:12px 14px;font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:all 0.18s;white-space:nowrap}
+.btn-again:hover{border-color:rgba(255,255,255,0.1);color:var(--white)}
+
+.hidden{display:none!important}
+
+@media(max-width:480px){
+  .field-row{grid-template-columns:1fr}
+  .result-grid{grid-template-columns:1fr}
+  .result-btns{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<div class="preview">
+  <div class="preview-eyebrow">Aria by AK Enterprises</div>
+  <h1 class="preview-title">Try <em>Aria</em> now</h1>
+  <p class="preview-sub">Enter any property. Aria analyses the market and gives you a number in seconds.</p>
+
+  <div class="aria-demo">
+    <div class="aria-topbar">
+      <div class="aria-brand">
+        <div class="aria-orb"></div>
+        <span class="aria-wordmark">Aria</span>
+      </div>
+      <div class="aria-pill">
+        <div class="aria-pill-dot"></div>
+        Online now
+      </div>
+    </div>
+
+    <div class="aria-card">
+
+      <!-- STEP 1 -->
+      <div id="s1">
+        <div class="aria-msg">
+          <div class="aria-msg-orb"></div>
+          <div class="aria-msg-text"><strong>What are we working with?</strong> Tell me about the property and I'll pull the numbers.</div>
+        </div>
+        <div class="aria-prog">
+          <div class="prog-track"><div class="prog-fill" style="width:50%"></div></div>
+          <div class="prog-row">
+            <span class="prog-label">Property details</span>
+            <span class="prog-step">1 / 2</span>
+          </div>
+        </div>
+        <div class="aria-form">
+          <div class="field">
+            <label class="field-label">Address</label>
+            <input class="field-input" id="addr" type="text" placeholder="e.g. 123 Main Street, New York NY 10001">
+          </div>
+          <div class="field">
+            <label class="field-label">Property type</label>
+            <select class="field-select" id="ptype" onchange="onType()">
+              <option value="">Select</option>
+              <option value="house">House</option>
+              <option value="apartment">Apartment / Condo</option>
+              <option value="multi">Multi-family / Block</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label class="field-label">Your name</label>
+              <input class="field-input" id="fname" type="text" placeholder="First name">
+            </div>
+            <div class="field">
+              <label class="field-label">Email</label>
+              <input class="field-input" id="email" type="email" placeholder="you@company.com">
+            </div>
+          </div>
+          <div class="aria-actions">
+            <button class="btn-main" onclick="next()">Keep going →</button>
+          </div>
+          <p class="aria-footnote">No cost. No catch. Just a number.</p>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div id="s2" class="hidden">
+        <div class="aria-msg">
+          <div class="aria-msg-orb"></div>
+          <div class="aria-msg-text" id="s2msg"><strong>Almost there.</strong> A few more details and I'll have your number.</div>
+        </div>
+        <div class="aria-prog">
+          <div class="prog-track"><div class="prog-fill" style="width:100%"></div></div>
+          <div class="prog-row">
+            <span class="prog-label" id="s2label">Property spec</span>
+            <span class="prog-step">2 / 2</span>
+          </div>
+        </div>
+        <div class="aria-form">
+          <div class="field-row">
+            <div class="field">
+              <label class="field-label">Bedrooms</label>
+              <select class="field-select" id="beds">
+                <option value="">Select</option>
+                <option>Studio</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label">Bathrooms</label>
+              <select class="field-select" id="baths">
+                <option value="">Select</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label class="field-label">En-suite</label>
+              <select class="field-select" id="ensuite">
+                <option value="none">None</option>
+                <option value="some">Some</option>
+                <option value="all">All en-suite</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label">Furnishing</label>
+              <select class="field-select" id="furnished">
+                <option value="un">Unfurnished</option>
+                <option value="part">Part furnished</option>
+                <option value="full">Fully furnished</option>
+              </select>
+            </div>
+          </div>
+          <div class="apt-only" id="aptFields">
+            <div class="field-row">
+              <div class="field">
+                <label class="field-label">Floor</label>
+                <input class="field-input" id="floor" type="number" placeholder="e.g. 4" min="0">
+              </div>
+              <div class="field">
+                <label class="field-label">Elevator</label>
+                <select class="field-select" id="lift">
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="aria-actions">
+            <button class="btn-ghost" onclick="back()">← Back</button>
+            <button class="btn-main" onclick="generate()">Show me the number →</button>
+          </div>
+          <p class="aria-footnote">Aria checks live market data · ~10 seconds</p>
+        </div>
+      </div>
+
+      <!-- LOADING -->
+      <div class="aria-loading" id="loading">
+        <div class="load-orb"></div>
+        <div class="load-label">Aria is working</div>
+        <div class="load-title">Give me a moment.</div>
+        <ul class="load-steps">
+          <li class="load-step"><div class="ls-dot"></div>Searching comparable rentals nearby</li>
+          <li class="load-step"><div class="ls-dot"></div>Reading the market</li>
+          <li class="load-step"><div class="ls-dot"></div>Calculating your offer</li>
+        </ul>
+      </div>
+
+      <!-- RESULT -->
+      <div class="aria-result" id="result">
+        <div class="result-msg">
+          <div class="result-msg-orb"></div>
+          <div class="result-msg-text" id="rMsg"><strong>Here's the number.</strong> Based on what I'm seeing in your market right now.</div>
+        </div>
+
+        <div class="offer-block">
+          <div class="offer-ey">Guaranteed Rent Offer</div>
+          <div class="offer-fig" id="rOffer">$2,800</div>
+          <div class="offer-per">per month</div>
+          <div class="offer-yr" id="rAnnual">$33,600 per year</div>
+        </div>
+
+        <div class="result-grid">
+          <div class="rg-card">
+            <div class="rg-label">Market Range</div>
+            <div class="rg-val" id="rMarket">$3,100 – $3,300</div>
+          </div>
+          <div class="rg-card">
+            <div class="rg-label">Confidence</div>
+            <div class="rg-val" id="rConfLabel">High</div>
+            <div class="conf-row">
+              <div class="conf-track"><div class="conf-bar" id="rConfBar"></div></div>
+              <span class="conf-num" id="rConfPct">88%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-note" id="rNote">
+          This property matches our current acquisition criteria. Someone from the team will reach out shortly.
+        </div>
+
+        <div class="result-disc">
+          Aria's estimate is based on live market data and is for guidance only. Not a formal valuation or guaranteed offer. Your specialist confirms the final figure on the call.
+        </div>
+
+        <div class="result-btns">
+          <button class="btn-cta" onclick="bookCall()">Let's talk →</button>
+          <button class="btn-again" onclick="reset()">Run another</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function onType(){
+  var t=document.getElementById('ptype').value;
+  var af=document.getElementById('aptFields');
+  var msgs={house:"<strong>Got it  a house.</strong> One more step and I'll have your number.",apartment:"<strong>Apartment noted.</strong> A couple more details and we're done.",multi:"<strong>Multi-family.</strong> These are strong. One more step."};
+  document.getElementById('s2msg').innerHTML=msgs[t]||"<strong>Almost there.</strong> A few more details and I'll have your number.";
+  var labels={house:'House spec',apartment:'Apartment spec',multi:'Multi-family spec'};
+  document.getElementById('s2label').textContent=labels[t]||'Property spec';
+  if(t==='apartment'||t==='multi'){af.classList.add('show')}
+  else{af.classList.remove('show')}
+}
+
+function next(){
+  var addr=document.getElementById('addr').value.trim();
+  var pt=document.getElementById('ptype').value;
+  var fn=document.getElementById('fname').value.trim();
+  if(!addr||!pt||!fn){alert('Fill in all fields and I can get your number.');return}
+  document.getElementById('s1').classList.add('hidden');
+  document.getElementById('s2').classList.remove('hidden');
+}
+
+function back(){
+  document.getElementById('s2').classList.add('hidden');
+  document.getElementById('s1').classList.remove('hidden');
+}
+
+function generate(){
+  var beds=document.getElementById('beds').value;
+  var baths=document.getElementById('baths').value;
+  if(!beds||!baths){alert('Select bedrooms and bathrooms so I can run the numbers.');return}
+  document.getElementById('s2').classList.add('hidden');
+  document.getElementById('loading').classList.add('on');
+  setTimeout(showResult,3900);
+}
+
+function showResult(){
+  document.getElementById('loading').classList.remove('on');
+  var pt=document.getElementById('ptype').value;
+  var beds=document.getElementById('beds').value;
+  var ensuite=document.getElementById('ensuite').value;
+  var furnished=document.getElementById('furnished').value;
+  var base={Studio:1400,1:1800,2:2400,3:3100,4:3800,5:4600,'6+':5600};
+  var b=base[beds]||2400;
+  var disc,conf,confLabel,note,msg;
+
+  if(pt==='multi'){
+    b=Math.round(b*1.15);disc=0.08;conf=91;confLabel='High';
+    note="Multi-family properties move fast on our end. This one fits what we're actively looking for.";
+    msg="<strong>Strong property.</strong> Multi-family is exactly what we're acquiring right now.";
+  } else if(ensuite==='all'&&furnished==='full'){
+    disc=0.065;conf=94;confLabel='High';
+    note="Fully en-suite, fully furnished. This is the specification our serviced accommodation network pays top dollar for.";
+    msg="<strong>This is a good one.</strong> Fully en-suite and furnished  we can be competitive on the number.";
+  } else if(ensuite==='all'){
+    disc=0.08;conf=91;confLabel='High';
+    note="All en-suite properties sit at the top of our acquisition list. We can offer closer to market rate for this spec.";
+    msg="<strong>All en-suite.</strong> That changes things. Here's what I'd offer.";
+  } else if(pt==='apartment'){
+    disc=0.10;conf=83;confLabel='High';
+    note="This apartment fits our current acquisition criteria. Our corporate and qualified tenant network is actively seeking properties like this.";
+    msg="<strong>Here's the number.</strong> Based on what I'm seeing in your market right now.";
+  } else {
+    disc=0.10;conf=79;confLabel='Medium';
+    note="Solid property. Fits our standard acquisition criteria. We work with qualified tenants and housing providers who are actively looking for this type.";
+    msg="<strong>Here's what I'd offer.</strong> Based on comparable rentals nearby.";
+  }
+
+  var offer=Math.round(b*(1-disc)/50)*50;
+  var annual=offer*12;
+  var mktLow=b;
+  var mktHigh=Math.round(b*1.1/50)*50;
+
+  document.getElementById('rMsg').innerHTML=msg;
+  document.getElementById('rOffer').textContent='$'+offer.toLocaleString();
+  document.getElementById('rAnnual').textContent='$'+annual.toLocaleString()+' per year';
+  document.getElementById('rMarket').textContent='$'+mktLow.toLocaleString()+' \u2013 $'+mktHigh.toLocaleString();
+  document.getElementById('rConfLabel').textContent=confLabel;
+  document.getElementById('rConfPct').textContent=conf+'%';
+  document.getElementById('rNote').textContent=note;
+  document.getElementById('result').classList.add('on');
+  setTimeout(function(){document.getElementById('rConfBar').style.width=conf+'%'},200);
+}
+
+function reset(){
+  document.getElementById('result').classList.remove('on');
+  document.getElementById('rConfBar').style.width='0';
+  document.getElementById('s1').classList.remove('hidden');
+  ['addr','fname','email'].forEach(function(id){document.getElementById(id).value=''});
+  document.getElementById('ptype').value='';
+  document.getElementById('beds').value='';
+  document.getElementById('baths').value='';
+  document.getElementById('aptFields').classList.remove('show');
+  document.getElementById('s2msg').innerHTML='<strong>Almost there.</strong> A few more details and I\'ll have your number.';
+}
+
+function bookCall(){
+  alert('Connect your Calendly or booking link here.');
+}
+</script>
+</body>
+</html>

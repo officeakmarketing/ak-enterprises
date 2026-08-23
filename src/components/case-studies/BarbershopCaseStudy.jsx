@@ -42,7 +42,7 @@ export default function BarbershopCaseStudy() {
                   <span className="w-6 sm:w-8 h-px bg-brand-gold/50 group-hover:w-16 transition-all duration-300"></span> What Was Built
                 </h3>
                 <p className="text-warm-grey/90 leading-relaxed text-base sm:text-lg font-light pl-6 sm:pl-8 border-l border-brand-gold/20">
-                  A complete Business Operating System — automated booking, CRM
+                  A complete Business Operating System  automated booking, CRM
                   pipeline, instant follow-up sequences, Google Business Profile
                   optimisation, automated review generation, and a reporting
                   dashboard. Installed once. Running continuously.
@@ -65,7 +65,7 @@ export default function BarbershopCaseStudy() {
             <div className="lg:col-span-5 flex flex-col gap-8 lg:gap-10">
 
               {/* Media component */}
-              <button 
+              <button
                 onClick={() => setIsLightboxOpen(true)}
                 className="bg-[#111112]/80 w-full flex flex-col items-center justify-center border border-brand-gold/20 rounded-2xl p-2 relative overflow-hidden group cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 focus:ring-offset-ink-black"
                 aria-label="Enlarge image"
@@ -124,9 +124,9 @@ export default function BarbershopCaseStudy() {
 
       {/* Full Screen Lightbox Overlay */}
       {isLightboxOpen && (
-        <Lightbox 
-          images={["/bright-face-dashboard.png"]} 
-          onClose={() => setIsLightboxOpen(false)} 
+        <Lightbox
+          images={["/bright-face-dashboard.png"]}
+          onClose={() => setIsLightboxOpen(false)}
         />
       )}
     </section>

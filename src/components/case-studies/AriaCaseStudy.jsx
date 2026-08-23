@@ -69,10 +69,9 @@ export default function AriaCaseStudy() {
           <div className="text-center">
             <Link
               href="/demo"
-              className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-8 sm:px-10 py-4 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md text-center"
+              className="inline-block text-brand-gold hover:text-white transition-colors duration-200 text-sm font-bold tracking-widest uppercase underline underline-offset-8 decoration-brand-gold/30 hover:decoration-white/50"
             >
-              <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>
-              <span className="relative z-10">See the Live Demo &rarr;</span>
+              See the Live Demo &rarr;
             </Link>
           </div>
         </ScrollReveal>

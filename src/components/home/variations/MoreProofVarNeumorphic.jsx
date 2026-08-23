@@ -10,17 +10,17 @@ export default function MoreProofVarNeumorphic() {
     <section className="w-full py-10 sm:py-16 lg:py-20 border-b border-muted-grey/20 bg-ink-black overflow-hidden relative">
       <ScrollReveal>
         <div className="w-full 2xl:max-w-[1536px] 2xl:mx-auto">
-          
+
           {/* Deep Neumorphic Container */}
           <div className="bg-[#050506] shadow-neo-pressed border border-white/5 2xl:rounded-[2rem] px-4 py-8 sm:px-8 sm:py-12 md:p-12 lg:p-14 xl:p-16 2xl:p-20 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 xl:gap-20 items-center">
-              
+
               {/* Left Column */}
               <div className="lg:col-span-7 flex flex-col justify-between">
-                
+
                 {/* LABEL */}
                 <div className="inline-block self-start shadow-neo-pressed bg-[#0a0a0c] border border-white/5 px-3.5 py-1.5 rounded-md text-brand-gold text-[9px] sm:text-[10px] tracking-[0.2em] uppercase mb-6 font-bold">
-                  Case Study Luxury Events, London UK
+                  Case Study ; Luxury Events, London UK
                 </div>
 
                 {/* HEADLINE */}
@@ -81,7 +81,7 @@ export default function MoreProofVarNeumorphic() {
 
               {/* Right Column */}
               <div className="lg:col-span-5 w-full max-w-xl mx-auto lg:max-w-none flex flex-col gap-6">
-                
+
                 {/* Raised Hardware Dashboard Wrapper */}
                 <div className="w-full rounded-2xl p-2 bg-[#121214] shadow-neo-raised border border-white/5 overflow-hidden block">
                   <div className="rounded-xl overflow-hidden border border-black bg-black">

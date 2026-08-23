@@ -48,7 +48,7 @@ export default function AboutFounders() {
               <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-1000 ease-out pointer-events-none"></span>
 
               <span className="relative z-10 w-full text-xs sm:text-sm tracking-widest text-ink-black">
-                Book a Free Business Audit
+                Book a Free Audit
               </span>
             </Link>
           </div>

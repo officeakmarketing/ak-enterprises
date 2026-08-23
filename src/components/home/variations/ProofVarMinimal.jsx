@@ -13,14 +13,14 @@ export default function ProofVarMinimal() {
     <section className="w-full py-10 sm:py-16 lg:py-20 border-b border-white/20 bg-black overflow-hidden relative font-sans">
       <ScrollReveal>
         <div className="w-full 2xl:max-w-[1536px] 2xl:mx-auto">
-          
+
           {/* Brutalist Container */}
           <div className="bg-black border border-white/20 px-4 py-8 sm:px-8 sm:py-12 md:p-12 lg:p-14 xl:p-16 2xl:p-20 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 xl:gap-20 items-center">
-              
+
               {/* Left Column */}
               <div className="lg:col-span-7 flex flex-col justify-between">
-                
+
                 {/* LABEL */}
                 <div className="inline-block self-start border border-white px-3 py-1 text-white text-[9px] sm:text-[10px] tracking-[0.25em] uppercase mb-8 font-bold">
                   Theme 3: Absolute Minimalism
@@ -85,9 +85,9 @@ export default function ProofVarMinimal() {
 
               {/* Right Column */}
               <div className="lg:col-span-5 w-full max-w-xl mx-auto lg:max-w-none flex flex-col gap-8 relative z-10">
-                
+
                 {/* Flat Image */}
-                <button 
+                <button
                   onClick={() => setIsLightboxOpen(true)}
                   className="w-full border border-white/20 group cursor-pointer focus:outline-none block bg-white"
                 >
@@ -109,7 +109,7 @@ export default function ProofVarMinimal() {
                     "Since launching the new site, people are booking nonstop. No more missed calls. It just works."
                   </p>
                   <div className="text-white/60 text-[9px] font-bold tracking-[0.2em] uppercase font-mono">
-                    Talib M — CEO, Bright Face Barber
+                    Talib M  CEO, Bright Face Barber
                   </div>
                 </div>
               </div>
@@ -120,9 +120,9 @@ export default function ProofVarMinimal() {
       </ScrollReveal>
 
       {isLightboxOpen && (
-        <Lightbox 
-          images={["/bright-face-dashboard.png"]} 
-          onClose={() => setIsLightboxOpen(false)} 
+        <Lightbox
+          images={["/bright-face-dashboard.png"]}
+          onClose={() => setIsLightboxOpen(false)}
         />
       )}
     </section>

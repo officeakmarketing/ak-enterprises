@@ -3,59 +3,54 @@
 import Link from "next/link";
 import AnimatedHeadline from "@/components/AnimatedHeadline";
 import HeroVideoPlayer from "./HeroVideoPlayer";
+import RiskReversal from "@/components/RiskReversal";
 
 export default function HeroSection() {
   return (
     <section className="relative bg-ink-black lg:h-[calc(100vh-4.25rem)] lg:min-h-[calc(100vh-4.25rem)] 2xl:h-[calc(100vh-4.75rem)] 2xl:min-h-[calc(100vh-4.75rem)] flex items-center border-b border-muted-grey/20 overflow-hidden">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-8 pb-14 sm:pt-10 sm:pb-16 lg:py-0 flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-8 xl:gap-12 2xl:gap-16 items-center justify-between z-10 relative">
-        {/* Left Column: Copy & Actions */}
-        <div className="flex-1 w-full lg:max-w-[490px] xl:max-w-[580px] 2xl:max-w-[680px]">
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-16 pb-20 sm:pt-24 sm:pb-28 lg:py-32 flex flex-col items-center justify-center z-10 relative text-center">
+        {/* Centered Copy & Actions */}
+        <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
           {/* Refined Glowing Badge */}
-          <div className="inline-flex items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-brand-gold tracking-[0.2em] sm:tracking-[0.24em] uppercase text-[9px] sm:text-[10px] lg:text-xs mb-4 sm:mb-5 lg:mb-3.5 2xl:mb-5 font-bold">
+          <div className="inline-flex items-center justify-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-brand-gold tracking-[0.2em] sm:tracking-[0.24em] uppercase text-[9px] sm:text-[10px] lg:text-xs mb-6 sm:mb-8 font-bold">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
             <span>Business Operating Systems</span>
           </div>
 
           <AnimatedHeadline
             text={"Your business is losing clients right now. Not to your competitors.\nTo your own broken systems."}
-            className="text-[1.85rem] sm:text-3xl md:text-4xl lg:text-[1.75rem] xl:text-[2.2rem] 2xl:text-[2.75rem] mb-4 sm:mb-5 lg:mb-4 2xl:mb-5 leading-[1.18] lg:leading-[1.14] font-serif italic text-white"
+            className="text-[2rem] sm:text-[2.5rem] md:text-4xl lg:text-4xl xl:text-5xl mb-5 sm:mb-6 lg:mb-8 leading-[1.15] lg:leading-[1.1] font-serif italic text-white"
             highlightWords={["broken", "systems"]}
           />
 
-          <p className="text-warm-grey/85 text-[0.95rem] sm:text-base lg:text-[0.88rem] xl:text-[0.95rem] 2xl:text-base mb-6 sm:mb-8 lg:mb-6 2xl:mb-8 leading-[1.65] lg:leading-relaxed font-light">
-            AK Enterprises builds Business Operating Systems for service
-            businesses  the complete infrastructure that captures every lead,
-            automates every booking, and manages every client interaction
-            without manual input.
+          <p className="text-warm-grey/85 text-[1rem] sm:text-base lg:text-base xl:text-lg max-w-[90%] sm:max-w-2xl mx-auto mb-8 sm:mb-10 leading-[1.65] lg:leading-relaxed font-light">
+            AK Enterprises builds Business Operating Systems for service businesses the complete infrastructure that captures every lead, follows up automatically, and runs without the owner. UK. USA. Romania.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-3.5 lg:gap-3.5 2xl:gap-4 w-full">
+          <div className="flex flex-col items-center gap-4 w-full sm:w-auto">
             <Link
               href="/contact"
-              className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 py-4 sm:py-3.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 rounded-lg text-xs lg:text-[11px] xl:text-xs 2xl:text-sm font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto text-center shadow-md"
+              className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 py-4 sm:py-3.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 rounded-lg text-xs lg:text-[11px] xl:text-xs 2xl:text-sm font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-fit text-center shadow-md"
             >
               {/* White specular glare sweep on hover */}
               <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>
               <span className="relative z-10">Book a Free Business Audit</span>
             </Link>
-            <Link
-              href="/demo"
-              className="group relative inline-flex items-center justify-center border border-brand-gold/50 bg-[#111112] text-brand-gold px-6 py-4 sm:py-3.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 rounded-lg text-xs lg:text-[11px] xl:text-xs 2xl:text-sm font-bold uppercase tracking-wider overflow-hidden transition-all duration-200 hover:bg-brand-gold hover:text-ink-black hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto text-center"
-            >
-              <span className="relative z-10">See the Live Demo</span>
-            </Link>
+
+            <RiskReversal />
           </div>
         </div>
 
-       {/* Right Column: Embedded Video */}
-              <div className="flex-1 w-full lg:max-w-[460px] xl:max-w-[530px] 2xl:max-w-[620px] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
-                {/* Container without shadows */}
-                <div className="relative aspect-video rounded-3xl overflow-hidden p-2 bg-white/5 transition-transform duration-700 hover:scale-[1.02]">
-                  <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                    <HeroVideoPlayer src="/demo.mp4" />
-                  </div>
-                </div>
-              </div>
+        {/* Right Column: Embedded Video (Hidden until real content provided) */}
+        {/*
+        <div className="flex-1 w-full lg:max-w-[460px] xl:max-w-[530px] 2xl:max-w-[620px] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both">
+          <div className="relative aspect-video rounded-3xl overflow-hidden p-2 bg-white/5 transition-transform duration-700 hover:scale-[1.02]">
+            <div className="relative w-full h-full rounded-2xl overflow-hidden">
+              <HeroVideoPlayer src="/demo.mp4" />
+            </div>
+          </div>
+        </div>
+        */}
       </div>
     </section>
   );

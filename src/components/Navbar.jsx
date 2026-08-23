@@ -46,7 +46,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="hover:text-brand-gold transition-colors duration-200"
+                  className="hover:text-white transition-colors duration-200"
                 >
                   {link.name}
                 </Link>
@@ -71,7 +71,7 @@ export default function Navbar() {
                 href="/contact"
                 className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-3.5 py-2 rounded-lg text-[10px] font-bold uppercase tracking-wider overflow-hidden shadow-sm active:scale-95 transition-transform"
               >
-                <span className="relative z-10">Free Audit</span>
+                <span className="relative z-10">Book a Free Audit</span>
               </Link>
 
               <button
@@ -114,10 +114,10 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="group flex items-center justify-between text-2xl sm:text-3xl font-serif italic text-white hover:text-brand-gold transition-colors duration-200 border-b border-[#18181a] pb-4"
+                className="group flex items-center justify-between text-2xl sm:text-3xl font-serif italic text-white hover:text-white/80 transition-colors duration-200 border-b border-[#18181a] pb-4"
               >
                 <span>{link.name}</span>
-                <span className="text-xs font-mono font-bold tracking-widest text-brand-gold/50 group-hover:text-brand-gold not-italic">
+                <span className="text-xs font-mono font-bold tracking-widest text-warm-grey/50 group-hover:text-white not-italic">
                   0{idx + 1} →
                 </span>
               </Link>

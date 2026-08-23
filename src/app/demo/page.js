@@ -1,6 +1,7 @@
 import DemoHero from "@/components/demo/DemoHero";
 import LiveDemoIframe from "@/components/demo/LiveDemoIframe";
 import DemoIndustries from "@/components/demo/DemoIndustries";
+import CTASection from "@/components/home/CTASection";
 
 export default function Demo() {
   return (
@@ -8,6 +9,7 @@ export default function Demo() {
       <DemoHero />
       <LiveDemoIframe />
       <DemoIndustries />
+      <CTASection />
     </main>
   );
 }

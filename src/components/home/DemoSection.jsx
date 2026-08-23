@@ -80,11 +80,11 @@ export default function DemoSection() {
 
             <div className="shrink-0 pt-2 lg:pt-0">
               <Link
-                href="/demo"
+                href="/contact"
                 className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-7 py-3.5 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto text-center shadow-md"
               >
                 <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>
-                <span className="relative z-10">See What We Would Build For You &rarr;</span>
+                <span className="relative z-10">Book a Free Audit</span>
               </Link>
             </div>
           </div>

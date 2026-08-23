@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import BackgroundSparkles from "@/components/BackgroundSparkles";
+import RiskReversal from "@/components/RiskReversal";
 
 export default function CTASection() {
   return (
@@ -34,16 +35,14 @@ export default function CTASection() {
           </div>
 
           {/* Guarantee Card */}
-          <div className="bg-[#0e0e10]/95 border border-brand-gold/30 p-5 sm:p-7 max-w-2xl mx-auto rounded-2xl mb-8 sm:mb-10 shadow-lg">
-            <p className="italic text-warm-grey/85 text-xs sm:text-sm leading-relaxed">
-              "If we cannot find a single gap in your business that is costing you money, we will tell you honestly and you owe us nothing. We have never left an audit empty-handed."
-            </p>
+          <div className="bg-[#0e0e10]/95 border border-brand-gold/30 p-5 sm:p-7 max-w-2xl mx-auto rounded-2xl mb-8 sm:mb-10 shadow-lg relative z-10">
+            <RiskReversal className="italic" />
           </div>
 
           {/* Client Limit Scarcity Banner */}
           <div className="mb-8">
             <span className="inline-block text-[10px] sm:text-xs font-mono font-bold tracking-[0.16em] sm:tracking-widest text-brand-gold uppercase bg-brand-gold/10 border border-brand-gold/25 px-3.5 py-1.5 rounded-md">
-              Limited to 4 New Client Deployments Per Month
+              We take on a maximum of 4 new clients per month. Current availability: 2 slots.
             </span>
           </div>
 
@@ -55,7 +54,7 @@ export default function CTASection() {
             >
               {/* White specular glare sweep */}
               <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>
-              <span className="relative z-10">Book Your Free Audit &rarr;</span>
+              <span className="relative z-10">Book a Free Audit</span>
             </Link>
           </div>
 

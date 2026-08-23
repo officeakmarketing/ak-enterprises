@@ -78,17 +78,17 @@ export default function TestimonialsSection() {
 
                 <div>
                   {/* 1. RESULT NUMBER / ROLE HEADLINE (Bold / High-Contrast) */}
-                  <h3 className="text-xl sm:text-2xl font-serif italic font-bold text-white group-hover:text-brand-gold transition-colors mb-1.5 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-serif italic font-bold text-brand-gold mb-1.5 leading-snug">
                     {t.headline}
                   </h3>
 
                   {/* 2. NAME AND COMPANY */}
-                  <div className="text-xs sm:text-sm font-sans tracking-wide text-brand-gold/90 font-medium mb-4">
-                    {t.name}  {t.company}
+                  <div className="text-xs sm:text-sm font-sans tracking-wide text-warm-grey/80 font-medium mb-4">
+                    {t.name} ; {t.company}
                   </div>
 
                   {/* 3. THE QUOTE */}
-                  <p className="text-warm-grey/85 text-sm sm:text-base leading-relaxed font-light italic">
+                  <p className="text-white text-sm sm:text-base leading-relaxed font-light italic">
                     "{t.quote}"
                   </p>
                 </div>

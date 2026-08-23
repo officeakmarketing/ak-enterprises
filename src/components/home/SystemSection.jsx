@@ -9,7 +9,7 @@ export default function SystemSection() {
       title: "AUDIT",
       heading: "We analyse & pinpoint your exact revenue leaks.",
       description:
-        "We analyse your current setup  lead capture, follow-up, operations, and reporting. We show you exactly what is broken and what it is costing you. The audit is free. You own the findings regardless of whether we work together.",
+        "We analyse your current setup \u2014 lead capture, follow-up, operations, and reporting. We show you exactly what is broken and what it is costing you. The audit is free. You own the findings regardless of whether we work together.",
       icon: Search,
     },
     {
@@ -18,7 +18,7 @@ export default function SystemSection() {
       title: "BUILD",
       heading: "We design & deploy your Business Operating System.",
       description:
-        "We design and deploy your Business Operating System  bespoke to your business, connected end to end, built to run without manual input. Not a template. Not a subscription. Yours.",
+        "We design and deploy your Business Operating System \u2014 bespoke to your business, connected end to end, built to run without manual input. Not a template. Not a subscription. Yours.",
       icon: Layers,
     },
     {
@@ -27,7 +27,7 @@ export default function SystemSection() {
       title: "OPERATE",
       heading: "Live execution, maintenance & compounding growth.",
       description:
-        "Your system goes live. We maintain it on an ongoing basis. You keep full ownership. The system compounds over time  more data, better performance, higher conversion.",
+        "Your system goes live. We maintain it on an ongoing basis. You keep full ownership. The system compounds over time \u2014 more data, better performance, higher conversion.",
       icon: Activity,
     },
   ];
@@ -42,11 +42,8 @@ export default function SystemSection() {
               How It Works
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-white leading-tight mb-3">
-              How the system is built.
+              A proven process. From audit to activation in 4 to 6 weeks.
             </h2>
-            <p className="text-warm-grey/80 text-sm sm:text-base font-light">
-              From audit to live activation, every step installs a fully automated infrastructure.
-            </p>
           </div>
         </ScrollReveal>
 

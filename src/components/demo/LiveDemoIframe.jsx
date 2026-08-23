@@ -1,4 +1,5 @@
 import ScrollReveal from "@/components/ScrollReveal";
+import AriaDemoWidget from "@/components/home/AriaDemoWidget";
 
 export default function LiveDemoIframe() {
   return (
@@ -8,12 +9,9 @@ export default function LiveDemoIframe() {
           
           <div className="hidden sm:block absolute top-0 left-0 w-full h-1 bg-brand-gold/40"></div>
 
-          <iframe
-            src="https://getguaranteedrent.co.uk/"
-            className="w-full h-[700px] border-none"
-            title="Interactive Aria AI Lead Acquisition Demo"
-            scrolling="no"
-          />
+          <div className="w-full relative z-10 py-10 sm:py-16 md:py-20 px-3 sm:px-6 lg:px-8 bg-[radial-gradient(ellipse_at_top,rgba(201,169,97,0.05),transparent_70%)]">
+            <AriaDemoWidget />
+          </div>
         </div>
       </ScrollReveal>
     </section>
