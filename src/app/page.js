@@ -1,16 +1,18 @@
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/home/HeroSection";
 import TrustBar from "@/components/home/TrustBar";
-import PainSection from "@/components/home/PainSection";
-import ProofSection from "@/components/home/ProofSection";
-import SystemSection from "@/components/home/SystemSection";
-import NumbersSection from "@/components/home/NumbersSection";
-import DemoSection from "@/components/home/DemoSection";
-import MoreProofSection from "@/components/home/MoreProofSection";
-import CredibilitySection from "@/components/home/CredibilitySection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
-import TargetAudienceSection from "@/components/home/TargetAudienceSection";
-import CTASection from "@/components/home/CTASection";
-import FAQSection from "@/components/home/FAQSection";
+
+const PainSection = dynamic(() => import("@/components/home/PainSection"));
+const ProofSection = dynamic(() => import("@/components/home/ProofSection"));
+const SystemSection = dynamic(() => import("@/components/home/SystemSection"));
+const NumbersSection = dynamic(() => import("@/components/home/NumbersSection"));
+const DemoSection = dynamic(() => import("@/components/home/DemoSection"));
+const MoreProofSection = dynamic(() => import("@/components/home/MoreProofSection"));
+const CredibilitySection = dynamic(() => import("@/components/home/CredibilitySection"));
+const TestimonialsSection = dynamic(() => import("@/components/home/TestimonialsSection"));
+const TargetAudienceSection = dynamic(() => import("@/components/home/TargetAudienceSection"));
+const CTASection = dynamic(() => import("@/components/home/CTASection"));
+const FAQSection = dynamic(() => import("@/components/home/FAQSection"));
 
 export default function Home() {
   return (
