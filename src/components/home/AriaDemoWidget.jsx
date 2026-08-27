@@ -7,7 +7,7 @@ export default function AriaDemoWidget() {
         </h2>
       </div>
 
-      <div className="w-full max-w-4xl relative overflow-hidden rounded-lg" style={{ height: '880px' }}>
+      <div className="w-full max-w-4xl relative overflow-hidden rounded-lg" style={{ height: '1050px' }}>
         <iframe
           src="https://ariasystem.vercel.app/"
           className="absolute inset-0 w-full h-full border-0"
