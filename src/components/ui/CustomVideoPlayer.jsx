@@ -122,11 +122,11 @@ export default function CustomVideoPlayer({ src }) {
       {/* Big Play Button Overlay (when paused) */}
       {!isPlaying && (
         <div 
-          className="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer transition-opacity duration-300"
+          className="absolute inset-0 flex items-center justify-center pb-16 sm:pb-24 bg-black/40 cursor-pointer transition-opacity duration-300"
           onClick={togglePlay}
         >
-          <div className="w-20 h-20 bg-brand-gold rounded-full flex items-center justify-center pl-1.5 shadow-[0_0_30px_rgba(200,169,110,0.4)] hover:scale-110 transition-transform duration-300">
-            <Play className="w-8 h-8 text-black fill-black" />
+          <div className="w-14 h-14 sm:w-20 sm:h-20 bg-brand-gold rounded-full flex items-center justify-center pl-1 sm:pl-1.5 hover:scale-110 transition-transform duration-300">
+            <Play className="w-6 h-6 sm:w-8 sm:h-8 text-black fill-black" />
           </div>
         </div>
       )}
@@ -157,7 +157,7 @@ export default function CustomVideoPlayer({ src }) {
               onClick={togglePlay}
               className="text-white hover:text-brand-gold transition-colors focus:outline-none"
             >
-              {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current" />}
+              {isPlaying ? <Pause className="w-4 h-4 sm:w-5 sm:h-5 fill-current" /> : <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />}
             </button>
             
             <button 
