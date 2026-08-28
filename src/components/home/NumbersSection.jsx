@@ -1,5 +1,5 @@
-import AnimatedCounter from "@/components/AnimatedCounter";
-import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function NumbersSection() {
   const metrics = [

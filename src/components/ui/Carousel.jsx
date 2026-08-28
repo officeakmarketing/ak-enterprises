@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import Lightbox from "@/components/Lightbox";
+import Lightbox from "@/components/ui/Lightbox";
 
 export default function Carousel() {
   const photos = [

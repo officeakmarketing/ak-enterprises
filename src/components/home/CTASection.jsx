@@ -1,7 +1,7 @@
 import Link from "next/link";
-import ScrollReveal from "@/components/ScrollReveal";
-import BackgroundSparkles from "@/components/BackgroundSparkles";
-import RiskReversal from "@/components/RiskReversal";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
+import RiskReversal from "@/components/ui/RiskReversal";
 
 export default function CTASection() {
   return (

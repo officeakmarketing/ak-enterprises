@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Carousel from "@/components/Carousel";
-import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedCounter from "@/components/AnimatedCounter";
+import Carousel from "@/components/ui/Carousel";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 export default function MoreProofSection() {
   return (

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import ScrollReveal from "@/components/ScrollReveal";
-import RiskReversal from "@/components/RiskReversal";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import RiskReversal from "@/components/ui/RiskReversal";
 
 export default function MaintenanceSection() {
   return (

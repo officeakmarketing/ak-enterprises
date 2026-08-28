@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import AnimatedHeadline from "@/components/AnimatedHeadline";
+import AnimatedHeadline from "@/components/ui/AnimatedHeadline";
 import HeroVideoPlayer from "./HeroVideoPlayer";
-import RiskReversal from "@/components/RiskReversal";
+import RiskReversal from "@/components/ui/RiskReversal";
 
 export default function HeroSection() {
   return (

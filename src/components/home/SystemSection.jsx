@@ -1,4 +1,4 @@
-import ScrollReveal from "@/components/ScrollReveal";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import { Search, Layers, Activity } from "lucide-react";
 
 export default function SystemSection() {

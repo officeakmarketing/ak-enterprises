@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import BackgroundSparkles from "@/components/BackgroundSparkles";
+import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
 
 export default function TrustBar() {
   const metrics = [

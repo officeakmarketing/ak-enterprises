@@ -1,5 +1,5 @@
-import Carousel from "@/components/Carousel";
-import ScrollReveal from "@/components/ScrollReveal";
+import Carousel from "@/components/ui/Carousel";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function GalaCaseStudy() {
   return (

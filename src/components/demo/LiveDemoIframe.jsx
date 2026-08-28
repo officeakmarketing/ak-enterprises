@@ -1,4 +1,4 @@
-import ScrollReveal from "@/components/ScrollReveal";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import AriaDemoWidget from "@/components/home/AriaDemoWidget";
 
 export default function LiveDemoIframe() {

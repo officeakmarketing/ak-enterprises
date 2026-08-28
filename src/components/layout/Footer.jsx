@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
-import BackgroundSparkles from "@/components/BackgroundSparkles";
-import Logo from "@/components/Logo";
+import { usePathname } from "next/navigation";
+import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
+import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isThankYouPage = pathname === "/thank-you";
   return (
     <footer className="relative border-t border-muted-grey/30 pt-16 pb-12 w-full overflow-hidden bg-ink-black">
       <BackgroundSparkles count={40} />
@@ -49,6 +54,20 @@ export default function Footer() {
             Trading as AK Enterprises.
           </div>
 
+          {/* Conditional Legal Links for Thank You Page */}
+          {isThankYouPage && (
+            <div className="flex flex-col items-center md:items-end gap-2.5 pt-6 md:pt-0">
+              <Link href="/privacy" className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-warm-grey hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-warm-grey hover:text-white transition-colors">
+                Terms of Service
+              </Link>
+              <Link href="/refunds" className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-warm-grey hover:text-white transition-colors">
+                Refund / Cancellation Policy
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </footer>

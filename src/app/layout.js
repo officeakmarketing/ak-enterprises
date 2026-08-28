@@ -16,9 +16,9 @@ export const metadata = {
   description: "AK Enterprises builds Business Operating Systems for service businesses  the complete infrastructure that captures every lead, follows up automatically, and runs without the owner.",
 };
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import SmoothScroll from "@/components/SmoothScroll";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
 export default function RootLayout({ children }) {
   return (

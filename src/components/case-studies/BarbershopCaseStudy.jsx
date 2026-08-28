@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ScrollReveal from "@/components/ScrollReveal";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import Image from "next/image";
-import Lightbox from "@/components/Lightbox";
+import Lightbox from "@/components/ui/Lightbox";
 
 export default function BarbershopCaseStudy() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);

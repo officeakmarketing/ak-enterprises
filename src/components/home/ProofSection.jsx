@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedCounter from "@/components/AnimatedCounter";
-import Lightbox from "@/components/Lightbox";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import Lightbox from "@/components/ui/Lightbox";
 
 export default function ProofSection() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);

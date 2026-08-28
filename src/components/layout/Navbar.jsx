@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import Logo from "@/components/Logo";
+import Logo from "@/components/ui/Logo";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isThankYouPage = pathname === "/thank-you";
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -25,11 +28,12 @@ export default function Navbar() {
     { name: "Case Studies", href: "/case-studies" },
     { name: "The Demo", href: "/demo" },
     { name: "About", href: "/about" },
+    { name: "Thank You Screen", href: "/thank-you" },
   ];
 
   return (
     <>
-      <nav className="w-full sticky top-0 z-50 bg-[#0b0b0c]/95 border-b border-muted-grey/20">
+      <nav className={`w-full z-50 bg-[#0b0b0c]/95 border-b border-muted-grey/20 ${isThankYouPage ? "relative" : "sticky top-0"}`}>
         <div className="w-full max-w-[1536px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-12 py-3.5 md:py-4">
           {/* Left side Logo */}
           <div className="flex items-center">

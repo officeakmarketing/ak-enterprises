@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ScrollReveal from "@/components/ScrollReveal";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function TestimonialsSection() {
   const testimonials = [

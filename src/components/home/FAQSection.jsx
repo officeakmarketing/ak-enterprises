@@ -1,5 +1,5 @@
-import FAQItem from "@/components/FAQItem";
-import ScrollReveal from "@/components/ScrollReveal";
+import FAQItem from "@/components/ui/FAQItem";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function FAQSection() {
   const faqs = [
