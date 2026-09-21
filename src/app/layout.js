@@ -19,6 +19,7 @@ export const metadata = {
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import CookieConsent from "@/components/ui/CookieConsent";
 
 export default function RootLayout({ children }) {
   return (
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
           <main className="flex-1">{children}</main>
           <Footer />
         </SmoothScroll>
+        <CookieConsent />
       </body>
     </html>
   );
