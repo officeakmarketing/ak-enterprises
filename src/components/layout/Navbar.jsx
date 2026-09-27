@@ -30,7 +30,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "What We Build", href: "/what-we-build" },
     { name: "Case Studies", href: "/case-studies" },
-    { name: "The Demo", href: "/demo" },
+    { name: "Aria AI", href: "/aria" },
     { name: "About", href: "/about" },
   ];
 

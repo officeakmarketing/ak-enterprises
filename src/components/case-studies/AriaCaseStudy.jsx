@@ -68,7 +68,7 @@ export default function AriaCaseStudy() {
 
           <div className="text-center">
             <Link
-              href="/demo"
+              href="/aria"
               className="inline-block text-brand-gold hover:text-white transition-colors duration-200 text-sm font-bold tracking-widest uppercase underline underline-offset-8 decoration-brand-gold/30 hover:decoration-white/50"
             >
               See the Live Demo &rarr;

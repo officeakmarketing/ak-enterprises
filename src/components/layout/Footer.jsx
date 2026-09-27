@@ -38,8 +38,8 @@ export default function Footer() {
           <Link href="/case-studies" className="hover:text-white transition">
             Case Studies
           </Link>
-          <Link href="/demo" className="hover:text-white transition">
-            The Demo
+          <Link href="/aria" className="hover:text-white transition">
+            Aria AI
           </Link>
           <Link href="/about" className="hover:text-white transition">
             About
