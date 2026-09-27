@@ -42,36 +42,15 @@ export default function DemoSection() {
           </div>
         </ScrollReveal>
 
-        {/* Frosted Glass Plate Presentation */}
+        {/* Direct Widget Presentation (Unboxed) */}
         <ScrollReveal delay={0.1}>
-          <div className="relative -mx-4 sm:mx-0 mb-8 sm:mb-12">
+          <div className="relative w-full flex justify-center mb-10 sm:mb-16 mt-6 sm:mt-10">
+            {/* Extremely soft background glow to gently lift the widget off the pure black void without boxing it */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-[800px] h-[80%] bg-brand-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
             
-            {/* Ambient Base Glow (Behind Glass) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-brand-gold/10 blur-[100px] rounded-full pointer-events-none"></div>
-
-            {/* The Glass Plate */}
-            <div className="relative w-full rounded-none sm:rounded-3xl overflow-hidden bg-white/[0.01] backdrop-blur-[32px] shadow-[0_30px_80px_-15px_rgba(0,0,0,0.8),inset_0_1px_0px_rgba(255,255,255,0.05),inset_0_-1px_0px_rgba(255,255,255,0.01)] border border-white/[0.03]">
-              
-              {/* Subtle top edge highlight */}
-              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-gold/20 to-transparent opacity-50"></div>
-
-              {/* Plate Body */}
-              <div className="relative w-full py-12 sm:py-16 md:py-20 px-3 sm:px-6 lg:px-12 flex flex-col items-center">
-                
-                {/* Floating micro-accents */}
-                <div className="absolute top-8 left-8 w-1 h-1 rounded-full bg-brand-gold/30"></div>
-                <div className="absolute bottom-8 right-8 w-1 h-1 rounded-full bg-brand-gold/30"></div>
-
-                {/* Optional context label (Subtle) */}
-                <div className="absolute top-6 left-1/2 -translate-x-1/2 text-[9px] uppercase tracking-[0.3em] font-medium text-warm-grey/30">
-                  Interactive Module
-                </div>
-
-                {/* The Widget */}
-                <div className="relative z-10 w-full max-w-full overflow-hidden flex justify-center mt-6">
-                  <AriaDemoWidget />
-                </div>
-              </div>
+            {/* The Widget */}
+            <div className="relative z-10 w-full max-w-full overflow-hidden flex justify-center">
+              <AriaDemoWidget />
             </div>
           </div>
         </ScrollReveal>

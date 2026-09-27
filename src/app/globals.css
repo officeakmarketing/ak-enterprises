@@ -98,3 +98,8 @@ body {
   max-width: 100%;
   width: 100%;
 }
+
+/* Fix for iframes trapping smooth scroll events (Lenis) */
+html.lenis-scrolling iframe {
+  pointer-events: none;
+}
