@@ -49,7 +49,7 @@ export default function CTASection() {
           {/* CTA Button (Responsive Full-Width on Mobile) */}
           <div className="w-full flex justify-center mb-4">
             <Link
-              href="/contact"
+              href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-8 sm:px-12 py-4 sm:py-5 rounded-xl text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto text-center shadow-lg"
             >
               {/* White specular glare sweep */}
@@ -60,7 +60,7 @@ export default function CTASection() {
 
           {/* Sub-Notice */}
           <p className="text-warm-grey/60 text-[11px] sm:text-xs font-mono">
-            Takes 60 seconds to book • Confirmed within 24 hours
+            Takes 60 seconds. Pick a time and we confirm instantly.
           </p>
         </ScrollReveal>
       </div>

@@ -37,7 +37,7 @@ export default function MaintenanceSection() {
           {/* CTA */}
           <div>
             <Link
-              href="/contact"
+              href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-8 py-4 lg:px-10 lg:py-5 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
               <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>

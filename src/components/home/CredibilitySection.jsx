@@ -12,19 +12,19 @@ export default function CredibilitySection() {
         <div className="space-y-5 sm:space-y-6">
           <div className="border-b border-muted-grey/20 pb-5 sm:pb-6 flex flex-col md:flex-row md:items-center justify-between gap-1.5 md:gap-4">
             <div className="font-bold text-base sm:text-lg md:text-xl text-white">
-              Business Lounge Romania  Cover Feature
+              Business Lounge Romania, Special Guest and Award Recipient
             </div>
             <div className="text-warm-grey/85 text-xs sm:text-sm md:text-right max-w-md leading-relaxed font-light">
-              National business magazine. Cover and 5-page editorial. October 2026.
+              National business magazine. Cover feature, special guest appearance, and award recipient. October 2026.
             </div>
           </div>
 
           <div className="border-b border-muted-grey/20 pb-5 sm:pb-6 flex flex-col md:flex-row md:items-center justify-between gap-1.5 md:gap-4">
             <div className="font-bold text-base sm:text-lg md:text-xl text-white">
-              The Business Show London  Exhibitor
+              The Business Show London, Stand B1354
             </div>
             <div className="text-warm-grey/85 text-xs sm:text-sm md:text-right max-w-md leading-relaxed font-light">
-              Stand B1354. ExCeL London. 25,000 decision makers. November 2026.
+              ExCeL London. Europe's largest business show. 25,000 decision makers. November 2026.
             </div>
           </div>
 

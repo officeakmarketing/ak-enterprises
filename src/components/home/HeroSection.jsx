@@ -8,28 +8,28 @@ import RiskReversal from "@/components/ui/RiskReversal";
 export default function HeroSection() {
   return (
     <section className="relative bg-ink-black lg:h-[calc(100vh-4.25rem)] lg:min-h-[calc(100vh-4.25rem)] 2xl:h-[calc(100vh-4.75rem)] 2xl:min-h-[calc(100vh-4.75rem)] flex items-center border-b border-muted-grey/20 overflow-hidden">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-16 pb-20 sm:pt-24 sm:pb-28 lg:py-32 flex flex-col items-center justify-center z-10 relative text-center">
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 lg:py-12 flex flex-col items-center justify-center z-10 relative text-center">
         {/* Centered Copy & Actions */}
         <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
           {/* Refined Glowing Badge */}
-          <div className="inline-flex items-center justify-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-brand-gold tracking-[0.2em] sm:tracking-[0.24em] uppercase text-[9px] sm:text-[10px] lg:text-xs mb-6 sm:mb-8 font-bold">
+          <div className="inline-flex items-center justify-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-brand-gold tracking-[0.2em] sm:tracking-[0.24em] uppercase text-[9px] sm:text-[10px] lg:text-xs mb-4 font-bold">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
             <span>Business Operating Systems</span>
           </div>
 
           <AnimatedHeadline
             text={"Your business is losing clients right now. Not to your competitors.\nTo your own broken systems."}
-            className="text-[2rem] sm:text-[2.5rem] md:text-4xl lg:text-4xl xl:text-5xl mb-5 sm:mb-6 lg:mb-8 leading-[1.15] lg:leading-[1.1] font-serif italic text-white"
+            className="text-[2rem] sm:text-[2.5rem] md:text-4xl lg:text-4xl xl:text-5xl mb-4 lg:mb-5 leading-[1.15] lg:leading-[1.1] font-serif italic text-white"
             highlightWords={["broken", "systems"]}
           />
 
-          <p className="text-warm-grey/85 text-[1rem] sm:text-base lg:text-base xl:text-lg max-w-[90%] sm:max-w-2xl mx-auto mb-8 sm:mb-10 leading-[1.65] lg:leading-relaxed font-light">
-            AK Enterprises builds Business Operating Systems for service businesses the complete infrastructure that captures every lead, follows up automatically, and runs without the owner. UK. USA. Romania.
+          <p className="text-warm-grey/85 text-[1rem] sm:text-base lg:text-base xl:text-lg max-w-[90%] sm:max-w-2xl mx-auto mb-6 lg:mb-8 leading-[1.65] lg:leading-relaxed font-light">
+            AK Enterprises builds Business Operating Systems for service businesses. The complete infrastructure that captures every lead, follows up automatically, and runs without the owner. UK. USA. EU.
           </p>
 
           <div className="flex flex-col items-center gap-4 w-full sm:w-auto">
             <Link
-              href="/contact"
+              href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 py-4 sm:py-3.5 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 rounded-lg text-xs lg:text-[11px] xl:text-xs 2xl:text-sm font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-fit text-center shadow-md"
             >
               {/* White specular glare sweep on hover */}
@@ -38,6 +38,10 @@ export default function HeroSection() {
             </Link>
 
             <RiskReversal />
+            
+            <div className="text-[10px] sm:text-[11px] text-brand-gold font-mono tracking-widest uppercase mt-1 lg:mt-2 text-center opacity-90">
+              One client. £237,355 in verified revenue. 14 months.
+            </div>
           </div>
         </div>
 

@@ -52,7 +52,7 @@ export default function PainSection() {
         {/* CTA (Responsive Mobile-Friendly Secondary Link) */}
         <ScrollReveal delay={0.3} className="text-left md:text-center mt-10 sm:mt-12">
           <Link
-            href="/contact"
+            href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
             className="group inline-block text-warm-grey hover:text-brand-gold border-b border-warm-grey/30 hover:border-brand-gold pb-1 font-bold uppercase tracking-[0.14em] sm:tracking-widest text-[11px] sm:text-xs md:text-sm leading-relaxed transition-all"
           >
             <span>Find out what your business is losing  book a free audit</span>

@@ -8,6 +8,9 @@ import Logo from "@/components/ui/Logo";
 export default function Footer() {
   const pathname = usePathname();
   const isThankYouPage = pathname === "/thank-you";
+  const isBusinessShowPage = pathname === "/businessshow";
+
+  if (isBusinessShowPage) return null;
   return (
     <footer className="relative border-t border-muted-grey/30 pt-16 pb-12 w-full overflow-hidden bg-ink-black">
       <BackgroundSparkles count={40} />
@@ -41,7 +44,7 @@ export default function Footer() {
           <Link href="/about" className="hover:text-white transition">
             About
           </Link>
-          <Link href="/contact" className="hover:text-white transition">
+          <Link href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
             Contact
           </Link>
         </div>

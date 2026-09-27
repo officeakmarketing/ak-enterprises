@@ -42,7 +42,7 @@ export default function AboutFounders() {
 
           <div className="flex justify-center w-full px-4 sm:px-0">
             <Link
-              href="/contact"
+              href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 sm:px-10 py-4 sm:py-5 rounded-lg font-bold uppercase tracking-widest overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md text-center w-full sm:w-auto"
             >
               <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-1000 ease-out pointer-events-none"></span>

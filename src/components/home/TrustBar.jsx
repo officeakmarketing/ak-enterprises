@@ -5,8 +5,8 @@ import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
 
 export default function TrustBar() {
   const metrics = [
-    { value: "5", label: "ACTIVE CLIENTS" },
-    { value: "UK & USA", label: "OPERATIONS" },
+    { value: "6", label: "ACTIVE CLIENTS" },
+    { value: "UK, USA & EU", label: "OPERATIONS" },
     { value: "£237K+", label: "VERIFIED REVENUE" },
     { value: "LIVE", label: "AI DEPLOYMENT" },
   ];
@@ -20,14 +20,14 @@ export default function TrustBar() {
 
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 relative z-10">
         {/* 2x2 Grid on Mobile, Horizontal Flex Row on Desktop */}
-        <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-y-8 gap-x-2 md:gap-x-6 lg:gap-12">
+        <div className="grid grid-cols-2 md:flex md:flex-wrap xl:flex-nowrap items-center justify-center gap-y-8 gap-x-2 md:gap-x-4 lg:gap-8 xl:gap-12 w-full">
           {metrics.map((metric, idx) => (
             <React.Fragment key={idx}>
-              <div className="flex flex-col md:flex-row items-center md:items-baseline justify-center gap-1.5 md:gap-3 shrink-0">
-                <span className={`font-bold font-sans text-gradient-gold-high-contrast tracking-tight ${metric.value === '5' ? 'text-3xl md:text-[1.7rem]' : 'text-xl sm:text-2xl'}`}>
+              <div className="flex flex-col md:flex-row items-center md:items-baseline justify-center gap-1.5 md:gap-2 lg:gap-3 shrink-0">
+                <span className={`font-bold font-sans text-gradient-gold-high-contrast tracking-tight ${idx === 0 ? 'text-3xl md:text-[1.5rem] lg:text-[1.7rem]' : 'text-xl sm:text-2xl md:text-xl lg:text-2xl whitespace-nowrap'}`}>
                   {metric.value}
                 </span>
-                <span className="text-[9px] sm:text-[10px] md:text-xs font-sans tracking-[0.15em] md:tracking-[0.25em] text-warm-grey/60 uppercase mt-1 md:mt-0 text-center">
+                <span className="text-[9px] sm:text-[10px] md:text-[9.5px] lg:text-xs font-sans tracking-[0.15em] md:tracking-[0.15em] lg:tracking-[0.25em] text-warm-grey/60 uppercase mt-1 md:mt-0 text-center whitespace-nowrap">
                   {metric.label}
                 </span>
               </div>

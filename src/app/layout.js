@@ -13,7 +13,7 @@ const sourceSerif4 = Source_Serif_4({
 
 export const metadata = {
   title: "AK Enterprises | Business Operating Systems",
-  description: "AK Enterprises builds Business Operating Systems for service businesses  the complete infrastructure that captures every lead, follows up automatically, and runs without the owner.",
+  description: "AK Enterprises builds Business Operating Systems for service businesses. The complete infrastructure that captures every lead, follows up automatically, and runs without the owner. UK. USA. EU.",
 };
 
 import Navbar from "@/components/layout/Navbar";

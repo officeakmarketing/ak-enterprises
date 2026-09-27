@@ -85,7 +85,7 @@ export default function ThankYouPage() {
               
               <div className="grid grid-cols-[40px_1fr] gap-y-2 mb-6">
                 <span className="text-[#70757a]">When</span>
-                <span>Wed Apr 22, 2026 12:30am – 1:15am (IST)</span>
+                <span>Wed Apr 22, 2026 12:30am to 1:15am (IST)</span>
                 
                 <span className="text-[#70757a]">Where</span>
                 <a href="#" className="text-[#1a73e8] hover:underline break-all">https://meet.google.com/fxh-trxz-zsp</a>
