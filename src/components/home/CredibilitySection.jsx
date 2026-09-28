@@ -1,6 +1,6 @@
 export default function CredibilitySection() {
   return (
-    <section className="w-full py-14 sm:py-18 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="text-brand-gold text-xs sm:text-sm tracking-widest uppercase mb-3 sm:mb-4 font-bold">
           As Seen
