@@ -8,8 +8,8 @@ export default function GalaCaseStudy() {
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
 
           {/* HEADER ROW */}
-          <div className="mb-10 md:mb-14">
-            <h2 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-serif italic text-white max-w-4xl leading-[1.15]">
+          <div className="mb-8 md:mb-14 -mx-2 sm:mx-0 px-2 sm:px-0">
+            <h2 className="text-[1.45rem] sm:text-4xl md:text-5xl lg:text-6xl font-serif italic text-white max-w-4xl leading-[1.25] sm:leading-[1.15]">
               2 million simultaneous users. One platform. Zero failures.
             </h2>
           </div>

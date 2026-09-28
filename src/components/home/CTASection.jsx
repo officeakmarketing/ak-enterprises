@@ -25,7 +25,7 @@ export default function CTASection() {
           </h2>
 
           {/* Body Narrative */}
-          <div className="text-warm-grey/90 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto space-y-4 mb-8 sm:mb-10 font-light">
+          <div className="text-warm-grey/90 text-[0.85rem] sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto space-y-4 mb-8 sm:mb-10 font-light">
             <p>
               We look at your lead capture, follow-up process, operational workflows, and reporting visibility. We identify every gap and quantify exactly what it is costing you. We show you what a Business Operating System would look like for your specific business.
             </p>
@@ -35,14 +35,18 @@ export default function CTASection() {
           </div>
 
           {/* Guarantee Card */}
-          <div className="bg-[#0e0e10]/95 border border-brand-gold/30 p-5 sm:p-7 max-w-2xl mx-auto rounded-2xl mb-8 sm:mb-10 shadow-lg relative z-10">
+          <div className="bg-[#0e0e10]/95 border border-brand-gold/30 p-5 sm:p-7 max-w-2xl mx-auto rounded-2xl mb-8 sm:mb-10 shadow-lg relative z-10 flex flex-col gap-3">
             <RiskReversal className="italic" />
+            <div className="w-full h-px bg-brand-gold/10"></div>
+            <p className="text-[11px] sm:text-xs text-brand-gold/90 font-mono tracking-wide font-medium uppercase mt-1">
+              You own the system. No subscription. No vendor lock-in. If you ever leave, the system is yours.
+            </p>
           </div>
 
           {/* Client Limit Scarcity Banner */}
           <div className="mb-8">
             <span className="inline-block text-[10px] sm:text-xs font-mono font-bold tracking-[0.16em] sm:tracking-widest text-brand-gold uppercase bg-brand-gold/10 border border-brand-gold/25 px-3.5 py-1.5 rounded-md">
-              We take on a maximum of 4 new clients per month. Current availability: 2 slots.
+              Last updated: September 2026. 2 slots remaining.
             </span>
           </div>
 

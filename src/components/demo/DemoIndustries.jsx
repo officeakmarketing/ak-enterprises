@@ -37,65 +37,54 @@ export default function DemoIndustries() {
           </div>
 
           <div className="w-full max-w-6xl mx-auto">
-            {/* Desktop Table Header */}
-            <div className="hidden lg:grid grid-cols-12 gap-8 pb-5 border-b border-brand-gold/30 text-[10px] tracking-[0.2em] uppercase font-bold text-brand-gold">
-              <div className="col-span-3">Industry</div>
-              <div className="col-span-4">The Problem</div>
-              <div className="col-span-5">What the System Does</div>
-            </div>
-
-            {/* Industry Rows */}
-            <div className="flex flex-col gap-6 lg:gap-0">
+            {/* 2x2 Grid Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {industries.map((ind, i) => (
                 <div
                   key={i}
-                  className="flex flex-col lg:grid lg:grid-cols-12 gap-4 lg:gap-8 lg:items-center py-6 sm:py-8 lg:border-b lg:border-white/10 group bg-[#111112] lg:bg-transparent p-6 lg:p-0 rounded-2xl lg:rounded-none border border-white/5 lg:border-none relative overflow-hidden"
+                  className="group relative p-8 sm:p-10 bg-[#0e0e10]/80 rounded-2xl border border-muted-grey/20 hover:border-brand-gold/40 transition-colors duration-500 overflow-hidden"
                 >
-                  {/* Mobile Mobile subtle top-gradient highlight */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold/20 via-transparent to-transparent lg:hidden"></div>
+                  {/* Subtle Hover Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                  {/* Industry Title */}
-                  <div className="lg:col-span-3">
-                    <h3 className="font-bold text-white text-xl sm:text-2xl flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-gold hidden lg:block opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  <div className="relative z-10">
+                    {/* Industry Title */}
+                    <h3 className="text-2xl sm:text-3xl font-serif italic text-brand-gold mb-6">
                       {ind.title}
                     </h3>
-                  </div>
 
-                  {/* Problem Block */}
-                  <div className="lg:col-span-4 lg:pr-8">
-                    <div className="text-white/40 text-[9px] font-bold uppercase tracking-widest mb-1.5 lg:hidden">
-                      The Problem
-                    </div>
-                    <p className="text-warm-grey/80 text-sm sm:text-base leading-relaxed font-light">
-                      {ind.problem}
-                    </p>
-                  </div>
+                    {/* Narrative Block */}
+                    <div className="space-y-5">
+                      <p className="text-warm-grey/70 text-sm sm:text-[0.95rem] font-light leading-relaxed">
+                        <span className="block font-bold text-warm-grey/50 uppercase tracking-[0.15em] text-[10px] mb-1.5">
+                          The Problem
+                        </span>
+                        {ind.problem}
+                      </p>
 
-                  {/* Solution Block */}
-                  <div className="lg:col-span-5">
-                    <div className="text-brand-gold text-[9px] font-bold uppercase tracking-widest mb-1.5 lg:hidden mt-2">
-                      What The System Does
+                      <p className="text-white text-sm sm:text-[0.95rem] font-light leading-relaxed border-l-2 border-brand-gold/40 pl-4">
+                        <span className="block font-bold text-brand-gold uppercase tracking-[0.15em] text-[10px] mb-1.5">
+                          What Aria Does
+                        </span>
+                        {ind.solution}
+                      </p>
                     </div>
-                    <p className="text-white text-sm sm:text-base leading-relaxed font-light pl-4 lg:pl-0 border-l-2 border-brand-gold/40 lg:border-none">
-                      {ind.solution}
-                    </p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* CTA */}
-            <div className="mt-16 sm:mt-24 flex justify-center px-4 sm:px-0">
+            <div className="mt-12 sm:mt-16 flex justify-center px-4 sm:px-0">
               <Link
                 href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 sm:px-10 py-5 sm:py-5 rounded-lg font-bold uppercase tracking-widest overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md text-center w-full sm:w-auto"
+                className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 sm:px-10 py-3.5 sm:py-5 rounded-lg font-bold uppercase tracking-widest overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md text-center w-full sm:w-auto"
               >
                 <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-1000 ease-out pointer-events-none"></span>
 
                 {/* Mobile Layout */}
                 <span className="relative z-10 flex flex-col items-center sm:hidden w-full">
-                  <span className="text-[13px] tracking-[0.2em] mb-2 text-ink-black">Book a Free Audit</span>
+                  <span className="text-[13px] tracking-[0.2em] mb-1.5 text-ink-black">Book a Free Audit</span>
                   <span className="flex items-center justify-center gap-2 w-full text-[9px] opacity-75">
                     <span className="h-px bg-ink-black/20 flex-1 max-w-[30px]"></span>
                     See What We Would Build

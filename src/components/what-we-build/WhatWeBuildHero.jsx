@@ -4,11 +4,11 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export default function WhatWeBuildHero() {
   return (
     <section className="w-full min-h-[calc(100vh-4.25rem)] 2xl:min-h-[calc(100vh-4.75rem)] flex flex-col border-b border-muted-grey/20 bg-ink-black overflow-hidden">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 my-auto lg:mt-0 lg:mb-auto pt-8 sm:pt-12 lg:pt-8 xl:pt-10 pb-16 lg:pb-12 xl:pb-20">
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 my-auto pt-8 sm:pt-12 lg:pt-8 xl:pt-10 pb-16 lg:pb-12 xl:pb-20">
         <ScrollReveal>
           {/* HEADLINE */}
           <h1 className="text-[2rem] sm:text-[2.5rem] md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-serif italic text-white leading-[1.2] lg:leading-[1.15] max-w-4xl mb-4 lg:mb-3 xl:mb-5">
-            Business Operating Systems.<br />
+            <span className="not-italic font-normal text-gradient-gold-high-contrast block mb-1 lg:mb-2">Business Operating Systems.</span>
             Built bespoke. Owned by you.
           </h1>
 

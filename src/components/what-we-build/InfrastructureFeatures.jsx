@@ -18,7 +18,7 @@ export default function InfrastructureFeatures() {
       solves: "Slow follow-up costs you clients before the first conversation happens"
     },
     {
-      title: "AI Lead Acquisition System",
+      title: "AI Lead Acquisition System (a system that qualifies and routes inbound leads automatically without staff involvement)",
       does: "Captures, qualifies, and routes leads without any staff involvement",
       solves: "Your best leads require too much manual effort to capture and qualify"
     },
@@ -44,7 +44,7 @@ export default function InfrastructureFeatures() {
     },
     {
       title: "CRM Integration",
-      does: "Integrates with your existing CRM \u2014 no replacement required unless wanted",
+      does: "Integrates with your existing CRM  no replacement required unless wanted",
       solves: "Your tools do not talk to each other and data lives in silos"
     }
   ];
@@ -72,13 +72,13 @@ export default function InfrastructureFeatures() {
           {components.map((component, index) => (
             <ScrollReveal key={index} delay={index * 0.05}>
               <div className="flex flex-col lg:flex-row lg:border-b lg:border-white/[0.06] py-0 lg:py-8 group hover:bg-white/[0.02] transition-colors duration-300">
-                
+
                 {/* Mobile Card Layout vs Desktop Row Layout */}
                 <div className="flex flex-col lg:contents bg-[#111112] lg:bg-transparent border border-white/5 lg:border-none rounded-2xl lg:rounded-none p-6 lg:p-0 mb-4 lg:mb-0 relative overflow-hidden">
-                  
+
                   {/* Subtle mobile top highlight */}
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold/20 to-brand-gold/0 lg:hidden"></div>
-                  
+
                   {/* Header: Component Name */}
                   <div className="lg:w-[28%] lg:pr-8 mb-5 lg:mb-0 flex items-center">
                     <h3 className="text-white font-serif text-2xl italic group-hover:text-brand-gold transition-colors duration-300">

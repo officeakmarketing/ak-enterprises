@@ -128,7 +128,7 @@ export default function Carousel() {
       >
         {/* Sliding Track with Real-Time Finger Follow */}
         <div
-          className={`flex h-[340px] sm:h-[420px] md:h-[480px] lg:h-[460px] xl:h-[520px] 2xl:h-[560px] w-full ${
+          className={`flex h-[420px] sm:h-[480px] md:h-[480px] lg:h-[460px] xl:h-[520px] 2xl:h-[560px] w-full ${
             isDragging
               ? "transition-none"
               : "transition-transform duration-600 ease-[cubic-bezier(0.25,1,0.5,1)]"

@@ -3,12 +3,12 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export default function CaseStudiesHero() {
   return (
     <section className="w-full flex flex-col border-b border-muted-grey/20 bg-ink-black overflow-hidden">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-16 sm:pt-20 lg:pt-24 pb-16 lg:pb-16 xl:pb-20">
+      <div className="w-full max-w-[1536px] mx-auto px-2.5 sm:px-6 lg:px-8 xl:px-12 pt-16 sm:pt-20 lg:pt-24 pb-16 lg:pb-16 xl:pb-20">
         <ScrollReveal>
           {/* HEADLINE */}
-          <h1 className="text-[2rem] sm:text-[2.5rem] md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-serif italic text-white leading-[1.2] lg:leading-[1.15] max-w-4xl mb-4 lg:mb-3 xl:mb-5">
-            Real systems. Documented results.<br />
-            Every number verified.
+          <h1 className="text-[1.85rem] sm:text-[2.5rem] md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-serif italic text-white leading-[1.2] lg:leading-[1.15] max-w-4xl mb-4 lg:mb-3 xl:mb-5">
+            Real systems. <span className="not-italic font-normal text-gradient-gold-high-contrast block sm:inline mt-1 sm:mt-0">Documented results.</span><br className="hidden sm:block" />
+            <span className="block mt-1 sm:mt-0">Every number verified.</span>
           </h1>
 
           {/* BODY */}

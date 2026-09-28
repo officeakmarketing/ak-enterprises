@@ -5,7 +5,7 @@ import CTASection from "@/components/home/CTASection";
 
 export default function Demo() {
   return (
-    <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <main className="w-full">
       <DemoHero />
       <LiveDemoIframe />
       <DemoIndustries />

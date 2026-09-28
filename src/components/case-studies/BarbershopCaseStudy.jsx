@@ -14,8 +14,8 @@ export default function BarbershopCaseStudy() {
         <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
 
           {/* HEADER ROW */}
-          <div className="mb-10 md:mb-14">
-            <h2 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-serif italic text-white max-w-4xl leading-[1.15]">
+          <div className="mb-8 md:mb-14 -mx-2 sm:mx-0 px-2 sm:px-0">
+            <h2 className="text-[1.45rem] sm:text-4xl md:text-5xl lg:text-6xl font-serif italic text-white max-w-4xl leading-[1.25] sm:leading-[1.15]">
               £237,355. 7,208 bookings. 14 months. One barbershop.
             </h2>
           </div>
@@ -67,7 +67,7 @@ export default function BarbershopCaseStudy() {
               {/* Media component */}
               <button
                 onClick={() => setIsLightboxOpen(true)}
-                className="bg-[#111112]/80 w-full flex flex-col items-center justify-center border border-brand-gold/20 rounded-2xl p-2 relative overflow-hidden group cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 focus:ring-offset-ink-black"
+                className="bg-[#111112]/80 w-[calc(100%+2rem)] -mx-4 sm:w-full sm:mx-0 flex flex-col items-center justify-center border-y sm:border sm:border-x-0 border-brand-gold/20 rounded-none sm:rounded-2xl p-0 sm:p-2 relative overflow-hidden group cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 focus:ring-offset-ink-black"
                 aria-label="Enlarge image"
               >
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors z-10 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -77,7 +77,16 @@ export default function BarbershopCaseStudy() {
                     </svg>
                   </div>
                 </div>
-                <Image src="/bright-face-dashboard.png" alt="Revenue Dashboard" width={800} height={500} className="object-contain w-full h-auto rounded-xl shadow-inner group-hover:scale-[1.02] transition-transform duration-700" />
+
+                {/* Mobile Tap Indicator */}
+                <div className="absolute bottom-2 right-2 bg-black/60 backdrop-blur-md text-white/90 text-[9px] uppercase tracking-wider font-bold px-2 py-1 rounded border border-white/10 flex items-center gap-1.5 z-20 lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3 h-3">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                  </svg>
+                  <span>Tap to enlarge</span>
+                </div>
+
+                <Image src="/bright-face-dashboard.png" alt="Revenue Dashboard" width={800} height={500} className="object-contain w-full h-auto rounded-none sm:rounded-xl shadow-inner group-hover:scale-[1.02] transition-transform duration-700" />
               </button>
 
               {/* Results Block - Under the Image */}

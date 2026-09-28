@@ -47,15 +47,20 @@ export default function Navbar() {
 
           {/* Center navigation */}
           <div className="hidden md:flex justify-center items-center gap-7 lg:gap-9 text-xs lg:text-[13px] font-bold tracking-[0.16em] uppercase text-warm-grey/80">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="hover:text-white transition-colors duration-200 whitespace-nowrap"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href || (pathname.startsWith(link.href) && link.href !== '/');
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`transition-colors duration-200 whitespace-nowrap ${
+                    isActive ? "text-brand-gold" : "hover:text-white"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Right side CTA & Mobile Menu */}
@@ -78,7 +83,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3 md:hidden">
               <Link
                 href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-3.5 py-2 rounded-lg text-[10px] font-bold uppercase tracking-wider overflow-hidden shadow-sm active:scale-95 transition-transform"
+                className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-lg text-[9px] sm:text-[10px] font-bold uppercase tracking-wider overflow-hidden shadow-sm active:scale-95 transition-transform whitespace-nowrap"
               >
                 <span className="relative z-10">Book a Free Audit</span>
               </Link>
@@ -118,19 +123,26 @@ export default function Navbar() {
 
           {/* Center Navigation Links (Exact ordered stack) */}
           <div className="flex flex-col gap-6 py-8">
-            {navLinks.map((link, idx) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="group flex items-center justify-between text-2xl sm:text-3xl font-serif italic text-white hover:text-white/80 transition-colors duration-200 border-b border-[#18181a] pb-4"
-              >
-                <span>{link.name}</span>
-                <span className="text-xs font-mono font-bold tracking-widest text-warm-grey/50 group-hover:text-white not-italic">
-                  0{idx + 1} →
-                </span>
-              </Link>
-            ))}
+            {navLinks.map((link, idx) => {
+              const isActive = pathname === link.href || (pathname.startsWith(link.href) && link.href !== '/');
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`group flex items-center justify-between text-2xl sm:text-3xl font-serif italic transition-colors duration-200 border-b border-[#18181a] pb-4 ${
+                    isActive ? "text-brand-gold" : "text-white hover:text-white/80"
+                  }`}
+                >
+                  <span>{link.name}</span>
+                  <span className={`text-xs font-mono font-bold tracking-widest not-italic ${
+                    isActive ? "text-brand-gold" : "text-warm-grey/50 group-hover:text-white"
+                  }`}>
+                    0{idx + 1} →
+                  </span>
+                </Link>
+              );
+            })}
           </div>
 
           {/* Bottom Actions inside overlay */}

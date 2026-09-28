@@ -12,7 +12,7 @@ export default function TrustBar() {
   ];
 
   return (
-    <div className="w-full bg-[#050505] py-8 md:py-10 border-y border-white/5 overflow-hidden relative">
+    <div className="w-full bg-[#050505] py-4 sm:py-6 md:py-10 border-y border-white/5 overflow-hidden relative">
       <BackgroundSparkles count={30} />
       
       {/* Subtle Centered White Spotlight Glow */}
@@ -20,14 +20,14 @@ export default function TrustBar() {
 
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 relative z-10">
         {/* 2x2 Grid on Mobile, Horizontal Flex Row on Desktop */}
-        <div className="grid grid-cols-2 md:flex md:flex-wrap xl:flex-nowrap items-center justify-center gap-y-8 gap-x-2 md:gap-x-4 lg:gap-8 xl:gap-12 w-full">
+        <div className="grid grid-cols-2 md:flex md:flex-wrap xl:flex-nowrap items-center justify-center gap-y-5 sm:gap-y-6 gap-x-2 md:gap-x-4 lg:gap-8 xl:gap-12 w-full">
           {metrics.map((metric, idx) => (
             <React.Fragment key={idx}>
-              <div className="flex flex-col md:flex-row items-center md:items-baseline justify-center gap-1.5 md:gap-2 lg:gap-3 shrink-0">
-                <span className={`font-bold font-sans text-gradient-gold-high-contrast tracking-tight ${idx === 0 ? 'text-3xl md:text-[1.5rem] lg:text-[1.7rem]' : 'text-xl sm:text-2xl md:text-xl lg:text-2xl whitespace-nowrap'}`}>
+              <div className="flex flex-col md:flex-row items-center md:items-baseline justify-center gap-1 md:gap-2 lg:gap-3 shrink-0">
+                <span className={`font-bold font-sans text-gradient-gold-high-contrast tracking-tight ${idx === 0 ? 'text-2xl sm:text-3xl md:text-[1.5rem] lg:text-[1.7rem]' : 'text-lg sm:text-xl md:text-xl lg:text-2xl whitespace-nowrap'}`}>
                   {metric.value}
                 </span>
-                <span className="text-[9px] sm:text-[10px] md:text-[9.5px] lg:text-xs font-sans tracking-[0.15em] md:tracking-[0.15em] lg:tracking-[0.25em] text-warm-grey/60 uppercase mt-1 md:mt-0 text-center whitespace-nowrap">
+                <span className="text-[8.5px] sm:text-[9.5px] md:text-[9.5px] lg:text-xs font-sans tracking-[0.15em] md:tracking-[0.15em] lg:tracking-[0.25em] text-warm-grey/60 uppercase text-center whitespace-nowrap">
                   {metric.label}
                 </span>
               </div>

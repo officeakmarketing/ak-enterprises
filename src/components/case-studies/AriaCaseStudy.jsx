@@ -41,14 +41,14 @@ export default function AriaCaseStudy() {
                   What We Built
                 </h3>
                 <p className="text-warm-grey/90 leading-relaxed text-sm sm:text-base lg:text-lg font-light pl-6 sm:pl-8 border-l border-brand-gold/30">
-                  An AI-powered landlord acquisition system. Prospects submit property details and receive an instant AI-generated guaranteed rent offer within seconds  with zero staff involvement. The system searches live rental listings within 0.25 miles, calculates a personalised offer, and displays the result instantly. Every lead is captured, qualified, routed into the CRM, and followed up automatically.
+                  ARIA (our AI-powered lead qualification platform) designed for landlord acquisition. Prospects submit property details and receive an instant AI-generated guaranteed rent offer within seconds  with zero staff involvement. The system searches live rental listings within 0.25 miles, calculates a personalised offer, and displays the result instantly. Every lead is captured, qualified, routed into the CRM, and followed up automatically.
                 </p>
               </div>
             </div>
 
             {/* Right Column: System Architecture Card (6 cols) */}
-            <div className="lg:col-span-6">
-              <div className="bg-[#0e0e10]/95 border border-muted-grey/25 p-7 sm:p-9 rounded-2xl h-full shadow-xl">
+            <div className="lg:col-span-6 -mx-4 sm:mx-0">
+              <div className="bg-[#0e0e10]/95 border-y sm:border sm:border-x-0 border-muted-grey/25 p-6 sm:p-9 rounded-none sm:rounded-2xl h-full shadow-xl">
                 <h3 className="text-brand-gold tracking-widest uppercase text-xs sm:text-sm font-bold mb-6">
                   System Architecture Delivered
                 </h3>

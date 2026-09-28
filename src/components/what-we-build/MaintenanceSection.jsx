@@ -26,11 +26,13 @@ export default function MaintenanceSection() {
             {/* Subtle left glow */}
             <div className="absolute inset-y-0 left-0 w-8 bg-brand-gold/10 blur-xl pointer-events-none"></div>
             
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 relative z-10">
-              <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 border border-brand-gold/30 rounded-full bg-brand-gold/5">
-                <span className="text-brand-gold text-lg">✦</span>
+            <div className="flex flex-row items-start sm:items-center gap-4 sm:gap-6 relative z-10">
+              <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 border border-brand-gold/30 rounded-full bg-brand-gold/5 mt-1 sm:mt-0">
+                <span className="text-brand-gold text-base sm:text-lg">✦</span>
               </div>
-              <RiskReversal className="text-white text-[0.95rem] sm:text-base lg:text-lg leading-[1.65] lg:leading-relaxed font-light italic" />
+              <p className="text-white text-[0.95rem] sm:text-base lg:text-lg leading-[1.65] lg:leading-relaxed font-light italic">
+                If we cannot find a single gap in your business that is costing you money, we will tell you honestly and you owe us nothing. We have never left an audit empty-handed.
+              </p>
             </div>
           </div>
 

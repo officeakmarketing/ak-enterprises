@@ -34,57 +34,42 @@ export default function AboutGroup() {
       </ScrollReveal>
 
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        {/* Desktop Table Header */}
-        <div className="hidden lg:flex border-b border-brand-gold/30 pb-4 mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold">
-          <div className="w-[30%] pr-6">Division</div>
-          <div className="w-[45%] pr-6">What It Is</div>
-          <div className="w-[25%]">Status</div>
-        </div>
-
-        <div className="flex flex-col">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {divisions.map((div, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
-              <div className="flex flex-col lg:flex-row lg:border-b lg:border-white/[0.06] py-0 lg:py-8 group hover:bg-white/[0.02] transition-colors duration-300">
+              <div className="group relative p-8 sm:p-10 bg-[#0e0e10]/80 rounded-2xl border border-muted-grey/20 hover:border-brand-gold/40 transition-colors duration-500 overflow-hidden h-full flex flex-col">
+                {/* Subtle Hover Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                {/* Mobile Card Layout vs Desktop Row Layout */}
-                <div className="flex flex-col lg:contents bg-[#111112] lg:bg-transparent border border-white/5 lg:border-none rounded-2xl lg:rounded-none p-6 lg:p-0 mb-4 lg:mb-0 relative overflow-hidden w-full">
+                <div className="relative z-10 flex-1 flex flex-col">
+                  {/* Header */}
+                  <h3 className="text-2xl sm:text-3xl font-serif italic text-white group-hover:text-brand-gold transition-colors duration-300 mb-6">
+                    {div.name}
+                  </h3>
 
-                  {/* Subtle mobile top highlight */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-gold/0 via-brand-gold/20 to-brand-gold/0 lg:hidden"></div>
-
-                  {/* Header: Division Name */}
-                  <div className="lg:w-[30%] lg:pr-8 mb-5 lg:mb-0 flex items-center">
-                    <h3 className="text-white font-serif text-3xl md:text-4xl italic group-hover:text-brand-gold transition-colors duration-300">
-                      {div.name}
-                    </h3>
-                  </div>
-
-                  {/* Middle Column: What it does */}
-                  <div className="lg:w-[45%] lg:pr-10 mb-6 lg:mb-0 flex flex-col justify-center">
-                    <div className="lg:hidden text-[10px] font-bold uppercase tracking-[0.2em] text-warm-grey/50 mb-2">What It Is</div>
-                    <p className="text-warm-grey text-base md:text-lg font-light leading-relaxed">
+                  {/* Description */}
+                  <div className="flex-1 mb-8">
+                    <span className="block font-bold text-warm-grey/50 uppercase tracking-[0.15em] text-[10px] mb-2">
+                      What It Is
+                    </span>
+                    <p className="text-warm-grey/80 text-sm sm:text-base font-light leading-relaxed">
                       {div.description}
                     </p>
                   </div>
 
-                  {/* Right Column: Status */}
-                  <div className="lg:w-[25%] flex flex-col justify-center">
-                    <div className="lg:hidden text-[10px] font-bold uppercase tracking-[0.2em] text-brand-gold/90 mb-2 flex items-center gap-2">
+                  {/* Status Footer */}
+                  <div className="pt-6 border-t border-white/5">
+                    <span className="flex items-center gap-2 font-bold text-brand-gold uppercase tracking-[0.15em] text-[10px] mb-2">
                       {div.statusPulse && (
                         <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse shadow-[0_0_8px_rgba(201,169,97,0.5)]"></span>
                       )}
                       Status
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-brand-gold text-lg hidden lg:block opacity-60 group-hover:opacity-100 transition-opacity">↳</span>
-                      <p className={`text-[0.95rem] sm:text-base leading-[1.65] font-normal ${div.statusHighlight ? 'text-white' : 'text-warm-grey/60 italic'}`}>
-                        {div.status}
-                      </p>
-                    </div>
+                    </span>
+                    <p className={`text-sm sm:text-[0.95rem] font-light leading-relaxed ${div.statusHighlight ? 'text-white' : 'text-warm-grey/60 italic'}`}>
+                      {div.status}
+                    </p>
                   </div>
-
                 </div>
-
               </div>
             </ScrollReveal>
           ))}

@@ -7,13 +7,13 @@ export default function NumbersSection() {
       prefix: "£",
       value: "237355",
       suffix: "",
-      label: "Verified revenue \u2014 one client, 14 months",
+      label: "Verified revenue  one client, 14 months",
     },
     {
       prefix: "",
       value: "7208",
       suffix: "",
-      label: "Automated bookings \u2014 zero manual input",
+      label: "Automated bookings  zero manual input",
     },
     {
       prefix: "",

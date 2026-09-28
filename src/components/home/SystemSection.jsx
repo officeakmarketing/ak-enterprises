@@ -9,7 +9,7 @@ export default function SystemSection() {
       title: "AUDIT",
       heading: "We analyse & pinpoint your exact revenue leaks.",
       description:
-        "We analyse your current setup \u2014 lead capture, follow-up, operations, and reporting. We show you exactly what is broken and what it is costing you. The audit is free. You own the findings regardless of whether we work together.",
+        "We analyse your current setup  lead capture, follow-up, operations, and reporting. We show you exactly what is broken and what it is costing you. The audit is free. You own the findings regardless of whether we work together.",
       icon: Search,
     },
     {
@@ -18,7 +18,7 @@ export default function SystemSection() {
       title: "BUILD",
       heading: "We design & deploy your Business Operating System.",
       description:
-        "We design and deploy your Business Operating System \u2014 bespoke to your business, connected end to end, built to run without manual input. Not a template. Not a subscription. Yours.",
+        "We design and deploy your Business Operating System  bespoke to your business, connected end to end, built to run without manual input. Not a template. Not a subscription. Yours.",
       icon: Layers,
     },
     {
@@ -27,21 +27,21 @@ export default function SystemSection() {
       title: "OPERATE",
       heading: "Live execution, maintenance & compounding growth.",
       description:
-        "Your system goes live. We maintain it on an ongoing basis. You keep full ownership. The system compounds over time \u2014 more data, better performance, higher conversion.",
+        "Your system goes live. We maintain it on an ongoing basis. You keep full ownership. The system compounds over time  more data, better performance, higher conversion.",
       icon: Activity,
     },
   ];
 
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-8 lg:py-12 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-18">
+          <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-18 px-2 sm:px-0">
             <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-4 font-bold">
               How It Works
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-white leading-tight mb-3">
+            <h2 className="text-[1.65rem] sm:text-4xl md:text-5xl font-serif italic text-white leading-tight mb-3">
               A proven process. From audit to activation in 4 to 6 weeks.
             </h2>
           </div>

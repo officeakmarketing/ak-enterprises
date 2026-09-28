@@ -2,13 +2,12 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function AboutHero() {
   return (
-    <section className="w-full flex flex-col border-b border-muted-grey/20 bg-ink-black overflow-hidden -mt-12">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-8 sm:pt-12 lg:pt-16 xl:pt-20 pb-10 sm:pb-12 lg:pb-16 flex flex-col justify-start">
+    <section className="w-full flex flex-col border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-16 sm:pt-16 lg:pt-12 xl:pt-12 pb-10 sm:pb-12 lg:pb-16 flex flex-col justify-start">
         <ScrollReveal>
           {/* HEADLINE */}
-          <h1 className="text-[2rem] sm:text-[2.5rem] md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-serif italic text-white leading-[1.2] lg:leading-[1.15] max-w-5xl mb-10 lg:mb-12 xl:mb-16">
-            AK Enterprises is a business group building operating system
-            infrastructure for growing businesses.
+          <h1 className="text-[1.85rem] sm:text-[2.5rem] md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-serif italic text-white leading-[1.2] lg:leading-[1.15] max-w-5xl mb-10 lg:mb-12 xl:mb-16">
+            AK Enterprises is a business group building <span className="not-italic font-normal text-gradient-gold-high-contrast">operating system infrastructure</span> for growing businesses.
           </h1>
 
           {/* TWO COLUMN NARRATIVE (Desktop) / STACKED (Mobile) */}
@@ -29,7 +28,7 @@ export default function AboutHero() {
             <div className="space-y-6 lg:space-y-8">
               <p className="pl-6 border-l border-brand-gold/20">
                 <strong className="text-white font-normal block mb-2">AK Marketing was built to fix that.</strong>
-                The Aria landlord acquisition system. The Bright Face Barber booking and revenue system. The Grace and Power Gala and Legacy and Power Gala event infrastructure. The Holiday Dream Photos booking system across 8 US mall locations.
+                The ARIA (our AI-powered lead qualification platform) landlord acquisition system. The Bright Face Barber booking and revenue system. The Grace and Power Gala and Legacy and Power Gala event infrastructure. The Holiday Dream Photos booking system across 8 US mall locations.
               </p>
               <p>
                 Now we are building AK Enterprises as the group. Services, software,

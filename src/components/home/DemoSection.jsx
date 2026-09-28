@@ -14,7 +14,7 @@ export default function DemoSection() {
   ];
 
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full pt-10 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
         <ScrollReveal>
@@ -49,9 +49,18 @@ export default function DemoSection() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-[800px] h-[80%] bg-brand-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
             
             {/* The Widget */}
-            <div className="relative z-10 w-full max-w-full overflow-hidden flex justify-center">
+            <div className="relative z-10 w-full max-w-full flex justify-center">
               <AriaDemoWidget />
             </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Proof Cross-Reference */}
+        <ScrollReveal delay={0.12}>
+          <div className="w-full text-center mb-12 sm:mb-16 -mt-4 sm:-mt-8">
+            <p className="text-brand-gold/90 font-mono text-xs sm:text-sm tracking-wide max-w-3xl mx-auto border border-brand-gold/20 bg-brand-gold/5 py-3 px-3 sm:px-5 rounded-lg">
+              The same system deployed for a barbershop generated 7,208 bookings in 14 months. The architecture is the same. The configuration is different.
+            </p>
           </div>
         </ScrollReveal>
 

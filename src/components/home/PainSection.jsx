@@ -17,8 +17,8 @@ export default function PainSection() {
           <ScrollReveal delay={0.05}>
             <p>
               The average service business loses between{" "}
-              <span className="text-white font-medium">£40,000 and £120,000 per year</span>{" "}
-              in leads that went cold, bookings that never happened, and clients who chose whoever responded first.
+              <span className="text-white font-medium">£40,000 and £120,000 per year</span>,{" "}
+              based on audits conducted across our active client base.
             </p>
           </ScrollReveal>
 
