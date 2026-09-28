@@ -3,7 +3,7 @@ export default function robots() {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/thank-you", "/businessshow", "/api/*"],
+      disallow: ["/thank-you", "/business-show", "/api/*"],
     },
     sitemap: "https://akenterprises.io/sitemap.xml",
   };

@@ -8,7 +8,7 @@ import Logo from "@/components/ui/Logo";
 export default function Footer() {
   const pathname = usePathname();
   const isThankYouPage = pathname === "/thank-you";
-  const isBusinessShowPage = pathname === "/businessshow";
+  const isBusinessShowPage = pathname === "/business-show";
 
   if (isBusinessShowPage) return null;
   return (

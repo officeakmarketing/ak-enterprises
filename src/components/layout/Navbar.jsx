@@ -10,7 +10,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const isThankYouPage = pathname === "/thank-you";
-  const isBusinessShowPage = pathname === "/businessshow";
+  const isBusinessShowPage = pathname === "/business-show";
 
   // Hide Navbar completely on the Business Show landing page
   if (isBusinessShowPage) return null;
