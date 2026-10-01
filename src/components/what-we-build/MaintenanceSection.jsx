@@ -17,7 +17,7 @@ export default function MaintenanceSection() {
           <p className="text-warm-grey/85 text-base sm:text-lg lg:text-[1.1rem] leading-relaxed max-w-3xl mx-auto mb-12 lg:mb-16 font-light">
             Every system we build is maintained by us on an ongoing basis. These
             are our systems and our reputation is attached to how they perform.
-            Monthly maintenance covers monitoring, updates, optimisations,
+            Monthly maintenance covers monitoring, updates, optimizations,
             integrations, and direct support. Minimum four months from go-live.
           </p>
 

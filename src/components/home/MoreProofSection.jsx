@@ -5,7 +5,7 @@ import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 export default function MoreProofSection() {
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-32 sm:py-40 lg:py-48 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <ScrollReveal>
         <div className="w-full 2xl:max-w-[1536px] 2xl:mx-auto bg-[#0e0e10]/95 border-y 2xl:border border-muted-grey/25 2xl:rounded-3xl px-4 py-7 sm:px-8 sm:py-10 md:p-10 lg:p-12 xl:p-14 2xl:p-16 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-8 lg:gap-10 xl:gap-14 items-center">
@@ -21,15 +21,7 @@ export default function MoreProofSection() {
                 2 million simultaneous users. One platform. Built and deployed by AK Enterprises.
               </h2>
 
-              {/* BODY */}
-              <div className="text-warm-grey/85 text-sm sm:text-base 2xl:text-lg leading-relaxed font-light space-y-3 sm:space-y-3.5 mb-5 sm:mb-8 max-w-2xl">
-                <p>
-                  The Grace and Power Gala is an invitation-only luxury awards ceremony in London. We designed and deployed the complete official digital platform handling organiser coordination, partner access, and guest experience across one connected infrastructure.
-                </p>
-                <p>
-                  At peak, the platform handled 2 million simultaneous users without failure, delivering uninterrupted ticket verification, partner portals, and media coverage streaming.
-                </p>
-              </div>
+              {/* BODY REMOVED FOR HOMEPAGE BREATHING ROOM */}
 
               {/* RESULT BLOCK (Responsive Multi-Column Serif Italic Gold Numbers) */}
               <div className="grid grid-cols-3 gap-2 sm:gap-4 py-4 sm:py-5 border-t border-muted-grey/25 mb-5 sm:mb-8">
@@ -62,6 +54,16 @@ export default function MoreProofSection() {
                 </div>
               </div>
 
+              {/* HIGHLIGHTED PULL QUOTE */}
+              <div className="mb-8 border-l-2 border-brand-gold/50 pl-4 py-1">
+                <p className="text-white/90 italic font-serif text-sm sm:text-base leading-relaxed mb-2">
+                  "Extremely professional and highly effective. Very happy with the results."
+                </p>
+                <div className="text-brand-gold text-[9.5px] sm:text-xs not-italic font-bold tracking-widest uppercase">
+                  Mario Paunica, organizer, Grace and Power Gala
+                </div>
+              </div>
+
               {/* LINK */}
               <div className="mb-2 sm:mb-0">
                 <Link
@@ -81,15 +83,6 @@ export default function MoreProofSection() {
                 <Carousel />
               </div>
 
-              {/* TESTIMONIAL Glass Card */}
-              <div className="bg-[#141416]/90 border-l-2 border-brand-gold border-y border-r border-muted-grey/25 p-3.5 sm:p-5 rounded-r-xl">
-                <p className="text-white text-xs sm:text-sm italic leading-relaxed mb-2">
-                  "Extremely professional and highly effective. Very happy with the results."
-                </p>
-                <div className="text-brand-gold text-[9.5px] sm:text-xs not-italic font-bold tracking-widest uppercase">
-                  Mario Paunica, Organiser, Grace and Power Gala
-                </div>
-              </div>
             </div>
           </div>
         </div>

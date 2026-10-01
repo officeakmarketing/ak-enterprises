@@ -30,14 +30,9 @@ export default function NumbersSection() {
   ];
 
   return (
-    <section className="w-full py-14 sm:py-18 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-28 sm:py-36 lg:py-48 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 text-center">
-        {/* Section Headline */}
-        <ScrollReveal>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-12 sm:mb-16 lg:mb-20 font-serif italic text-white leading-tight">
-            The results speak for themselves.
-          </h2>
-        </ScrollReveal>
+        {/* Section Headline Removed for Breathing Room */}
 
         {/* 2x2 Grid on Mobile/Tablet, 4-Column on Desktop */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 sm:gap-y-12 gap-x-4 sm:gap-x-8">

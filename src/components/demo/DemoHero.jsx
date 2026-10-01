@@ -15,7 +15,7 @@ export default function DemoHero() {
           <p className="text-warm-grey/85 text-[0.85rem] sm:text-base lg:text-base xl:text-[1.1rem] font-light leading-relaxed max-w-3xl mx-auto">
             Submit the form below. You will receive exactly what a real prospect
             receives from one of our deployed systems  an instant AI-generated
-            result, personalised to the details you submitted, delivered in seconds.
+            result, personalized to the details you submitted, delivered in seconds.
             <span className="block mt-4 text-white font-bold">No staff. No manual input. Just the system.</span>
           </p>
         </ScrollReveal>

@@ -28,7 +28,7 @@ export default function AboutHero() {
             <div className="space-y-6 lg:space-y-8">
               <p className="pl-6 border-l border-brand-gold/20">
                 <strong className="text-white font-normal block mb-2">AK Marketing was built to fix that.</strong>
-                The ARIA (our AI-powered lead qualification platform) landlord acquisition system. The Bright Face Barber booking and revenue system. The Grace and Power Gala and Legacy and Power Gala event infrastructure. The Holiday Dream Photos booking system across 8 US mall locations.
+                The ARIA (our AI-powered lead qualification platform) landlord acquisition system. The Bright Face Barber booking and revenue system. The Grace and Power Gala and Legacy and Power Gala event infrastructure. The Holiday Dream Photos booking system across 9 US mall locations.
               </p>
               <p>
                 Now we are building AK Enterprises as the group. Services, software,

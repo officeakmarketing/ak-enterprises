@@ -27,44 +27,17 @@ export default function TestimonialsSection() {
         "Extremely professional and highly effective. Very happy with the results.",
       image: "/mario.jpg",
     },
-    {
-      headline: "Faster than promised",
-      name: "Alexandra",
-      company: "Founder, Alla Nails & Beauty",
-      quote:
-        "They delivered exactly what I had in mind. The site was completed faster than promised.",
-      image: "/alexandra.jpg",
-    },
-    {
-      headline: "Perfectly captured the vision",
-      name: "Raluca Uta",
-      company: "CEO, Strategos Analytica",
-      quote:
-        "They perfectly captured the vision of the event and created a beautiful, user-friendly site that made ticket purchasing easy. Professional and incredibly talented.",
-      image: "/raluca.jpg",
-    },
-    {
-      headline: "Delivering real results",
-      name: "Sebastian Pop",
-      company: "Founder, Sebastian Pop Photography",
-      quote:
-        "Their professionalism and commitment to delivering real results truly stood out.",
-      image: "/sebastian.jpg",
-    },
   ];
 
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-32 sm:py-40 lg:py-48 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
         <ScrollReveal>
           <div className="max-w-3xl mb-12 sm:mb-16">
-            <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-4 font-bold">
+            <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase font-bold">
               Testimonials
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-white leading-tight">
-              Trusted by service business owners.
-            </h2>
           </div>
         </ScrollReveal>
 

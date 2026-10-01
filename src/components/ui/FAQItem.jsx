@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Plus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function FAQItem({ question, answer }) {
@@ -18,13 +18,11 @@ export default function FAQItem({ question, answer }) {
           {question}
         </span>
         <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
+          animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          className={`shrink-0 transition-colors ${
-            isOpen ? "text-brand-gold" : "text-warm-grey/60"
-          }`}
+          className="shrink-0 text-brand-gold"
         >
-          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />
+          <Plus className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.5} />
         </motion.div>
       </button>
 

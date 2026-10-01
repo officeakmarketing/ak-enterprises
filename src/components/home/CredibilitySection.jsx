@@ -1,13 +1,10 @@
 export default function CredibilitySection() {
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-32 sm:py-40 lg:py-48 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="text-brand-gold text-xs sm:text-sm tracking-widest uppercase mb-3 sm:mb-4 font-bold">
+        <div className="text-brand-gold text-xs sm:text-sm tracking-widest uppercase mb-8 sm:mb-12 font-bold">
           As Seen
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl mb-8 sm:mb-12 font-serif italic text-white leading-tight">
-          Where AK Enterprises has been.
-        </h2>
 
         <div className="space-y-5 sm:space-y-6">
           <div className="border-b border-muted-grey/20 pb-5 sm:pb-6 flex flex-col md:flex-row md:items-center justify-between gap-1.5 md:gap-4">

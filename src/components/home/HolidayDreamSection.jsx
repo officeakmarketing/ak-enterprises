@@ -10,7 +10,7 @@ import Lightbox from "@/components/ui/Lightbox";
 export default function HolidayDreamSection() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full py-32 sm:py-40 lg:py-48 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <ScrollReveal>
         <div className="w-full 2xl:max-w-[1536px] 2xl:mx-auto bg-[#0e0e10]/95 border-y 2xl:border border-muted-grey/25 2xl:rounded-3xl px-4 py-7 sm:px-8 sm:py-10 md:p-10 lg:p-12 xl:p-14 2xl:p-16 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-8 lg:gap-10 xl:gap-14 items-center">
@@ -26,18 +26,7 @@ export default function HolidayDreamSection() {
                 9 malls. 9 locations. A fully automated booking system serving thousands of families across the United States.
               </h2>
 
-              {/* BODY */}
-              <div className="text-warm-grey/85 text-sm sm:text-base 2xl:text-lg leading-relaxed font-light space-y-3 sm:space-y-3.5 mb-5 sm:mb-8 max-w-2xl">
-                <p>
-                  Holiday Dream Photos is a premium Santa photography experience operating across 9 mall locations in the United States. When they came to AK Enterprises, families had no way to book online. Everything was manual. No booking system. No automated confirmations. No reminders. No payment collection.
-                </p>
-                <p>
-                  We designed, built, and deployed a complete digital infrastructure. A new website built around conversion. An Acuity booking system with 9 separate location calendars, 11 appointment types, custom pricing per location, automated confirmations, and SMS and email reminders. Stripe payment processing integrated directly into every booking flow.
-                </p>
-                <p>
-                  The result is a seamless end-to-end experience. A family finds their nearest location, selects their package, pays, and receives instant confirmation without a single manual touch from the Holiday Dream Photos team. The platform was built to handle a full Christmas season across 9 simultaneous locations in 7 US states.
-                </p>
-              </div>
+              {/* BODY REMOVED FOR HOMEPAGE BREATHING ROOM */}
 
               {/* RESULT BLOCK (Responsive Multi-Column Serif Italic Gold Numbers) */}
               <div className="grid grid-cols-3 gap-2 sm:gap-4 py-4 sm:py-5 border-t border-brand-gold/20 mb-5 sm:mb-8">
@@ -72,7 +61,7 @@ export default function HolidayDreamSection() {
               {/* HIGHLIGHTED PULL QUOTE */}
               <div className="mb-8 border-l-2 border-brand-gold/50 pl-4 py-1">
                 <p className="text-white/90 italic font-serif text-sm sm:text-base leading-relaxed">
-                  "Holiday Dream Photos works with some of the most recognised names in entertainment. Nick Cannon has publicly supported the Black Santa experience, a dedicated session offered at select locations celebrating Black Santa as a cultural milestone for families."
+                  "Holiday Dream Photos works with some of the most recognized names in entertainment. Nick Cannon has publicly supported the Black Santa experience, a dedicated session offered at select locations celebrating Black Santa as a cultural milestone for families."
                 </p>
               </div>
 
@@ -80,7 +69,7 @@ export default function HolidayDreamSection() {
               <div className="mb-2 sm:mb-0">
                 <Link
                   href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-transform hover:scale-[1.02] shadow-md"
+                  className="group inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 rounded-lg text-xs font-bold uppercase tracking-wider transition-transform hover:scale-[1.02] shadow-md w-full sm:w-auto min-h-[56px]"
                 >
                   <span>Book a Free Audit</span>
                 </Link>

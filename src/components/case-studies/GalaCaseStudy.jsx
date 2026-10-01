@@ -25,7 +25,7 @@ export default function GalaCaseStudy() {
                 </h3>
                 <p className="text-warm-grey/90 leading-relaxed text-base sm:text-lg font-light pl-6 sm:pl-8 border-l border-brand-gold/20">
                   An invitation-only luxury awards ceremony in London needed a complete
-                  digital platform managing organiser coordination, partner access,
+                  digital platform managing organizer coordination, partner access,
                   sponsor visibility, and guest experience  across one connected
                   infrastructure.
                 </p>
@@ -49,7 +49,7 @@ export default function GalaCaseStudy() {
                   results."
                 </p>
                 <footer className="text-brand-gold text-[10px] sm:text-xs not-italic font-bold tracking-[0.2em] uppercase relative z-10">
-                  Mario Paunica, Organiser
+                  Mario Paunica, organizer
                 </footer>
               </blockquote>
 

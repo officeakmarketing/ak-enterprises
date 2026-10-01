@@ -7,7 +7,7 @@ export default function TrustBar() {
   const metrics = [
     { value: "6", label: "ACTIVE CLIENTS" },
     { value: "UK, USA & EU", label: "OPERATIONS" },
-    { value: "£237K+", label: "VERIFIED REVENUE" },
+    { value: "$301K+", label: "VERIFIED REVENUE" },
     { value: "LIVE", label: "AI DEPLOYMENT" },
   ];
 

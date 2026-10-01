@@ -44,7 +44,7 @@ export default function BarbershopCaseStudy() {
                 <p className="text-warm-grey/90 leading-relaxed text-base sm:text-lg font-light pl-6 sm:pl-8 border-l border-brand-gold/20">
                   A complete Business Operating System  automated booking, CRM
                   pipeline, instant follow-up sequences, Google Business Profile
-                  optimisation, automated review generation, and a reporting
+                  optimization, automated review generation, and a reporting
                   dashboard. Installed once. Running continuously.
                 </p>
               </div>

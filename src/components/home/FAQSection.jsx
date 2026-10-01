@@ -13,8 +13,9 @@ export default function FAQSection() {
     {
       question: "How is this different from a normal website or SaaS tool?",
       answer: [
-        "A normal website simply displays static information, and SaaS tools add more disconnected subscriptions.",
-        "Our Business Operating Systems connect your lead capture, follow-up, and booking workflows end-to-end. You own the infrastructure permanently  not another monthly template.",
+        "Tools like GoHighLevel, HubSpot, or ClickFunnels are platforms you operate yourself. You pay monthly, configure everything, watch tutorials, and hope it works. Most businesses that subscribe to these tools configure a fraction of what they pay for.",
+        "This is different. We build the system, install it in your business, and run it on an ongoing basis. You never touch the software. You never configure anything. You own the outcome, not a subscription.",
+        "If you want a tool, there are cheaper options. If you want a system that runs without you, this is it."
       ],
     },
     {
@@ -26,7 +27,7 @@ export default function FAQSection() {
     {
       question: "How long does deployment take?",
       answer: [
-        "Most bespoke systems are fully architected, tested, and deployed live within 4 to 6 weeks depending on operational complexity.",
+        "Most custom-built systems are fully architected, tested, and deployed live within 4 to 6 weeks depending on operational complexity.",
       ],
     },
     {
@@ -44,7 +45,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="w-full pt-8 pb-14 sm:py-12 lg:py-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full pt-16 pb-28 sm:py-24 lg:py-32 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">

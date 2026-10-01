@@ -4,7 +4,7 @@ export default function AboutGroup() {
   const divisions = [
     {
       name: "AK Marketing",
-      description: "Services division  bespoke Business Operating System builds for clients",
+      description: "Services division  custom-built Business Operating System builds for clients",
       status: "Active  live clients across UK and USA",
       statusHighlight: true,
       statusPulse: true

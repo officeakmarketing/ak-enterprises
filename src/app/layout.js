@@ -1,4 +1,5 @@
 import { Arimo, Source_Serif_4 } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const arimo = Arimo({
@@ -17,7 +18,7 @@ export const metadata = {
     default: "AK Enterprises | Business Operating Systems",
     template: "%s | AK Enterprises",
   },
-  description: "AK Enterprises builds bespoke Business Operating Systems for service businesses across the UK, USA, and EU. We deploy infrastructures that capture leads, automate follow-ups, and run without the owner.",
+  description: "AK Enterprises builds custom-built Business Operating Systems for service businesses across the UK, USA, and EU. We deploy infrastructures that capture leads, automate follow-ups, and run without the owner.",
   keywords: ["Business Operating Systems", "Automation", "CRM", "Lead Capture", "Business Infrastructure", "AK Enterprises"],
   authors: [{ name: "AK Enterprises" }],
   creator: "AK Enterprises",
@@ -61,6 +62,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import CookieConsent from "@/components/ui/CookieConsent";
+import CalendlyWidget from "@/components/ui/CalendlyWidget";
 
 export default function RootLayout({ children }) {
   return (
@@ -68,6 +70,9 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${arimo.variable} ${sourceSerif4.variable} antialiased`}
     >
+      <head>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+      </head>
       <body className="flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black">
         <SmoothScroll>
           <Navbar />
@@ -75,6 +80,8 @@ export default function RootLayout({ children }) {
           <Footer />
         </SmoothScroll>
         <CookieConsent />
+        <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
+        <CalendlyWidget />
       </body>
     </html>
   );

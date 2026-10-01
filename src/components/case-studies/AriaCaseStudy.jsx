@@ -7,7 +7,7 @@ export default function AriaCaseStudy() {
     "AI valuation engine using live market data within 0.25 miles",
     "Instant guaranteed rent offer with annual income figure & confidence score",
     "Automated CRM integration and real-time lead routing",
-    "Personalised match and waiting list email sequences",
+    "personalized match and waiting list email sequences",
     "Full automation connecting landing page, AI, CRM, and property database",
     "Ongoing maintenance, monitoring and 24/7 support",
   ];
@@ -31,7 +31,7 @@ export default function AriaCaseStudy() {
                   The Situation
                 </h3>
                 <p className="text-warm-grey/90 leading-relaxed text-sm sm:text-base lg:text-lg font-light pl-6 sm:pl-8 border-l border-brand-gold/30">
-                  A UK estate agency with a guaranteed rent programme. Landlord acquisition was entirely manual  staff qualifying properties and calculating offers by hand. Slow, inconsistent, expensive, and unable to capture after-hours leads.
+                  A UK estate agency with a guaranteed rent program. Landlord acquisition was entirely manual  staff qualifying properties and calculating offers by hand. Slow, inconsistent, expensive, and unable to capture after-hours leads.
                 </p>
               </div>
 
@@ -41,7 +41,7 @@ export default function AriaCaseStudy() {
                   What We Built
                 </h3>
                 <p className="text-warm-grey/90 leading-relaxed text-sm sm:text-base lg:text-lg font-light pl-6 sm:pl-8 border-l border-brand-gold/30">
-                  ARIA (our AI-powered lead qualification platform) designed for landlord acquisition. Prospects submit property details and receive an instant AI-generated guaranteed rent offer within seconds  with zero staff involvement. The system searches live rental listings within 0.25 miles, calculates a personalised offer, and displays the result instantly. Every lead is captured, qualified, routed into the CRM, and followed up automatically.
+                  ARIA (our AI-powered lead qualification platform) designed for landlord acquisition. Prospects submit property details and receive an instant AI-generated guaranteed rent offer within seconds  with zero staff involvement. The system searches live rental listings within 0.25 miles, calculates a personalized offer, and displays the result instantly. Every lead is captured, qualified, routed into the CRM, and followed up automatically.
                 </p>
               </div>
             </div>

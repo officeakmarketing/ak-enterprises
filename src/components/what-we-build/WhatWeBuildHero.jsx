@@ -9,7 +9,7 @@ export default function WhatWeBuildHero() {
           {/* HEADLINE */}
           <h1 className="text-[2rem] sm:text-[2.5rem] md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-serif italic text-white leading-[1.2] lg:leading-[1.15] max-w-4xl mb-4 lg:mb-3 xl:mb-5">
             <span className="not-italic font-normal text-gradient-gold-high-contrast block mb-1 lg:mb-2">Business Operating Systems.</span>
-            Built bespoke. Owned by you.
+            Built custom-built. Owned by you.
           </h1>
 
           {/* BODY */}

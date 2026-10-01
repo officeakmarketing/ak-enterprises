@@ -5,7 +5,7 @@ import RiskReversal from "@/components/ui/RiskReversal";
 
 export default function CTASection() {
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 border-b border-muted-grey/20 bg-ink-black overflow-hidden relative">
+    <section className="w-full py-32 sm:py-40 lg:py-48 border-b border-muted-grey/20 bg-ink-black overflow-hidden relative">
       <BackgroundSparkles count={50} />
       
       {/* Subtle Bottom-Center Spotlight Glow to match Footer */}
@@ -54,7 +54,7 @@ export default function CTASection() {
           <div className="w-full flex justify-center mb-4">
             <Link
               href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-8 sm:px-12 py-4 sm:py-5 rounded-xl text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto text-center shadow-lg"
+              className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-8 sm:px-12 rounded-xl text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto min-h-[56px] text-center shadow-lg"
             >
               {/* White specular glare sweep */}
               <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>

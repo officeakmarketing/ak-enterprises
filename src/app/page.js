@@ -21,17 +21,17 @@ export default function Home() {
       <HeroSection />
       <TrustBar />
       <PainSection />
-      <ProofSection />
       <SystemSection />
-      <NumbersSection />
-      <DemoSection />
+      <ProofSection />
       <MoreProofSection />
       <HolidayDreamSection />
-      <CredibilitySection />
-      <TestimonialsSection />
+      <DemoSection />
       <TargetAudienceSection />
-      <CTASection />
+      <TestimonialsSection />
+      <CredibilitySection />
+      <NumbersSection />
       <FAQSection />
+      <CTASection />
     </main>
   );
 }

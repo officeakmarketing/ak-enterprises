@@ -5,7 +5,7 @@ export default function InfrastructureFeatures() {
     {
       title: "Website",
       does: "High-converting, mobile-first, integrated with CRM and booking from day one",
-      solves: "Your site gets visitors but does not convert them into enquiries"
+      solves: "Your site gets visitors but does not convert them into inquiries"
     },
     {
       title: "CRM and Lead Management",
@@ -14,7 +14,7 @@ export default function InfrastructureFeatures() {
     },
     {
       title: "Automated Follow-Up",
-      does: "Instant personalised response to every enquiry within seconds, 24 hours a day",
+      does: "Instant personalized response to every enquiry within seconds, 24 hours a day",
       solves: "Slow follow-up costs you clients before the first conversation happens"
     },
     {

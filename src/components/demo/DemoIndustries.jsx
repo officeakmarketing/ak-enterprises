@@ -10,7 +10,7 @@ export default function DemoIndustries() {
     },
     {
       title: "Legal",
-      problem: "Case enquiries require manual assessment. Partners spend hours on unqualified calls.",
+      problem: "Case inquiries require manual assessment. Partners spend hours on unqualified calls.",
       solution: "Intake form captures case details. AI pre-qualifies. Qualified cases routed instantly with all information captured."
     },
     {
@@ -32,7 +32,7 @@ export default function DemoIndustries() {
 
           <div className="text-center mb-16 lg:mb-24">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif italic text-white max-w-4xl mx-auto leading-tight">
-              The same architecture. Any industry that receives inbound enquiries.
+              The same architecture. Any industry that receives inbound inquiries.
             </h2>
           </div>
 
