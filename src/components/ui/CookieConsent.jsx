@@ -57,9 +57,9 @@ export default function CookieConsent() {
                 <Cookie className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-white font-serif italic text-xl mb-1.5 leading-tight">System Preferences</h3>
+                <h3 className="text-white font-serif italic text-xl mb-1.5 leading-tight">Cookie Preferences</h3>
                 <p className="text-warm-grey text-sm leading-relaxed">
-                  We use cookies to optimize our Business Operating System infrastructure, analyze performance metrics, and ensure your experience runs perfectly.
+                  We use cookies to improve your experience and analyze how our site performs.
                 </p>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function CookieConsent() {
                 className="group relative flex-[2] inline-flex items-center justify-center bg-brand-gold text-ink-black px-4 py-3 rounded-lg text-xs font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-sm"
               >
                 <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>
-                <span className="relative z-10">Initialize Cookies</span>
+                <span className="relative z-10">Accept Cookies</span>
               </button>
               
               <button
