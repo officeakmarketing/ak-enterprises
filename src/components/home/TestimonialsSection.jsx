@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="max-w-3xl mb-12 sm:mb-16">
+          <div className="text-center mx-auto mb-12 sm:mb-16">
             <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase font-bold">
               Testimonials
             </div>
