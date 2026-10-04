@@ -54,7 +54,8 @@ export default function Footer() {
           <div className="text-center md:text-left leading-relaxed text-[11px] sm:text-xs">
             AK Marketing Consulting Ltd. Registered in England and Wales.
             Company No. 17128177.<br />
-            Trading as AK Enterprises.
+            Trading as AK Enterprises.<br />
+            US operations managed by Christopher Strobach, North Carolina.
           </div>
 
           {/* Conditional Legal Links for Thank You Page */}

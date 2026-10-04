@@ -4,23 +4,23 @@ export default function AboutGroup() {
   const divisions = [
     {
       name: "AK Marketing",
-      description: "Services division  custom-built Business Operating System builds for clients",
+      description: "Performance marketing and AI automation systems designed to capture and qualify leads at scale.",
       status: "Active  live clients across UK and USA",
       statusHighlight: true,
       statusPulse: true
     },
     {
-      name: "Nova",
-      description: "AI-native operating system  productised version of what we build manually",
-      status: "Live deployment",
+      name: "AK Enterprises",
+      description: "Custom-built Business Operating Systems. The complete infrastructure that runs service businesses automatically.",
+      status: "Active  live deployments globally",
       statusHighlight: true,
-      statusPulse: false
+      statusPulse: true
     },
     {
-      name: "Future Ventures",
-      description: "Additional business lines built on the same systems principle",
-      status: "In development",
-      statusHighlight: false,
+      name: "Aria AI",
+      description: "Our proprietary AI agent. The productised intelligence engine that powers our client infrastructures.",
+      status: "Live deployment",
+      statusHighlight: true,
       statusPulse: false
     }
   ];

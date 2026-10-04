@@ -45,7 +45,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="w-full pt-16 pb-28 sm:py-24 lg:py-32 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full pt-8 pb-14 sm:py-12 lg:py-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">

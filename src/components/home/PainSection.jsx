@@ -3,7 +3,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function PainSection() {
   return (
-    <section className="w-full bg-ink-black py-32 sm:py-40 lg:py-48 border-b border-muted-grey/20">
+    <section className="w-full bg-ink-black py-8 sm:py-12 lg:py-16 border-b border-muted-grey/20">
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* BODY (Stark & Impactful) */}
         <div className="text-left md:text-center space-y-6 text-white text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] leading-[1.3] font-serif italic max-w-4xl mx-auto">

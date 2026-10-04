@@ -9,7 +9,7 @@ import { Play } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="relative bg-ink-black min-h-[calc(100svh-4.25rem)] lg:h-[calc(100vh-4.25rem)] lg:min-h-[calc(100vh-4.25rem)] 2xl:h-[calc(100vh-4.75rem)] 2xl:min-h-[calc(100vh-4.75rem)] flex items-center border-b border-muted-grey/20 overflow-hidden">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-24 lg:py-8 flex flex-col items-center justify-center z-10 relative text-center">
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-12 lg:py-4 flex flex-col items-center justify-center z-10 relative text-center">
         {/* Centered Copy & Actions */}
         <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
           {/* Refined Glowing Badge */}

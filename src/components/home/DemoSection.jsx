@@ -14,7 +14,7 @@ export default function DemoSection() {
   ];
 
   return (
-    <section className="w-full pt-32 pb-32 sm:pt-40 sm:pb-40 lg:pt-48 lg:pb-48 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+    <section className="w-full pt-8 pb-8 sm:pt-12 sm:pb-12 lg:pt-16 lg:pb-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Section Header */}

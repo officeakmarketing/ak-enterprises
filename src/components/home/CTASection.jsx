@@ -5,7 +5,7 @@ import RiskReversal from "@/components/ui/RiskReversal";
 
 export default function CTASection() {
   return (
-    <section className="w-full py-32 sm:py-40 lg:py-48 border-b border-muted-grey/20 bg-ink-black overflow-hidden relative">
+    <section className="w-full py-8 sm:py-12 lg:py-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden relative">
       <BackgroundSparkles count={50} />
       
       {/* Subtle Bottom-Center Spotlight Glow to match Footer */}
