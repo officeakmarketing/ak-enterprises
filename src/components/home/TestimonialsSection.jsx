@@ -27,6 +27,30 @@ export default function TestimonialsSection() {
         "Extremely professional and highly effective. Very happy with the results.",
       image: "/mario.jpg",
     },
+    {
+      headline: "Faster than promised",
+      name: "Alexandra",
+      company: "Founder, Alla Nails & Beauty",
+      quote:
+        "They delivered exactly what I had in mind. The site was completed faster than promised.",
+      image: "/alexandra.jpg",
+    },
+    {
+      headline: "Perfectly captured the vision",
+      name: "Raluca Uta",
+      company: "CEO, Strategos Analytica",
+      quote:
+        "They perfectly captured the vision of the event and created a beautiful, user-friendly site that made ticket purchasing easy. Professional and incredibly talented.",
+      image: "/raluca.jpg",
+    },
+    {
+      headline: "Delivering real results",
+      name: "Sebastian Pop",
+      company: "Founder, Sebastian Pop Photography",
+      quote:
+        "Their professionalism and commitment to delivering real results truly stood out.",
+      image: "/sebastian.jpg",
+    },
   ];
 
   return (

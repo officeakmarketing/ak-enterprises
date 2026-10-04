@@ -11,6 +11,7 @@ const MoreProofSection = dynamic(() => import("@/components/home/MoreProofSectio
 const HolidayDreamSection = dynamic(() => import("@/components/home/HolidayDreamSection"));
 const CredibilitySection = dynamic(() => import("@/components/home/CredibilitySection"));
 const TestimonialsSection = dynamic(() => import("@/components/home/TestimonialsSection"));
+const TrustGallerySection = dynamic(() => import("@/components/home/TrustGallerySection"));
 const TargetAudienceSection = dynamic(() => import("@/components/home/TargetAudienceSection"));
 const CTASection = dynamic(() => import("@/components/home/CTASection"));
 const FAQSection = dynamic(() => import("@/components/home/FAQSection"));
@@ -28,6 +29,7 @@ export default function Home() {
       <DemoSection />
       <TargetAudienceSection />
       <TestimonialsSection />
+      <TrustGallerySection />
       <CredibilitySection />
       <NumbersSection />
       <FAQSection />

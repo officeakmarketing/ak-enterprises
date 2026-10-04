@@ -13,7 +13,7 @@ export default function HeroSection() {
         {/* Centered Copy & Actions */}
         <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
           {/* Refined Glowing Badge */}
-          <div className="inline-flex items-center justify-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-brand-gold tracking-[0.2em] sm:tracking-[0.24em] uppercase text-[9px] sm:text-[10px] lg:text-xs mb-5 lg:mb-4 font-bold">
+          <div className="inline-flex items-center justify-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-brand-gold tracking-[0.2em] sm:tracking-[0.24em] uppercase text-[9px] sm:text-[10px] lg:text-xs mt-8 sm:mt-12 mb-5 lg:mb-4 font-bold">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
             <span>Business Operating Systems</span>
           </div>
@@ -40,7 +40,7 @@ export default function HeroSection() {
 
             <RiskReversal className="max-w-[85%] mx-auto lg:max-w-none" />
             
-            <div className="text-[9px] sm:text-[11px] text-brand-gold font-mono tracking-wider sm:tracking-widest uppercase mt-4 lg:mt-3 text-center opacity-90 whitespace-nowrap sm:whitespace-normal">
+            <div className="text-[11px] sm:text-[13px] md:text-[15px] text-brand-gold font-bold tracking-[0.15em] uppercase mt-4 text-center drop-shadow-md">
               ONE CLIENT. $301,340 IN VERIFIED REVENUE. 14 MONTHS.
             </div>
           </div>
