@@ -10,6 +10,19 @@ export default function RevenueCalculatorSection() {
   const [leads, setLeads] = useState(30);
   const [closeRate, setCloseRate] = useState(20);
   const [dealValue, setDealValue] = useState(1500);
+  const [currency, setCurrency] = useState("$");
+
+  const handleCurrencyToggle = (newCurrency) => {
+    if (newCurrency === currency) return;
+    
+    setCurrency(newCurrency);
+    // Approximate exchange rate conversion for a "smart" feel
+    if (newCurrency === "$") {
+      setDealValue((prev) => Math.round((prev * 1.3) / 100) * 100);
+    } else {
+      setDealValue((prev) => Math.round((prev / 1.3) / 100) * 100);
+    }
+  };
 
   const lostRevenue = Math.round(leads * (closeRate / 100) * dealValue);
 
@@ -24,9 +37,31 @@ export default function RevenueCalculatorSection() {
             <h2 className="text-[1.75rem] sm:text-[2.5rem] md:text-4xl lg:text-[2.75rem] font-serif italic text-white leading-tight mb-5 lg:mb-6">
               Stop guessing. See exactly what your broken systems cost you.
             </h2>
-            <p className="text-warm-grey/80 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-warm-grey/80 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
               Calculate the invisible money you're leaving on the table every single month due to missed calls, slow follow-ups, and uncaptured leads.
             </p>
+
+            {/* Currency Toggle */}
+            <div className="flex justify-center">
+              <div className="inline-flex bg-white/5 rounded-full p-1 border border-white/10">
+                <button
+                  onClick={() => handleCurrencyToggle("$")}
+                  className={`px-5 py-2 rounded-full text-[10px] sm:text-xs font-bold tracking-widest transition-all duration-300 ${
+                    currency === "$" ? "bg-brand-gold text-ink-black shadow-[0_0_15px_rgba(201,169,97,0.3)]" : "text-warm-grey hover:text-white"
+                  }`}
+                >
+                  USD ($)
+                </button>
+                <button
+                  onClick={() => handleCurrencyToggle("£")}
+                  className={`px-5 py-2 rounded-full text-[10px] sm:text-xs font-bold tracking-widest transition-all duration-300 ${
+                    currency === "£" ? "bg-brand-gold text-ink-black shadow-[0_0_15px_rgba(201,169,97,0.3)]" : "text-warm-grey hover:text-white"
+                  }`}
+                >
+                  GBP (£)
+                </button>
+              </div>
+            </div>
           </div>
         </ScrollReveal>
 
@@ -72,7 +107,7 @@ export default function RevenueCalculatorSection() {
                 <div className="flex justify-between items-end border-b border-white/5 pb-2">
                   <label className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Avg. Deal Value</label>
                   <span className="text-brand-gold font-serif italic text-2xl sm:text-3xl leading-none flex items-baseline">
-                    <span className="text-lg sm:text-xl text-brand-gold/80 mr-0.5">£</span>
+                    <span className="text-lg sm:text-xl text-brand-gold/80 mr-0.5">{currency}</span>
                     {Intl.NumberFormat('en-GB').format(dealValue)}
                   </span>
                 </div>
@@ -98,13 +133,13 @@ export default function RevenueCalculatorSection() {
               </div>
               
               <div className="text-5xl sm:text-[4.5rem] lg:text-[5.5rem] xl:text-[6rem] font-serif italic text-brand-gold leading-none mb-3 relative z-10 flex items-center justify-center">
-                <span className="opacity-90 mr-1 sm:mr-2">£</span>
+                <span className="opacity-90 mr-1 sm:mr-2">{currency}</span>
                 <AnimatedCounter value={lostRevenue} />
               </div>
 
               {/* Yearly Impact Text */}
               <div className="text-warm-grey/60 text-xs sm:text-sm font-light mb-10 relative z-10">
-                That's <strong className="text-white font-medium">£<AnimatedCounter value={lostRevenue * 12} /></strong> bleeding out every year.
+                That's <strong className="text-white font-medium">{currency}<AnimatedCounter value={lostRevenue * 12} /></strong> bleeding out every year.
               </div>
 
               <MagneticElement strength={15}>
