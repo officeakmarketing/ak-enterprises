@@ -4,6 +4,7 @@ import Link from "next/link";
 import AnimatedHeadline from "@/components/ui/AnimatedHeadline";
 import HeroVideoPlayer from "./HeroVideoPlayer";
 import RiskReversal from "@/components/ui/RiskReversal";
+import MagneticElement from "@/components/ui/MagneticElement";
 import { Play } from "lucide-react";
 
 export default function HeroSection() {
@@ -29,19 +30,21 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col items-center gap-5 lg:gap-2 w-full sm:w-auto">
-            <Link
-              href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 py-4 lg:py-3 rounded-lg text-xs lg:text-[11px] xl:text-xs font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto text-center shadow-md"
-            >
-              {/* White specular glare sweep on hover */}
-              <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>
-              <span className="relative z-10">Book a Free Business Audit</span>
-            </Link>
+            <MagneticElement strength={15}>
+              <Link
+                href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 py-4 lg:py-3 rounded-lg text-xs lg:text-[11px] xl:text-xs font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto text-center shadow-md"
+              >
+                {/* White specular glare sweep on hover */}
+                <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>
+                <span className="relative z-10">Book a Free Business Audit</span>
+              </Link>
+            </MagneticElement>
 
             <RiskReversal className="max-w-[85%] mx-auto lg:max-w-none mt-2 lg:mt-1" />
             
             <div className="text-[10px] sm:text-xs md:text-sm text-brand-gold font-bold tracking-[0.15em] uppercase mt-2 lg:mt-0 text-center drop-shadow-md">
-              ONE CLIENT. $301,340 IN VERIFIED REVENUE. 14 MONTHS.
+              ONE US CLIENT. ONE UK CLIENT. $301K+ VERIFIED REVENUE.
             </div>
           </div>
         </div>

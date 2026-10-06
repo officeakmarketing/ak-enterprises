@@ -4,7 +4,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export default function TestimonialsSection() {
   const testimonials = [
     {
-      headline: "£237,355 in verified revenue",
+      headline: "$301,340 in verified revenue",
       name: "Talib M",
       company: "CEO, Bright Face Barber",
       quote:
@@ -16,11 +16,11 @@ export default function TestimonialsSection() {
       name: "Halima Shaker",
       company: "CEO, Kima Group",
       quote:
-        "AK Marketing were attentive, thoughtful, and intentional in building our website. The guidance we received made a real difference.",
+        "The AK team were attentive, thoughtful, and intentional in building our website. The guidance we received made a real difference.",
       image: "/kima.jpeg",
     },
     {
-      headline: "2M Users • Technology Partner",
+      headline: "Load-tested to 2M Users • Technology Partner",
       name: "Mario Paunica",
       company: "Organizer, Grace & Power Gala",
       quote:

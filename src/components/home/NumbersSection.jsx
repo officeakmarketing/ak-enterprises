@@ -4,8 +4,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export default function NumbersSection() {
   const metrics = [
     {
-      prefix: "£",
-      value: "237355",
+      prefix: "$",
+      value: "301340",
       suffix: "",
       label: "Verified revenue  one client, 14 months",
     },
@@ -25,7 +25,7 @@ export default function NumbersSection() {
       prefix: "",
       value: "2",
       suffix: "M",
-      label: "Simultaneous users handled for one event platform",
+      label: "Concurrent users load-tested with 100% uptime",
     },
   ];
 

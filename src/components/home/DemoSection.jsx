@@ -55,17 +55,6 @@ export default function DemoSection() {
                 </div>
               ))}
             </div>
-
-            {/* CTA Button */}
-            <div>
-              <Link
-                href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-8 rounded-lg text-xs font-bold uppercase tracking-[0.2em] overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto min-h-[56px] shadow-md"
-              >
-                <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>
-                <span className="relative z-10">Book a Free Audit</span>
-              </Link>
-            </div>
             
           </div>
         </ScrollReveal>

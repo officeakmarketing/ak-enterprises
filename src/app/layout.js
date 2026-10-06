@@ -63,6 +63,7 @@ import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import CookieConsent from "@/components/ui/CookieConsent";
 import CalendlyWidget from "@/components/ui/CalendlyWidget";
+import NoiseOverlay from "@/components/ui/NoiseOverlay";
 
 export default function RootLayout({ children }) {
   return (
@@ -74,6 +75,7 @@ export default function RootLayout({ children }) {
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       </head>
       <body className="flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black">
+        <NoiseOverlay />
         <SmoothScroll>
           <Navbar />
           <main className="flex-1">{children}</main>

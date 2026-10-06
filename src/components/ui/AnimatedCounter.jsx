@@ -22,6 +22,10 @@ export default function AnimatedCounter({
     stiffness: 100,
   });
 
+  const formattedInitial = Intl.NumberFormat("en-GB", {
+    maximumFractionDigits: 0,
+  }).format(rawNumber);
+
   const [display, setDisplay] = useState("0");
 
   useEffect(() => {
@@ -49,9 +53,14 @@ export default function AnimatedCounter({
 
   return (
     <span ref={ref} className={className}>
-      {prefix}
-      {display}
-      {suffix}
+      {/* Real number for crawlers and screen readers */}
+      <span className="sr-only">
+        {prefix}{formattedInitial}{suffix}
+      </span>
+      {/* Animated number for sighted users */}
+      <span aria-hidden="true">
+        {prefix}{display}{suffix}
+      </span>
     </span>
   );
 }

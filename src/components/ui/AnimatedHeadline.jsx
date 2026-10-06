@@ -45,7 +45,9 @@ export default function AnimatedHeadline({ text, className, highlightWords = [] 
       variants={container}
       initial="hidden"
       animate="visible"
+      aria-label={text.replace(/\n/g, " ")}
     >
+      <span aria-hidden="true">
       {lines.map((line, lineIdx) => (
         <span key={lineIdx} className={lineIdx > 0 ? "block mt-1 sm:mt-1.5" : "inline"}>
           {line.split(" ").map((word, wordIdx) => {
@@ -71,6 +73,7 @@ export default function AnimatedHeadline({ text, className, highlightWords = [] 
           })}
         </span>
       ))}
+      </span>
     </motion.h1>
   );
 }

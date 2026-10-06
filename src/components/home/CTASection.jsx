@@ -1,9 +1,21 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
 import RiskReversal from "@/components/ui/RiskReversal";
 
 export default function CTASection() {
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    const date = new Date();
+    const month = date.toLocaleString('default', { month: 'long' }).toUpperCase();
+    const year = date.getFullYear();
+    setCurrentDate(`${month} ${year}`);
+  }, []);
+
   return (
     <section className="w-full py-8 sm:py-12 lg:py-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden relative">
       <BackgroundSparkles count={50} />
@@ -44,10 +56,12 @@ export default function CTASection() {
           </div>
 
           {/* Client Limit Scarcity Banner */}
-          <div className="mb-8">
-            <span className="inline-block text-[10px] sm:text-xs font-mono font-bold tracking-[0.16em] sm:tracking-widest text-brand-gold uppercase bg-brand-gold/10 border border-brand-gold/25 px-3.5 py-1.5 rounded-md">
-              Last updated: September 2026. 2 slots remaining.
-            </span>
+          <div className="mb-8 h-8 flex justify-center items-center">
+            {currentDate && (
+              <span className="inline-block text-[10px] sm:text-xs font-mono font-bold tracking-[0.16em] sm:tracking-widest text-brand-gold uppercase bg-brand-gold/10 border border-brand-gold/25 px-3.5 py-1.5 rounded-md animate-in fade-in duration-500">
+                Last updated: {currentDate}. 2 slots remaining.
+              </span>
+            )}
           </div>
 
           {/* CTA Button (Responsive Full-Width on Mobile) */}

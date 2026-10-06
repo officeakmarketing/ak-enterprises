@@ -18,7 +18,7 @@ export default function MoreProofSection() {
 
               {/* HEADLINE */}
               <h2 className="text-[1.65rem] sm:text-3xl md:text-4xl lg:text-[2.25rem] 2xl:text-[2.5rem] font-serif italic text-white leading-[1.22] mb-4 sm:mb-5">
-                2 million simultaneous users. One platform. Built and deployed by AK Enterprises.
+                Load-tested to 2 million concurrent users. One platform. Built and deployed by AK Enterprises.
               </h2>
 
               {/* BODY REMOVED FOR HOMEPAGE BREATHING ROOM */}
@@ -30,7 +30,7 @@ export default function MoreProofSection() {
                     <AnimatedCounter value="2" suffix="M" />
                   </div>
                   <div className="text-[8.5px] sm:text-[10px] lg:text-[11px] text-warm-grey uppercase tracking-wider font-semibold leading-tight">
-                    Simultaneous users
+                    Users load-tested
                   </div>
                 </div>
 

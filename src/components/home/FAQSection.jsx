@@ -44,8 +44,26 @@ export default function FAQSection() {
     },
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer.join(" "),
+      },
+    })),
+  };
+
   return (
     <section className="w-full pt-8 pb-14 sm:py-12 lg:py-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
+      {/* FAQ Structured Data for Google Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">

@@ -3,8 +3,10 @@ import HeroSection from "@/components/home/HeroSection";
 import TrustBar from "@/components/home/TrustBar";
 
 const PainSection = dynamic(() => import("@/components/home/PainSection"));
+const RevenueCalculatorSection = dynamic(() => import("@/components/home/RevenueCalculatorSection"));
 const ProofSection = dynamic(() => import("@/components/home/ProofSection"));
 const SystemSection = dynamic(() => import("@/components/home/SystemSection"));
+const ArchitectureSection = dynamic(() => import("@/components/home/ArchitectureSection"));
 const NumbersSection = dynamic(() => import("@/components/home/NumbersSection"));
 const DemoSection = dynamic(() => import("@/components/home/DemoSection"));
 const MoreProofSection = dynamic(() => import("@/components/home/MoreProofSection"));
@@ -22,7 +24,9 @@ export default function Home() {
       <HeroSection />
       <TrustBar />
       <PainSection />
+      <RevenueCalculatorSection />
       <SystemSection />
+      <ArchitectureSection />
       <ProofSection />
       <MoreProofSection />
       <HolidayDreamSection />
