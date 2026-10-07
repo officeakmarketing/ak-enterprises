@@ -67,7 +67,7 @@ export default function FAQSection() {
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-3 font-bold">
+            <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3 py-2.5 sm:py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-3 font-bold">
               Frequently Asked Questions
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic text-white leading-tight">

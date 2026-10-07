@@ -17,7 +17,7 @@ export default function ProofSection() {
             {/* Left Column: Copy, Result Block & Link (7 cols on desktop - Wider) */}
             <div className="lg:col-span-7 flex flex-col justify-between z-10 relative">
               {/* LABEL */}
-              <div className="inline-block self-start border border-brand-gold/30 bg-brand-gold/5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-full text-brand-gold text-[9px] sm:text-[10px] tracking-widest uppercase mb-3.5 sm:mb-5 font-bold">
+              <div className="inline-block self-start border border-brand-gold/30 bg-brand-gold/5 px-3 py-2.5 sm:py-1 sm:px-3.5 sm:py-2.5 sm:py-1 rounded-full text-brand-gold text-[9px] sm:text-[10px] tracking-widest uppercase mb-3.5 sm:mb-5 font-bold">
                 Case Study  Central London Barbershop
               </div>
 
@@ -61,7 +61,7 @@ export default function ProofSection() {
               </div>
 
               {/* HIGHLIGHTED PULL QUOTE */}
-              <div className="mb-8 border-l-2 border-brand-gold/50 pl-4 py-1">
+              <div className="mb-8 border-l-2 border-brand-gold/50 pl-4 py-2.5 sm:py-1">
                 <p className="text-white/90 italic font-serif text-sm sm:text-base leading-relaxed mb-2">
                   "Since launching the new site, people are booking nonstop. No more missed calls. It just works."
                 </p>
@@ -99,7 +99,7 @@ export default function ProofSection() {
                 </div>
                 
                 {/* Mobile Tap Indicator */}
-                <div className="absolute bottom-2 right-2 bg-black/60 backdrop-blur-md text-white/90 text-[9px] uppercase tracking-wider font-bold px-2 py-1 rounded border border-white/10 flex items-center gap-1.5 z-20 lg:hidden">
+                <div className="absolute bottom-2 right-2 bg-black/60 backdrop-blur-md text-white/90 text-[9px] uppercase tracking-wider font-bold px-2 py-2.5 sm:py-1 rounded border border-white/10 flex items-center gap-1.5 z-20 lg:hidden">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3 h-3">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
                   </svg>

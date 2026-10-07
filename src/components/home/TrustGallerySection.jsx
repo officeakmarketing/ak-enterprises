@@ -25,7 +25,7 @@ export default function TrustGallerySection() {
     <section className="w-full py-8 sm:py-12 lg:py-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden relative">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 mb-8 sm:mb-10 text-center relative z-20">
         <ScrollReveal>
-          <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-4 font-bold">
+          <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-2.5 sm:py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-4 font-bold">
             Wall of Proof
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-white leading-tight">

@@ -16,7 +16,7 @@ export default function AboutFounders() {
             {/* Section Header */}
             <ScrollReveal>
               <div className="max-w-3xl mb-12 sm:mb-16">
-                <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase font-bold mb-6">
+                <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-2.5 sm:py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase font-bold mb-6">
                   The Founders
                 </div>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif italic text-white leading-tight">

@@ -26,7 +26,7 @@ export default function CTASection() {
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <ScrollReveal>
           {/* Header Badge */}
-          <div className="inline-flex items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-6 font-bold">
+          <div className="inline-flex items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-2.5 sm:py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-6 font-bold">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
             <span>Free Operational Audit</span>
           </div>
@@ -58,7 +58,7 @@ export default function CTASection() {
           {/* Client Limit Scarcity Banner */}
           <div className="mb-8 h-8 flex justify-center items-center">
             {currentDate && (
-              <span className="inline-block text-[10px] sm:text-xs font-mono font-bold tracking-[0.16em] sm:tracking-widest text-brand-gold uppercase bg-brand-gold/10 border border-brand-gold/25 px-3.5 py-1.5 rounded-md animate-in fade-in duration-500">
+              <span className="inline-block text-[10px] sm:text-xs font-mono font-bold tracking-[0.16em] sm:tracking-widest text-brand-gold uppercase bg-brand-gold/10 border border-brand-gold/25 px-3.5 py-2.5 sm:py-1.5 rounded-md animate-in fade-in duration-500">
                 Last updated: {currentDate}. 2 slots remaining.
               </span>
             )}

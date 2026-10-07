@@ -26,7 +26,7 @@ export default function SystemSection() {
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 px-2 sm:px-0">
-            <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase font-bold">
+            <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-2.5 sm:py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase font-bold">
               How It Works
             </div>
           </div>

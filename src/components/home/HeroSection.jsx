@@ -14,7 +14,7 @@ export default function HeroSection() {
         {/* Centered Copy & Actions */}
         <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
           {/* Refined Glowing Badge */}
-          <div className="inline-flex items-center justify-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-full text-brand-gold tracking-[0.2em] sm:tracking-[0.24em] uppercase text-[9px] sm:text-[10px] lg:text-xs mb-6 lg:mb-3 font-bold">
+          <div className="inline-flex items-center justify-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3 py-2.5 sm:py-1 sm:px-3.5 sm:py-2.5 sm:py-1 rounded-full text-brand-gold tracking-[0.2em] sm:tracking-[0.24em] uppercase text-[9px] sm:text-[10px] lg:text-xs mb-6 lg:mb-3 font-bold">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
             <span>Business Operating Systems</span>
           </div>
