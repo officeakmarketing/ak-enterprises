@@ -64,6 +64,7 @@ import SmoothScroll from "@/components/ui/SmoothScroll";
 import CookieConsent from "@/components/ui/CookieConsent";
 import CalendlyWidget from "@/components/ui/CalendlyWidget";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
+import AriaWidget from "@/components/ui/AriaWidget";
 
 export default function RootLayout({ children }) {
   return (
@@ -82,6 +83,7 @@ export default function RootLayout({ children }) {
           <Footer />
         </SmoothScroll>
         <CookieConsent />
+        <AriaWidget />
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
         <CalendlyWidget />
       </body>

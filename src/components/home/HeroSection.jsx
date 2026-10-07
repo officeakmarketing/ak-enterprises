@@ -25,8 +25,8 @@ export default function HeroSection() {
             highlightWords={["broken", "systems"]}
           />
 
-          <p className="text-warm-grey/85 text-xs sm:text-sm lg:text-base xl:text-base max-w-[95%] sm:max-w-2xl mx-auto mb-8 lg:mb-4 leading-[1.6] sm:leading-[1.6] lg:leading-relaxed font-light">
-            AK Enterprises builds Business Operating Systems for service businesses. The complete infrastructure that captures every lead, follows up automatically, and runs without the owner. UK. USA. EU.
+          <p className="text-white text-sm sm:text-base lg:text-lg xl:text-xl max-w-[95%] sm:max-w-3xl mx-auto mb-8 lg:mb-6 leading-[1.6] font-semibold tracking-wide">
+            We build the system that runs your business. Website, AI follow-up, bookings, reviews. Installed once, compounding forever.
           </p>
 
           <div className="flex flex-col items-center gap-5 lg:gap-2 w-full sm:w-auto">
@@ -43,9 +43,6 @@ export default function HeroSection() {
 
             <RiskReversal className="max-w-[85%] mx-auto lg:max-w-none mt-2 lg:mt-1" />
             
-            <div className="text-[10px] sm:text-xs md:text-sm text-brand-gold font-bold tracking-[0.15em] uppercase mt-2 lg:mt-0 text-center drop-shadow-md">
-              ONE US CLIENT. ONE UK CLIENT. $301K+ VERIFIED REVENUE.
-            </div>
           </div>
         </div>
 

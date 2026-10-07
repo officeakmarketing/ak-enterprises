@@ -19,9 +19,9 @@ export default function AboutFounders() {
                 <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-2.5 sm:py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase font-bold mb-6">
                   The Founders
                 </div>
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif italic text-white leading-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif italic text-white leading-tight">
                   Building systems. Not excuses.
-                </h2>
+                </h1>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
@@ -104,7 +104,7 @@ export default function AboutFounders() {
         </div>
 
         {/* Krisztian Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-24 pt-16 sm:pt-20 border-t border-muted-grey/15">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 pt-16 sm:pt-20 border-t border-muted-grey/15">
           
           {/* LEFT: Image */}
           <div className="lg:col-span-5 flex flex-col gap-10">
@@ -164,27 +164,6 @@ export default function AboutFounders() {
           </div>
         </div>
 
-        {/* CTA SECTION */}
-        <ScrollReveal delay={0.3}>
-          <div className="pt-16 sm:pt-20 border-t border-muted-grey/15 flex flex-col items-center text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-white mb-8 sm:mb-10 max-w-4xl mx-auto leading-tight">
-              If you are a business owner, investor, or partner  let us talk.
-            </h2>
-
-            <div className="flex justify-center w-full sm:w-auto px-4 sm:px-0">
-              <Link
-                href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-6 sm:px-10 rounded-lg font-bold uppercase tracking-widest overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md text-center w-full sm:w-auto min-h-[56px]"
-              >
-                <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-1000 ease-out pointer-events-none"></span>
-
-                <span className="relative z-10 w-full text-xs sm:text-sm tracking-widest text-ink-black">
-                  Book a Free Audit
-                </span>
-              </Link>
-            </div>
-          </div>
-        </ScrollReveal>
 
       </div>
     </section>

@@ -73,7 +73,7 @@ export default function RevenueCalculatorSection() {
               {/* Slider 1: Missed Leads */}
               <div className="space-y-4">
                 <div className="flex justify-between items-end border-b border-white/5 pb-2">
-                  <label className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Missed Leads</label>
+                  <label className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Leads coming in each month</label>
                   <span className="text-brand-gold font-serif italic text-2xl sm:text-3xl leading-none">{leads}<span className="text-xs sm:text-sm text-brand-gold/60 not-italic ml-1">/mo</span></span>
                 </div>
                 <input 
@@ -89,7 +89,7 @@ export default function RevenueCalculatorSection() {
               {/* Slider 2: Close Rate */}
               <div className="space-y-4">
                 <div className="flex justify-between items-end border-b border-white/5 pb-2">
-                  <label className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Average Close Rate</label>
+                  <label className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Your current close rate (%)</label>
                   <span className="text-brand-gold font-serif italic text-2xl sm:text-3xl leading-none">{closeRate}<span className="text-xs sm:text-sm text-brand-gold/60 not-italic ml-0.5">%</span></span>
                 </div>
                 <input 
@@ -105,7 +105,7 @@ export default function RevenueCalculatorSection() {
               {/* Slider 3: Deal Value */}
               <div className="space-y-4">
                 <div className="flex justify-between items-end border-b border-white/5 pb-2">
-                  <label className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Avg. Deal Value</label>
+                  <label className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Average job value</label>
                   <span className="text-brand-gold font-serif italic text-2xl sm:text-3xl leading-none flex items-baseline">
                     <span className="text-lg sm:text-xl text-brand-gold/80 mr-0.5">{currency}</span>
                     {Intl.NumberFormat('en-GB').format(dealValue)}
@@ -138,8 +138,13 @@ export default function RevenueCalculatorSection() {
               </div>
 
               {/* Yearly Impact Text */}
-              <div className="text-warm-grey/60 text-xs sm:text-sm font-light mb-10 relative z-10">
+              <div className="text-warm-grey/60 text-xs sm:text-sm font-light mb-6 relative z-10">
                 That's <strong className="text-white font-medium">{currency}<AnimatedCounter value={lostRevenue * 12} /></strong> bleeding out every year.
+              </div>
+
+              {/* Explainer Line */}
+              <div className="text-brand-gold/80 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest mb-10 relative z-10 max-w-[80%] leading-relaxed">
+                Every enquiry that doesn't get an answer within minutes leaks money. This is what it's costing you.
               </div>
 
               <MagneticElement strength={15}>

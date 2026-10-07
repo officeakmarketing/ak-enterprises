@@ -19,14 +19,14 @@ ANTHROPIC_API_KEY=sk-ant-...
 
 ## STEP 2. Create the API route
 
-Next.js App Router: app/api/aria/route.ts
+Next.js App Router: app/api/aria/route.js
 
 import Anthropic from '@anthropic-ai/sdk';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 const SYSTEM_PROMPT = `[paste the full system prompt from the Aria spec doc, section 3 - it is final, do not edit]`;
 
-export async function POST(req: NextRequest) {
+export async function POST(req) {
   // simple rate limit: max 20 messages per session
   const { messages, session } = await req.json();
   if (!Array.isArray(messages) || messages.length > 20) {

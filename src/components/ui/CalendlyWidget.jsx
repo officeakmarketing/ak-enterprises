@@ -19,28 +19,8 @@ export default function CalendlyWidget() {
 
     document.addEventListener("click", handleClick);
 
-    // 2. Initialize the floating badge (with gold coloring instead of default blue)
-    if (window.Calendly && document.readyState === "complete") {
-      initBadge();
-    } else {
-      window.addEventListener("load", initBadge);
-    }
-
-    function initBadge() {
-      if (window.Calendly) {
-        window.Calendly.initBadgeWidget({
-          url: "https://calendly.com/ak-enterprises/call?hide_gdpr_banner=1&background_color=0b0b0c&text_color=ffffff&primary_color=c9a961",
-          text: "Book a Free Audit",
-          color: "#C9A961", // Brand gold
-          textColor: "#0b0b0c", // Ink black
-          branding: false,
-        });
-      }
-    }
-
     return () => {
       document.removeEventListener("click", handleClick);
-      window.removeEventListener("load", initBadge);
     };
   }, []);
 
