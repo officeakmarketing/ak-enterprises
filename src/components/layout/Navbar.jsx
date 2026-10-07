@@ -28,6 +28,7 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
+    { name: "Home", href: "/" },
     { name: "What We Build", href: "/what-we-build" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Aria AI", href: "/aria" },

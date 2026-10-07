@@ -5,7 +5,7 @@ import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
 
 export default function TrustBar() {
   const metrics = [
-    { value: "6", label: "ACTIVE CLIENTS" },
+    { value: "20+", label: "ACTIVE CLIENTS" },
     { value: "UK, USA & EU", label: "OPERATIONS" },
     { value: "$301K+", label: "VERIFIED REVENUE" },
     { value: "LIVE", label: "AI DEPLOYMENT" },
