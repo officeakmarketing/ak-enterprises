@@ -18,8 +18,8 @@ export default function AnimatedCounter({
   
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {
-    damping: 60,
-    stiffness: 100,
+    damping: 30,
+    stiffness: 250,
   });
 
   const formattedInitial = Intl.NumberFormat("en-GB", {
