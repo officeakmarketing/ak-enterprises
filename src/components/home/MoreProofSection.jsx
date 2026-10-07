@@ -27,7 +27,7 @@ export default function MoreProofSection() {
               <div className="grid grid-cols-3 gap-2 sm:gap-4 py-4 sm:py-5 border-t border-muted-grey/25 mb-5 sm:mb-8">
                 <div>
                   <div className="text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-serif italic font-normal text-brand-gold leading-tight mb-0.5 sm:mb-1 flex items-baseline">
-                    <AnimatedCounter value="2" suffix="M" />
+                    <AnimatedCounter value="2" suffix="M" damping={45} stiffness={150} />
                   </div>
                   <div className="text-[8.5px] sm:text-[10px] lg:text-[11px] text-warm-grey uppercase tracking-wider font-semibold leading-tight">
                     Users load-tested
@@ -36,7 +36,7 @@ export default function MoreProofSection() {
 
                 <div>
                   <div className="text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-serif italic font-normal text-brand-gold leading-tight mb-0.5 sm:mb-1 flex items-center">
-                    <AnimatedCounter value="100" suffix="%" />
+                    <AnimatedCounter value="100" suffix="%" damping={45} stiffness={150} />
                   </div>
                   <div className="text-[8.5px] sm:text-[10px] lg:text-[11px] text-warm-grey uppercase tracking-wider font-semibold leading-tight">
                     Uptime at peak

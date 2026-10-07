@@ -8,6 +8,8 @@ export default function AnimatedCounter({
   prefix = "",
   suffix = "",
   className,
+  stiffness = 250,
+  damping = 30,
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px" }); // Removed -100px margin so it triggers earlier
@@ -18,8 +20,8 @@ export default function AnimatedCounter({
   
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {
-    damping: 30,
-    stiffness: 250,
+    damping: damping,
+    stiffness: stiffness,
   });
 
   const formattedInitial = Intl.NumberFormat("en-GB", {

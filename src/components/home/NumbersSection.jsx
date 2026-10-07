@@ -46,7 +46,7 @@ export default function NumbersSection() {
                       {item.prefix}
                     </span>
                   )}
-                  <AnimatedCounter value={item.value} suffix={item.suffix} />
+                  <AnimatedCounter value={item.value} suffix={item.suffix} damping={45} stiffness={150} />
                 </div>
 
                 {/* Sub-Label */}
