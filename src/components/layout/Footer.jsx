@@ -55,7 +55,7 @@ export default function Footer() {
             AK Marketing Consulting Ltd. Registered in England and Wales.
             Company No. 17128177.<br />
             Trading as AK Enterprises.<br />
-            US operations managed by Christopher Strobach, Director of Sales, Wisconsin, and Jonathan White, Managing Partner, North Carolina.
+            US operations managed by Christopher Strobach, Director of Sales, Wisconsin.
           </div>
 
           {/* Conditional Legal Links for Thank You Page */}

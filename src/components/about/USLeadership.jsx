@@ -46,8 +46,16 @@ export default function USLeadership() {
                     Based in Wisconsin.
                   </p>
                   <p className="mb-4">
-                    At 23, Christopher has already built a track record in Operations management for a multi-billion dollar retail chain, following that he spent time closing significant commercial deals in exterior construction sales before moving into marketing operations and business growth strategy.
+                    At 23, Christopher has already built a track record in operations management for a multi-billion dollar retail chain, following that he spent time closing significant commercial deals in exterior construction sales before moving into marketing operations and business growth strategy.
                   </p>
+                  
+                  {/* Pull Quote */}
+                  <div className="my-8 sm:my-10 border-l-2 border-brand-gold/50 pl-6 py-2">
+                    <p className="text-xl sm:text-2xl font-serif italic text-white leading-snug">
+                      "Everything I do is done to a professional standard, helping businesses win big is no exception."
+                    </p>
+                  </div>
+                  
                   <p className="mb-4">
                     He now works directly with business owners across the US to diagnose the systems gaps that keep revenue unpredictable and install the infrastructure to fix them.
                   </p>

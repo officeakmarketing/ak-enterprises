@@ -134,12 +134,35 @@ export default function AriaWidget() {
         body: JSON.stringify({ messages: newMessages }),
       });
       
-      const data = await res.json();
-      
       setIsTyping(false);
       
-      if (data.reply) {
-        setMessages(prev => [...prev, { role: "assistant", content: data.reply }]);
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setMessages(prev => [...prev, { 
+          role: "assistant", 
+          content: data.reply || "I'm having a little trouble connecting. Please book a free audit directly: https://calendly.com/ak-enterprises/call" 
+        }]);
+        return;
+      }
+      
+      // Initialize empty assistant message for streaming
+      setMessages(prev => [...prev, { role: "assistant", content: "" }]);
+      
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder("utf-8");
+      let assistantMessage = "";
+      
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        
+        assistantMessage += decoder.decode(value, { stream: true });
+        
+        setMessages(prev => {
+          const updated = [...prev];
+          updated[updated.length - 1].content = assistantMessage;
+          return updated;
+        });
       }
     } catch (error) {
       setIsTyping(false);
