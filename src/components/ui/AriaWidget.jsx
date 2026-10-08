@@ -15,6 +15,18 @@ export default function AriaWidget() {
   const [lastMessageTime, setLastMessageTime] = useState(0);
   const messagesEndRef = useRef(null);
 
+  // Lock body scroll when chat is open (prevents background scrolling on mobile & desktop)
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   // Initialize messages from localStorage or use default
   useEffect(() => {
     const saved = localStorage.getItem("aria_chat_history");
@@ -225,7 +237,7 @@ export default function AriaWidget() {
 
       {/* Chat Panel */}
       {isOpen && (
-        <div className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 sm:w-[380px] sm:h-[600px] z-[100] bg-[#0a0a0a] sm:rounded-2xl border border-muted-grey/20 shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200">
+        <div data-lenis-prevent="true" className="fixed inset-0 w-full h-[100dvh] sm:top-auto sm:left-auto sm:bottom-6 sm:right-6 sm:w-[380px] sm:h-[600px] sm:max-h-[calc(100dvh-4rem)] z-[100] bg-[#0a0a0a] sm:rounded-2xl border border-muted-grey/20 shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200">
           
           {/* Header */}
           <div className="flex items-center justify-between px-5 py-4 border-b border-white/5 bg-[#0a0a0a] shrink-0">
@@ -250,7 +262,7 @@ export default function AriaWidget() {
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-5 flex flex-col gap-5 scroll-smooth bg-[#0a0a0a]">
+          <div className="flex-1 overflow-y-auto overscroll-contain aria-scrollbar p-5 flex flex-col gap-5 scroll-smooth bg-[#0a0a0a]">
             {messages.map((msg, idx) => (
               <div
                 key={idx}
@@ -310,9 +322,19 @@ export default function AriaWidget() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
+                onFocus={() => {
+                  setTimeout(() => {
+                    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+                  }, 300);
+                }}
                 placeholder="Ask Aria a question..."
                 className="w-full bg-[#141416] border border-white/10 rounded-full pl-5 pr-12 py-3.5 sm:py-3 text-sm text-white placeholder:text-warm-grey focus:outline-none focus:border-brand-gold/50 transition-colors"
+                name="aria-chat-message"
+                id="aria-chat-input"
                 autoComplete="off"
+                autoCorrect="off"
+                spellCheck="false"
+                data-form-type="other"
               />
               <button
                 type="submit"
