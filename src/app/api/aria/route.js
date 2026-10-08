@@ -48,17 +48,21 @@ export async function POST(req) {
   
   try {
     const response = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-20241022',
+      model: 'claude-sonnet-5-5',
       max_tokens: 300,
       system: SYSTEM_PROMPT,
-      temperature: 0.7,
       messages: sanitizedMessages,
     });
     
-    const reply = response.content[0]?.text ?? '';
+    const textBlock = response.content.find(block => block.type === 'text');
+    const reply = textBlock ? textBlock.text : '';
+    
     return NextResponse.json({ reply });
   } catch (e) {
     console.error("Aria API Error:", e);
-    return NextResponse.json({ reply: 'Our systems hiccuped for a second. Grab the free 20-minute audit directly: https://calendly.com/ak-enterprises/call' });
+    return NextResponse.json({ 
+      reply: 'Our systems hiccuped for a second. Grab the free 20-minute audit directly: https://calendly.com/ak-enterprises/call',
+      errorDetails: e.message
+    });
   }
 }
