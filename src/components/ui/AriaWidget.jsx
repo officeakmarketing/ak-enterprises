@@ -12,8 +12,9 @@ export default function AriaWidget() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [leadCaptured, setLeadCaptured] = useState(false);
-  const [lastMessageTime, setLastMessageTime] = useState(0);
   const messagesEndRef = useRef(null);
+  const isTypingRef = useRef(false);
+  const lastMessageTimeRef = useRef(0);
 
   // Lock body scroll when chat is open (prevents background scrolling on mobile & desktop)
   useEffect(() => {
@@ -101,21 +102,25 @@ export default function AriaWidget() {
   const handleSend = async (text) => {
     if (!text.trim()) return;
     
+    // Prevent concurrent sends (e.g., double-enter or sending while streaming)
+    if (isTypingRef.current) return;
+    
+    // Dynamic Cooldown: 2 seconds minimum between messages
+    const now = Date.now();
+    if (now - lastMessageTimeRef.current < 2000) return;
+    
+    lastMessageTimeRef.current = now;
+    isTypingRef.current = true;
+    
     // Strip HTML tags for security
     const sanitizedText = text.replace(/<[^>]*>?/gm, '');
-    
-    // 3-second minimum between calls (Rate limit)
-    const now = Date.now();
-    if (now - lastMessageTime < 3000) {
-      return; // Ignore if sending too fast
-    }
-    setLastMessageTime(now);
 
     const userMessage = { role: "user", content: sanitizedText };
     const newMessages = [...messages, userMessage];
-    setMessages(newMessages);
+    
     setInput("");
     setIsTyping(true);
+    setMessages(newMessages);
 
     // Simple email extraction regex
     const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
@@ -137,6 +142,7 @@ export default function AriaWidget() {
       setIsTyping(false);
       
       if (!res.ok) {
+        isTypingRef.current = false;
         const data = await res.json().catch(() => ({}));
         setMessages(prev => [...prev, { 
           role: "assistant", 
@@ -160,11 +166,20 @@ export default function AriaWidget() {
         
         setMessages(prev => {
           const updated = [...prev];
-          updated[updated.length - 1].content = assistantMessage;
+          // Safely target the assistant message, avoiding overwrites if a race condition occurs
+          for (let i = updated.length - 1; i >= 0; i--) {
+            if (updated[i].role === "assistant") {
+              updated[i] = { ...updated[i], content: assistantMessage };
+              break;
+            }
+          }
           return updated;
         });
       }
+      
+      isTypingRef.current = false;
     } catch (error) {
+      isTypingRef.current = false;
       setIsTyping(false);
       setMessages(prev => [...prev, { 
         role: "assistant", 
