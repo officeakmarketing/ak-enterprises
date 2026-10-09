@@ -54,24 +54,20 @@ export default function Footer() {
           <div className="text-center md:text-left leading-relaxed text-[11px] sm:text-xs">
             AK Marketing Consulting Ltd. Registered in England and Wales.
             Company No. 17128177.<br />
-            Trading as AK Enterprises.<br />
-            US operations managed by Christopher Strobach, Director of Sales, Wisconsin.
+            Trading as AK Enterprises.
           </div>
 
-          {/* Conditional Legal Links for Thank You Page */}
-          {isThankYouPage && (
-            <div className="flex flex-col items-center md:items-end gap-2.5 pt-6 md:pt-0">
-              <Link href="/privacy" className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-warm-grey hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-warm-grey hover:text-white transition-colors">
-                Terms of Service
-              </Link>
-              <Link href="/refunds" className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-warm-grey hover:text-white transition-colors">
-                Refund / Cancellation Policy
-              </Link>
-            </div>
-          )}
+          <div className="flex flex-col md:flex-row items-center md:items-end gap-4 md:gap-6 pt-6 md:pt-0">
+            <Link href="/privacy" className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-warm-grey hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-warm-grey hover:text-white transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="/refunds" className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-warm-grey hover:text-white transition-colors">
+              Refund / Cancellation Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

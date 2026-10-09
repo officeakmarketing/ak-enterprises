@@ -14,11 +14,7 @@ export default function About() {
       <AboutHero />
       <CredibilitySection />
       <AboutCTA />
-      <div className="w-full bg-ink-black py-16 sm:py-20 text-center px-4 border-b border-muted-grey/20">
-        <p className="text-warm-grey/60 text-[10px] sm:text-xs font-mono tracking-widest uppercase font-bold">
-          US operations managed by Christopher Strobach, Director of Sales, Wisconsin.
-        </p>
-      </div>
+
     </main>
   );
 }
