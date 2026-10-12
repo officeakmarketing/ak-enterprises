@@ -45,7 +45,7 @@ export async function POST(req) {
     const reply = response.content[0]?.text ?? '';
     return NextResponse.json({ reply });
   } catch (e) {
-    return NextResponse.json({ reply: 'Our systems hiccuped for a second. Grab the free 20-minute audit directly: [CALENDLY_LINK]' });
+    return NextResponse.json({ reply: 'Our systems hiccuped for a second. Grab the free 45-minute audit directly: [CALENDLY_LINK]' });
   }
 }
 

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { MessageSquare, X, Send, Minimize2, Maximize2, Plus, RotateCcw } from "lucide-react";
+import { MessageSquare, X, Send, Minimize2, Maximize2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { InlineWidget, useCalendlyEventListener } from "react-calendly";
@@ -815,16 +815,6 @@ export default function AriaWidget() {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              {/* New Chat Button */}
-              <button
-                onClick={() => startNewChat()}
-                title="Start a fresh conversation"
-                className="flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-brand-gold bg-brand-gold/10 hover:bg-brand-gold/25 border border-brand-gold/40 hover:border-brand-gold rounded-lg transition-all active:scale-95 shadow-sm"
-              >
-                <Plus className="w-3 h-3 shrink-0" />
-                <span className="font-bold">New Chat</span>
-              </button>
-
               <button
                 onClick={() => {
                   if (showCalendly) {

@@ -39,7 +39,7 @@ export default function FAQSection() {
     {
       question: "What happens during the free audit?",
       answer: [
-        "We review your current lead flow and operational bottlenecks in 20 minutes, pinpointing exactly where revenue is leaking. The findings are 100% yours to keep regardless of whether we work together.",
+        "We review your current lead flow and operational bottlenecks in 45 minutes, pinpointing exactly where revenue is leaking. The findings are 100% yours to keep regardless of whether we work together.",
       ],
     },
   ];

@@ -42,7 +42,7 @@ export default function CTASection() {
               We look at your lead capture, follow-up process, operational workflows, and reporting visibility. We identify every gap and quantify exactly what it is costing you. We show you what a Business Operating System would look like for your specific business.
             </p>
             <p className="text-white font-medium">
-              The audit takes 20 minutes. The findings are yours to keep regardless of whether we work together.
+              The audit takes 45 minutes. The findings are yours to keep regardless of whether we work together.
             </p>
           </div>
 
