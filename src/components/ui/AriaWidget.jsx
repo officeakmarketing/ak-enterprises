@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { MessageSquare, X, Send, Minimize2, Maximize2 } from "lucide-react";
+import { MessageSquare, X, Send, Minimize2, Maximize2, Plus, RotateCcw } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { InlineWidget, useCalendlyEventListener } from "react-calendly";
@@ -16,6 +16,7 @@ export default function AriaWidget() {
   const [messages, setMessages] = useState([]);
   const [showCalendly, setShowCalendly] = useState(false);
   const [hasBooked, setHasBooked] = useState(false);
+  const [toastMessage, setToastMessage] = useState(null);
   const messagesRef = useRef(messages);
   messagesRef.current = messages;
   const messagesEndRef = useRef(null);
@@ -50,11 +51,12 @@ export default function AriaWidget() {
         content: "Perfect. Your free audit is booked! Redirecting you to your confirmation video..." 
       };
 
-      // Strip any valuation follow-up message upon booking
+      // Strip any valuation follow-up or error message upon booking
       setMessages(prev => {
         const cleaned = prev.filter(
           (m) =>
             !m.isValuationFollowup &&
+            !isErrorMessage(m) &&
             !m.content?.includes("I see you just tested our live valuation system")
         );
         return [...cleaned, confirmationMsg];
@@ -68,6 +70,7 @@ export default function AriaWidget() {
           list = list.filter(
             (m) =>
               !m.isValuationFollowup &&
+              !isErrorMessage(m) &&
               !m.content?.includes("I see you just tested our live valuation system")
           );
           list.push(confirmationMsg);
@@ -109,8 +112,109 @@ export default function AriaWidget() {
     };
   }, [isOpen]);
 
-  // Initialize messages from localStorage, sync booking state, and clean stale flags
+  // Helper: check if message is an error fallback (never render from or save to stored history)
+  const isErrorMessage = (msg) => {
+    if (!msg) return true;
+    if (msg.isError) return true;
+    const content = (msg.content || "").toLowerCase().trim();
+    if (!content) return true;
+    return (
+      content.includes("having a little trouble connecting") ||
+      content.includes("trouble connecting") ||
+      content.includes("trouble with connection") ||
+      content.includes("trouble right now")
+    );
+  };
+
+  const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000; // 86,400,000 ms
+
+  // Start fresh chat session
+  const startNewChat = (silent = false) => {
+    try {
+      // 1. Purge conversation history and valuation followup flags from storage
+      localStorage.removeItem("aria_chat_history");
+      localStorage.removeItem("aria_valuation_followup_sent");
+      sessionStorage.removeItem("aria_valuation_followup_sent");
+      sessionStorage.removeItem("aria_visited_demo");
+      sessionStorage.removeItem("aria_demo_submitted");
+      sessionStorage.removeItem("aria_demo_interacted");
+
+      // 2. Refresh session timestamp and ID
+      const newSid = "sess_" + Math.random().toString(36).substring(2, 15);
+      sessionIdRef.current = newSid;
+      localStorage.setItem("aria_session_id", newSid);
+      localStorage.setItem("aria_last_active_timestamp", Date.now().toString());
+
+      // 3. Reset in-memory chat state
+      setMessages([
+        { role: "assistant", content: "Hi. I'm Aria, AK Enterprises' AI Assistant. How can I help you today?" }
+      ]);
+      setHasBooked(false);
+      setShowCalendly(false);
+      setInput("");
+
+      // 4. Reset tracking refs
+      emailSentRef.current = false;
+      emailProvidedLoggedRef.current = false;
+      bookingStartedLoggedRef.current = false;
+      bookingCompletedLoggedRef.current = false;
+      chatAbandonedLoggedRef.current = false;
+      lastSyncedLengthRef.current = 0;
+
+      // 5. Toast feedback
+      if (!silent) {
+        setToastMessage("New chat started");
+        setTimeout(() => setToastMessage(null), 2500);
+      }
+    } catch (e) {
+      console.error("Error starting new chat:", e);
+    }
+  };
+
+  // Clear all Aria chatbot keys completely
+  const clearAriaStorage = () => {
+    try {
+      const localKeys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && (key.startsWith("aria_") || key.toLowerCase().includes("aria"))) {
+          localKeys.push(key);
+        }
+      }
+      localKeys.forEach((key) => localStorage.removeItem(key));
+
+      const sessionKeys = [];
+      for (let i = 0; i < sessionStorage.length; i++) {
+        const key = sessionStorage.key(i);
+        if (key && (key.startsWith("aria_") || key.toLowerCase().includes("aria"))) {
+          sessionKeys.push(key);
+        }
+      }
+      sessionKeys.forEach((key) => sessionStorage.removeItem(key));
+
+      startNewChat(true);
+      setToastMessage("Aria storage cleared");
+      setTimeout(() => setToastMessage(null), 2500);
+    } catch (e) {
+      console.error("Error clearing Aria storage:", e);
+    }
+  };
+
+  // Initialize messages from localStorage, sync booking state, and enforce 24h expiration
   useEffect(() => {
+    // 1. Auto-reset if more than 24 hours have elapsed since last activity
+    const lastActiveStr = localStorage.getItem("aria_last_active_timestamp");
+    const now = Date.now();
+    if (lastActiveStr) {
+      const lastActive = parseInt(lastActiveStr, 10);
+      if (!isNaN(lastActive) && now - lastActive > TWENTY_FOUR_HOURS) {
+        startNewChat(true); // Silent auto-reset after 24 hours
+        return;
+      }
+    }
+    // Refresh last active timestamp
+    localStorage.setItem("aria_last_active_timestamp", now.toString());
+
     const hasBookedStored = localStorage.getItem("aria_has_booked") === "true";
     if (hasBookedStored) {
       setHasBooked(true);
@@ -127,6 +231,9 @@ export default function AriaWidget() {
       try {
         let loaded = JSON.parse(saved);
         if (Array.isArray(loaded)) {
+          // Strictly filter out any error fallbacks from stored history
+          loaded = loaded.filter((m) => !isErrorMessage(m));
+
           // If already booked, strictly remove any valuation follow-up pitch from history
           if (hasBookedStored) {
             loaded = loaded.filter(
@@ -155,6 +262,16 @@ export default function AriaWidget() {
       }
     }
     setMessages([{ role: "assistant", content: "Hi. I'm Aria, AK Enterprises' AI Assistant. How can I help you today?" }]);
+  }, []);
+
+  // Expose helpers to window for console execution as well
+  useEffect(() => {
+    window.clearAriaStorage = clearAriaStorage;
+    window.startNewChat = startNewChat;
+    return () => {
+      delete window.clearAriaStorage;
+      delete window.startNewChat;
+    };
   }, []);
 
   const logAnalytics = (eventName, metadata = {}) => {
@@ -235,10 +352,14 @@ export default function AriaWidget() {
     }
   };
 
-  // Save messages to localStorage and sync to HUD once assistant finishes answering
+  // Save messages to localStorage (never storing error fallbacks) and sync to HUD once assistant finishes answering
   useEffect(() => {
     if (messages.length > 0) {
-      localStorage.setItem("aria_chat_history", JSON.stringify(messages));
+      const cleanMessages = messages.filter((m) => !isErrorMessage(m));
+      if (cleanMessages.length > 0) {
+        localStorage.setItem("aria_chat_history", JSON.stringify(cleanMessages));
+      }
+      localStorage.setItem("aria_last_active_timestamp", Date.now().toString());
     }
     
     // Only sync to HUD once an exchange is completed (assistant finished responding)
@@ -456,6 +577,7 @@ export default function AriaWidget() {
         const data = await res.json().catch(() => ({}));
         setMessages(prev => [...prev, { 
           role: "assistant", 
+          isError: true,
           content: data.reply || "I'm having a little trouble connecting. Please book a free audit directly: https://calendly.com/ak-enterprises/call" 
         }]);
         return;
@@ -493,6 +615,7 @@ export default function AriaWidget() {
       setIsTyping(false);
       setMessages(prev => [...prev, { 
         role: "assistant", 
+        isError: true,
         content: "I'm having a little trouble connecting. Please book a free audit directly: https://calendly.com/ak-enterprises/call" 
       }]);
     }
@@ -691,27 +814,48 @@ export default function AriaWidget() {
                 </div>
               </div>
             </div>
-            <button
-              onClick={() => {
-                if (showCalendly) {
-                  setShowCalendly(false);
-                } else {
-                  if (
-                    messages.length > 1 &&
-                    !hasBooked &&
-                    !chatAbandonedLoggedRef.current
-                  ) {
-                    chatAbandonedLoggedRef.current = true;
-                    logAnalytics("chat_abandoned", { trigger: "user_closed_chat" });
+            <div className="flex items-center gap-2">
+              {/* New Chat Button */}
+              <button
+                onClick={() => startNewChat()}
+                title="Start a fresh conversation"
+                className="flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-brand-gold bg-brand-gold/10 hover:bg-brand-gold/25 border border-brand-gold/40 hover:border-brand-gold rounded-lg transition-all active:scale-95 shadow-sm"
+              >
+                <Plus className="w-3 h-3 shrink-0" />
+                <span className="font-bold">New Chat</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  if (showCalendly) {
+                    setShowCalendly(false);
+                  } else {
+                    if (
+                      messages.length > 1 &&
+                      !hasBooked &&
+                      !chatAbandonedLoggedRef.current
+                    ) {
+                      chatAbandonedLoggedRef.current = true;
+                      logAnalytics("chat_abandoned", { trigger: "user_closed_chat" });
+                    }
+                    setIsOpen(false);
                   }
-                  setIsOpen(false);
-                }
-              }}
-              className="p-2 text-warm-grey hover:text-white rounded-full bg-white/5 hover:bg-white/10 transition-colors"
-            >
-              <X className="w-4 h-4" />
-            </button>
+                }}
+                className="p-2 text-warm-grey hover:text-white rounded-full bg-white/5 hover:bg-white/10 transition-colors"
+                aria-label="Close Aria"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
           </div>
+
+          {/* Toast Notification */}
+          {toastMessage && (
+            <div className="bg-brand-gold/15 border-b border-brand-gold/30 px-4 py-2 text-center text-[11px] font-mono text-brand-gold font-bold tracking-wider animate-in fade-in slide-in-from-top-2 duration-200 flex items-center justify-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+              <span>{toastMessage}</span>
+            </div>
+          )}
 
           {showCalendly ? (
             <div className="flex-1 w-full bg-[#0a0a0a] flex flex-col relative">
