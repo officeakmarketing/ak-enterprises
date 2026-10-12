@@ -14,7 +14,7 @@ export default function ThankYouPage() {
         
         {/* Video Player */}
         <div className="w-full max-w-4xl mb-16">
-          <CustomVideoPlayer src="/demo.mp4" />
+          <CustomVideoPlayer src="/thank-you.mp4" />
         </div>
 
         {/* Confirmation Text Section */}

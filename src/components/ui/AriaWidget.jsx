@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { MessageSquare, X, Send, Minimize2, Maximize2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { InlineWidget, useCalendlyEventListener } from "react-calendly";
 
 export default function AriaWidget() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
@@ -36,14 +38,49 @@ export default function AriaWidget() {
       setShowCalendly(false);
       setHasBooked(true);
       localStorage.setItem("aria_has_booked", "true");
+      localStorage.setItem("aria_valuation_followup_sent", "true");
+      sessionStorage.setItem("aria_valuation_followup_sent", "true");
       if (!bookingCompletedLoggedRef.current) {
         bookingCompletedLoggedRef.current = true;
         logAnalytics("booking_completed", { event_data: e?.data?.payload || {} });
       }
-      setMessages(prev => [...prev, { 
+      
+      const confirmationMsg = { 
         role: "assistant", 
-        content: "Perfect. Your free audit is booked! I've sent a confirmation to your email. Talk to you soon." 
-      }]);
+        content: "Perfect. Your free audit is booked! Redirecting you to your confirmation video..." 
+      };
+
+      // Strip any valuation follow-up message upon booking
+      setMessages(prev => {
+        const cleaned = prev.filter(
+          (m) =>
+            !m.isValuationFollowup &&
+            !m.content?.includes("I see you just tested our live valuation system")
+        );
+        return [...cleaned, confirmationMsg];
+      });
+
+      // Synchronize directly into localStorage before navigation
+      try {
+        const saved = localStorage.getItem("aria_chat_history");
+        let list = saved ? JSON.parse(saved) : [];
+        if (Array.isArray(list)) {
+          list = list.filter(
+            (m) =>
+              !m.isValuationFollowup &&
+              !m.content?.includes("I see you just tested our live valuation system")
+          );
+          list.push(confirmationMsg);
+          localStorage.setItem("aria_chat_history", JSON.stringify(list));
+        }
+      } catch (err) {}
+
+      // Redirect to thank-you page preserving user activation token for video voice playback
+      try {
+        router.push("/thank-you");
+      } catch (err) {
+        window.location.href = "/thank-you";
+      }
     },
   });
 
@@ -72,18 +109,52 @@ export default function AriaWidget() {
     };
   }, [isOpen]);
 
-  // Initialize messages from localStorage or use default
+  // Initialize messages from localStorage, sync booking state, and clean stale flags
   useEffect(() => {
+    const hasBookedStored = localStorage.getItem("aria_has_booked") === "true";
+    if (hasBookedStored) {
+      setHasBooked(true);
+      localStorage.setItem("aria_valuation_followup_sent", "true");
+      sessionStorage.setItem("aria_valuation_followup_sent", "true");
+    }
+
+    // Clean up any stale legacy test flags from old sessions
+    sessionStorage.removeItem("aria_demo_submitted");
+    sessionStorage.removeItem("aria_demo_interacted");
+
     const saved = localStorage.getItem("aria_chat_history");
     if (saved) {
       try {
-        setMessages(JSON.parse(saved));
+        let loaded = JSON.parse(saved);
+        if (Array.isArray(loaded)) {
+          // If already booked, strictly remove any valuation follow-up pitch from history
+          if (hasBookedStored) {
+            loaded = loaded.filter(
+              (m) =>
+                !m.isValuationFollowup &&
+                !m.content?.includes("I see you just tested our live valuation system")
+            );
+          } else {
+            // Deduplicate so it never appears multiple times
+            let seenValuation = false;
+            loaded = loaded.filter((m) => {
+              const isVal = m.isValuationFollowup || m.content?.includes("I see you just tested our live valuation system");
+              if (isVal) {
+                if (seenValuation) return false;
+                seenValuation = true;
+              }
+              return true;
+            });
+          }
+          setMessages(loaded.length > 0 ? loaded : [{ role: "assistant", content: "Hi. I'm Aria, AK Enterprises' AI Assistant. How can I help you today?" }]);
+          return;
+        }
       } catch (e) {
         setMessages([{ role: "assistant", content: "Hi. I'm Aria, AK Enterprises' AI Assistant. How can I help you today?" }]);
+        return;
       }
-    } else {
-      setMessages([{ role: "assistant", content: "Hi. I'm Aria, AK Enterprises' AI Assistant. How can I help you today?" }]);
     }
+    setMessages([{ role: "assistant", content: "Hi. I'm Aria, AK Enterprises' AI Assistant. How can I help you today?" }]);
   }, []);
 
   const logAnalytics = (eventName, metadata = {}) => {
@@ -238,25 +309,35 @@ export default function AriaWidget() {
     };
   }, []);
 
-  // Live Property Demo Follow-up: triggers when user submits or completes the valuation demo
+  // Live Property Demo Follow-up: triggers strictly ONCE when user completes the valuation demo
   useEffect(() => {
     const triggerDemoFollowup = (customDetail = null) => {
-      sessionStorage.setItem("aria_visited_demo", "true");
-      sessionStorage.setItem("aria_demo_interacted", "true");
-      sessionStorage.setItem("aria_demo_submitted", "true");
+      // 1. NEVER trigger if user has already booked an audit
+      if (localStorage.getItem("aria_has_booked") === "true") return;
+
+      // 2. Strict ONE-TIME ONLY: never re-fire or spam again
+      if (
+        sessionStorage.getItem("aria_valuation_followup_sent") === "true" ||
+        localStorage.getItem("aria_valuation_followup_sent") === "true"
+      ) {
+        return;
+      }
+      sessionStorage.setItem("aria_valuation_followup_sent", "true");
+      localStorage.setItem("aria_valuation_followup_sent", "true");
 
       setIsVisible(true);
-      setIsOpen(true); // Open the chat widget so the user immediately sees the reflection!
+      setIsOpen(true); // Open the chat widget so the user sees the reflection!
 
       const followupMessage = 
         "I see you just tested our live valuation system! How did the numbers look? If you want an automated acquisition system like that capturing and qualifying leads for your business 24/7, grab a free 45-minute audit with our founders: https://calendly.com/ak-enterprises/call";
 
       setMessages((prev) => {
-        // Prevent duplicate if the last message is already this exact follow-up
-        const lastMsg = prev[prev.length - 1];
-        if (lastMsg && lastMsg.isValuationFollowup && lastMsg.content === followupMessage) {
-          return prev;
-        }
+        // Prevent duplicate if already in conversation history
+        const alreadyExists = prev.some(
+          (m) => m.isValuationFollowup || m.content === followupMessage
+        );
+        if (alreadyExists) return prev;
+
         return [
           ...prev,
           {
@@ -267,21 +348,21 @@ export default function AriaWidget() {
         ];
       });
 
-      // Ensure smooth scroll to reveal the new follow-up and audit button
+      // Smooth scroll to the follow-up message
       setTimeout(() => scrollToBottom("auto"), 50);
       setTimeout(() => scrollToBottom("smooth"), 150);
       setTimeout(() => scrollToBottom("smooth"), 350);
-      setTimeout(() => scrollToBottom("smooth"), 600);
     };
 
-    // 1. Listen for custom event when user submits the valuation form in the demo iframe
-    const handleDemoSubmitted = (event) => {
-      triggerDemoFollowup(event?.detail);
-    };
-
-    // 2. Listen for cross-origin postMessage from ariasystem demo iframe if dispatched
+    // Listen ONLY for genuine VALUATION_COMPLETED postMessage strictly from the demo iframe origin
     const handlePostMessage = (event) => {
       try {
+        const isFromDemo =
+          event.origin?.includes("ariasystem.vercel.app") ||
+          (typeof window !== "undefined" && window.location.hostname === "localhost" && event.origin?.includes("localhost"));
+
+        if (!isFromDemo) return;
+
         let data = event.data;
         if (typeof data === "string") {
           try {
@@ -289,36 +370,16 @@ export default function AriaWidget() {
           } catch (e) {}
         }
 
-        const isValuation = 
-          data?.type === "VALUATION_COMPLETED" || 
-          (typeof data?.type === "string" && data.type.includes("VALUATION")) ||
-          (typeof event.data === "string" && event.data.includes("VALUATION_COMPLETED"));
-
-        const isFromDemo = event.origin?.includes("ariasystem.vercel.app") || event.origin?.includes("localhost");
-
-        if (isValuation || (isFromDemo && data?.offer)) {
-          if (data?.address) sessionStorage.setItem("aria_demo_address", data.address);
-          if (data?.offer) sessionStorage.setItem("aria_demo_offer", String(data.offer));
+        if (data?.type === "VALUATION_COMPLETED") {
           triggerDemoFollowup(data);
         }
       } catch (e) {}
     };
 
-    // 3. Listen for window focus back to page if user interacted with iframe
-    const handleWindowFocus = () => {
-      if (sessionStorage.getItem("aria_demo_submitted") === "true") {
-        triggerDemoFollowup();
-      }
-    };
-
-    window.addEventListener("aria:demo-submitted", handleDemoSubmitted);
     window.addEventListener("message", handlePostMessage);
-    window.addEventListener("focus", handleWindowFocus);
 
     return () => {
-      window.removeEventListener("aria:demo-submitted", handleDemoSubmitted);
       window.removeEventListener("message", handlePostMessage);
-      window.removeEventListener("focus", handleWindowFocus);
     };
   }, []);
 
@@ -601,12 +662,6 @@ export default function AriaWidget() {
           <button
             onClick={() => {
               setIsOpen(true);
-              const hasInteractedDemo =
-                sessionStorage.getItem("aria_demo_submitted") === "true" ||
-                sessionStorage.getItem("aria_demo_interacted") === "true";
-              if (hasInteractedDemo && !sessionStorage.getItem("aria_valuation_followup_sent")) {
-                window.dispatchEvent(new CustomEvent("aria:demo-submitted"));
-              }
             }}
             className="relative p-3 rounded-full bg-black border-2 border-brand-gold shadow-[0_4px_20px_rgba(201,169,97,0.25)] hover:shadow-[0_4px_25px_rgba(201,169,97,0.45)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center"
             aria-label="Open Aria Chatbot"

@@ -5,16 +5,6 @@ import { useRef } from "react";
 export default function AriaDemoWidget() {
   const iframeRef = useRef(null);
 
-  const notifyDemoSubmitted = () => {
-    if (typeof window === "undefined") return;
-
-    sessionStorage.setItem("aria_visited_demo", "true");
-    sessionStorage.setItem("aria_demo_interacted", "true");
-    sessionStorage.setItem("aria_demo_submitted", "true");
-
-    window.dispatchEvent(new CustomEvent("aria:demo-submitted"));
-  };
-
   return (
     <div 
       id="demo" 
@@ -44,10 +34,7 @@ export default function AriaDemoWidget() {
       </div>
 
       {/* Loop Closer: Book the Audit Card */}
-      <div 
-        onClick={notifyDemoSubmitted}
-        className="mt-6 sm:mt-8 max-w-[850px] w-full bg-[#121214] border border-brand-gold/30 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_10px_40px_rgba(0,0,0,0.6)] cursor-pointer"
-      >
+      <div className="mt-6 sm:mt-8 max-w-[850px] w-full bg-[#121214] border border-brand-gold/30 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
         <div className="text-center sm:text-left">
           <h4 className="text-white font-serif text-lg sm:text-xl font-bold mb-1">
             Want an acquisition system like this for your business?
