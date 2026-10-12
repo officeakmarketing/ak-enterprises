@@ -78,11 +78,15 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${arimo.variable} ${sourceSerif4.variable} antialiased`}
+      suppressHydrationWarning
     >
       <head>
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       </head>
-      <body className="flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black">
+      <body 
+        suppressHydrationWarning
+        className="flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black"
+      >
         <NoiseOverlay />
         <SmoothScroll>
           <Navbar />
