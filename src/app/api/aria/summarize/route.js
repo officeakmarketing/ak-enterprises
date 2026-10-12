@@ -35,18 +35,6 @@ ${transcript}
 
 Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks around the JSON. Just the JSON object.`;
 
-    const response = await anthropic.messages.create({
-      model: 'claude-sonnet-5-5',
-      max_tokens: 500,
-      system: "You are a JSON CRM parser. Output raw JSON only.",
-      messages: [{ role: "user", content: prompt }]
-    });
-    
-    let text = response.content[0].text;
-    
-    // Strip possible markdown code blocks if the LLM disobeys
-    text = text.replace(/^```json/i, '').replace(/^```/i, '').replace(/```$/i, '').trim();
-    
     let parsed = {
       problem: "Not stated",
       budget: "Not stated",
@@ -54,10 +42,30 @@ Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks arou
       gap_report: ""
     };
 
-    try {
-      parsed = { ...parsed, ...JSON.parse(text) };
-    } catch (parseErr) {
-      console.error("JSON parse error from LLM extraction:", parseErr, text);
+    if (process.env.ANTHROPIC_API_KEY) {
+      try {
+        const response = await anthropic.messages.create({
+          model: 'claude-sonnet-5-5',
+          max_tokens: 500,
+          system: "You are a JSON CRM parser. Output raw JSON only.",
+          messages: [{ role: "user", content: prompt }]
+        });
+        
+        let text = response.content?.[0]?.text || "";
+        
+        // Strip possible markdown code blocks if the LLM disobeys
+        text = text.replace(/^```json/i, '').replace(/^```/i, '').replace(/```$/i, '').trim();
+        
+        try {
+          parsed = { ...parsed, ...JSON.parse(text) };
+        } catch (parseErr) {
+          console.error("JSON parse error from LLM extraction:", parseErr, text);
+        }
+      } catch (llmErr) {
+        console.error("LLM extraction failed in summarize, proceeding with raw transcript:", llmErr.message);
+      }
+    } else {
+      console.warn("ANTHROPIC_API_KEY missing in summarize; proceeding with raw transcript forwarding.");
     }
 
     // Determine timezone and routing

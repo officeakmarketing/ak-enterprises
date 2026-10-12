@@ -140,7 +140,18 @@ export async function POST(req) {
     content: msg.content
   }));
 
-  const anthropic = new Anthropic({ maxRetries: 3 }); 
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.error("Aria API Error: ANTHROPIC_API_KEY environment variable is missing.");
+    return NextResponse.json({ 
+      reply: "I'm having a little trouble connecting. Please book a free audit directly: https://calendly.com/ak-enterprises/call",
+      errorDetails: "Missing ANTHROPIC_API_KEY environment variable in deployment settings"
+    }, { status: 500 });
+  }
+
+  const anthropic = new Anthropic({ 
+    apiKey: process.env.ANTHROPIC_API_KEY,
+    maxRetries: 3 
+  }); 
   
   try {
     let stream;
