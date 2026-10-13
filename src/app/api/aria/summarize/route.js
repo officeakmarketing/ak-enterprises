@@ -79,29 +79,39 @@ Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks arou
     const isUS = tz.includes("america") || tz.includes("us/") || tz.includes("hawaii") || tz.includes("alaska");
     const routed_to = isUS ? "Christopher Strobach" : "UK team";
 
-    // Auto-detect contact details from user messages if not explicitly passed
-    let finalContact = contact_details;
+    // Regex pass over the user's messages to extract email and contact before CRM write
+    const userMessages = messages.filter(m => m.role === "user").map(m => m.content).join("\n");
+    const emailMatches = userMessages.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/gi) || [];
+    const phoneMatches = userMessages.match(/(\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9})/g) || [];
+
+    const extractedEmail = emailMatches.length > 0 ? emailMatches[emailMatches.length - 1].trim() : (contact_details && contact_details.includes("@") ? contact_details.trim() : null);
+    const extractedPhone = phoneMatches.length > 0 ? phoneMatches[phoneMatches.length - 1].trim() : null;
+
+    let finalContact = extractedEmail || extractedPhone || contact_details;
     if (!finalContact || finalContact === "Not provided") {
-      const userText = messages.filter(m => m.role === "user").map(m => m.content).join(" ");
-      const emails = userText.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi) || [];
-      const phones = userText.match(/(\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9})/g) || [];
-      if (emails.length > 0) finalContact = emails[0];
-      else if (phones.length > 0) finalContact = phones[0];
-      else finalContact = "Not provided";
+      finalContact = "Not provided";
     }
 
-    const isAnon = anonymous !== undefined ? Boolean(anonymous) : (finalContact === "Not provided");
+    const isAnon = anonymous !== undefined ? Boolean(anonymous) : (!extractedEmail && finalContact === "Not provided");
 
     // Track 1 record per conversation: look up existing lead_id by session
     const existingLeadId = lead_id || (session_id ? sessionLeadMap.get(session_id) : null);
-    const isUpdate = Boolean(existingLeadId || requestedAction === "UPDATE" || requestedAction === "update");
+    const isUpdate = Boolean(existingLeadId || session_id || requestedAction === "UPDATE" || requestedAction === "update");
 
     const hudPayload = {
       action: isUpdate ? "UPDATE" : "CREATE",
+      session_id: session_id || "sess_unknown",
+      sessionId: session_id || "sess_unknown",
       lead_id: existingLeadId || undefined,
       id: existingLeadId || undefined,
       record_id: existingLeadId || undefined,
-      session_id: session_id || "sess_unknown",
+      _id: existingLeadId || undefined,
+      overwrite: true,
+      upsert: true,
+      email: extractedEmail || undefined,
+      email_address: extractedEmail || undefined,
+      prospect_email: extractedEmail || undefined,
+      phone: extractedPhone || undefined,
       anonymous: isAnon,
       routed_to: routed_to,
       contact_details: finalContact,
