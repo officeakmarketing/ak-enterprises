@@ -24,6 +24,9 @@ export default function AriaWidget() {
   const isTypingRef = useRef(false);
   const lastMessageTimeRef = useRef(0);
   const sessionIdRef = useRef(null);
+  const leadIdRef = useRef(null);
+  const isSyncingRef = useRef(false);
+  const pendingSyncMessagesRef = useRef(null);
   const emailSentRef = useRef(false);
   const emailCaptureTimerRef = useRef(null);
   const lastSyncedLengthRef = useRef(0);
@@ -94,6 +97,11 @@ export default function AriaWidget() {
       localStorage.setItem("aria_session_id", sid);
     }
     sessionIdRef.current = sid;
+
+    const savedLeadId = localStorage.getItem("aria_lead_id");
+    if (savedLeadId) {
+      leadIdRef.current = savedLeadId;
+    }
   }, []);
 
   // Lock body scroll when chat is open (prevents background scrolling on mobile & desktop)
@@ -134,6 +142,7 @@ export default function AriaWidget() {
       // 1. Purge conversation history and valuation followup flags from storage
       localStorage.removeItem("aria_chat_history");
       localStorage.removeItem("aria_valuation_followup_sent");
+      localStorage.removeItem("aria_lead_id");
       sessionStorage.removeItem("aria_valuation_followup_sent");
       sessionStorage.removeItem("aria_visited_demo");
       sessionStorage.removeItem("aria_demo_submitted");
@@ -142,6 +151,7 @@ export default function AriaWidget() {
       // 2. Refresh session timestamp and ID
       const newSid = "sess_" + Math.random().toString(36).substring(2, 15);
       sessionIdRef.current = newSid;
+      leadIdRef.current = null;
       localStorage.setItem("aria_session_id", newSid);
       localStorage.setItem("aria_last_active_timestamp", Date.now().toString());
 
@@ -160,6 +170,8 @@ export default function AriaWidget() {
       bookingCompletedLoggedRef.current = false;
       chatAbandonedLoggedRef.current = false;
       lastSyncedLengthRef.current = 0;
+      isSyncingRef.current = false;
+      pendingSyncMessagesRef.current = null;
 
       // 5. Toast feedback
       if (!silent) {
@@ -310,35 +322,65 @@ export default function AriaWidget() {
   const syncSessionToHUD = async (currentMessages) => {
     if (!sessionIdRef.current || !currentMessages || currentMessages.length <= 1) return;
     
+    // If a sync is currently in-flight, queue latest messages to update after it finishes
+    if (isSyncingRef.current) {
+      pendingSyncMessagesRef.current = currentMessages;
+      return;
+    }
+    isSyncingRef.current = true;
+
     try {
       const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      const currentLeadId = leadIdRef.current || (typeof window !== "undefined" ? localStorage.getItem("aria_lead_id") : null);
       
       // Sync through API route which runs internal LLM extraction for problem/budget
-      await fetch("/api/aria/summarize", {
+      const res = await fetch("/api/aria/summarize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           session_id: sessionIdRef.current,
+          lead_id: currentLeadId || undefined,
+          action: currentLeadId ? "UPDATE" : "CREATE",
           timeZone: tz,
           messages: currentMessages,
           send_to_hud: true
         })
       });
+
+      if (res.ok) {
+        const data = await res.json().catch(() => ({}));
+        if (data?.lead_id) {
+          leadIdRef.current = data.lead_id;
+          if (typeof window !== "undefined") {
+            localStorage.setItem("aria_lead_id", data.lead_id);
+          }
+        }
+      }
     } catch (e) {
       console.error("HUD Sync Error:", e);
+    } finally {
+      isSyncingRef.current = false;
+      if (pendingSyncMessagesRef.current) {
+        const nextMsgs = pendingSyncMessagesRef.current;
+        pendingSyncMessagesRef.current = null;
+        syncSessionToHUD(nextMsgs);
+      }
     }
   };
 
   const triggerFollowUpEmail = async (currentMessages, emailAddress) => {
     try {
       const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      const currentLeadId = leadIdRef.current || (typeof window !== "undefined" ? localStorage.getItem("aria_lead_id") : null);
       
       // Trigger follow-up email via API route with LLM extraction
-      await fetch("/api/aria/summarize", {
+      const res = await fetch("/api/aria/summarize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           session_id: sessionIdRef.current,
+          lead_id: currentLeadId || undefined,
+          action: currentLeadId ? "UPDATE" : "CREATE",
           timeZone: tz,
           contact_details: emailAddress,
           anonymous: false,
@@ -347,6 +389,16 @@ export default function AriaWidget() {
           send_to_hud: true
         })
       });
+
+      if (res.ok) {
+        const data = await res.json().catch(() => ({}));
+        if (data?.lead_id) {
+          leadIdRef.current = data.lead_id;
+          if (typeof window !== "undefined") {
+            localStorage.setItem("aria_lead_id", data.lead_id);
+          }
+        }
+      }
     } catch(e) {
       console.error("Follow-up email error:", e);
     }

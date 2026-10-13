@@ -1,11 +1,17 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { NextResponse } from 'next/server';
 
+// In-memory cache across server invocations to ensure 1 CRM record per conversation
+const sessionLeadMap = globalThis.__aria_session_leads || new Map();
+globalThis.__aria_session_leads = sessionLeadMap;
+
 export async function POST(req) {
   try {
     const { 
       messages, 
       session_id, 
+      lead_id,
+      action: requestedAction,
       timeZone, 
       contact_details, 
       anonymous, 
@@ -86,9 +92,17 @@ Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks arou
 
     const isAnon = anonymous !== undefined ? Boolean(anonymous) : (finalContact === "Not provided");
 
+    // Track 1 record per conversation: look up existing lead_id by session
+    const existingLeadId = lead_id || (session_id ? sessionLeadMap.get(session_id) : null);
+    const isUpdate = Boolean(existingLeadId || requestedAction === "UPDATE" || requestedAction === "update");
+
     const hudPayload = {
-      anonymous: isAnon,
+      action: isUpdate ? "UPDATE" : "CREATE",
+      lead_id: existingLeadId || undefined,
+      id: existingLeadId || undefined,
+      record_id: existingLeadId || undefined,
       session_id: session_id || "sess_unknown",
+      anonymous: isAnon,
       routed_to: routed_to,
       contact_details: finalContact,
       problem: parsed.problem || "Not stated",
@@ -102,6 +116,7 @@ Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks arou
     // Forward to Base44 HUD if session_id is provided and send_to_hud is enabled
     let hudStatus = null;
     let hudError = null;
+    let savedLeadId = existingLeadId;
 
     if (send_to_hud && session_id) {
       try {
@@ -111,6 +126,17 @@ Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks arou
           body: JSON.stringify(hudPayload)
         });
         hudStatus = hudRes.status;
+        const hudData = await hudRes.json().catch(() => ({}));
+        const returnedId = hudData?.lead_id || hudData?.id || hudData?.record_id || hudData?.data?.id || hudData?.data?.lead_id || hudData?.result?.id || hudData?.result?.lead_id;
+        if (returnedId) {
+          savedLeadId = returnedId;
+        } else if (existingLeadId) {
+          savedLeadId = existingLeadId;
+        }
+
+        if (session_id && savedLeadId) {
+          sessionLeadMap.set(session_id, savedLeadId);
+        }
       } catch (hudErr) {
         console.error("Base44 HUD dispatch error:", hudErr);
         hudError = hudErr.message;
@@ -119,6 +145,8 @@ Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks arou
 
     return NextResponse.json({
       ...parsed,
+      lead_id: savedLeadId,
+      action: isUpdate ? "UPDATE" : "CREATE",
       routed_to,
       contact_details: finalContact,
       hud_synced: hudStatus !== null ? (hudStatus >= 200 && hudStatus < 300) : false,
