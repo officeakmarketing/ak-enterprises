@@ -205,33 +205,6 @@ export default function UKBusinessOperatingSystemsPage() {
 
         </div>
 
-        {/* Minimal Outbound Navigation Directory */}
-        <footer className="mt-20 pt-10 border-t border-muted-grey/20 flex flex-wrap items-center justify-between gap-y-4 gap-x-6 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-warm-grey/60">
-          <Link href="/" className="hover:text-brand-gold transition-colors">
-            ← Home
-          </Link>
-          <Link href="/what-we-build" className="hover:text-brand-gold transition-colors">
-            What We Build
-          </Link>
-          <Link href="/case-studies" className="hover:text-brand-gold transition-colors">
-            Case Studies
-          </Link>
-          <Link href="/aria" className="hover:text-brand-gold transition-colors">
-            Aria AI
-          </Link>
-          <Link href="/about" className="hover:text-brand-gold transition-colors">
-            About
-          </Link>
-          <Link
-            href="https://calendly.com/ak-enterprises/call"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-brand-gold hover:underline"
-          >
-            Free Audit →
-          </Link>
-        </footer>
-
       </div>
     </article>
   );
