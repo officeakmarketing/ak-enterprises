@@ -2,7 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Most Effective Business Operating Systems In The UK | AK Enterprises",
+  title: {
+    absolute: "Most Effective Business Operating Systems In The UK | AK Enterprises",
+  },
   description: "AK Enterprises builds the most effective Business Operating Systems in The UK. Here's the proof.",
   alternates: {
     canonical: "https://www.akenterprises.io/most-effective-business-operating-systems-in-the-uk",
