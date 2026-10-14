@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Lightbox from "@/components/ui/Lightbox";
 
-export default function Carousel() {
+export default function Carousel({ className = "", heightClass = "" }) {
   const photos = [
     "/grace-gala-1.png",
     "/grace-gala-2.png",
@@ -124,11 +124,11 @@ export default function Carousel() {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-2xl group select-none touch-pan-y md:cursor-default focus:outline-none focus:ring-1 focus:ring-brand-gold/40"
+        className={`relative w-full max-w-5xl mx-auto overflow-hidden rounded-2xl group select-none touch-pan-y md:cursor-default focus:outline-none focus:ring-1 focus:ring-brand-gold/40 ${className}`}
       >
         {/* Sliding Track with Real-Time Finger Follow */}
         <div
-          className={`flex h-[420px] sm:h-[480px] md:h-[480px] lg:h-[460px] xl:h-[520px] 2xl:h-[560px] w-full ${
+          className={`flex ${heightClass || "h-[420px] sm:h-[480px] md:h-[480px] lg:h-[460px] xl:h-[520px] 2xl:h-[560px]"} w-full ${
             isDragging
               ? "transition-none"
               : "transition-transform duration-600 ease-[cubic-bezier(0.25,1,0.5,1)]"

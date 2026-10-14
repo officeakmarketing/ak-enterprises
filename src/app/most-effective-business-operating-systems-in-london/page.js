@@ -165,7 +165,7 @@ export default function LondonBusinessOperatingSystemsPage() {
             </p>
 
             <div className="my-8 relative w-full rounded-2xl overflow-hidden border border-brand-gold/40 shadow-xl">
-              <Carousel />
+              <Carousel heightClass="h-[520px] sm:h-[600px] md:h-[660px] lg:h-[720px]" />
             </div>
 
             <blockquote className="my-8 border-l-2 border-brand-gold/60 pl-6 py-2">
