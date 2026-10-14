@@ -418,7 +418,11 @@ export default function AriaWidget() {
     const lastMsg = messages[messages.length - 1];
     const isAssistantDone = lastMsg && lastMsg.role === "assistant" && lastMsg.content && lastMsg.content.trim().length > 0 && !isTyping;
     
-    if (messages.length > 1 && isAssistantDone && messages.length > lastSyncedLengthRef.current) {
+    // Only sync to HUD after the first real USER message — prevents junk leads from
+    // demo auto-open which injects an assistant pitch with zero user messages
+    const hasUserMessage = messages.some(m => m.role === "user");
+
+    if (hasUserMessage && isAssistantDone && messages.length > lastSyncedLengthRef.current) {
       const timeoutId = setTimeout(() => {
         lastSyncedLengthRef.current = messages.length;
         syncSessionToHUD(messages);

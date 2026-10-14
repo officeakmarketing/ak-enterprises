@@ -25,7 +25,7 @@ export default function AriaDemoWidget() {
           ref={iframeRef}
           src="https://ariasystem.vercel.app/"
           className="absolute inset-0 w-full h-full border-0"
-          title="Ariia Property Analysis"
+          title="Aria Property Analysis"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           scrolling="yes"
