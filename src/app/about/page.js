@@ -1,5 +1,6 @@
 import AboutHero from "@/components/about/AboutHero";
 import AboutGroup from "@/components/about/AboutGroup";
+import AboutArticles from "@/components/about/AboutArticles";
 import CredibilitySection from "@/components/home/CredibilitySection";
 import AboutFounders from "@/components/about/AboutFounders";
 import USLeadership from "@/components/about/USLeadership";
@@ -12,9 +13,9 @@ export default function About() {
       <USLeadership />
       <AboutGroup />
       <AboutHero />
+      <AboutArticles />
       <CredibilitySection />
       <AboutCTA />
-
     </main>
   );
 }
