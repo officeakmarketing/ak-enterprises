@@ -140,15 +140,6 @@ export default function UKBusinessOperatingSystemsPage() {
               Bright Face Barber, Central London. Fourteen months ago it ran on pen and paper and a phone that rang out after hours. Today the numbers are verified: $301,340 in revenue and 7,208 automated bookings in 14 months, with a booking system that never sleeps. &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo; Talib M, CEO, Bright Face Barber.
             </p>
 
-            <blockquote className="my-8 border-l-2 border-brand-gold/60 pl-6 py-2">
-              <p className="text-white/95 italic font-serif text-lg sm:text-xl leading-relaxed mb-2">
-                &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo;
-              </p>
-              <footer className="text-brand-gold text-xs font-mono font-bold tracking-widest uppercase">
-                Talib M, CEO, Bright Face Barber
-              </footer>
-            </blockquote>
-
             <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0e0e10] shadow-xl">
               <Image
                 src="/bright-face-dashboard.png"
@@ -159,18 +150,18 @@ export default function UKBusinessOperatingSystemsPage() {
               />
             </div>
 
+            <blockquote className="my-8 border-l-2 border-brand-gold/60 pl-6 py-2">
+              <p className="text-white/95 italic font-serif text-lg sm:text-xl leading-relaxed mb-2">
+                &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo;
+              </p>
+              <footer className="text-brand-gold text-xs font-mono font-bold tracking-widest uppercase">
+                Talib M, CEO, Bright Face Barber
+              </footer>
+            </blockquote>
+
             <p className="mb-4">
               Grace and Power Gala, London. A luxury events platform load-tested to two million concurrent users with 100% uptime at peak, built and deployed by AK Enterprises. &ldquo;Extremely professional and highly effective. Very happy with the results.&rdquo; Mario Paunica, organizer.
             </p>
-
-            <blockquote className="my-8 border-l-2 border-brand-gold/60 pl-6 py-2">
-              <p className="text-white/95 italic font-serif text-lg sm:text-xl leading-relaxed mb-2">
-                &ldquo;Extremely professional and highly effective. Very happy with the results.&rdquo;
-              </p>
-              <footer className="text-brand-gold text-xs font-mono font-bold tracking-widest uppercase">
-                Mario Paunica, Organizer, Grace and Power Gala
-              </footer>
-            </blockquote>
 
             <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0e0e10] shadow-xl">
               <Image
@@ -181,6 +172,15 @@ export default function UKBusinessOperatingSystemsPage() {
                 className="w-full h-auto object-cover"
               />
             </div>
+
+            <blockquote className="my-8 border-l-2 border-brand-gold/60 pl-6 py-2">
+              <p className="text-white/95 italic font-serif text-lg sm:text-xl leading-relaxed mb-2">
+                &ldquo;Extremely professional and highly effective. Very happy with the results.&rdquo;
+              </p>
+              <footer className="text-brand-gold text-xs font-mono font-bold tracking-widest uppercase">
+                Mario Paunica, Organizer, Grace and Power Gala
+              </footer>
+            </blockquote>
           </section>
 
           {/* Section: How we build it */}
