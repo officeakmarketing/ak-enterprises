@@ -842,11 +842,11 @@ export default function AriaWidget() {
             onClick={() => {
               setIsOpen(true);
             }}
-            className="relative p-3 rounded-full bg-black border-2 border-brand-gold shadow-[0_4px_20px_rgba(201,169,97,0.25)] hover:shadow-[0_4px_25px_rgba(201,169,97,0.45)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center"
+            className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black border-[1.5px] sm:border-2 border-brand-gold hover:scale-105 active:scale-95 transition-transform duration-300 flex items-center justify-center overflow-hidden"
             aria-label="Open Aria Chatbot"
           >
-            <div className="relative w-8 h-8 z-10">
-              <Image src="/fav.png" alt="Aria Logo" fill className="object-contain" />
+            <div className="relative w-7 h-7 sm:w-8 sm:h-8 z-10 flex items-center justify-center scale-135">
+              <Image src="/fav.png" alt="Aria Logo" fill className="object-contain" priority />
             </div>
           </button>
         </div>

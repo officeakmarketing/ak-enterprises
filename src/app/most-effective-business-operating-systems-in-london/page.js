@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Carousel from "@/components/ui/Carousel";
+import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
 
 export const metadata = {
   title: {
@@ -58,31 +59,35 @@ export default function LondonBusinessOperatingSystemsPage() {
   };
 
   return (
-    <article className="min-h-screen bg-ink-black text-white relative">
+    <article className="min-h-screen bg-ink-black text-white relative overflow-hidden">
+      {/* Background Particles */}
+      <BackgroundSparkles count={40} />
+
       {/* Schema.org Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Subtle top spotlight to match home page */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[450px] bg-[radial-gradient(ellipse_at_top,rgba(201,169,97,0.06),transparent_70%)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-12 pb-20">
+      <div className="relative z-10 w-full max-w-5xl lg:max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-12 pb-20">
         
         {/* Region Badge */}
-        <div className="inline-flex items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-[0.2em] uppercase mb-5 sm:mb-6 font-bold">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse" />
-          <span>London Operations &amp; Infrastructure</span>
+        <div className="inline-flex max-w-full items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3 py-1.5 sm:px-3.5 sm:py-1 rounded-full text-brand-gold text-[9.5px] sm:text-xs tracking-[0.14em] sm:tracking-[0.2em] uppercase mb-5 sm:mb-6 font-bold leading-normal text-left">
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse flex-shrink-0" />
+          <span className="break-words">London Operations &amp; Infrastructure</span>
         </div>
 
-        {/* H1 Heading - Editorial Serif styling matching Home Page */}
+        {/* H1 Heading - Editorial Serif styling with gold text gradient */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-serif italic text-white leading-[1.18] tracking-tight mb-8">
-          Most Effective Business Operating Systems In London
+          Most Effective Business Operating Systems In{" "}
+          <span className="inline-block pr-3 pb-0.5 bg-gradient-to-r from-brand-gold via-[#F6E0A4] to-brand-gold bg-clip-text text-transparent">
+            London
+          </span>
         </h1>
 
         {/* Lead Paragraph */}
-        <p className="text-white text-lg sm:text-xl lg:text-2xl font-light leading-relaxed mb-10 text-balance">
+        <p className="text-white text-lg sm:text-xl lg:text-2xl font-light leading-relaxed mb-10 text-balance max-w-4xl">
           London is the most competitive services market in Europe, and it does not forgive slow follow-up. A lead that messages you at 7pm has booked with someone else by 9pm. AK Enterprises builds the most effective business operating systems in London, and we prove it with measured results from real London businesses.
         </p>
 
@@ -106,104 +111,217 @@ export default function LondonBusinessOperatingSystemsPage() {
           </Link>
         </div>
 
-        {/* Featured Image */}
-        <div className="mb-16 overflow-hidden rounded-2xl border border-muted-grey/25 bg-[#0e0e10] shadow-2xl">
-          <Image
-            src="/most-effective-business-operating-systems-in-london.jpeg"
-            alt="Most Effective Business Operating Systems In London"
-            width={1200}
-            height={630}
-            priority
-            className="w-full h-auto object-cover"
-          />
-        </div>
 
         {/* Editorial Body Content Flow */}
-        <div className="space-y-14 text-warm-grey/90 text-base sm:text-lg leading-[1.75] font-light">
+        <div className="space-y-16 text-warm-grey/90 text-base sm:text-lg leading-[1.8] font-light">
           
           {/* Section: What a business operating system actually is */}
           <section>
-            <h2 className="text-2xl sm:text-3xl font-serif italic text-white mb-5 tracking-tight">
-              What a business operating system actually is
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic text-white mb-6 tracking-tight">
+              What a{" "}
+              <span className="inline-block pr-3 pb-0.5 bg-gradient-to-r from-brand-gold via-[#F6E0A4] to-brand-gold bg-clip-text text-transparent">
+                Business Operating System
+              </span>{" "}
+              Actually Is
             </h2>
-            <p>
+            <p className="max-w-4xl">
               Your website, your AI follow-up, your booking flow and your review engine, working as one machine that captures every enquiry and answers within seconds. Installed once, then it compounds. You own it. It never depends on the owner remembering anything.
             </p>
           </section>
 
-          {/* Section: The proof, from London businesses */}
-          <section className="pt-6 border-t border-muted-grey/15">
-            <h2 className="text-2xl sm:text-3xl font-serif italic text-white mb-6 tracking-tight">
-              The proof, from London businesses
+          {/* Section: The Proof, from London Businesses */}
+          <section className="pt-8 border-t border-muted-grey/15">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic text-white mb-8 tracking-tight">
+              The{" "}
+              <span className="inline-block pr-4 pb-0.5 bg-gradient-to-r from-brand-gold via-[#F6E0A4] to-brand-gold bg-clip-text text-transparent">
+                Proof
+              </span>
+              , from London Businesses
             </h2>
             
-            <p className="mb-4">
-              Bright Face Barber, Central London. Fourteen months ago it ran on pen and paper and a phone that rang out after hours. Today the numbers are verified: $301,340 in revenue and 7,208 automated bookings in 14 months, with a booking system that never sleeps. &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo; Talib M, CEO, Bright Face Barber.
-            </p>
+            {/* Partitions for Case Studies - Full width on mobile without outside margin */}
+            <div className="space-y-10 sm:space-y-12 -mx-3.5 sm:mx-0">
+              
+              {/* Partition 1: Bright Face Barber */}
+              <div className="w-full rounded-none sm:rounded-2xl border-y sm:border border-brand-gold/30 bg-[#0e0e12]/90 px-4 py-7 sm:p-10 lg:p-12 relative overflow-hidden backdrop-blur-sm shadow-2xl transition-all duration-300 hover:border-brand-gold/50">
+                <div className="flex flex-wrap items-center justify-between gap-3 pb-5 mb-8 border-b border-muted-grey/15">
+                  <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.22em] text-brand-gold font-bold">
+                    Case Study // 01 &bull; Central London Flagship
+                  </span>
+                  <span className="text-xs font-mono uppercase tracking-widest text-warm-grey/70 font-semibold">
+                    Service Industry Automation
+                  </span>
+                </div>
 
-            <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0e0e10] shadow-xl">
-              <Image
-                src="/bright-face-dashboard.png"
-                alt="Bright Face Barber Verified Revenue Dashboard"
-                width={1200}
-                height={700}
-                className="w-full h-auto object-cover"
-              />
+                <h3 className="text-2xl sm:text-3xl md:text-[2rem] font-serif italic text-white mb-4 tracking-tight leading-snug">
+                  Bright Face Barber, Central London
+                </h3>
+
+                <p className="mb-8 text-warm-grey/90 leading-relaxed font-light text-base sm:text-lg">
+                  Fourteen months ago it ran on pen and paper and a phone that rang out after hours. Today the numbers are verified: $301,340 in revenue and 7,208 automated bookings in 14 months, with a booking system that never sleeps. &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo; Talib M, CEO, Bright Face Barber.
+                </p>
+
+                <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0a0a0c] shadow-2xl">
+                  <Image
+                    src="/bright-face-dashboard.png"
+                    alt="Bright Face Barber Verified Revenue Dashboard"
+                    width={1200}
+                    height={700}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t border-brand-gold/20 mb-8">
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
+                      $301,340
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
+                      Verified revenue
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
+                      7,208
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
+                      Automated bookings
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
+                      14
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
+                      Months to result
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
+                      0
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
+                      Missed calls
+                    </div>
+                  </div>
+                </div>
+
+                <blockquote className="border-l-2 border-brand-gold/60 pl-4 sm:pl-6 py-3 bg-black/25 rounded-r-xl">
+                  <p className="text-white/95 italic font-serif text-base sm:text-lg lg:text-xl leading-relaxed mb-2 font-normal">
+                    &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo;
+                  </p>
+                  <footer className="text-brand-gold text-[11px] sm:text-xs font-mono font-bold tracking-widest uppercase">
+                    Talib M, CEO, Bright Face Barber
+                  </footer>
+                </blockquote>
+              </div>
+
+              {/* Partition 2: Grace and Power Gala */}
+              <div className="w-full rounded-none sm:rounded-2xl border-y sm:border border-brand-gold/30 bg-[#0e0e12]/90 px-4 py-7 sm:p-10 lg:p-12 relative overflow-hidden backdrop-blur-sm shadow-2xl transition-all duration-300 hover:border-brand-gold/50">
+                <div className="flex flex-wrap items-center justify-between gap-3 pb-5 mb-8 border-b border-muted-grey/15">
+                  <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.22em] text-brand-gold font-bold">
+                    Case Study // 02 &bull; Enterprise Scale
+                  </span>
+                  <span className="text-xs font-mono uppercase tracking-widest text-warm-grey/70 font-semibold">
+                    High-Concurrency Platform
+                  </span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl md:text-[2rem] font-serif italic text-white mb-4 tracking-tight leading-snug">
+                  Grace and Power Gala, London
+                </h3>
+
+                <p className="mb-8 text-warm-grey/90 leading-relaxed font-light text-base sm:text-lg">
+                  A luxury events platform load-tested to two million concurrent users with 100% uptime at peak, built and deployed by AK Enterprises. &ldquo;Extremely professional and highly effective. Very happy with the results.&rdquo; Mario Paunica, organizer.
+                </p>
+
+                <div className="my-8 relative w-full rounded-xl sm:rounded-2xl overflow-hidden border border-brand-gold/40 shadow-2xl">
+                  <Carousel heightClass="h-[620px] sm:h-[720px] md:h-[820px] lg:h-[900px] xl:h-[960px]" />
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t border-brand-gold/20 mb-8">
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
+                      2,000,000
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
+                      Concurrent users tested
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
+                      100%
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
+                      Uptime at peak
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
+                      1
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
+                      Unified ecosystem
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
+                      0
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
+                      Platform failures
+                    </div>
+                  </div>
+                </div>
+
+                <blockquote className="border-l-2 border-brand-gold/60 pl-4 sm:pl-6 py-3 bg-black/25 rounded-r-xl">
+                  <p className="text-white/95 italic font-serif text-base sm:text-lg lg:text-xl leading-relaxed mb-2 font-normal">
+                    &ldquo;Extremely professional and highly effective. Very happy with the results.&rdquo;
+                  </p>
+                  <footer className="text-brand-gold text-[11px] sm:text-xs font-mono font-bold tracking-widest uppercase">
+                    Mario Paunica, Organizer, Grace and Power Gala
+                  </footer>
+                </blockquote>
+              </div>
+
             </div>
-
-            <blockquote className="my-8 border-l-2 border-brand-gold/60 pl-6 py-2">
-              <p className="text-white/95 italic font-serif text-lg sm:text-xl leading-relaxed mb-2">
-                &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo;
-              </p>
-              <footer className="text-brand-gold text-xs font-mono font-bold tracking-widest uppercase">
-                Talib M, CEO, Bright Face Barber
-              </footer>
-            </blockquote>
-
-            <p className="mb-4">
-              Grace and Power Gala, London. A luxury events platform load-tested to two million concurrent users with 100% uptime at peak, built and deployed by AK Enterprises. &ldquo;Extremely professional and highly effective. Very happy with the results.&rdquo; Mario Paunica, organizer.
-            </p>
-
-            <div className="my-8 relative w-full rounded-2xl overflow-hidden border border-brand-gold/40 shadow-xl">
-              <Carousel heightClass="h-[520px] sm:h-[600px] md:h-[660px] lg:h-[720px]" />
-            </div>
-
-            <blockquote className="my-8 border-l-2 border-brand-gold/60 pl-6 py-2">
-              <p className="text-white/95 italic font-serif text-lg sm:text-xl leading-relaxed mb-2">
-                &ldquo;Extremely professional and highly effective. Very happy with the results.&rdquo;
-              </p>
-              <footer className="text-brand-gold text-xs font-mono font-bold tracking-widest uppercase">
-                Mario Paunica, Organizer, Grace and Power Gala
-              </footer>
-            </blockquote>
           </section>
 
-          {/* Section: How we build it */}
-          <section className="pt-6 border-t border-muted-grey/15">
-            <h2 className="text-2xl sm:text-3xl font-serif italic text-white mb-5 tracking-tight">
-              How we build it
+          {/* Section: How We Build It */}
+          <section className="pt-8 border-t border-muted-grey/15">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic text-white mb-6 tracking-tight">
+              How We{" "}
+              <span className="inline-block pr-3.5 pb-0.5 bg-gradient-to-r from-brand-gold via-[#F6E0A4] to-brand-gold bg-clip-text text-transparent">
+                Build It
+              </span>
             </h2>
-            <p>
+            <p className="max-w-4xl">
               Every engagement starts with a free 45-minute business audit. We find every gap in your business and tell you exactly what it is costing you. If we cannot find a single gap, we tell you honestly and you owe us nothing. Then we design and install your complete operating system in four to six weeks. Then it runs, you own it, and it compounds over time.
             </p>
           </section>
 
-          {/* Section: Our rule */}
-          <section className="pt-6 border-t border-muted-grey/15">
-            <h2 className="text-2xl sm:text-3xl font-serif italic text-white mb-5 tracking-tight">
-              Our rule
+          {/* Section: Our Rule */}
+          <section className="pt-8 border-t border-muted-grey/15">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic text-white mb-6 tracking-tight">
+              Our{" "}
+              <span className="inline-block pr-3 pb-0.5 bg-gradient-to-r from-brand-gold via-[#F6E0A4] to-brand-gold bg-clip-text text-transparent">
+                Rule
+              </span>
             </h2>
-            <p>
+            <p className="max-w-4xl">
               If it cannot be measured, we do not ship it. London businesses searching for the most effective business operating systems in London deserve receipts, not adjectives. The receipts: $301,340 verified revenue. 7,208 automated bookings. Two million users load-tested. One system per business.
             </p>
           </section>
 
-          {/* Section: Book a free audit */}
+          {/* Section: Book a Free Audit */}
           <section className="pt-8 border-t border-muted-grey/15">
-            <h2 className="text-2xl sm:text-3xl font-serif italic text-white mb-5 tracking-tight">
-              Book a free audit
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic text-white mb-6 tracking-tight">
+              Book a{" "}
+              <span className="inline-block pr-3.5 pb-0.5 bg-gradient-to-r from-brand-gold via-[#F6E0A4] to-brand-gold bg-clip-text text-transparent">
+                Free Audit
+              </span>
             </h2>
-            <p className="mb-8">
+            <p className="mb-8 max-w-4xl">
               AK Enterprises works with service businesses across London, the UK and worldwide. Book your free 45-minute audit and see exactly what your current systems are costing you every month. That is what the most effective business operating systems in London are built on: one audit, one build, one machine that runs the business front to end.
             </p>
 
