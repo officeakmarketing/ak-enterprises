@@ -65,10 +65,10 @@ export default function LondonBusinessOperatingSystemsPage() {
       {/* Subtle top spotlight to match home page */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[450px] bg-[radial-gradient(ellipse_at_top,rgba(201,169,97,0.06),transparent_70%)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 pb-24">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-12 pb-20">
         
         {/* Region Badge */}
-        <div className="inline-flex items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-[0.2em] uppercase mb-8 font-bold">
+        <div className="inline-flex items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-[0.2em] uppercase mb-5 sm:mb-6 font-bold">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse" />
           <span>London Operations &amp; Infrastructure</span>
         </div>
