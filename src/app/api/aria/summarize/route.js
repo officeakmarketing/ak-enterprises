@@ -82,7 +82,10 @@ Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks arou
     // Regex pass over the user's messages to extract email and contact before CRM write
     const userMessages = messages.filter(m => m.role === "user").map(m => m.content).join("\n");
     const emailMatches = userMessages.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/gi) || [];
-    const phoneMatches = userMessages.match(/(\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9})/g) || [];
+    // Phone: broad match first (digit-bounded string up to 20 chars), then filter to ≥7 actual digits
+    // This correctly handles: "07700 900 321", "07700 900123", "+44 7700 900321", "555-123-4567"
+    const rawPhoneMatches = userMessages.match(/(\+?[\d][\d\s().+-]{5,19}[\d])/g) || [];
+    const phoneMatches = rawPhoneMatches.filter(p => p.replace(/\D/g, "").length >= 7);
 
     const extractedEmail = emailMatches.length > 0 ? emailMatches[emailMatches.length - 1].trim() : (contact_details && contact_details.includes("@") ? contact_details.trim() : null);
     const extractedPhone = phoneMatches.length > 0 ? phoneMatches[phoneMatches.length - 1].trim() : null;
