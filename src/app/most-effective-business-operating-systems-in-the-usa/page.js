@@ -140,6 +140,20 @@ export default function USABusinessOperatingSystemsPage() {
               Holiday Dream Photos, USA. A multi-location photography experience running a fully automated booking system across 9 mall locations in 7 states simultaneously, with 11 appointment types configured and thousands of families served. The experience works with some of the most recognized names in entertainment, and Nick Cannon has publicly supported its Black Santa experience, a dedicated session offered at select locations.
             </p>
 
+            <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0e0e10] shadow-xl">
+              <Image
+                src="/santa-case.png"
+                alt="Holiday Dream Photos Multi-Location Automated Booking System"
+                width={1200}
+                height={700}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            <p className="mb-4">
+              Bright Face Barber, London. Our flagship build, installed by the same team: $301,340 in verified revenue and 7,208 automated bookings in 14 months after moving from pen and paper. &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo; Talib M, CEO.
+            </p>
+
             <blockquote className="my-8 border-l-2 border-brand-gold/60 pl-6 py-2">
               <p className="text-white/95 italic font-serif text-lg sm:text-xl leading-relaxed mb-2">
                 &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo;
@@ -149,9 +163,15 @@ export default function USABusinessOperatingSystemsPage() {
               </footer>
             </blockquote>
 
-            <p className="mb-4">
-              Bright Face Barber, London. Our flagship build, installed by the same team: $301,340 in verified revenue and 7,208 automated bookings in 14 months after moving from pen and paper. &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo; Talib M, CEO.
-            </p>
+            <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0e0e10] shadow-xl">
+              <Image
+                src="/bright-face-dashboard.png"
+                alt="Bright Face Barber Verified Revenue Dashboard"
+                width={1200}
+                height={700}
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </section>
 
           {/* Section: How we build it */}

@@ -149,6 +149,16 @@ export default function LondonBusinessOperatingSystemsPage() {
               </footer>
             </blockquote>
 
+            <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0e0e10] shadow-xl">
+              <Image
+                src="/bright-face-dashboard.png"
+                alt="Bright Face Barber Verified Revenue Dashboard"
+                width={1200}
+                height={700}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
             <p className="mb-4">
               Grace and Power Gala, London. A luxury events platform load-tested to two million concurrent users with 100% uptime at peak, built and deployed by AK Enterprises. &ldquo;Extremely professional and highly effective. Very happy with the results.&rdquo; Mario Paunica, organizer.
             </p>
@@ -161,6 +171,16 @@ export default function LondonBusinessOperatingSystemsPage() {
                 Mario Paunica, Organizer, Grace and Power Gala
               </footer>
             </blockquote>
+
+            <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0e0e10] shadow-xl">
+              <Image
+                src="/grace-gala-1.png"
+                alt="Grace and Power Gala Platform Deployed by AK Enterprises"
+                width={1200}
+                height={700}
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </section>
 
           {/* Section: How we build it */}
