@@ -8,6 +8,9 @@ export default function sitemap() {
     "/case-studies",
     "/aria",
     "/about",
+    "/most-effective-business-operating-systems-in-the-uk",
+    "/most-effective-business-operating-systems-in-london",
+    "/most-effective-business-operating-systems-in-the-usa",
   ];
 
   return routes.map((route) => ({

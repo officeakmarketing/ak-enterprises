@@ -44,17 +44,20 @@ export default function Footer() {
           <Link href="/about" className="hover:text-white transition">
             About
           </Link>
-          <Link href="https://calendly.com/ak-enterprises/call" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
-            Contact
+          <Link
+            href="https://calendly.com/ak-enterprises/call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-gold hover:text-white transition"
+          >
+            Book Audit Now
           </Link>
         </div>
       </div>
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-muted-grey border-t border-[#1a1a1a] pt-8 gap-6 md:gap-0">
           <div className="text-center md:text-left leading-relaxed text-[11px] sm:text-xs">
-            AK Marketing Consulting Ltd. Registered in England and Wales.
-            Company No. 17128177.<br />
-            Trading as AK Enterprises.
+            © {new Date().getFullYear()} AK Enterprises. All rights reserved.
           </div>
 
           <div className="flex flex-col md:flex-row items-center md:items-end gap-4 md:gap-6 pt-6 md:pt-0">
