@@ -75,31 +75,31 @@ export default function Preloader() {
         background: "radial-gradient(ellipse at center, #0d1217 0%, #080a0d 50%, #030405 100%)",
       }}
     >
-      {/* Premium star particles identical to the footer */}
-      <BackgroundSparkles count={45} />
+      {/* Premium star particles - appearing immediately */}
+      <BackgroundSparkles count={55} immediate={true} />
 
       {/* Subtle Studio White/Silver Spotlight Glow as seen in footer */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.035),transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.04),transparent_70%)] pointer-events-none" />
       {/* Cinematic Ambient Glow Atmosphere */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        {/* Soft atmospheric cyan cloud - toned down */}
-        <div className="w-[340px] h-[220px] sm:w-[500px] sm:h-[300px] md:w-[620px] md:h-[340px] rounded-full bg-cyan-500/10 blur-[100px]" />
-        {/* Wider deep teal horizon - toned down */}
-        <div className="absolute w-[500px] h-[320px] sm:w-[720px] sm:h-[420px] rounded-full bg-cyan-700/8 blur-[140px]" />
+        {/* Soft atmospheric cyan cloud */}
+        <div className="w-[380px] h-[250px] sm:w-[560px] sm:h-[340px] md:w-[700px] md:h-[380px] rounded-full bg-cyan-500/18 blur-[95px] animate-pulse" />
+        {/* Wider deep teal horizon */}
+        <div className="absolute w-[560px] h-[360px] sm:w-[800px] sm:h-[460px] rounded-full bg-cyan-600/12 blur-[130px]" />
         {/* Warm gold core reflection */}
-        <div className="absolute w-[240px] h-[160px] sm:w-[320px] sm:h-[200px] rounded-full bg-brand-gold/20 blur-[70px]" />
+        <div className="absolute w-[240px] h-[160px] sm:w-[320px] sm:h-[200px] rounded-full bg-brand-gold/18 blur-[70px]" />
       </div>
 
       {/* Main Brand Logo */}
       <div className="relative z-10 flex flex-col items-center justify-center animate-preloader-reveal px-6">
-        {/* Loader image with responsive sizing and subtle halo */}
+        {/* Loader image with responsive sizing, smooth scale and cinematic drift */}
         <img
           src="/loader.png"
           alt="AK Enterprises"
           width={1646}
           height={734}
           fetchPriority="high"
-          className="w-[230px] sm:w-[320px] md:w-[380px] max-w-[80vw] h-auto object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] drop-shadow-[0_0_20px_rgba(201,169,97,0.2)] select-none pointer-events-none"
+          className="w-[230px] sm:w-[320px] md:w-[380px] max-w-[80vw] h-auto object-contain animate-preloader-logo drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] drop-shadow-[0_0_20px_rgba(201,169,97,0.2)] select-none pointer-events-none"
         />
 
         {/* Luminous Accent Hairline with Gold Glow */}

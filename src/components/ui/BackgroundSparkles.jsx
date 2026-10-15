@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function BackgroundSparkles({ count = 40 }) {
+export default function BackgroundSparkles({ count = 40, immediate = false }) {
   const [sparkles, setSparkles] = useState([]);
 
   useEffect(() => {
@@ -12,11 +12,11 @@ export default function BackgroundSparkles({ count = 40 }) {
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
       size: Math.random() * 1.5 + 0.5, // 0.5px to 2px
-      animationDuration: `${Math.random() * 4 + 3}s`, // 3s to 7s
-      animationDelay: `${Math.random() * 5}s`,
+      animationDuration: `${Math.random() * 3 + 2}s`, // 2s to 5s
+      animationDelay: immediate ? `${(Math.random() * 0.4).toFixed(2)}s` : `${Math.random() * 5}s`,
     }));
     setSparkles(generatedSparkles);
-  }, [count]);
+  }, [count, immediate]);
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
