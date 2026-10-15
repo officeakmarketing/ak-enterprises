@@ -40,8 +40,8 @@ export default function Navbar() {
       <nav className={`w-full z-50 bg-[#0b0b0c]/95 border-b border-muted-grey/20 ${isThankYouPage ? "relative" : "sticky top-0"}`}>
         <div className="w-full max-w-[1536px] mx-auto grid grid-cols-2 md:grid-cols-[1fr_auto_1fr] items-center px-4 sm:px-6 lg:px-8 xl:px-12 py-3.5 md:py-4">
           {/* Left side Logo */}
-          <div className="flex justify-start">
-            <Link href="/" aria-label="AK Enterprises Home">
+          <div className="flex items-center justify-start">
+            <Link href="/" aria-label="AK Enterprises Home" className="inline-flex items-center">
               <Logo />
             </Link>
           </div>

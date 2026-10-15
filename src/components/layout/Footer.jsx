@@ -21,9 +21,9 @@ export default function Footer() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-[radial-gradient(ellipse_at_bottom,rgba(255,255,255,0.04),transparent_70%)] pointer-events-none"></div>
       
       <div className="relative z-10 flex flex-col md:flex-row justify-between items-center mb-12 max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center md:text-left mb-8 md:mb-0">
-          <div className="mb-2 flex justify-center md:justify-start">
-            <Link href="/" aria-label="AK Enterprises Home">
+        <div className="text-center md:text-left mb-8 md:mb-0 flex flex-col justify-center">
+          <div className="mb-4 sm:mb-5 flex justify-center md:justify-start items-center">
+            <Link href="/" aria-label="AK Enterprises Home" className="inline-flex items-center">
               <Logo />
             </Link>
           </div>
@@ -31,7 +31,7 @@ export default function Footer() {
             We build the systems that run your business.
           </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-xs sm:text-sm uppercase tracking-widest text-warm-grey font-bold">
+        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-xs sm:text-sm uppercase tracking-widest text-warm-grey font-bold">
           <Link href="/what-we-build" className="hover:text-white transition">
             What We Build
           </Link>

@@ -84,7 +84,7 @@ export default function RootLayout({ children }) {
     >
       <head>
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-        <link rel="preload" as="image" href="/loader.png" type="image/png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/transparent-logo.png" type="image/png" fetchPriority="high" />
         <style
           dangerouslySetInnerHTML={{
             __html: `html.intro-seen #ak-preloader { display: none !important; }`,
