@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
 
 export default function Preloader() {
   const [fading, setFading] = useState(false);
@@ -67,21 +68,26 @@ export default function Preloader() {
     <div
       id="ak-preloader"
       aria-hidden="true"
-      className={`fixed inset-0 z-[99999] flex items-center justify-center transition-opacity duration-450 ease-out select-none ${
+      className={`fixed inset-0 z-[99999] flex items-center justify-center bg-ink-black overflow-hidden transition-opacity duration-450 ease-out select-none ${
         fading ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
       style={{
-        background: "radial-gradient(ellipse at center, #0a1118 0%, #06080b 55%, #020304 100%)",
+        background: "radial-gradient(ellipse at center, #0d1217 0%, #080a0d 50%, #030405 100%)",
       }}
     >
+      {/* Premium star particles identical to the footer */}
+      <BackgroundSparkles count={45} />
+
+      {/* Subtle Studio White/Silver Spotlight Glow as seen in footer */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.035),transparent_70%)] pointer-events-none" />
       {/* Cinematic Ambient Glow Atmosphere */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        {/* Soft atmospheric cyan cloud */}
-        <div className="w-[360px] h-[240px] sm:w-[540px] sm:h-[320px] md:w-[700px] md:h-[380px] rounded-full bg-cyan-500/22 blur-[90px] animate-pulse" />
-        {/* Wider deep teal horizon */}
-        <div className="absolute w-[550px] h-[360px] sm:w-[800px] sm:h-[480px] rounded-full bg-cyan-600/12 blur-[130px]" />
-        {/* Subtle warm gold core reflection */}
-        <div className="absolute w-[240px] h-[160px] sm:w-[320px] sm:h-[200px] rounded-full bg-brand-gold/18 blur-[65px]" />
+        {/* Soft atmospheric cyan cloud - toned down */}
+        <div className="w-[340px] h-[220px] sm:w-[500px] sm:h-[300px] md:w-[620px] md:h-[340px] rounded-full bg-cyan-500/10 blur-[100px]" />
+        {/* Wider deep teal horizon - toned down */}
+        <div className="absolute w-[500px] h-[320px] sm:w-[720px] sm:h-[420px] rounded-full bg-cyan-700/8 blur-[140px]" />
+        {/* Warm gold core reflection */}
+        <div className="absolute w-[240px] h-[160px] sm:w-[320px] sm:h-[200px] rounded-full bg-brand-gold/20 blur-[70px]" />
       </div>
 
       {/* Main Brand Logo */}
@@ -93,7 +99,7 @@ export default function Preloader() {
           width={1646}
           height={734}
           fetchPriority="high"
-          className="w-[280px] sm:w-[400px] md:w-[480px] max-w-[85vw] h-auto object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] drop-shadow-[0_0_24px_rgba(6,182,212,0.25)] select-none pointer-events-none"
+          className="w-[230px] sm:w-[320px] md:w-[380px] max-w-[80vw] h-auto object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] drop-shadow-[0_0_20px_rgba(201,169,97,0.2)] select-none pointer-events-none"
         />
 
         {/* Luminous Accent Hairline with Gold Glow */}
