@@ -43,18 +43,13 @@
     50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); }
   }
 
-  --animate-preloader-reveal: preloaderReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-preloader-reveal: preloaderReveal 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 
   @keyframes preloaderReveal {
     0% {
       opacity: 0;
-      transform: scale(0.92);
-      filter: blur(4px);
-    }
-    40% {
-      opacity: 1;
-      transform: scale(1.02);
-      filter: blur(0px);
+      transform: scale(0.96);
+      filter: blur(3px);
     }
     100% {
       opacity: 1;

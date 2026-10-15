@@ -73,6 +73,7 @@ import CalendlyWidget from "@/components/ui/CalendlyWidget";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
 import AriaWidget from "@/components/ui/AriaWidget";
 import Preloader from "@/components/ui/Preloader";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function RootLayout({ children }) {
   return (
@@ -83,6 +84,7 @@ export default function RootLayout({ children }) {
     >
       <head>
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <link rel="preload" as="image" href="/loader.png" type="image/png" fetchPriority="high" />
         <style
           dangerouslySetInnerHTML={{
             __html: `html.intro-seen #ak-preloader { display: none !important; }`,
@@ -107,6 +109,7 @@ export default function RootLayout({ children }) {
         </SmoothScroll>
         <CookieConsent />
         <AriaWidget />
+        <ScrollToTop />
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
         <CalendlyWidget />
       </body>
