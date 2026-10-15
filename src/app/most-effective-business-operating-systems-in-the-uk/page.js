@@ -7,13 +7,13 @@ export const metadata = {
   title: {
     absolute: "Most Effective Business Operating Systems In The UK | AK Enterprises",
   },
-  description: "AK Enterprises builds the most effective Business Operating Systems in The UK. Here's the proof.",
+  description: "AK Enterprises builds custom Business Operating Systems in the UK. Here's the proof.",
   alternates: {
     canonical: "https://www.akenterprises.io/most-effective-business-operating-systems-in-the-uk",
   },
   openGraph: {
     title: "Most Effective Business Operating Systems In The UK | AK Enterprises",
-    description: "AK Enterprises builds the most effective Business Operating Systems in The UK. Here's the proof.",
+    description: "AK Enterprises builds custom Business Operating Systems in the UK. Here's the proof.",
     url: "https://www.akenterprises.io/most-effective-business-operating-systems-in-the-uk",
     siteName: "AK Enterprises",
     locale: "en_GB",
@@ -30,7 +30,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Most Effective Business Operating Systems In The UK | AK Enterprises",
-    description: "AK Enterprises builds the most effective Business Operating Systems in The UK. Here's the proof.",
+    description: "AK Enterprises builds custom Business Operating Systems in the UK. Here's the proof.",
     images: ["https://www.akenterprises.io/most-effective-business-operating-systems-in-the-uk.jpeg"],
   },
 };
@@ -40,7 +40,7 @@ export default function UKBusinessOperatingSystemsPage() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Most Effective Business Operating Systems In The UK",
-    "description": "AK Enterprises builds the most effective Business Operating Systems in The UK. Here's the proof.",
+    "description": "AK Enterprises builds custom Business Operating Systems in the UK. Here's the proof.",
     "image": "https://www.akenterprises.io/most-effective-business-operating-systems-in-the-uk.jpeg",
     "author": {
       "@type": "Organization",
@@ -308,7 +308,7 @@ export default function UKBusinessOperatingSystemsPage() {
               </span>
             </h2>
             <p className="max-w-4xl">
-              If it cannot be measured, we do not ship it. Businesses searching for the most effective business operating systems in the UK deserve receipts, not adjectives. The receipts: $301,340 verified revenue. 7,208 automated bookings. Two million users load-tested. One system per business.
+              If it cannot be measured, we do not ship it. Businesses investing in operational infrastructure in the UK deserve receipts, not adjectives. The receipts: $301,340 verified revenue. 7,208 automated bookings. Two million users load-tested. One system per business.
             </p>
           </section>
 

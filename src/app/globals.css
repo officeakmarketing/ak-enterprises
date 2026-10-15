@@ -42,6 +42,31 @@
     0%, 100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
     50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); }
   }
+
+  --animate-preloader-reveal: preloaderReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes preloaderReveal {
+    0% {
+      opacity: 0;
+      transform: scale(0.92);
+      filter: blur(4px);
+    }
+    40% {
+      opacity: 1;
+      transform: scale(1.02);
+      filter: blur(0px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0px);
+    }
+  }
+}
+
+/* Intro preloader hide immediately if already seen */
+html.intro-seen #ak-preloader {
+  display: none !important;
 }
 
 @layer utilities {

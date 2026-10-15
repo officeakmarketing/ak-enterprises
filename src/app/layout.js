@@ -72,6 +72,7 @@ import CookieConsent from "@/components/ui/CookieConsent";
 import CalendlyWidget from "@/components/ui/CalendlyWidget";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
 import AriaWidget from "@/components/ui/AriaWidget";
+import Preloader from "@/components/ui/Preloader";
 
 export default function RootLayout({ children }) {
   return (
@@ -82,11 +83,22 @@ export default function RootLayout({ children }) {
     >
       <head>
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `html.intro-seen #ak-preloader { display: none !important; }`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var p=new URLSearchParams(window.location.search);var f=p.has('intro')||p.has('preloader')||p.has('preview');var r=!f&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;var s=sessionStorage.getItem('ak_intro_seen')||localStorage.getItem('ak_intro_seen');if(r||(s&&!f)){document.documentElement.classList.add('intro-seen');}}catch(e){}})();`,
+          }}
+        />
       </head>
       <body 
         suppressHydrationWarning
         className="flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black"
       >
+        <Preloader />
         <NoiseOverlay />
         <SmoothScroll>
           <Navbar />

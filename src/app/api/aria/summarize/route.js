@@ -23,6 +23,15 @@ export async function POST(req) {
       return NextResponse.json({ error: "No messages provided" }, { status: 400 });
     }
 
+    // Server-side guard: no user message, no record created
+    const userMessageList = messages.filter(m => m.role === "user" && typeof m.content === "string" && m.content.trim().length > 0);
+    if (userMessageList.length === 0) {
+      return NextResponse.json({
+        skipped: true,
+        message: "No user message in conversation. Lead record creation skipped."
+      }, { status: 200 });
+    }
+
     const anthropic = new Anthropic({ maxRetries: 2 });
     
     const transcript = messages.map(m => `${m.role.toUpperCase()}: ${m.content}`).join("\n\n");
@@ -30,6 +39,7 @@ export async function POST(req) {
     const prompt = `You are a CRM parser for AK Enterprises. Here is a chat transcript between a prospect and AI assistant Aria.
 Extract the following in strict JSON format:
 {
+  "name": "The visitor or prospect's name if provided in the conversation. If not stated, return 'Not stated'.",
   "problem": "A 1-sentence description of the user's core problem, bottleneck, or missed revenue source (e.g. 'Missing 10 calls a week leading to lost bookings'). If not stated or if they only said a generic greeting, return 'Not stated'.",
   "budget": "The user's stated budget, deal size, or average customer/job value (e.g. '£50 per job', '$5,000 budget'). If not stated, return 'Not stated'.",
   "summary": "A punchy 3-bullet point summary of the conversation",
@@ -42,6 +52,7 @@ ${transcript}
 Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks around the JSON. Just the JSON object.`;
 
     let parsed = {
+      name: "Not stated",
       problem: "Not stated",
       budget: "Not stated",
       summary: "",
@@ -79,23 +90,98 @@ Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks arou
     const isUS = tz.includes("america") || tz.includes("us/") || tz.includes("hawaii") || tz.includes("alaska");
     const routed_to = isUS ? "Christopher Strobach" : "UK team";
 
-    // Regex pass over the user's messages to extract email and contact before CRM write
-    const userMessages = messages.filter(m => m.role === "user").map(m => m.content).join("\n");
+    // Regex pass over the user's messages to extract email, phone, and name before CRM write
+    const userMessages = userMessageList.map(m => m.content).join("\n");
     const emailMatches = userMessages.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/gi) || [];
     // Phone: broad match first (digit-bounded string up to 20 chars), then filter to ≥7 actual digits
     // This correctly handles: "07700 900 321", "07700 900123", "+44 7700 900321", "555-123-4567"
     const rawPhoneMatches = userMessages.match(/(\+?[\d][\d\s().+-]{5,19}[\d])/g) || [];
     const phoneMatches = rawPhoneMatches.filter(p => p.replace(/\D/g, "").length >= 7);
 
+    // Name regex extraction: capture visitor's name from explicit declaration or direct response
+    let extractedName = null;
+    const stopWords = new Set([
+      "looking", "interested", "wondering", "reaching", "trying", "hoping",
+      "the", "a", "an", "here", "running", "good", "fine", "ok", "okay",
+      "ready", "happy", "sure", "sorry", "not", "busy", "asking", "having",
+      "curious", "currently", "based", "located", "owner", "founder", "ceo",
+      "director", "manager", "calling", "writing", "testing", "checking",
+      "losing", "spending", "earning", "working", "missing", "needing",
+      "just", "already", "so", "very", "really", "all", "back", "thinking",
+      "yes", "no", "hi", "hello", "hey", "aria", "ak", "enterprises"
+    ]);
+
+    const namePatterns = [
+      /(?:my\s+name\s+is|my\s+name's|name\s+is|name's|name\s*[:=-])\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'\-\s]{1,35})/i,
+      /(?:call\s+me|you\s+can\s+call\s+me)\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'\-\s]{1,30})/i,
+      /(?:this\s+is|it's|its)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)?)(?:[.,!\s]|$)/,
+      /(?:^|\b)(?:i'm|im|i\s+am)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)?)(?:[.,!\s]|$)/
+    ];
+
+    for (const pattern of namePatterns) {
+      const match = userMessages.match(pattern);
+      if (match && match[1]) {
+        const candidate = match[1].trim().replace(/[.,!?;:]+$/, "").trim();
+        const words = candidate.split(/\s+/).filter(Boolean);
+        if (words.length >= 1 && words.length <= 3) {
+          const hasStopWord = words.some(w => stopWords.has(w.toLowerCase()));
+          if (!hasStopWord) {
+            extractedName = words.map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(" ");
+            break;
+          }
+        }
+      }
+    }
+
+    // Direct answer if Aria asked for their name
+    if (!extractedName) {
+      for (let i = 0; i < messages.length - 1; i++) {
+        const current = messages[i];
+        const next = messages[i + 1];
+        if (current.role === "assistant" && next.role === "user") {
+          const aText = (current.content || "").toLowerCase();
+          if (
+            aText.includes("who am i talking to") || 
+            aText.includes("who am i speaking with") || 
+            aText.includes("what's your name") || 
+            aText.includes("what is your name") ||
+            aText.includes("may i have your name") ||
+            aText.includes("can i get your name")
+          ) {
+            const reply = (next.content || "").trim().replace(/[.,!?;:]+$/, "").trim();
+            const words = reply.split(/\s+/).filter(Boolean);
+            if (words.length >= 1 && words.length <= 3) {
+              const allAlpha = words.every(w => /^[A-Za-zÀ-ÿ'-]+$/.test(w) && !stopWords.has(w.toLowerCase()));
+              if (allAlpha) {
+                extractedName = words.map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(" ");
+                break;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Fallback to LLM parsed name if regex missed an unconventional structure
+    if (!extractedName && parsed.name && parsed.name !== "Not stated" && parsed.name !== "Not provided") {
+      const parsedCandidate = String(parsed.name).trim().replace(/[.,!?;:]+$/, "");
+      const words = parsedCandidate.split(/\s+/).filter(Boolean);
+      if (words.length >= 1 && words.length <= 4 && !words.some(w => stopWords.has(w.toLowerCase()))) {
+        extractedName = words.map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(" ");
+      }
+    }
+
     const extractedEmail = emailMatches.length > 0 ? emailMatches[emailMatches.length - 1].trim() : (contact_details && contact_details.includes("@") ? contact_details.trim() : null);
     const extractedPhone = phoneMatches.length > 0 ? phoneMatches[phoneMatches.length - 1].trim() : null;
 
-    let finalContact = extractedEmail || extractedPhone || contact_details;
+    let finalContact = extractedEmail || extractedPhone || (extractedName ? `${extractedName} (Chat)` : null) || contact_details;
     if (!finalContact || finalContact === "Not provided") {
       finalContact = "Not provided";
     }
 
-    const isAnon = anonymous !== undefined ? Boolean(anonymous) : (!extractedEmail && finalContact === "Not provided");
+    const isAnon = anonymous !== undefined 
+      ? Boolean(anonymous) 
+      : (!extractedEmail && !extractedName && finalContact === "Not provided");
 
     // Track 1 record per conversation: look up existing lead_id by session
     const existingLeadId = lead_id || (session_id ? sessionLeadMap.get(session_id) : null);
@@ -111,6 +197,10 @@ Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks arou
       _id: existingLeadId || undefined,
       overwrite: true,
       upsert: true,
+      name: extractedName || undefined,
+      prospect_name: extractedName || undefined,
+      visitor_name: extractedName || undefined,
+      full_name: extractedName || undefined,
       email: extractedEmail || undefined,
       email_address: extractedEmail || undefined,
       prospect_email: extractedEmail || undefined,
@@ -159,6 +249,8 @@ Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks arou
     return NextResponse.json({
       ...parsed,
       lead_id: savedLeadId,
+      name: extractedName,
+      prospect_name: extractedName,
       action: isUpdate ? "UPDATE" : "CREATE",
       routed_to,
       contact_details: finalContact,
