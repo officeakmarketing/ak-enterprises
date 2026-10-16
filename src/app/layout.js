@@ -110,6 +110,19 @@ export default function RootLayout({ children }) {
         <CookieConsent />
         <AriaWidget />
         <ScrollToTop />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-M2Y7SW4D4B"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-M2Y7SW4D4B');
+          `}
+        </Script>
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
         <CalendlyWidget />
       </body>
