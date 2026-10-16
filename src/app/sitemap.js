@@ -15,6 +15,14 @@ export default function sitemap() {
     "/most-effective-business-operating-systems-in-los-angeles",
     "/most-effective-business-operating-systems-in-miami",
     "/most-effective-business-operating-systems-in-dubai",
+    "/most-effective-business-operating-systems-in-romania",
+    "/most-effective-business-operating-systems-in-minneapolis",
+    "/most-effective-business-operating-systems-in-dallas",
+    "/most-effective-business-operating-systems-in-houston",
+    "/most-effective-business-operating-systems-in-chicago",
+    "/most-effective-business-operating-systems-in-atlanta",
+    "/most-effective-business-operating-systems-in-abu-dhabi",
+    "/most-effective-business-operating-systems-in-doha",
   ];
 
   return routes.map((route) => ({

@@ -134,16 +134,23 @@ export default function UKBusinessOperatingSystemsPage() {
           </Link>
         </div>
 
-        {/* Featured Regional Infrastructure Map */}
-        <div className="mb-16 overflow-hidden rounded-xl sm:rounded-2xl border border-brand-gold/30 bg-[#0e0e12]/80 shadow-2xl">
-          <Image
-            src="/most-effective-business-operating-systems-in-the-uk.jpeg"
-            alt="most-effective-business-operating-systems-in-the-uk.jpeg"
-            width={1200}
-            height={800}
-            className="w-full h-auto object-cover max-h-[640px]"
-            priority
+        {/* Featured Regional Infrastructure Map - Ultra-Premium Monochrome Stealth & Gold Accent */}
+        <div className="mb-16 relative w-full h-[400px] sm:h-[480px] md:h-[540px] rounded-2xl border border-brand-gold/40 bg-[#040406] overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] group">
+          {/* Grayscale & Inverted Google Maps Embed */}
+          <iframe
+            src="https://maps.google.com/maps?q=United+Kingdom&ll=54.5,-3.5&spn=7.5,7.5&t=m&z=6&output=embed&iwloc=near"
+            title="AK Enterprises United Kingdom Operating Coverage"
+            className="w-full h-full border-0 filter grayscale invert contrast-[145%] brightness-[68%]"
+            loading="lazy"
+            allowFullScreen={false}
+            referrerPolicy="no-referrer-when-downgrade"
           />
+
+          {/* Premium Multi-Stage Black & Gold Ambient Vignettes (Seamlessly blurs out Google iframe controls) */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-black via-transparent to-ink-black/80" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink-black/75 via-transparent to-ink-black/75" />
+          <div className="pointer-events-none absolute inset-0 bg-brand-gold/[0.05] mix-blend-color-dodge" />
+          <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-brand-gold/25 rounded-2xl shadow-[inset_0_0_80px_rgba(0,0,0,0.9)]" />
         </div>
 
 
