@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Carousel from "@/components/ui/Carousel";
 import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
+import LazyMapEmbed from "@/components/ui/LazyMapEmbed";
 
 export const metadata = {
   title: {
@@ -134,24 +135,11 @@ export default function UKBusinessOperatingSystemsPage() {
           </Link>
         </div>
 
-        {/* Featured Regional Infrastructure Map - Ultra-Premium Monochrome Stealth & Gold Accent */}
-        <div className="mb-16 relative w-full h-[400px] sm:h-[480px] md:h-[540px] rounded-2xl border border-brand-gold/40 bg-[#040406] overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] group">
-          {/* Grayscale & Inverted Google Maps Embed */}
-          <iframe
-            src="https://maps.google.com/maps?q=United+Kingdom&ll=54.5,-3.5&spn=7.5,7.5&t=m&z=6&output=embed&iwloc=near"
-            title="AK Enterprises United Kingdom Operating Coverage"
-            className="w-full h-full border-0 filter grayscale invert contrast-[145%] brightness-[68%]"
-            loading="lazy"
-            allowFullScreen={false}
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-
-          {/* Premium Multi-Stage Black & Gold Ambient Vignettes (Seamlessly blurs out Google iframe controls) */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-black via-transparent to-ink-black/80" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink-black/75 via-transparent to-ink-black/75" />
-          <div className="pointer-events-none absolute inset-0 bg-brand-gold/[0.05] mix-blend-color-dodge" />
-          <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-brand-gold/25 rounded-2xl shadow-[inset_0_0_80px_rgba(0,0,0,0.9)]" />
-        </div>
+        {/* High-Performance Lazy Map Embed (Fast page load, zero render-blocking) */}
+        <LazyMapEmbed
+          src="https://maps.google.com/maps?q=United+Kingdom&ll=54.5,-3.5&spn=7.5,7.5&t=m&z=6&output=embed&iwloc=near"
+          title="AK Enterprises United Kingdom Operating Coverage"
+        />
 
 
         {/* Editorial Body Content Flow */}
