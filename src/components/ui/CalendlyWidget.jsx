@@ -55,7 +55,7 @@ export default function CalendlyWidget() {
             trigger_followup_email: false,
             routed_to: isUS ? "Christopher Strobach" : "UK team",
             anonymous: false,
-            transcript: `CALENDLY BOOKING\nName: ${inviteeName}\nEmail: ${inviteeEmail}\nEvent URI: ${payload?.event_type?.uri || ""}`,
+            transcript: "",
           };
 
           // Use sendBeacon for reliability on page navigation
@@ -70,7 +70,7 @@ export default function CalendlyWidget() {
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(crmPayload),
               keepalive: true,
-            }).catch(() => {});
+            }).catch(() => { });
           }
         } catch (err) {
           console.warn("Calendly CRM capture error:", err);
@@ -94,7 +94,7 @@ export default function CalendlyWidget() {
             }
             localStorage.setItem("aria_chat_history", JSON.stringify(list));
           }
-        } catch (err) {}
+        } catch (err) { }
 
         // Redirect to the thank-you page
         try {

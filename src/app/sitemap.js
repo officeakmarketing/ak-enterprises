@@ -11,6 +11,10 @@ export default function sitemap() {
     "/most-effective-business-operating-systems-in-the-uk",
     "/most-effective-business-operating-systems-in-london",
     "/most-effective-business-operating-systems-in-the-usa",
+    "/most-effective-business-operating-systems-in-new-york",
+    "/most-effective-business-operating-systems-in-los-angeles",
+    "/most-effective-business-operating-systems-in-miami",
+    "/most-effective-business-operating-systems-in-dubai",
   ];
 
   return routes.map((route) => ({

@@ -32,6 +32,12 @@ export const metadata = {
     description: "AK Enterprises builds custom Business Operating Systems in the USA. Here's the proof.",
     images: ["https://www.akenterprises.io/most-effective-business-operating-systems-in-the-usa.jpeg"],
   },
+  other: {
+    "geo.region": "US",
+    "geo.placename": "United States",
+    "geo.position": "37.0902;-95.7129",
+    "ICBM": "37.0902, -95.7129",
+  },
 };
 
 export default function USABusinessOperatingSystemsPage() {
@@ -54,6 +60,23 @@ export default function USABusinessOperatingSystemsPage() {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://www.akenterprises.io/most-effective-business-operating-systems-in-the-usa"
+    },
+    "contentLocation": {
+      "@type": "Place",
+      "name": "United States",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.0902,
+        "longitude": -95.7129
+      }
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
     }
   };
 

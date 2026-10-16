@@ -33,6 +33,12 @@ export const metadata = {
     description: "AK Enterprises builds custom Business Operating Systems in the UK. Here's the proof.",
     images: ["https://www.akenterprises.io/most-effective-business-operating-systems-in-the-uk.jpeg"],
   },
+  other: {
+    "geo.region": "GB",
+    "geo.placename": "United Kingdom",
+    "geo.position": "55.3781;-3.4360",
+    "ICBM": "55.3781, -3.4360",
+  },
 };
 
 export default function UKBusinessOperatingSystemsPage() {
@@ -55,6 +61,23 @@ export default function UKBusinessOperatingSystemsPage() {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://www.akenterprises.io/most-effective-business-operating-systems-in-the-uk"
+    },
+    "contentLocation": {
+      "@type": "Place",
+      "name": "United Kingdom",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.3781,
+        "longitude": -3.4360
+      }
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United Kingdom"
     }
   };
 
@@ -92,7 +115,7 @@ export default function UKBusinessOperatingSystemsPage() {
         </p>
 
         {/* Hero Actions */}
-        <div className="flex flex-wrap items-center gap-5 mb-16 pb-12 border-b border-muted-grey/20">
+        <div className="flex flex-wrap items-center gap-5 mb-12 pb-12 border-b border-muted-grey/20">
           <Link
             href="https://calendly.com/ak-enterprises/call"
             target="_blank"
@@ -109,6 +132,18 @@ export default function UKBusinessOperatingSystemsPage() {
           >
             Explore Case Studies →
           </Link>
+        </div>
+
+        {/* Featured Regional Infrastructure Map */}
+        <div className="mb-16 overflow-hidden rounded-xl sm:rounded-2xl border border-brand-gold/30 bg-[#0e0e12]/80 shadow-2xl">
+          <Image
+            src="/most-effective-business-operating-systems-in-the-uk.jpeg"
+            alt="most-effective-business-operating-systems-in-the-uk.jpeg"
+            width={1200}
+            height={800}
+            className="w-full h-auto object-cover max-h-[640px]"
+            priority
+          />
         </div>
 
 

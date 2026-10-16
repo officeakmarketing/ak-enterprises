@@ -33,6 +33,12 @@ export const metadata = {
     description: "AK Enterprises builds custom Business Operating Systems in London. Here's the proof.",
     images: ["https://www.akenterprises.io/most-effective-business-operating-systems-in-london.jpeg"],
   },
+  other: {
+    "geo.region": "GB-LND",
+    "geo.placename": "London",
+    "geo.position": "51.5074;-0.1278",
+    "ICBM": "51.5074, -0.1278",
+  },
 };
 
 export default function LondonBusinessOperatingSystemsPage() {
@@ -55,6 +61,24 @@ export default function LondonBusinessOperatingSystemsPage() {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://www.akenterprises.io/most-effective-business-operating-systems-in-london"
+    },
+    "contentLocation": {
+      "@type": "Place",
+      "name": "London",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      }
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "London"
     }
   };
 
