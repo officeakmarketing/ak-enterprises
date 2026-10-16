@@ -9,6 +9,7 @@ export async function POST(req) {
   try {
     const { 
       messages, 
+      transcript: rawTranscript,
       session_id, 
       lead_id,
       action: requestedAction,
@@ -19,22 +20,35 @@ export async function POST(req) {
       send_to_hud = true 
     } = await req.json();
 
-    if (!Array.isArray(messages) || messages.length === 0) {
-      return NextResponse.json({ error: "No messages provided" }, { status: 400 });
+    // Construct full untouched transcript with USER: and ASSISTANT: lines
+    let transcript = "";
+    if (Array.isArray(messages) && messages.length > 0) {
+      transcript = messages.map(m => `${(m.role || "").toUpperCase()}: ${m.content || ""}`).join("\n\n");
+    } else if (typeof rawTranscript === "string") {
+      transcript = rawTranscript;
     }
 
-    // Server-side guard: no user message, no record created
-    const userMessageList = messages.filter(m => m.role === "user" && typeof m.content === "string" && m.content.trim().length > 0);
-    if (userMessageList.length === 0) {
+    if (!transcript.trim()) {
+      return NextResponse.json({ ok: true, skipped: true, message: "No transcript provided" }, { status: 200 });
+    }
+
+    // Server-side guard: parse the transcript. If there is no USER: line with actual text, return ok and create nothing.
+    const hasUserLineWithText = transcript
+      .split("\n")
+      .some(line => {
+        const match = line.match(/^\s*USER\s*:\s*(.*)$/i);
+        return match && match[1].trim().length > 0;
+      });
+
+    if (!hasUserLineWithText) {
       return NextResponse.json({
+        ok: true,
         skipped: true,
-        message: "No user message in conversation. Lead record creation skipped."
+        message: "No USER: line with actual text in transcript. Lead record creation skipped."
       }, { status: 200 });
     }
 
     const anthropic = new Anthropic({ maxRetries: 2 });
-    
-    const transcript = messages.map(m => `${m.role.toUpperCase()}: ${m.content}`).join("\n\n");
     
     const prompt = `You are a CRM parser for AK Enterprises. Here is a chat transcript between a prospect and AI assistant Aria.
 Extract the following in strict JSON format:
@@ -90,8 +104,18 @@ Return ONLY raw JSON. No markdown formatting, no intro text, no code blocks arou
     const isUS = tz.includes("america") || tz.includes("us/") || tz.includes("hawaii") || tz.includes("alaska");
     const routed_to = isUS ? "Christopher Strobach" : "UK team";
 
+    // Extract text from all USER lines in the transcript
+    const userLines = transcript
+      .split("\n")
+      .filter(line => /^\s*USER\s*:/i.test(line))
+      .map(line => line.replace(/^\s*USER\s*:\s*/i, "").trim())
+      .filter(Boolean);
+    const userMessages = userLines.join("\n");
+    const userMessageList = Array.isArray(messages) 
+      ? messages.filter(m => m.role === "user" && typeof m.content === "string" && m.content.trim().length > 0)
+      : userLines.map(content => ({ role: "user", content }));
+
     // Regex pass over the user's messages to extract email, phone, and name before CRM write
-    const userMessages = userMessageList.map(m => m.content).join("\n");
     const emailMatches = userMessages.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/gi) || [];
     // Phone: broad match first (digit-bounded string up to 20 chars), then filter to ≥7 actual digits
     // This correctly handles: "07700 900 321", "07700 900123", "+44 7700 900321", "555-123-4567"

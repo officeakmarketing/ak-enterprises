@@ -320,7 +320,7 @@ export default function AriaWidget() {
   };
 
   const syncSessionToHUD = async (currentMessages) => {
-    if (!sessionIdRef.current || !currentMessages || currentMessages.length <= 1) return;
+    if (!sessionIdRef.current || !currentMessages || currentMessages.length === 0) return;
     
     // If a sync is currently in-flight, queue latest messages to update after it finishes
     if (isSyncingRef.current) {
