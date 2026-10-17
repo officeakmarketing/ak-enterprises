@@ -182,7 +182,7 @@ export default function USABusinessOperatingSystemsPage() {
 
                 <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0a0a0c] shadow-2xl">
                   <Image
-                    src="/santa-case.png"
+                    src="/santa-case.jpg"
                     alt="Holiday Dream Photos Multi-Location Automated Booking System"
                     width={1200}
                     height={700}

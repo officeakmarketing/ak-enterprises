@@ -7,13 +7,13 @@ import CTASection from "@/components/home/CTASection";
 
 export default function CaseStudies() {
   return (
-    <main className="w-full">
+    <div className="w-full">
       <CaseStudiesHero />
       <BarbershopCaseStudy />
       <GalaCaseStudy />
       <HolidayDreamSection />
       <AriaCaseStudy />
       <CTASection />
-    </main>
+    </div>
   );
 }

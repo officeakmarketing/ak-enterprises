@@ -65,14 +65,17 @@ export const viewport = {
   interactiveWidget: "resizes-content",
 };
 
+import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/ui/SmoothScroll";
-import CookieConsent from "@/components/ui/CookieConsent";
 import CalendlyWidget from "@/components/ui/CalendlyWidget";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
-import AriaWidget from "@/components/ui/AriaWidget";
-import ScrollToTop from "@/components/ui/ScrollToTop";
+
+// Code-split deferred client widgets to keep initial critical bundle minimal
+const AriaWidget = dynamic(() => import("@/components/ui/AriaWidget"));
+const CookieConsent = dynamic(() => import("@/components/ui/CookieConsent"));
+const ScrollToTop = dynamic(() => import("@/components/ui/ScrollToTop"));
 
 export default function RootLayout({ children }) {
   return (
@@ -82,7 +85,16 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <head>
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        {/* Non-blocking stylesheet prevents external network from delaying First Contentful Paint */}
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+          media="print"
+          onLoad="this.media='all'"
+        />
+        <noscript>
+          <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        </noscript>
         <link rel="preload" as="image" href="/transparent-logo.png" type="image/png" fetchPriority="high" />
       </head>
       <body 

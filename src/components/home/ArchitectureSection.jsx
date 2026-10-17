@@ -1,5 +1,3 @@
-"use client";
-
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { ArrowRight, XCircle, CheckCircle2, Zap, Clock, TrendingUp, TrendingDown } from "lucide-react";
 

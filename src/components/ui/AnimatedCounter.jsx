@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 
 export default function AnimatedCounter({
@@ -28,7 +28,7 @@ export default function AnimatedCounter({
     maximumFractionDigits: 0,
   }).format(rawNumber);
 
-  const [display, setDisplay] = useState("0");
+  const displayRef = useRef(null);
 
   useEffect(() => {
     if (isInView) {
@@ -37,21 +37,22 @@ export default function AnimatedCounter({
   }, [isInView, motionValue, rawNumber]);
 
   useEffect(() => {
-    // Listen to spring value changes
+    // Direct DOM update eliminates 60+ FPS React state re-renders
     const unsubscribe = springValue.on("change", (latest) => {
-      const formatted = Intl.NumberFormat("en-GB", {
-        maximumFractionDigits: 0,
-      }).format(Math.floor(latest));
-      setDisplay(formatted);  
+      if (displayRef.current) {
+        const formatted = Intl.NumberFormat("en-GB", {
+          maximumFractionDigits: 0,
+        }).format(Math.floor(latest));
+        displayRef.current.textContent = `${prefix}${formatted}${suffix}`;
+      }
     });
     
     return () => {
-      // Safely unsubscribe based on Framer Motion version
       if (typeof unsubscribe === "function") {
         unsubscribe();
       }
     };
-  }, [springValue]);
+  }, [springValue, prefix, suffix]);
 
   return (
     <span ref={ref} className={className}>
@@ -59,9 +60,9 @@ export default function AnimatedCounter({
       <span className="sr-only">
         {prefix}{formattedInitial}{suffix}
       </span>
-      {/* Animated number for sighted users */}
-      <span aria-hidden="true">
-        {prefix}{display}{suffix}
+      {/* Animated number for sighted users (updated directly via DOM ref) */}
+      <span ref={displayRef} aria-hidden="true">
+        {prefix}0{suffix}
       </span>
     </span>
   );

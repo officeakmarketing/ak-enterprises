@@ -123,71 +123,6 @@ export default function DohaBusinessOperatingSystemsPage() {
           </Link>
         </div>
 
-        {/* Featured Regional Infrastructure Map - Styled Google Maps Embed */}
-        <div className="mb-16 rounded-xl sm:rounded-2xl border border-brand-gold/40 bg-[#0e0e12]/95 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.9)] overflow-hidden">
-          {/* Top System Chrome Bar */}
-          <div className="px-4 py-3 bg-[#0a0a0d] border-b border-brand-gold/20 flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center space-x-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
-              <span className="ml-2 text-[10px] sm:text-xs font-mono text-warm-grey/80 tracking-wider">
-                REGIONAL INFRASTRUCTURE NODE // DOHA
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-[10px] sm:text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">
-                Active Service Coverage
-              </span>
-            </div>
-          </div>
-
-          {/* Map Viewport with Luxury Dark-Tuned Filter & Overlay Telemetry */}
-          <div className="relative w-full h-[400px] sm:h-[480px] md:h-[540px] bg-black overflow-hidden group">
-            <iframe
-              src="https://maps.google.com/maps?q=Doha&t=m&z=10&output=embed&iwloc=near"
-              title="AK Enterprises Doha Operating Coverage"
-              className="w-full h-full border-0 filter invert-[93%] hue-rotate-180 contrast-[120%] brightness-[85%] saturate-[70%] transition-opacity duration-300"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0e0e12] via-transparent to-[#0a0a0d]/40" />
-
-            <div className="pointer-events-none absolute top-4 left-4 z-10 bg-[#0a0a0d]/90 backdrop-blur-md border border-brand-gold/30 rounded-lg px-3.5 py-2.5 shadow-xl hidden sm:block">
-              <div className="text-[9.5px] font-mono text-brand-gold uppercase tracking-[0.18em] font-bold">
-                Deployments &amp; Operations
-              </div>
-              <div className="text-white text-xs font-semibold mt-0.5">
-                West Bay • The Pearl • Lusail • Msheireb Downtown • Doha Metro
-              </div>
-            </div>
-
-            <div className="pointer-events-none absolute bottom-4 right-4 z-10 bg-[#0a0a0d]/90 backdrop-blur-md border border-white/10 rounded-lg px-3 py-1.5 shadow-lg hidden sm:block">
-              <span className="text-[10px] font-mono text-warm-grey/80">
-                GEO: 25.2854° N, 51.5310° W
-              </span>
-            </div>
-          </div>
-
-          {/* Bottom Context Bar */}
-          <div className="px-5 py-3.5 bg-[#0a0a0d]/90 border-t border-brand-gold/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-            <span className="text-warm-grey/80 text-center sm:text-left">
-              <strong className="text-brand-gold font-medium">Bespoke Systems:</strong> Bespoke Systems: Engineering premier business operating systems and automation infrastructure for businesses across Qatar.
-            </span>
-            <Link
-              href="https://calendly.com/ak-enterprises/call"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-gold hover:text-white font-mono text-[11px] font-bold tracking-wider uppercase inline-flex items-center gap-1 transition-colors"
-            >
-              Book Doha Infrastructure Audit →
-            </Link>
-          </div>
-        </div>
-
         {/* Editorial Body Content Flow */}
         <div className="space-y-16 text-warm-grey/90 text-base sm:text-lg leading-[1.8] font-light">
           
@@ -312,7 +247,7 @@ export default function DohaBusinessOperatingSystemsPage() {
 
                 <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0a0a0c] shadow-2xl">
                   <Image
-                    src="/santa-case.png"
+                    src="/santa-case.jpg"
                     alt="Holiday Dream Photos Multi-Location Automated Booking System"
                     width={1200}
                     height={700}

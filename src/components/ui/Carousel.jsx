@@ -6,14 +6,14 @@ import Lightbox from "@/components/ui/Lightbox";
 
 export default function Carousel({ className = "", heightClass = "" }) {
   const photos = [
-    "/grace-gala-1.png",
-    "/grace-gala-2.png",
-    "/grace-gala-3.png",
-    "/grace-gala-4.png",
-    "/grace-gala-5.png",
-    "/grace-gala-6.png",
-    "/grace-gala-7.png",
-    "/grace-gala-8.png",
+    "/grace-gala-1.jpg",
+    "/grace-gala-2.jpg",
+    "/grace-gala-3.jpg",
+    "/grace-gala-4.jpg",
+    "/grace-gala-5.jpg",
+    "/grace-gala-6.jpg",
+    "/grace-gala-7.jpg",
+    "/grace-gala-8.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

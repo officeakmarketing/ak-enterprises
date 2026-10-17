@@ -133,18 +133,6 @@ export default function DubaiBusinessOperatingSystemsPage() {
           </Link>
         </div>
 
-        {/* Featured Location Image */}
-        <div className="mb-16 overflow-hidden rounded-xl sm:rounded-2xl border border-brand-gold/30 bg-[#0e0e12]/80 shadow-2xl">
-          <Image
-            src="/most-effective-business-operating-systems-in-dubai.jpeg"
-            alt="most-effective-business-operating-systems-in-dubai.jpeg"
-            width={1200}
-            height={800}
-            className="w-full h-auto object-cover max-h-[640px]"
-            priority
-          />
-        </div>
-
         {/* Editorial Body Content Flow */}
         <div className="space-y-16 text-warm-grey/90 text-base sm:text-lg leading-[1.8] font-light">
           
@@ -269,7 +257,7 @@ export default function DubaiBusinessOperatingSystemsPage() {
 
                 <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0a0a0c] shadow-2xl">
                   <Image
-                    src="/santa-case.png"
+                    src="/santa-case.jpg"
                     alt="Holiday Dream Photos Multi-Location Automated Booking System"
                     width={1200}
                     height={700}

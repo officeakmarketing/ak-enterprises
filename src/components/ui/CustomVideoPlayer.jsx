@@ -42,38 +42,7 @@ export default function CustomVideoPlayer({ src }) {
     }
   }, []);
 
-  // Continuous animation frame loop to keep time, progress, and playing state 100% in sync
-  useEffect(() => {
-    let animId;
-    const syncState = () => {
-      const video = videoRef.current;
-      if (video) {
-        const currentlyPlaying = !video.paused && !video.ended;
-        setIsPlaying(currentlyPlaying);
-
-        // Sync duration if browser has indexed the tail moov atom
-        const dur = video.duration;
-        let effectiveDuration = duration;
-        if (dur && !isNaN(dur) && isFinite(dur) && dur > 0) {
-          effectiveDuration = dur;
-          setDuration(dur);
-        }
-
-        const curr = video.currentTime || 0;
-        setCurrentTime(curr);
-
-        if (effectiveDuration > 0) {
-          setProgress(Math.min(100, (curr / effectiveDuration) * 100));
-        }
-      }
-      animId = requestAnimationFrame(syncState);
-    };
-
-    animId = requestAnimationFrame(syncState);
-    return () => cancelAnimationFrame(animId);
-  }, [duration]);
-
-  // Direct native event listeners on video
+  // Direct native event listeners on video (replaces continuous 120 FPS RAF loop)
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -93,6 +62,15 @@ export default function CustomVideoPlayer({ src }) {
       setShowControls(true);
     };
 
+    const handleTimeUpdate = () => {
+      const curr = video.currentTime || 0;
+      setCurrentTime(curr);
+      const dur = video.duration || duration;
+      if (dur > 0) {
+        setProgress(Math.min(100, (curr / dur) * 100));
+      }
+    };
+
     video.addEventListener("play", handlePlay);
     video.addEventListener("playing", handlePlay);
     video.addEventListener("pause", handlePause);
@@ -100,7 +78,7 @@ export default function CustomVideoPlayer({ src }) {
     video.addEventListener("durationchange", syncDuration);
     video.addEventListener("loadedmetadata", syncDuration);
     video.addEventListener("canplay", syncDuration);
-    video.addEventListener("timeupdate", syncDuration);
+    video.addEventListener("timeupdate", handleTimeUpdate);
 
     // Initial check
     if (!video.paused) {
@@ -116,9 +94,9 @@ export default function CustomVideoPlayer({ src }) {
       video.removeEventListener("durationchange", syncDuration);
       video.removeEventListener("loadedmetadata", syncDuration);
       video.removeEventListener("canplay", syncDuration);
-      video.removeEventListener("timeupdate", syncDuration);
+      video.removeEventListener("timeupdate", handleTimeUpdate);
     };
-  }, [syncDuration]);
+  }, [syncDuration, duration]);
 
   // Bulletproof Autoplay with voice on mount
   useEffect(() => {

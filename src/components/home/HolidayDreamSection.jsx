@@ -101,7 +101,7 @@ export default function HolidayDreamSection() {
                 </div>
 
                 <Image
-                  src="/santa-case.png"
+                  src="/santa-case.jpg"
                   alt="Holiday Dream Photos"
                   fill
                   className="object-cover w-full h-full group-hover:scale-[1.02] transition-transform duration-700"
@@ -118,7 +118,7 @@ export default function HolidayDreamSection() {
       {/* Full Screen Lightbox Overlay */}
       {isLightboxOpen && (
         <Lightbox 
-          images={["/santa-case.png"]} 
+          images={["/santa-case.jpg"]} 
           onClose={() => setIsLightboxOpen(false)} 
         />
       )}

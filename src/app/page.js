@@ -20,7 +20,7 @@ const FAQSection = dynamic(() => import("@/components/home/FAQSection"));
 
 export default function Home() {
   return (
-    <main className="w-full">
+    <div className="w-full">
       <HeroSection />
       <TrustBar />
       <PainSection />
@@ -38,6 +38,6 @@ export default function Home() {
       <NumbersSection />
       <FAQSection />
       <CTASection />
-    </main>
+    </div>
   );
 }

@@ -17,7 +17,7 @@ export default function UsaInteractiveMap() {
           DEPLOYMENTS &amp; OPERATIONS
         </div>
         <div className="text-white text-xs sm:text-sm font-medium mt-1">
-          New York &bull; San Francisco &bull; Austin &bull; Chicago &bull; Miami &bull; Nationwide
+          New York &bull; Los Angeles &bull; Chicago &bull; Houston &bull; Dallas &bull; Atlanta &bull; Miami &bull; Minneapolis
         </div>
       </div>
 
@@ -174,16 +174,24 @@ export default function UsaInteractiveMap() {
             strokeOpacity="0.45"
             pointerEvents="none"
           >
-            {/* San Francisco -> Chicago */}
-            <line x1="55" y1="270" x2="610" y2="205" />
-            {/* San Francisco -> Austin */}
-            <line x1="55" y1="270" x2="440" y2="460" />
-            {/* Austin -> Chicago */}
-            <line x1="440" y1="460" x2="610" y2="205" />
+            {/* San Francisco -> Los Angeles */}
+            <line x1="55" y1="270" x2="95" y2="355" />
+            {/* Los Angeles -> Dallas */}
+            <line x1="95" y1="355" x2="460" y2="400" />
+            {/* Dallas -> Houston */}
+            <line x1="460" y1="400" x2="490" y2="480" />
+            {/* Dallas -> Minneapolis */}
+            <line x1="460" y1="400" x2="530" y2="155" />
+            {/* Minneapolis -> Chicago */}
+            <line x1="530" y1="155" x2="610" y2="205" />
             {/* Chicago -> New York HQ */}
             <line x1="610" y1="205" x2="835" y2="195" />
-            {/* Austin -> Miami */}
-            <line x1="440" y1="460" x2="790" y2="530" />
+            {/* Chicago -> Atlanta */}
+            <line x1="610" y1="205" x2="695" y2="385" />
+            {/* Atlanta -> Miami */}
+            <line x1="695" y1="385" x2="790" y2="530" />
+            {/* Houston -> Atlanta */}
+            <line x1="490" y1="480" x2="695" y2="385" />
             {/* New York HQ -> Miami */}
             <line x1="835" y1="195" x2="790" y2="530" />
           </g>
@@ -243,7 +251,43 @@ export default function UsaInteractiveMap() {
               </text>
             </a>
 
-            {/* 3. Chicago Beacon */}
+            {/* 3. Los Angeles Beacon */}
+            <a
+              href="https://calendly.com/ak-enterprises/call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`region-pill ${activeState === "ca" ? "is-active" : ""}`}
+              transform="translate(95, 355)"
+              onMouseEnter={() => setActiveState("ca")}
+              onMouseLeave={() => setActiveState(null)}
+            >
+              <circle r="5" className="beacon-dot" />
+              <circle r="14" fill="none" strokeWidth="1.5" className="beacon-ring animate-pulse" />
+              <rect x="-124" y="-15" width="112" height="30" rx="7" />
+              <text x="-116" y="5" fontSize="12">
+                LOS ANGELES
+              </text>
+            </a>
+
+            {/* 4. Minneapolis Beacon */}
+            <a
+              href="https://calendly.com/ak-enterprises/call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`region-pill ${activeState === "mn" ? "is-active" : ""}`}
+              transform="translate(530, 155)"
+              onMouseEnter={() => setActiveState("mn")}
+              onMouseLeave={() => setActiveState(null)}
+            >
+              <circle r="5" className="beacon-dot" />
+              <circle r="14" fill="none" strokeWidth="1.5" className="beacon-ring animate-pulse" />
+              <rect x="14" y="-15" width="115" height="30" rx="7" />
+              <text x="22" y="5" fontSize="12">
+                MINNEAPOLIS
+              </text>
+            </a>
+
+            {/* 5. Chicago Beacon */}
             <a
               href="https://calendly.com/ak-enterprises/call"
               target="_blank"
@@ -255,31 +299,67 @@ export default function UsaInteractiveMap() {
             >
               <circle r="5" className="beacon-dot" />
               <circle r="14" fill="none" strokeWidth="1.5" className="beacon-ring animate-pulse" />
-              <rect x="15" y="-15" width="95" height="30" rx="7" />
-              <text x="23" y="5" fontSize="13">
+              <rect x="15" y="-15" width="85" height="30" rx="7" />
+              <text x="23" y="5" fontSize="12.5">
                 CHICAGO
               </text>
             </a>
 
-            {/* 4. Austin Beacon */}
+            {/* 6. Dallas Beacon */}
             <a
               href="https://calendly.com/ak-enterprises/call"
               target="_blank"
               rel="noopener noreferrer"
               className={`region-pill ${activeState === "tx" ? "is-active" : ""}`}
-              transform="translate(440, 460)"
+              transform="translate(460, 400)"
               onMouseEnter={() => setActiveState("tx")}
               onMouseLeave={() => setActiveState(null)}
             >
               <circle r="5" className="beacon-dot" />
               <circle r="14" fill="none" strokeWidth="1.5" className="beacon-ring animate-pulse" />
-              <rect x="15" y="-15" width="88" height="30" rx="7" />
-              <text x="23" y="5" fontSize="13">
-                AUSTIN
+              <rect x="-86" y="-15" width="76" height="30" rx="7" />
+              <text x="-78" y="5" fontSize="12.5">
+                DALLAS
               </text>
             </a>
 
-            {/* 5. Miami Beacon */}
+            {/* 7. Houston Beacon */}
+            <a
+              href="https://calendly.com/ak-enterprises/call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`region-pill ${activeState === "tx" ? "is-active" : ""}`}
+              transform="translate(490, 480)"
+              onMouseEnter={() => setActiveState("tx")}
+              onMouseLeave={() => setActiveState(null)}
+            >
+              <circle r="5" className="beacon-dot" />
+              <circle r="14" fill="none" strokeWidth="1.5" className="beacon-ring animate-pulse" />
+              <rect x="14" y="-15" width="86" height="30" rx="7" />
+              <text x="22" y="5" fontSize="12.5">
+                HOUSTON
+              </text>
+            </a>
+
+            {/* 8. Atlanta Beacon */}
+            <a
+              href="https://calendly.com/ak-enterprises/call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`region-pill ${activeState === "ga" ? "is-active" : ""}`}
+              transform="translate(695, 385)"
+              onMouseEnter={() => setActiveState("ga")}
+              onMouseLeave={() => setActiveState(null)}
+            >
+              <circle r="5" className="beacon-dot" />
+              <circle r="14" fill="none" strokeWidth="1.5" className="beacon-ring animate-pulse" />
+              <rect x="14" y="-15" width="86" height="30" rx="7" />
+              <text x="22" y="5" fontSize="12.5">
+                ATLANTA
+              </text>
+            </a>
+
+            {/* 9. Miami Beacon */}
             <a
               href="https://calendly.com/ak-enterprises/call"
               target="_blank"
@@ -291,8 +371,8 @@ export default function UsaInteractiveMap() {
             >
               <circle r="5" className="beacon-dot" />
               <circle r="14" fill="none" strokeWidth="1.5" className="beacon-ring animate-pulse" />
-              <rect x="-105" y="-15" width="88" height="30" rx="7" />
-              <text x="-97" y="5" fontSize="13">
+              <rect x="-84" y="-15" width="74" height="30" rx="7" />
+              <text x="-76" y="5" fontSize="12.5">
                 MIAMI
               </text>
             </a>

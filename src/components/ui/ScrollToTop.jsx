@@ -1,19 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowUp } from "lucide-react";
 import { useLenis } from "lenis/react";
 
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);
+  const visibleRef = useRef(false);
   const lenis = useLenis();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setVisible(true);
-      } else {
-        setVisible(false);
+      const shouldBeVisible = window.scrollY > 300;
+      if (visibleRef.current !== shouldBeVisible) {
+        visibleRef.current = shouldBeVisible;
+        setVisible(shouldBeVisible);
       }
     };
 

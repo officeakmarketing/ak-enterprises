@@ -1,22 +1,13 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 export default function BackgroundSparkles({ count = 40 }) {
-  const [sparkles, setSparkles] = useState([]);
-
-  useEffect(() => {
-    // Generate random sparkles only on the client to avoid hydration mismatch
-    const generatedSparkles = Array.from({ length: count }).map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      size: Math.random() * 1.5 + 0.5, // 0.5px to 2px
-      animationDuration: `${Math.random() * 4 + 3}s`, // 3s to 7s
-      animationDelay: `${Math.random() * 5}s`,
-    }));
-    setSparkles(generatedSparkles);
-  }, [count]);
+  // Deterministic positions eliminate hydration mismatch and post-mount re-renders
+  const sparkles = Array.from({ length: count }, (_, i) => ({
+    id: i,
+    left: `${((i * 137.5) % 100).toFixed(1)}%`,
+    top: `${((i * 269.3) % 100).toFixed(1)}%`,
+    size: (((i * 47) % 15) / 10 + 0.5).toFixed(1),
+    animationDuration: `${(((i * 31) % 40) / 10 + 3).toFixed(1)}s`,
+    animationDelay: `${(((i * 53) % 50) / 10).toFixed(1)}s`,
+  }));
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
