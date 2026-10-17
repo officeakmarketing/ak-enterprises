@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
+import UsaInteractiveMap from "@/components/ui/UsaInteractiveMap";
 
 export const metadata = {
   title: {
@@ -271,6 +272,9 @@ export default function USABusinessOperatingSystemsPage() {
           </section>
 
         </div>
+
+        {/* Interactive USA National Map Embed (Positioned before footer) */}
+        <UsaInteractiveMap />
 
       </div>
     </article>

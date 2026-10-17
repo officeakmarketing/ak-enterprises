@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Carousel from "@/components/ui/Carousel";
 import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
-import LazyMapEmbed from "@/components/ui/LazyMapEmbed";
+import UkInteractiveMap from "@/components/ui/UkInteractiveMap";
 
 export const metadata = {
   title: {
@@ -134,13 +134,6 @@ export default function UKBusinessOperatingSystemsPage() {
             Explore Case Studies →
           </Link>
         </div>
-
-        {/* High-Performance Lazy Map Embed (Fast page load, zero render-blocking) */}
-        <LazyMapEmbed
-          src="https://maps.google.com/maps?q=United+Kingdom&ll=54.5,-3.5&spn=7.5,7.5&t=m&z=6&output=embed&iwloc=near"
-          title="AK Enterprises United Kingdom Operating Coverage"
-        />
-
 
         {/* Editorial Body Content Flow */}
         <div className="space-y-16 text-warm-grey/90 text-base sm:text-lg leading-[1.8] font-light">
@@ -368,6 +361,9 @@ export default function UKBusinessOperatingSystemsPage() {
           </section>
 
         </div>
+
+        {/* Interactive UK Regional Map Embed (Positioned before footer) */}
+        <UkInteractiveMap />
 
       </div>
     </article>
