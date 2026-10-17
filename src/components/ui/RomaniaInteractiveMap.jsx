@@ -61,7 +61,7 @@ export default function RomaniaInteractiveMap() {
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
-          viewBox="0 0 1000 700"
+          viewBox="0 0 1050 700"
           xmlSpace="preserve"
           className="w-full max-w-[540px] sm:max-w-[680px] md:max-w-[780px] lg:max-w-[880px] h-auto drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)]"
         >
@@ -314,15 +314,15 @@ export default function RomaniaInteractiveMap() {
             pointerEvents="none"
           >
             {/* Bucharest HQ -> Cluj-Napoca */}
-            <line x1="635" y1="535" x2="390" y2="265" />
+            <line x1="560" y1="530" x2="390" y2="265" />
             {/* Bucharest HQ -> Timișoara */}
-            <line x1="635" y1="535" x2="150" y2="375" />
+            <line x1="560" y1="530" x2="150" y2="375" />
             {/* Bucharest HQ -> Iași */}
-            <line x1="635" y1="535" x2="735" y2="215" />
+            <line x1="560" y1="530" x2="735" y2="215" />
             {/* Bucharest HQ -> Brașov */}
-            <line x1="635" y1="535" x2="540" y2="385" />
+            <line x1="560" y1="530" x2="540" y2="385" />
             {/* Bucharest HQ -> Constanța */}
-            <line x1="635" y1="535" x2="830" y2="560" />
+            <line x1="560" y1="530" x2="860" y2="565" />
             {/* Cluj-Napoca -> Timișoara */}
             <line x1="390" y1="265" x2="150" y2="375" />
             {/* Cluj-Napoca -> Brașov */}
@@ -421,15 +421,15 @@ export default function RomaniaInteractiveMap() {
               target="_blank"
               rel="noopener noreferrer"
               className={`region-pill ${activeRegion === "muntenia" ? "is-active" : ""}`}
-              transform="translate(635, 535)"
+              transform="translate(560, 530)"
               onMouseEnter={() => setActiveRegion("muntenia")}
               onMouseLeave={() => setActiveRegion(null)}
             >
               <circle r="12" className="beacon-dot" />
               <circle r="34" fill="none" strokeWidth="2.5" className="beacon-ring animate-ping opacity-60" />
               <circle r="52" fill="none" strokeWidth="1.8" strokeDasharray="5 5" className="beacon-ring opacity-40" />
-              <rect x="34" y="-28" width="220" height="56" rx="12" />
-              <text x="50" y="9" fontSize="25">
+              <rect x="32" y="-28" width="210" height="56" rx="12" />
+              <text x="48" y="9" fontSize="24">
                 BUCHAREST HQ
               </text>
             </a>
@@ -512,14 +512,14 @@ export default function RomaniaInteractiveMap() {
               target="_blank"
               rel="noopener noreferrer"
               className={`region-pill ${activeRegion === "dobrogea" ? "is-active" : ""}`}
-              transform="translate(830, 560)"
+              transform="translate(860, 565)"
               onMouseEnter={() => setActiveRegion("dobrogea")}
               onMouseLeave={() => setActiveRegion(null)}
             >
               <circle r="9" className="beacon-dot" />
               <circle r="24" fill="none" strokeWidth="2" className="beacon-ring animate-pulse" />
-              <rect x="-195" y="-23" width="175" height="46" rx="10" />
-              <text x="-182" y="7" fontSize="21">
+              <rect x="22" y="-23" width="148" height="46" rx="10" />
+              <text x="34" y="7" fontSize="20">
                 CONSTANȚA
               </text>
             </a>

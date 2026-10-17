@@ -21,7 +21,7 @@ export default function USLeadership() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
           
           {/* Christopher Strobach */}
-          <ScrollReveal delay={0.1}>
+          <ScrollReveal delay={0.2} className="order-2 md:order-1">
             <div className="flex flex-col gap-6">
               <div className="w-full max-w-[300px] aspect-square bg-[#111112]/90 border border-muted-grey/20 rounded-2xl overflow-hidden shadow-xl relative group">
                 <Image
@@ -52,7 +52,7 @@ export default function USLeadership() {
                   {/* Pull Quote */}
                   <div className="my-8 sm:my-10 border-l-2 border-brand-gold/50 pl-6 py-2">
                     <p className="text-xl sm:text-2xl font-serif italic text-white leading-snug">
-                      "Everything I do is done to a professional standard, helping businesses win big is no exception."
+                      &ldquo;Everything I do is done to a professional standard, helping businesses win big is no exception.&rdquo;
                     </p>
                   </div>
                   
@@ -61,6 +61,56 @@ export default function USLeadership() {
                   </p>
                   <p>
                     His approach is direct, practical, and built on real numbers rather than theory.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Jonathan White */}
+          <ScrollReveal delay={0.1} className="order-1 md:order-2">
+            <div className="flex flex-col gap-6">
+              <div className="w-full max-w-[300px] aspect-square bg-[#111112]/90 border border-muted-grey/20 rounded-2xl overflow-hidden shadow-xl relative group">
+                <Image
+                  src="/jonathan.jpeg"
+                  alt="Jonathan White"
+                  fill
+                  className="object-cover object-center transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-wide uppercase mb-1">
+                    Jonathan White
+                  </h3>
+                  <p className="text-sm sm:text-base font-serif italic text-brand-gold">
+                    Sales, Leadership &amp; Marketing, USA.
+                  </p>
+                </div>
+                <div className="text-warm-grey/90 text-sm sm:text-base font-light leading-relaxed">
+                  <p className="mb-4">
+                    At 46, Jonathan White brings more than 20 years of experience in sales, leadership, and marketing. A U.S. Navy and Army veteran, he built his foundation in discipline and accountability, with military recruiting sharpening his ability to connect with people and turn conversations into commitments.
+                  </p>
+                  <p className="mb-4">
+                    His career spans sales management, aviation quality assurance, and marketing, giving him a practical understanding of both winning business and delivering on promises. His marketing skills have a proven track record of scaling companies by attracting customers, strengthening their positioning, and turning attention into revenue.
+                  </p>
+                  
+                  {/* Pull Quote */}
+                  <div className="my-8 sm:my-10 border-l-2 border-brand-gold/50 pl-6 py-2 space-y-3">
+                    <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-gold font-bold">
+                      Two Guiding Principles
+                    </div>
+                    <p className="text-xl sm:text-2xl font-serif italic text-white leading-snug">
+                      &ldquo;It&rsquo;s only a problem if it can&rsquo;t be solved.&rdquo;
+                    </p>
+                    <p className="text-lg sm:text-xl font-serif italic text-brand-gold leading-snug">
+                      &ldquo;Just get started. If you&rsquo;re going the wrong direction, we can change direction. We can never change not getting started.&rdquo;
+                    </p>
+                  </div>
+                  
+                  <p>
+                    His approach is direct, practical, and grounded in real-world results.
                   </p>
                 </div>
               </div>

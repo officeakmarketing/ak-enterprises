@@ -6,7 +6,7 @@ export const metadata = {
   title: {
     absolute: "Most Effective Business Operating Systems In Atlanta | AK Enterprises",
   },
-  description: "AK Enterprises builds custom Business Operating Systems in Atlanta. Here's the proof.",
+  description: "AK Enterprises builds the most effective Business Operating Systems in Atlanta. Here's the proof.",
   alternates: {
     canonical: "https://www.akenterprises.io/most-effective-business-operating-systems-in-atlanta",
   },
