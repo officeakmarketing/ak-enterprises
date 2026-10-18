@@ -156,7 +156,7 @@ export default function MiamiBusinessOperatingSystemsPage() {
           <SeoHowWeBuildIt />
 
           <SeoOurRule>
-            If it cannot be measured, we do not ship it. American service businesses looking for verified operational infrastructure deserve receipts, not adjectives. The receipts: 9 locations, 7 states, one automated booking system. $301,340 verified revenue. 7,208 automated bookings.
+            American service businesses looking for verified operational infrastructure deserve receipts, not adjectives. The receipts: 9 locations, 7 states, one automated booking system. $301,340 verified revenue. 7,208 automated bookings.
           </SeoOurRule>
 
           <SeoAuditCTA>

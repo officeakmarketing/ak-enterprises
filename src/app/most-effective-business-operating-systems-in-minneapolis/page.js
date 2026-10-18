@@ -145,7 +145,7 @@ export default function MinneapolisBusinessOperatingSystemsPage() {
           <SeoHowWeBuildIt />
 
           <SeoOurRule>
-            If it cannot be measured, we do not ship it. Businesses in Minneapolis looking for high-performance operational infrastructure deserve receipts, not adjectives. The receipts: 9 locations, 7 states, one automated booking system. $301,340 verified revenue. 7,208 automated bookings.
+            Businesses in Minneapolis looking for high-performance operational infrastructure deserve receipts, not adjectives. The receipts: 9 locations, 7 states, one automated booking system. $301,340 verified revenue. 7,208 automated bookings.
           </SeoOurRule>
 
           <SeoAuditCTA>
