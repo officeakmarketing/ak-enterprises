@@ -23,12 +23,12 @@ export default function USLeadership() {
           {/* Christopher Strobach */}
           <ScrollReveal delay={0.2} className="order-2 md:order-1">
             <div className="flex flex-col gap-6">
-              <div className="w-full max-w-[300px] aspect-square bg-[#111112]/90 border border-muted-grey/20 rounded-2xl overflow-hidden shadow-xl relative group">
+              <div className="w-full max-w-[340px] sm:max-w-[380px] aspect-[3/4] bg-[#111112]/90 border border-muted-grey/20 rounded-2xl overflow-hidden shadow-xl relative group">
                 <Image
                   src="/christopher.jpeg"
                   alt="Christopher Strobach"
                   fill
-                  className="object-cover object-center transition-all duration-700"
+                  className="object-cover object-top transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
               </div>
@@ -70,12 +70,12 @@ export default function USLeadership() {
           {/* Jonathan White */}
           <ScrollReveal delay={0.1} className="order-1 md:order-2">
             <div className="flex flex-col gap-6">
-              <div className="w-full max-w-[300px] aspect-square bg-[#111112]/90 border border-muted-grey/20 rounded-2xl overflow-hidden shadow-xl relative group">
+              <div className="w-full max-w-[340px] sm:max-w-[380px] aspect-[3/4] bg-[#111112]/90 border border-muted-grey/20 rounded-2xl overflow-hidden shadow-xl relative group">
                 <Image
                   src="/jonathan.jpeg"
                   alt="Jonathan White"
                   fill
-                  className="object-cover object-center transition-all duration-700"
+                  className="object-cover object-top transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
               </div>

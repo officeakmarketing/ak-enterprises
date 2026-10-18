@@ -30,7 +30,7 @@ export default function DemoSection() {
         <ScrollReveal delay={0.1}>
           <div className="relative w-full flex justify-center mb-16 sm:mb-24">
             {/* Extremely soft background glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-[800px] h-[80%] bg-brand-gold/5 blur-[120px] rounded-full pointer-events-none"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-[800px] h-[80%] bg-brand-gold/5 blur-[120px] rounded-full pointer-events-none transform-gpu will-change-transform"></div>
             
             <div className="relative z-10 w-full max-w-full flex justify-center">
               <AriaDemoWidget />

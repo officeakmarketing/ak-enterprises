@@ -1,6 +1,13 @@
-import Link from "next/link";
-import Image from "next/image";
 import BackgroundSparkles from "@/components/ui/BackgroundSparkles";
+import SeoRegionBadge from "@/components/seo/SeoRegionBadge";
+import SeoHeroActions from "@/components/seo/SeoHeroActions";
+import SeoFeaturedImage from "@/components/seo/SeoFeaturedImage";
+import SeoOperatingSystemExplainer from "@/components/seo/SeoOperatingSystemExplainer";
+import CaseStudyBrightFace from "@/components/seo/CaseStudyBrightFace";
+import CaseStudyHolidayDream from "@/components/seo/CaseStudyHolidayDream";
+import SeoHowWeBuildIt from "@/components/seo/SeoHowWeBuildIt";
+import SeoOurRule from "@/components/seo/SeoOurRule";
+import SeoAuditCTA from "@/components/seo/SeoAuditCTA";
 
 export const metadata = {
   title: {
@@ -12,25 +19,25 @@ export const metadata = {
   },
   openGraph: {
     title: "Most Effective Business Operating Systems In Abu Dhabi | AK Enterprises",
-    description: "AK Enterprises builds custom Business Operating Systems in Abu Dhabi. Here's the proof.",
+    description: "AK Enterprises builds the most effective Business Operating Systems in Abu Dhabi. Here's the proof.",
     url: "https://www.akenterprises.io/most-effective-business-operating-systems-in-abu-dhabi",
     siteName: "AK Enterprises",
     locale: "en_AE",
     type: "article",
     images: [
       {
-        url: "https://www.akenterprises.io/most-effective-business-operating-systems-in-abu-dhabi.jpeg",
+        url: "https://www.akenterprises.io/most-effective-business-operating-systems-in-abu-dhabi.png",
         width: 1200,
         height: 630,
-        alt: "most-effective-business-operating-systems-in-abu-dhabi.jpeg",
+        alt: "Most Effective Business Operating Systems In Abu Dhabi",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Most Effective Business Operating Systems In Abu Dhabi | AK Enterprises",
-    description: "AK Enterprises builds custom Business Operating Systems in Abu Dhabi. Here's the proof.",
-    images: ["https://www.akenterprises.io/most-effective-business-operating-systems-in-abu-dhabi.jpeg"],
+    description: "AK Enterprises builds the most effective Business Operating Systems in Abu Dhabi. Here's the proof.",
+    images: ["https://www.akenterprises.io/most-effective-business-operating-systems-in-abu-dhabi.png"],
   },
   other: {
     "geo.region": "AE-AZ",
@@ -46,7 +53,13 @@ export default function AbuDhabiBusinessOperatingSystemsPage() {
     "@type": "Article",
     "headline": "Most Effective Business Operating Systems In Abu Dhabi",
     "description": "AK Enterprises builds custom Business Operating Systems in Abu Dhabi. Here's the proof.",
-    "image": "https://www.akenterprises.io/most-effective-business-operating-systems-in-abu-dhabi.jpeg",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://www.akenterprises.io/most-effective-business-operating-systems-in-abu-dhabi.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "Most Effective Business Operating Systems In Abu Dhabi"
+    },
     "author": {
       "@type": "Organization",
       "name": "AK Enterprises",
@@ -85,10 +98,7 @@ export default function AbuDhabiBusinessOperatingSystemsPage() {
       <div className="relative z-10 w-full max-w-5xl lg:max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-12 pb-20">
         
         {/* Region Badge */}
-        <div className="inline-flex max-w-full items-center gap-2 border border-brand-gold/40 bg-brand-gold/5 px-3 py-1.5 sm:px-3.5 sm:py-1 rounded-full text-brand-gold text-[9.5px] sm:text-xs tracking-[0.14em] sm:tracking-[0.2em] uppercase mb-5 sm:mb-6 font-bold leading-normal text-left">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse flex-shrink-0" />
-          <span className="break-words">Abu Dhabi Operations & Infrastructure</span>
-        </div>
+        <SeoRegionBadge label="Abu Dhabi Operations & Infrastructure" />
 
         {/* H1 Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-serif italic text-white leading-[1.18] tracking-tight mb-8">
@@ -104,41 +114,17 @@ export default function AbuDhabiBusinessOperatingSystemsPage() {
         </p>
 
         {/* Hero Actions */}
-        <div className="flex flex-wrap items-center gap-5 mb-12 pb-12 border-b border-muted-grey/20">
-          <Link
-            href="https://calendly.com/ak-enterprises/call"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-7 py-3.5 rounded-lg text-xs font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md"
-          >
-            <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none" />
-            <span className="relative z-10">Book a Free Audit</span>
-          </Link>
+        <SeoHeroActions />
 
-          <Link
-            href="/case-studies"
-            className="text-warm-grey hover:text-white text-xs font-bold uppercase tracking-wider transition-colors py-2"
-          >
-            Explore Case Studies →
-          </Link>
-        </div>
+        {/* Featured In-Page SEO Image */}
+        <SeoFeaturedImage
+          src="/most-effective-business-operating-systems-in-abu-dhabi.png"
+          alt="Most Effective Business Operating Systems In Abu Dhabi"
+        />
 
         {/* Editorial Body Content Flow */}
         <div className="space-y-16 text-warm-grey/90 text-base sm:text-lg leading-[1.8] font-light">
-          
-          {/* Section: What a business operating system actually is */}
-          <section>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic text-white mb-6 tracking-tight">
-              What a{" "}
-              <span className="inline-block pr-3 pb-0.5 bg-gradient-to-r from-brand-gold via-[#F6E0A4] to-brand-gold bg-clip-text text-transparent">
-                Business Operating System
-              </span>{" "}
-              Actually Is
-            </h2>
-            <p className="max-w-4xl">
-              Your website, your AI follow-up, your booking flow and your review engine, working as one machine that captures every enquiry and answers within seconds. Installed once, then it compounds. You own it. It never depends on the owner remembering anything.
-            </p>
-          </section>
+          <SeoOperatingSystemExplainer />
 
           {/* Section: The Proof */}
           <section className="pt-8 border-t border-muted-grey/15">
@@ -149,194 +135,21 @@ export default function AbuDhabiBusinessOperatingSystemsPage() {
               </span>
             </h2>
             
-            {/* Partitions for Case Studies */}
             <div className="space-y-10 sm:space-y-12 -mx-3.5 sm:mx-0">
-              
-              {/* Partition 1: Bright Face Barber */}
-              <div className="w-full rounded-none sm:rounded-2xl border-y sm:border border-brand-gold/30 bg-[#0e0e12]/90 px-4 py-7 sm:p-10 lg:p-12 relative overflow-hidden backdrop-blur-sm shadow-2xl transition-all duration-300 hover:border-brand-gold/50">
-                <div className="flex flex-wrap items-center justify-between gap-3 pb-5 mb-8 border-b border-muted-grey/15">
-                  <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.22em] text-brand-gold font-bold">
-                    Case Study // 01 &bull; Service Business Operating System
-                  </span>
-                  <span className="text-xs font-mono uppercase tracking-widest text-warm-grey/70 font-semibold">
-                    Service Industry Automation
-                  </span>
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl md:text-[2rem] font-serif italic text-white mb-4 tracking-tight leading-snug">
-                  Bright Face Barber, Automated Booking System
-                </h3>
-
-                <p className="mb-8 text-warm-grey/90 leading-relaxed font-light text-base sm:text-lg">
-                  Fourteen months ago it ran on pen and paper and a phone that rang out after hours. Today the numbers are verified: $301,340 in revenue and 7,208 automated bookings in 14 months, with a booking system that never sleeps. &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo; Talib M, CEO, Bright Face Barber.
-                </p>
-
-                <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0a0a0c] shadow-2xl">
-                  <Image
-                    src="/bright-face-dashboard.png"
-                    alt="Bright Face Barber Verified Revenue Dashboard"
-                    width={1200}
-                    height={700}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t border-brand-gold/20 mb-8">
-                  <div>
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
-                      $301,340
-                    </div>
-                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
-                      Verified revenue
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
-                      7,208
-                    </div>
-                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
-                      Automated bookings
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
-                      14
-                    </div>
-                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
-                      Months to result
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
-                      0
-                    </div>
-                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
-                      Missed calls
-                    </div>
-                  </div>
-                </div>
-
-                <blockquote className="border-l-2 border-brand-gold/60 pl-4 sm:pl-6 py-3 bg-black/25 rounded-r-xl">
-                  <p className="text-white/95 italic font-serif text-base sm:text-lg lg:text-xl leading-relaxed mb-2 font-normal">
-                    &ldquo;Since launching the new site, people are booking nonstop. No more missed calls. It just works.&rdquo;
-                  </p>
-                  <footer className="text-brand-gold text-[11px] sm:text-xs font-mono font-bold tracking-widest uppercase">
-                    Talib M, CEO, Bright Face Barber
-                  </footer>
-                </blockquote>
-              </div>
-
-              {/* Partition 2: Holiday Dream Photos (Santa) */}
-              <div className="w-full rounded-none sm:rounded-2xl border-y sm:border border-brand-gold/30 bg-[#0e0e12]/90 px-4 py-7 sm:p-10 lg:p-12 relative overflow-hidden backdrop-blur-sm shadow-2xl transition-all duration-300 hover:border-brand-gold/50">
-                <div className="flex flex-wrap items-center justify-between gap-3 pb-5 mb-8 border-b border-muted-grey/15">
-                  <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.22em] text-brand-gold font-bold">
-                    Case Study // 02 &bull; Multi-Location Scale
-                  </span>
-                  <span className="text-xs font-mono uppercase tracking-widest text-warm-grey/70 font-semibold">
-                    7 States &bull; 9 Locations Simultaneously
-                  </span>
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl md:text-[2rem] font-serif italic text-white mb-4 tracking-tight leading-snug">
-                  Holiday Dream Photos, Multi-Location Booking Infrastructure
-                </h3>
-
-                <p className="mb-8 text-warm-grey/90 leading-relaxed font-light text-base sm:text-lg">
-                  A multi-location photography experience running a fully automated booking system across 9 mall locations in 7 states simultaneously, with 11 appointment types configured and thousands of families served. The experience works with some of the most recognized names in entertainment, and Nick Cannon has publicly supported its Black Santa experience, a dedicated session offered at select locations.
-                </p>
-
-                <div className="my-8 overflow-hidden rounded-xl border border-muted-grey/25 bg-[#0a0a0c] shadow-2xl">
-                  <Image
-                    src="/santa-case.jpg"
-                    alt="Holiday Dream Photos Multi-Location Automated Booking System"
-                    width={1200}
-                    height={700}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-brand-gold/20 my-6">
-                  <div>
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
-                      9
-                    </div>
-                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
-                      Mall locations across USA
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
-                      7
-                    </div>
-                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
-                      States simultaneously
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-serif italic font-normal text-brand-gold leading-tight mb-1">
-                      100%
-                    </div>
-                    <div className="text-[10px] sm:text-xs text-warm-grey uppercase tracking-wider font-semibold leading-tight">
-                      Automated scheduling
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+              <CaseStudyBrightFace stepNumber="01" />
+              <CaseStudyHolidayDream />
             </div>
           </section>
 
-          {/* Section: How We Build It */}
-          <section className="pt-8 border-t border-muted-grey/15">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic text-white mb-6 tracking-tight">
-              How We{" "}
-              <span className="inline-block pr-3.5 pb-0.5 bg-gradient-to-r from-brand-gold via-[#F6E0A4] to-brand-gold bg-clip-text text-transparent">
-                Build It
-              </span>
-            </h2>
-            <p className="max-w-4xl">
-              Every engagement starts with a free 45-minute business audit. We find every gap in your business and tell you exactly what it is costing you. If we cannot find a single gap, we tell you honestly and you owe us nothing. Then we design and install your complete operating system in four to six weeks. Then it runs, you own it, and it compounds over time.
-            </p>
-          </section>
+          <SeoHowWeBuildIt />
 
-          {/* Section: Our Rule */}
-          <section className="pt-8 border-t border-muted-grey/15">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic text-white mb-6 tracking-tight">
-              Our{" "}
-              <span className="inline-block pr-3 pb-0.5 bg-gradient-to-r from-brand-gold via-[#F6E0A4] to-brand-gold bg-clip-text text-transparent">
-                Rule
-              </span>
-            </h2>
-            <p className="max-w-4xl">
-              If it cannot be measured, we do not ship it. Businesses in Abu Dhabi looking for high-performance operational infrastructure deserve receipts, not adjectives. The receipts: 9 locations, 7 states, one automated booking system. $301,340 verified revenue. 7,208 automated bookings.
-            </p>
-          </section>
+          <SeoOurRule>
+            If it cannot be measured, we do not ship it. Businesses in Abu Dhabi looking for high-performance operational infrastructure deserve receipts, not adjectives. The receipts: 9 locations, 7 states, one automated booking system. $301,340 verified revenue. 7,208 automated bookings.
+          </SeoOurRule>
 
-          {/* Section: Book a Free Audit */}
-          <section className="pt-8 border-t border-muted-grey/15">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif italic text-white mb-6 tracking-tight">
-              Book a{" "}
-              <span className="inline-block pr-3.5 pb-0.5 bg-gradient-to-r from-brand-gold via-[#F6E0A4] to-brand-gold bg-clip-text text-transparent">
-                Free Audit
-              </span>
-            </h2>
-            <p className="mb-8 max-w-4xl">
-              AK Enterprises delivers remotely across Abu Dhabi and worldwide. Book your free 45-minute audit and see exactly what your current systems are costing you every month. That is what the most effective business operating systems in Abu Dhabi are built on: one audit, one build, one machine that runs the business front to end.
-            </p>
-
-            <div className="pt-2">
-              <Link
-                href="https://calendly.com/ak-enterprises/call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center bg-brand-gold text-ink-black px-8 py-4 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wider overflow-hidden transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] shadow-md"
-              >
-                <span className="absolute inset-0 w-1/2 h-full bg-white/30 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none" />
-                <span className="relative z-10">Book a Free 45-Minute Audit</span>
-              </Link>
-            </div>
-          </section>
-
+          <SeoAuditCTA>
+            AK Enterprises delivers remotely across Abu Dhabi and worldwide. Book your free 45-minute audit and see exactly what your current systems are costing you every month. That is what the most effective business operating systems in Abu Dhabi are built on: one audit, one build, one machine that runs the business front to end.
+          </SeoAuditCTA>
         </div>
 
       </div>

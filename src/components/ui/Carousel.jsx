@@ -128,7 +128,7 @@ export default function Carousel({ className = "", heightClass = "" }) {
       >
         {/* Sliding Track with Real-Time Finger Follow */}
         <div
-          className={`flex ${heightClass || "h-[620px] sm:h-[720px] md:h-[800px] lg:h-[880px] xl:h-[940px] 2xl:h-[1000px]"} w-full ${
+          className={`flex ${heightClass || "h-[700px] sm:h-[820px] md:h-[940px] lg:h-[1050px] xl:h-[1150px] 2xl:h-[1200px]"} w-full ${
             isDragging
               ? "transition-none"
               : "transition-transform duration-600 ease-[cubic-bezier(0.25,1,0.5,1)]"
@@ -151,7 +151,7 @@ export default function Carousel({ className = "", heightClass = "" }) {
                 src={src}
                 alt={`Grace and Power Gala photo ${idx + 1}`}
                 fill
-                className="object-cover pointer-events-none"
+                className="object-cover object-top pointer-events-none"
                 sizes="(max-width: 1024px) 100vw, 1024px"
                 priority={idx === 0}
               />

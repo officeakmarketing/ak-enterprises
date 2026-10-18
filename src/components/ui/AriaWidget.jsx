@@ -473,18 +473,19 @@ export default function AriaWidget() {
 
   // Show button after scroll or initial delay
   useEffect(() => {
+    if (isVisible) return;
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setIsVisible(true);
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     const timer = setTimeout(() => setIsVisible(true), 1500);
     return () => {
       window.removeEventListener("scroll", handleScroll);
       clearTimeout(timer);
     };
-  }, []);
+  }, [isVisible]);
 
   // Live Property Demo Follow-up: triggers strictly ONCE when user completes the valuation demo
   useEffect(() => {

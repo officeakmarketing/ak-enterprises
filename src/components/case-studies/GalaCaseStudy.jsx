@@ -94,8 +94,8 @@ export default function GalaCaseStudy() {
             <div className="lg:col-span-5 flex flex-col gap-8 lg:gap-10">
 
               {/* Media component */}
-              <div className="relative w-full rounded-2xl overflow-hidden border border-brand-gold/40">
-                <Carousel heightClass="h-[580px] sm:h-[660px] md:h-[740px] lg:h-[800px] xl:h-[860px]" />
+              <div className="relative w-full rounded-2xl overflow-hidden border border-brand-gold/40 shadow-2xl">
+                <Carousel heightClass="h-[680px] sm:h-[780px] md:h-[880px] lg:h-[960px] xl:h-[1050px]" />
               </div>
 
             </div>

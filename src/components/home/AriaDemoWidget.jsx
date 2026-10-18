@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import { useState, useRef } from "react";
 
 export default function AriaDemoWidget() {
+  const [isInteractive, setIsInteractive] = useState(false);
   const iframeRef = useRef(null);
 
   return (
@@ -19,12 +20,33 @@ export default function AriaDemoWidget() {
 
       <div
         id="demo-iframe"
-        className="w-full max-w-[850px] relative overflow-hidden rounded-none sm:rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] border-y sm:border border-brand-gold/10 ring-1 ring-white/5 bg-[#0a0a0c] h-[850px] sm:h-[900px]"
+        onMouseLeave={() => setIsInteractive(false)}
+        className="w-full max-w-[850px] relative overflow-hidden rounded-none sm:rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] border-y sm:border border-brand-gold/20 ring-1 ring-white/5 bg-[#0a0a0c] h-[850px] sm:h-[900px] group"
       >
+        {/* Pass-through scroll shield prevents iframe from hijacking Lenis/native page scroll */}
+        {!isInteractive && (
+          <div
+            onClick={() => setIsInteractive(true)}
+            className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/25 hover:bg-black/15 backdrop-blur-[1px] transition-colors cursor-pointer p-4 text-center select-none"
+            title="Click to interact with live demo"
+          >
+            <div className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#0a0a0e]/95 hover:bg-[#14141c] border border-brand-gold/60 text-brand-gold hover:text-white font-mono text-xs sm:text-sm font-bold uppercase tracking-wider shadow-[0_10px_30px_rgba(0,0,0,0.9)] transition-all duration-300 hover:scale-105 active:scale-95">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+              <span>Click to Interact with Live System</span>
+              <span className="text-brand-gold group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+            <span className="mt-3 text-[11px] font-mono text-warm-grey/75 tracking-wider bg-black/80 px-3 py-1 rounded-md border border-white/5">
+              Pass-through scrolling enabled &bull; Tap or click anywhere to activate live inputs
+            </span>
+          </div>
+        )}
+
         <iframe
           ref={iframeRef}
           src="https://ariasystem.vercel.app/"
-          className="absolute inset-0 w-full h-full border-0"
+          className={`absolute inset-0 w-full h-full border-0 transition-opacity duration-300 ${
+            isInteractive ? "pointer-events-auto" : "pointer-events-none"
+          }`}
           title="Aria Property Analysis"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

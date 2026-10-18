@@ -9,6 +9,14 @@ export default function CalendlyWidget() {
   const router = useRouter();
 
   useEffect(() => {
+    // 0. Inject Calendly widget CSS asynchronously on client mount without blocking FCP
+    if (!document.querySelector('link[href*="calendly.com/assets/external/widget.css"]')) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://assets.calendly.com/assets/external/widget.css";
+      document.head.appendChild(link);
+    }
+
     // 1. Intercept all calendly links to open in the popup widget instead of a new tab
     const handleClick = (e) => {
       const link = e.target.closest("a");

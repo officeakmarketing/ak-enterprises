@@ -70,7 +70,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import CalendlyWidget from "@/components/ui/CalendlyWidget";
-import NoiseOverlay from "@/components/ui/NoiseOverlay";
 
 // Code-split deferred client widgets to keep initial critical bundle minimal
 const AriaWidget = dynamic(() => import("@/components/ui/AriaWidget"));
@@ -85,23 +84,12 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <head>
-        {/* Non-blocking stylesheet prevents external network from delaying First Contentful Paint */}
-        <link
-          href="https://assets.calendly.com/assets/external/widget.css"
-          rel="stylesheet"
-          media="print"
-          onLoad="this.media='all'"
-        />
-        <noscript>
-          <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-        </noscript>
         <link rel="preload" as="image" href="/transparent-logo.png" type="image/png" fetchPriority="high" />
       </head>
       <body 
         suppressHydrationWarning
         className="flex flex-col font-sans bg-ink-black text-white selection:bg-brand-gold selection:text-ink-black"
       >
-        <NoiseOverlay />
         <SmoothScroll>
           <Navbar />
           <main className="flex-1">{children}</main>
