@@ -8,6 +8,7 @@ import CaseStudyHolidayDream from "@/components/seo/CaseStudyHolidayDream";
 import SeoHowWeBuildIt from "@/components/seo/SeoHowWeBuildIt";
 import SeoOurRule from "@/components/seo/SeoOurRule";
 import SeoAuditCTA from "@/components/seo/SeoAuditCTA";
+import DohaInteractiveMap from "@/components/ui/DohaInteractiveMap";
 
 export const metadata = {
   title: {
@@ -151,6 +152,9 @@ export default function DohaBusinessOperatingSystemsPage() {
             AK Enterprises delivers remotely across Doha and worldwide. Book your free 45-minute audit and see exactly what your current systems are costing you every month. That is what the most effective business operating systems in Doha are built on: one audit, one build, one machine that runs the business front to end.
           </SeoAuditCTA>
         </div>
+
+        {/* Interactive Doha Urban Map Embed */}
+        <DohaInteractiveMap />
 
       </div>
     </article>

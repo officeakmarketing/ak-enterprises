@@ -7,13 +7,13 @@ export default function MoreProofSection() {
   return (
     <section className="w-full pt-0 pb-8 sm:pb-12 lg:pb-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden">
       <ScrollReveal>
-        <div className="w-full 2xl:max-w-[1536px] 2xl:mx-auto bg-[#0e0e10]/95 border-y 2xl:border border-muted-grey/25 2xl:rounded-3xl px-4 py-7 sm:px-8 sm:py-10 md:p-10 lg:p-12 xl:p-14 2xl:p-16 relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-8 lg:gap-10 xl:gap-14 items-center">
-            {/* Left Column: Copy, Result Block & Link (7 cols on desktop - Wider) */}
-            <div className="lg:col-span-7 flex flex-col justify-between z-10 relative">
+        <div className="w-full 2xl:max-w-[1536px] 2xl:mx-auto bg-[#0e0e10]/95 border-y 2xl:border border-muted-grey/25 2xl:rounded-3xl px-0 py-7 sm:px-8 sm:py-10 md:p-10 lg:p-12 xl:p-14 2xl:p-16 relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
+            {/* Left Column: Copy, Result Block & Link (7 cols on desktop) */}
+            <div className="lg:col-span-7 flex flex-col justify-between z-10 relative px-4 sm:px-0">
               {/* LABEL */}
-              <div className="inline-block self-start border border-brand-gold/30 bg-brand-gold/5 px-3 py-2.5 sm:py-1 sm:px-3.5 sm:py-2.5 sm:py-1 rounded-full text-brand-gold text-[9px] sm:text-[10px] tracking-widest uppercase mb-3.5 sm:mb-5 font-bold">
-                Case Study  Luxury Events, London UK
+              <div className="inline-block self-start border border-brand-gold/30 bg-brand-gold/5 px-3.5 py-1 rounded-full text-brand-gold text-[9px] sm:text-[10px] tracking-widest uppercase mb-3.5 sm:mb-5 font-bold">
+                Case Study &bull; Luxury Events, London UK
               </div>
 
               {/* HEADLINE */}
@@ -57,7 +57,7 @@ export default function MoreProofSection() {
               {/* HIGHLIGHTED PULL QUOTE */}
               <div className="mb-8 border-l-2 border-brand-gold/50 pl-4 py-2.5 sm:py-1">
                 <p className="text-white/90 italic font-serif text-sm sm:text-base leading-relaxed mb-2">
-                  "Extremely professional and highly effective. Very happy with the results."
+                  &ldquo;Extremely professional and highly effective. Very happy with the results.&rdquo;
                 </p>
                 <div className="text-brand-gold text-[9.5px] sm:text-xs not-italic font-bold tracking-widest uppercase">
                   Mario Paunica, organizer, Grace and Power Gala
@@ -71,18 +71,17 @@ export default function MoreProofSection() {
                   className="group inline-flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-widest hover:text-white transition-colors border-b border-brand-gold/30 pb-0.5"
                 >
                   <span>Read the full case study</span>
-                  <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                  <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                 </Link>
               </div>
             </div>
 
-            {/* Right Column: Clean Gold Hairline Border Carousel Showcase + Testimonial Block */}
-            <div className="lg:col-span-5 w-full max-w-lg mx-auto lg:max-w-none flex flex-col gap-3.5 sm:gap-5 relative z-10">
+            {/* Right Column: Clean Gold Hairline Border Carousel Showcase (Refined desktop width, 4:5 image ratio) */}
+            <div className="lg:col-span-5 w-full flex flex-col justify-center relative z-10">
               {/* Clean Gold Hairline Border Carousel Container */}
-              <div className="relative w-full rounded-2xl overflow-hidden border border-brand-gold/40">
+              <div className="relative w-full max-w-[440px] xl:max-w-[480px] mx-auto rounded-none sm:rounded-2xl overflow-hidden border-y sm:border border-brand-gold/40 shadow-2xl">
                 <Carousel />
               </div>
-
             </div>
           </div>
         </div>

@@ -12,22 +12,6 @@ function IconAll(props) {
   );
 }
 
-function IconUsa(props) {
-  return (
-    <svg {...props} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
-    </svg>
-  );
-}
-
-function IconUk(props) {
-  return (
-    <svg {...props} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-    </svg>
-  );
-}
-
 function IconIntl(props) {
   return (
     <svg {...props} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,10 +20,81 @@ function IconIntl(props) {
   );
 }
 
+function FlagUS({ className = "w-4 h-3" }) {
+  return (
+    <svg className={className} viewBox="0 0 640 480" aria-label="United States flag">
+      <path fill="#bd3d44" d="M0 0h640v480H0z" />
+      <path stroke="#fff" strokeWidth="37" d="M0 55.5h640M0 129.5h640M0 203.5h640M0 277.5h640M0 351.5h640M0 425.5h640" />
+      <path fill="#192f5d" d="M0 0h260v258.5H0z" />
+      <g fill="#fff">
+        <circle cx="26" cy="24" r="8" /><circle cx="78" cy="24" r="8" /><circle cx="130" cy="24" r="8" /><circle cx="182" cy="24" r="8" /><circle cx="234" cy="24" r="8" />
+        <circle cx="52" cy="50" r="8" /><circle cx="104" cy="50" r="8" /><circle cx="156" cy="50" r="8" /><circle cx="208" cy="50" r="8" />
+        <circle cx="26" cy="76" r="8" /><circle cx="78" cy="76" r="8" /><circle cx="130" cy="76" r="8" /><circle cx="182" cy="76" r="8" /><circle cx="234" cy="76" r="8" />
+        <circle cx="52" cy="102" r="8" /><circle cx="104" cy="102" r="8" /><circle cx="156" cy="102" r="8" /><circle cx="208" cy="102" r="8" />
+        <circle cx="26" cy="128" r="8" /><circle cx="78" cy="128" r="8" /><circle cx="130" cy="128" r="8" /><circle cx="182" cy="128" r="8" /><circle cx="234" cy="128" r="8" />
+        <circle cx="52" cy="154" r="8" /><circle cx="104" cy="154" r="8" /><circle cx="156" cy="154" r="8" /><circle cx="208" cy="154" r="8" />
+        <circle cx="26" cy="180" r="8" /><circle cx="78" cy="180" r="8" /><circle cx="130" cy="180" r="8" /><circle cx="182" cy="180" r="8" /><circle cx="234" cy="180" r="8" />
+        <circle cx="52" cy="206" r="8" /><circle cx="104" cy="206" r="8" /><circle cx="156" cy="206" r="8" /><circle cx="208" cy="206" r="8" />
+        <circle cx="26" cy="232" r="8" /><circle cx="78" cy="232" r="8" /><circle cx="130" cy="232" r="8" /><circle cx="182" cy="232" r="8" /><circle cx="234" cy="232" r="8" />
+      </g>
+    </svg>
+  );
+}
+
+function FlagUK({ className = "w-4 h-3" }) {
+  return (
+    <svg className={className} viewBox="0 0 640 480" aria-label="United Kingdom flag">
+      <path fill="#012169" d="M0 0h640v480H0z"/>
+      <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
+      <path fill="#C8102E" d="m424 288 216 159v33h-44L380 321l44-33zM640 0v10L423 171l-44-33L601 0h39zM0 480v-10l217-161 44 33L39 480H0zM0 0l216 160-44 33L0 34V0z"/>
+      <path fill="#FFF" d="M240 0h160v480H240zM0 160h640v160H0z"/>
+      <path fill="#C8102E" d="M272 0h96v480h-96zM0 192h640v96H0z"/>
+    </svg>
+  );
+}
+
+function FlagAE({ className = "w-4 h-3" }) {
+  return (
+    <svg className={className} viewBox="0 0 640 480" aria-label="United Arab Emirates flag">
+      <path fill="#00732f" d="M0 0h640v160H0z"/>
+      <path fill="#fff" d="M0 160h640v160H0z"/>
+      <path fill="#000" d="M0 320h640v160H0z"/>
+      <path fill="#c8102e" d="M0 0h160v480H0z"/>
+    </svg>
+  );
+}
+
+function FlagQA({ className = "w-4 h-3" }) {
+  return (
+    <svg className={className} viewBox="0 0 640 480" aria-label="Qatar flag">
+      <path fill="#8d1b3d" d="M0 0h640v480H0z"/>
+      <path fill="#fff" d="M0 0h160l80 26.67-80 26.66 80 26.67-80 26.67 80 26.66-80 26.67 80 26.67-80 26.66 80 26.67-80 26.67 80 26.66-80 26.67 80 26.67-80 26.66 80 26.67H0z"/>
+    </svg>
+  );
+}
+
+function FlagRO({ className = "w-4 h-3" }) {
+  return (
+    <svg className={className} viewBox="0 0 640 480" aria-label="Romania flag">
+      <path fill="#002b7f" d="M0 0h213.3v480H0z"/>
+      <path fill="#fcd116" d="M213.3 0h213.4v480H213.3z"/>
+      <path fill="#ce1126" d="M426.7 0H640v480H426.7z"/>
+    </svg>
+  );
+}
+
+const FLAG_MAP = {
+  US: FlagUS,
+  UK: FlagUK,
+  AE: FlagAE,
+  QA: FlagQA,
+  RO: FlagRO,
+};
+
 const CATEGORIES = [
-  { id: "all", label: "All Deployments", count: 15, Icon: IconAll },
-  { id: "usa", label: "United States", count: 9, Icon: IconUsa },
-  { id: "uk", label: "United Kingdom", count: 2, Icon: IconUk },
+  { id: "all", label: "All Hubs", count: 15, Icon: IconAll },
+  { id: "usa", label: "United States", count: 9, Icon: FlagUS },
+  { id: "uk", label: "United Kingdom", count: 2, Icon: FlagUK },
   { id: "intl", label: "International", count: 4, Icon: IconIntl },
 ];
 
@@ -242,8 +297,8 @@ export default function AboutArticles() {
               </div>
 
               {/* Slider Hardware Navigation Controls */}
-              <div className="flex items-center gap-3 self-start lg:self-end">
-                <div className="hidden sm:flex flex-col text-right font-mono text-[10px] text-warm-grey/60 uppercase tracking-widest">
+              <div className="flex items-center justify-between sm:justify-end gap-3 w-full lg:w-auto self-start lg:self-end">
+                <div className="flex flex-col text-left sm:text-right font-mono text-[10px] text-warm-grey/60 uppercase tracking-widest">
                   <span className="text-brand-gold font-bold">{filteredLocations.length} Regional Hubs</span>
                   <span>Autonomous Pipeline</span>
                 </div>
@@ -271,8 +326,8 @@ export default function AboutArticles() {
               </div>
             </div>
 
-            {/* Region Filter Dock - Clean SVG icons, no emojis, no glow */}
-            <div className="relative z-10 flex items-center gap-2.5 overflow-x-auto pb-4 mb-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {/* Region Filter Dock - Hidden on Mobile, Clean on Desktop/Tablet */}
+            <div className="hidden sm:flex relative z-10 items-center gap-2.5 overflow-x-auto pb-4 mb-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {CATEGORIES.map((cat) => {
                 const IconComponent = cat.Icon;
                 return (
@@ -285,7 +340,7 @@ export default function AboutArticles() {
                         : "bg-[#0b0b10] text-warm-grey/75 border-muted-grey/25 hover:border-brand-gold/40 hover:text-white hover:bg-[#121218]"
                     }`}
                   >
-                    <IconComponent className="w-3.5 h-3.5 text-brand-gold" />
+                    <IconComponent className="w-3.5 h-3.5 text-brand-gold rounded-[1px] object-cover" />
                     <span className="tracking-wider">{cat.label}</span>
                     <span className={`ml-1 text-[10px] px-1.5 py-0.5 rounded font-mono ${
                       activeCategory === cat.id ? "bg-brand-gold text-ink-black font-bold" : "bg-white/10 text-warm-grey"
@@ -297,48 +352,54 @@ export default function AboutArticles() {
               })}
             </div>
 
-            {/* The Horizontal Telemetry Slider - Clean Cards without bottom metric / access buttons */}
+            {/* The Horizontal Telemetry Slider - Clean Cards with Flag Badges */}
             <div
               ref={sliderRef}
               className="relative z-10 flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 pt-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
-              {filteredLocations.map((item, idx) => (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  className="flex-shrink-0 w-[270px] sm:w-[300px] md:w-[320px] snap-start rounded-xl border border-brand-gold/25 bg-[#0d0d12] hover:bg-[#14141c] p-5 transition-all duration-200 hover:border-brand-gold/70 hover:-translate-y-1 shadow-lg group relative overflow-hidden flex flex-col justify-between will-change-transform"
-                >
-                  {/* Subtle top edge accent on hover */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-gold/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              {filteredLocations.map((item, idx) => {
+                const ItemFlag = FLAG_MAP[item.badge] || FlagUS;
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    className="flex-shrink-0 w-[270px] sm:w-[300px] md:w-[320px] snap-start rounded-xl border border-brand-gold/25 bg-[#0d0d12] hover:bg-[#14141c] p-4.5 sm:p-5 transition-all duration-200 hover:border-brand-gold/70 hover:-translate-y-1 shadow-lg group relative overflow-hidden flex flex-col justify-between will-change-transform"
+                  >
+                    {/* Subtle top edge accent on hover */}
+                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-gold/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                  <div>
-                    {/* Header: Code Pill, Region, and Index */}
-                    <div className="flex items-center justify-between pb-3 mb-3 border-b border-muted-grey/15">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-gold font-bold px-2 py-0.5 rounded bg-brand-gold/10 border border-brand-gold/30">
-                          {item.code}
-                        </span>
-                        <span className="text-[11px] font-mono text-warm-grey/60 uppercase tracking-wider">
-                          {item.region}
+                    <div>
+                      {/* Header: Flag, Code Pill, Region, and Index */}
+                      <div className="flex items-center justify-between pb-3 mb-3 border-b border-muted-grey/15">
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-brand-gold/10 border border-brand-gold/30">
+                            <ItemFlag className="w-4 h-2.5 rounded-[2px] object-cover shrink-0 shadow-sm" />
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-brand-gold font-bold">
+                              {item.code}
+                            </span>
+                          </div>
+                          <span className="text-[11px] font-mono text-warm-grey/60 uppercase tracking-wider">
+                            {item.region}
+                          </span>
+                        </div>
+                        <span className="text-[11px] font-mono text-warm-grey/40 group-hover:text-brand-gold font-semibold transition-colors">
+                          SYS // {String(idx + 1).padStart(2, "0")}
                         </span>
                       </div>
-                      <span className="text-[11px] font-mono text-warm-grey/40 group-hover:text-brand-gold font-semibold transition-colors">
-                        SYS // {String(idx + 1).padStart(2, "0")}
-                      </span>
+
+                      {/* Location Name */}
+                      <h3 className="text-xl sm:text-2xl font-serif italic text-white group-hover:text-brand-gold transition-colors duration-200 mb-2 leading-snug">
+                        {item.name}
+                      </h3>
+
+                      {/* Operational Scope */}
+                      <p className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-warm-grey/75 line-clamp-2 leading-relaxed">
+                        {item.tag}
+                      </p>
                     </div>
-
-                    {/* Location Name */}
-                    <h3 className="text-xl sm:text-2xl font-serif italic text-white group-hover:text-brand-gold transition-colors duration-200 mb-2 leading-snug">
-                      {item.name}
-                    </h3>
-
-                    {/* Operational Scope */}
-                    <p className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-warm-grey/75 line-clamp-2 leading-relaxed">
-                      {item.tag}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                );
+              })}
             </div>
 
             {/* One Good Button For All Cards */}
@@ -354,7 +415,7 @@ export default function AboutArticles() {
               </Link>
             </div>
 
-            {/* Bottom Global Index Circuit Strip - All 15 locations cleanly linked without emojis */}
+            {/* Bottom Global Index Circuit Strip - All 15 locations cleanly linked with flags */}
             <div className="relative z-10 mt-6 pt-5 border-t border-brand-gold/20">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                 <span className="text-[10px] font-mono uppercase tracking-[0.22em] text-brand-gold font-bold flex items-center gap-2">
@@ -366,19 +427,22 @@ export default function AboutArticles() {
                 </span>
               </div>
 
-              {/* Monospace Pill Chips Matrix */}
+              {/* Monospace Pill Chips Matrix with Flags */}
               <div className="flex flex-wrap gap-2">
-                {LOCATIONS.map((loc) => (
-                  <Link
-                    key={`index-pill-${loc.id}`}
-                    href={loc.href}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0b0b10] border border-brand-gold/25 hover:border-brand-gold/70 text-[11px] font-mono text-warm-grey/85 hover:text-white hover:bg-brand-gold/10 transition-all duration-200 shadow-sm"
-                  >
-                    <span className="text-[9px] font-bold text-brand-gold px-1 rounded bg-brand-gold/10">{loc.badge}</span>
-                    <span className="font-medium">{loc.name}</span>
-                    <span className="text-brand-gold text-[10px] font-bold">&rarr;</span>
-                  </Link>
-                ))}
+                {LOCATIONS.map((loc) => {
+                  const LocFlag = FLAG_MAP[loc.badge] || FlagUS;
+                  return (
+                    <Link
+                      key={`index-pill-${loc.id}`}
+                      href={loc.href}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0b0b10] border border-brand-gold/25 hover:border-brand-gold/70 text-[11px] font-mono text-warm-grey/85 hover:text-white hover:bg-brand-gold/10 transition-all duration-200 shadow-sm"
+                    >
+                      <LocFlag className="w-3.5 h-2.5 rounded-[2px] object-cover shrink-0 shadow-sm" />
+                      <span className="font-medium">{loc.name}</span>
+                      <span className="text-brand-gold text-[10px] font-bold">&rarr;</span>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>

@@ -23,8 +23,8 @@ export default function CaseStudyGraceAndPower({
         A luxury events platform load-tested to two million concurrent users with 100% uptime at peak, built and deployed by AK Enterprises. &ldquo;Extremely professional and highly effective. Very happy with the results.&rdquo; Mario Paunica, organizer.
       </p>
 
-      <div className="my-8 relative w-full rounded-xl sm:rounded-2xl overflow-hidden border border-brand-gold/40 shadow-2xl">
-        <Carousel heightClass="h-[700px] sm:h-[820px] md:h-[940px] lg:h-[1050px] xl:h-[1150px]" />
+      <div className="my-8 relative w-full max-w-[620px] mx-auto rounded-xl sm:rounded-2xl overflow-hidden border border-brand-gold/40 shadow-2xl">
+        <Carousel />
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t border-brand-gold/20 mb-8">

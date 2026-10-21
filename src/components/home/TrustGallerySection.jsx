@@ -25,12 +25,15 @@ export default function TrustGallerySection() {
     <section className="w-full py-8 sm:py-12 lg:py-16 border-b border-muted-grey/20 bg-ink-black overflow-hidden relative">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 mb-8 sm:mb-10 text-center relative z-20">
         <ScrollReveal>
-          <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-2.5 sm:py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase mb-4 font-bold">
-            Wall of Proof
+          <div className="text-center max-w-2xl mx-auto mb-4 sm:mb-6">
+            <h2 className="text-[2.15rem] sm:text-4xl md:text-5xl font-serif italic text-brand-gold leading-tight tracking-tight">
+              Wall of Proof
+            </h2>
+            <div className="w-20 sm:w-28 h-[1.5px] bg-brand-gold/40 mx-auto mt-3.5 sm:mt-4.5 rounded-full mb-3 sm:mb-4" />
+            <p className="text-base sm:text-lg md:text-xl font-serif italic text-white/90">
+              Real results. Real messages.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-white leading-tight">
-            Real results. Real messages.
-          </h2>
         </ScrollReveal>
 
         {/* Desktop Arrows (Top Right) */}

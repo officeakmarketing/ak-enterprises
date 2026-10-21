@@ -10,7 +10,7 @@ export default function AboutFounders() {
         {/* Mobile Section Header (Hidden on Desktop) */}
         <div className="block lg:hidden mb-12">
           <ScrollReveal>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl flex flex-col items-center text-center sm:items-start sm:text-left">
               <div className="inline-block border border-brand-gold/40 bg-brand-gold/5 px-3.5 py-2.5 sm:py-1 rounded-full text-brand-gold text-[10px] sm:text-xs tracking-widest uppercase font-bold mb-6">
                 The Founders
               </div>

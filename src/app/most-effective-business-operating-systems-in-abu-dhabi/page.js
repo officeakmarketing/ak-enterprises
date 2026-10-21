@@ -8,6 +8,7 @@ import CaseStudyHolidayDream from "@/components/seo/CaseStudyHolidayDream";
 import SeoHowWeBuildIt from "@/components/seo/SeoHowWeBuildIt";
 import SeoOurRule from "@/components/seo/SeoOurRule";
 import SeoAuditCTA from "@/components/seo/SeoAuditCTA";
+import MiddleEastInteractiveMap from "@/components/ui/MiddleEastInteractiveMap";
 
 export const metadata = {
   title: {
@@ -151,6 +152,9 @@ export default function AbuDhabiBusinessOperatingSystemsPage() {
             AK Enterprises delivers remotely across Abu Dhabi and worldwide. Book your free 45-minute audit and see exactly what your current systems are costing you every month. That is what the most effective business operating systems in Abu Dhabi are built on: one audit, one build, one machine that runs the business front to end.
           </SeoAuditCTA>
         </div>
+
+        {/* Interactive Middle East Regional Map Embed */}
+        <MiddleEastInteractiveMap defaultActive="abu-dhabi" />
 
       </div>
     </article>

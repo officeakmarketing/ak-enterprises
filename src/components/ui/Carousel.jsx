@@ -4,16 +4,14 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Lightbox from "@/components/ui/Lightbox";
 
-export default function Carousel({ className = "", heightClass = "" }) {
+export default function Carousel({ className = "", heightClass = "aspect-[4/5]" }) {
   const photos = [
-    "/grace-gala-1.jpg",
-    "/grace-gala-2.jpg",
-    "/grace-gala-3.jpg",
-    "/grace-gala-4.jpg",
-    "/grace-gala-5.jpg",
-    "/grace-gala-6.jpg",
-    "/grace-gala-7.jpg",
-    "/grace-gala-8.jpg",
+    "/grace-gala-1.png",
+    "/grace-gala-2.png",
+    "/grace-gala-3.png",
+    "/grace-gala-4.png",
+    "/grace-gala-5.png",
+    "/grace-gala-6.png",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -124,11 +122,11 @@ export default function Carousel({ className = "", heightClass = "" }) {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        className={`relative w-full max-w-5xl mx-auto overflow-hidden rounded-2xl group select-none touch-pan-y md:cursor-default focus:outline-none focus:ring-1 focus:ring-brand-gold/40 ${className}`}
+        className={`relative w-full ${heightClass} max-w-5xl mx-auto overflow-hidden rounded-none sm:rounded-2xl group select-none touch-pan-y md:cursor-default focus:outline-none focus:ring-1 focus:ring-brand-gold/40 ${className}`}
       >
         {/* Sliding Track with Real-Time Finger Follow */}
         <div
-          className={`flex ${heightClass || "h-[700px] sm:h-[820px] md:h-[940px] lg:h-[1050px] xl:h-[1150px] 2xl:h-[1200px]"} w-full ${
+          className={`flex w-full h-full ${
             isDragging
               ? "transition-none"
               : "transition-transform duration-600 ease-[cubic-bezier(0.25,1,0.5,1)]"
@@ -151,8 +149,8 @@ export default function Carousel({ className = "", heightClass = "" }) {
                 src={src}
                 alt={`Grace and Power Gala photo ${idx + 1}`}
                 fill
-                className="object-cover object-top pointer-events-none"
-                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-cover object-center pointer-events-none"
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 55vw, 700px"
                 priority={idx === 0}
               />
               
