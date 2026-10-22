@@ -83,12 +83,14 @@ export default function TrustGallerySection() {
         <div className="flex lg:hidden justify-center gap-4 mt-6">
           <button 
             onClick={() => scroll("left")}
+            aria-label="Scroll left"
             className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/80 active:bg-brand-gold/20 active:border-brand-gold/50 transition-colors"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button 
             onClick={() => scroll("right")}
+            aria-label="Scroll right"
             className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/80 active:bg-brand-gold/20 active:border-brand-gold/50 transition-colors"
           >
             <ChevronRight className="w-6 h-6" />

@@ -73,15 +73,17 @@ export default function RevenueCalculatorSection() {
               {/* Slider 1: Missed Leads */}
               <div className="space-y-4">
                 <div className="flex justify-between items-end border-b border-white/5 pb-2">
-                  <label className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Leads coming in each month</label>
+                  <label htmlFor="leads-slider" className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Leads coming in each month</label>
                   <span className="text-brand-gold font-serif italic text-2xl sm:text-3xl leading-none">{leads}<span className="text-xs sm:text-sm text-brand-gold/60 not-italic ml-1">/mo</span></span>
                 </div>
                 <input 
+                  id="leads-slider"
                   type="range" 
                   min="5" 
                   max="200" 
                   value={leads} 
                   onChange={(e) => setLeads(Number(e.target.value))}
+                  aria-label="Leads coming in each month"
                   className="w-full h-0.5 bg-white/5 rounded-full appearance-none cursor-pointer outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:bg-brand-gold [&::-webkit-slider-thumb]:rounded-full transition-all"
                 />
               </div>
@@ -89,15 +91,17 @@ export default function RevenueCalculatorSection() {
               {/* Slider 2: Close Rate */}
               <div className="space-y-4">
                 <div className="flex justify-between items-end border-b border-white/5 pb-2">
-                  <label className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Your current close rate (%)</label>
+                  <label htmlFor="close-rate-slider" className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Your current close rate (%)</label>
                   <span className="text-brand-gold font-serif italic text-2xl sm:text-3xl leading-none">{closeRate}<span className="text-xs sm:text-sm text-brand-gold/60 not-italic ml-0.5">%</span></span>
                 </div>
                 <input 
+                  id="close-rate-slider"
                   type="range" 
                   min="5" 
                   max="80" 
                   value={closeRate} 
                   onChange={(e) => setCloseRate(Number(e.target.value))}
+                  aria-label="Your current close rate"
                   className="w-full h-0.5 bg-white/5 rounded-full appearance-none cursor-pointer outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:bg-brand-gold [&::-webkit-slider-thumb]:rounded-full transition-all"
                 />
               </div>
@@ -105,19 +109,21 @@ export default function RevenueCalculatorSection() {
               {/* Slider 3: Deal Value */}
               <div className="space-y-4">
                 <div className="flex justify-between items-end border-b border-white/5 pb-2">
-                  <label className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Average job value</label>
+                  <label htmlFor="deal-value-slider" className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-warm-grey">Average job value</label>
                   <span className="text-brand-gold font-serif italic text-2xl sm:text-3xl leading-none flex items-baseline">
                     <span className="text-lg sm:text-xl text-brand-gold/80 mr-0.5">{currency}</span>
                     {Intl.NumberFormat('en-GB').format(dealValue)}
                   </span>
                 </div>
                 <input 
+                  id="deal-value-slider"
                   type="range" 
                   min="100" 
                   max="10000" 
                   step="100"
                   value={dealValue} 
                   onChange={(e) => setDealValue(Number(e.target.value))}
+                  aria-label="Average job value"
                   className="w-full h-0.5 bg-white/5 rounded-full appearance-none cursor-pointer outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:bg-brand-gold [&::-webkit-slider-thumb]:rounded-full transition-all"
                 />
               </div>
