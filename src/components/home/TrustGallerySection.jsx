@@ -40,12 +40,14 @@ export default function TrustGallerySection() {
         <div className="hidden lg:flex justify-end gap-3 absolute right-4 sm:right-6 lg:right-8 xl:right-12 bottom-0 translate-y-2">
           <button 
             onClick={() => scroll("left")}
+            aria-label="Scroll left"
             className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70 hover:text-brand-gold hover:border-brand-gold/50 hover:bg-brand-gold/10 transition-all duration-300"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button 
             onClick={() => scroll("right")}
+            aria-label="Scroll right"
             className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70 hover:text-brand-gold hover:border-brand-gold/50 hover:bg-brand-gold/10 transition-all duration-300"
           >
             <ChevronRight className="w-5 h-5" />
