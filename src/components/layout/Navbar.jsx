@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`w-full z-50 bg-[#0b0b0c]/95 border-b border-muted-grey/20 ${isThankYouPage ? "relative" : "sticky top-0"}`}>
+      <nav aria-label="Main navigation" className={`w-full z-50 bg-[#0b0b0c]/95 border-b border-muted-grey/20 ${isThankYouPage ? "relative" : "sticky top-0"}`}>
         <div className="w-full max-w-[1536px] mx-auto grid grid-cols-2 md:grid-cols-[1fr_auto_1fr] items-center px-4 sm:px-6 lg:px-8 xl:px-12 py-3.5 md:py-4">
           {/* Left side Logo */}
           <div className="flex items-center justify-start">
@@ -103,7 +103,7 @@ export default function Navbar() {
 
       {/* Fullscreen Mobile Navigation Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-[#0b0b0c] flex flex-col justify-between p-6 sm:p-8 animate-in fade-in duration-200 overflow-y-auto">
+        <div role="dialog" aria-modal="true" aria-label="Mobile navigation menu" className="fixed inset-0 z-[100] bg-[#0b0b0c] flex flex-col justify-between p-6 sm:p-8 animate-in fade-in duration-200 overflow-y-auto">
           {/* Top Bar inside overlay */}
           <div className="flex items-center justify-between border-b border-muted-grey/20 pb-4">
             <Link

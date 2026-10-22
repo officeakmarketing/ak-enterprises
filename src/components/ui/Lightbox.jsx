@@ -47,6 +47,9 @@ export default function Lightbox({ images, initialIndex = 0, onClose }) {
     <div 
       className="fixed inset-0 z-[100000] flex items-center justify-center bg-black/95 animate-in fade-in duration-300"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image lightbox viewer"
     >
       {/* Top Bar with Cancel Button */}
       <div className="absolute top-0 w-full flex justify-end p-4 sm:p-8 z-50">

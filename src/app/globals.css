@@ -106,6 +106,7 @@
 
 html {
   max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -113,9 +114,43 @@ body {
   color: #ffffff;
   max-width: 100%;
   width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
 }
 
 /* Fix for iframes trapping smooth scroll events (Lenis) */
 html.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* Reduce layout shift for images by reserving space */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Performance: Reduce paint/layout for fixed/sticky elements */
+.fixed, [class*="sticky"] {
+  will-change: transform;
+  contain: layout style;
+}
+
+/* Accessibility: Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile touch optimization */
+@media (hover: none) and (pointer: coarse) {
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+

@@ -920,6 +920,7 @@ export default function AriaWidget() {
               </div>
               <button 
                 onClick={() => setShowCalendly(false)}
+                aria-label="Back to Chat"
                 className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-[#141416] text-white px-6 py-2.5 rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-widest border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.8)] hover:bg-white hover:text-ink-black transition-all z-50"
               >
                 Back to Chat
@@ -1008,6 +1009,7 @@ export default function AriaWidget() {
                   <button
                     type="submit"
                     disabled={!input.trim() || isTyping}
+                    aria-label="Send message"
                     className="absolute right-2 p-2 rounded-full bg-brand-gold text-ink-black disabled:opacity-50 disabled:bg-white/10 disabled:text-warm-grey transition-colors"
                   >
                     <Send className="w-4 h-4" />

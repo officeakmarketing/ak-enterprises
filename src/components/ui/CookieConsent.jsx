@@ -40,7 +40,7 @@ export default function CookieConsent() {
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
           className="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 md:bottom-8 z-[100] md:max-w-md"
         >
-          <div className="bg-[#0b0b0c]/90 backdrop-blur-xl border border-brand-gold/30 rounded-2xl p-6 shadow-neo-raised relative overflow-hidden">
+          <div role="dialog" aria-label="Cookie preferences" className="bg-[#0b0b0c]/90 backdrop-blur-xl border border-brand-gold/30 rounded-2xl p-6 shadow-neo-raised relative overflow-hidden">
             {/* Subtle background glow */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-brand-gold/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
