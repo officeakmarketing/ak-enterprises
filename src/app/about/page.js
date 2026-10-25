@@ -5,6 +5,7 @@ import CredibilitySection from "@/components/home/CredibilitySection";
 import AboutFounders from "@/components/about/AboutFounders";
 import USLeadership from "@/components/about/USLeadership";
 import AboutCTA from "@/components/about/AboutCTA";
+import BusinessLoungeSection from "@/components/about/BusinessLoungeSection";
 
 export default function About() {
   return (
@@ -13,6 +14,7 @@ export default function About() {
       <USLeadership />
       <AboutGroup />
       <AboutHero />
+      <BusinessLoungeSection />
       <AboutArticles />
       <CredibilitySection />
       <AboutCTA />
