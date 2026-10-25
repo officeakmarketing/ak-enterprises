@@ -424,7 +424,7 @@ export default function BusinessLoungeSection() {
                       openLightbox(currentIndex);
                     }}
                     aria-label="View photograph in high resolution"
-                    className="p-2 sm:p-2.5 rounded-full bg-black/70 hover:bg-brand-gold text-white hover:text-black backdrop-blur-md border border-white/20 hover:border-brand-gold transition-all duration-300 shadow-md group/btn cursor-pointer"
+                    className="w-11 h-11 flex items-center justify-center rounded-full bg-black/70 hover:bg-brand-gold text-white hover:text-black backdrop-blur-md border border-white/20 hover:border-brand-gold transition-all duration-300 shadow-md group/btn cursor-pointer"
                     title="Click to view full screen"
                   >
                     <Maximize2 className="w-4 h-4 transition-transform group-hover/btn:scale-110" />
