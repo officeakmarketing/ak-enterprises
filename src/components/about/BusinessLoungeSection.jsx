@@ -41,7 +41,7 @@ const LOUNGE_SLIDES = [
   },
   {
     id: 4,
-    src: "/business-lounge/business-lounge-4.jpg",
+    src: "/business-lounge/business-lounge-4.JPG",
     title: "Honored on the Main Stage",
     subtitle: "Antonios celebrated on the gala stage alongside the host before an audience of top executives.",
     location: "Main Stage • Bucharest",
