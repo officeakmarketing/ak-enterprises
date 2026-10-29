@@ -41,6 +41,9 @@ export default function PrivacyPage() {
           <p className="text-white/60 pt-1">
             Effective date: 12 October 2026 | Version: 1.0
           </p>
+          <p className="text-white/80 pt-1 font-normal">
+            We use your details to reply and follow up. See our privacy policy.
+          </p>
         </div>
 
         {/* Text-Based Sections */}

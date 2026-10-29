@@ -11,6 +11,7 @@ export default function AriaWidget() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasUnread, setHasUnread] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
@@ -107,6 +108,7 @@ export default function AriaWidget() {
   // Lock body scroll when chat is open (prevents background scrolling on mobile & desktop)
   useEffect(() => {
     if (isOpen) {
+      setHasUnread(false);
       document.body.style.overflow = "hidden";
       if (!chatOpenedLoggedRef.current) {
         chatOpenedLoggedRef.current = true;
@@ -418,6 +420,10 @@ export default function AriaWidget() {
     const lastMsg = messages[messages.length - 1];
     const isAssistantDone = lastMsg && lastMsg.role === "assistant" && lastMsg.content && lastMsg.content.trim().length > 0 && !isTyping;
     
+    if (isAssistantDone && !isOpen) {
+      setHasUnread(true);
+    }
+    
     // Only sync to HUD after the first real USER message — prevents junk leads from
     // demo auto-open which injects an assistant pitch with zero user messages
     const hasUserMessage = messages.some(m => m.role === "user");
@@ -666,6 +672,8 @@ export default function AriaWidget() {
         });
       }
       
+      // If the chat widget is not open when assistant finishes replying, show notification dot
+      setHasUnread((prev) => (!isOpen ? true : false));
       isTypingRef.current = false;
     } catch (error) {
       isTypingRef.current = false;
@@ -839,17 +847,27 @@ export default function AriaWidget() {
           <span className="absolute right-[120%] bg-[#141416] text-brand-gold text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-md border border-brand-gold/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
             Aria
           </span>
-          <button
-            onClick={() => {
-              setIsOpen(true);
-            }}
-            className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black border-[1.5px] sm:border-2 border-brand-gold hover:scale-105 active:scale-95 transition-transform duration-300 flex items-center justify-center overflow-hidden"
-            aria-label="Open Aria Chatbot"
-          >
-            <div className="relative w-7 h-7 sm:w-8 sm:h-8 z-10 flex items-center justify-center scale-135">
-              <Image src="/fav.png" alt="Aria Logo" fill className="object-contain" priority />
-            </div>
-          </button>
+          <div className="relative">
+            <button
+              onClick={() => {
+                setIsOpen(true);
+              }}
+              className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black border-[1.5px] sm:border-2 border-brand-gold hover:scale-105 active:scale-95 transition-transform duration-300 flex items-center justify-center overflow-hidden"
+              aria-label="Open Aria Chatbot"
+            >
+              <div className="relative w-7 h-7 sm:w-8 sm:h-8 z-10 flex items-center justify-center scale-135">
+                <Image src="/fav.png" alt="Aria Logo" fill className="object-contain" priority />
+              </div>
+            </button>
+
+            {/* Notification Badge */}
+            {hasUnread && (
+              <span className="absolute -top-1 -right-1 z-20 pointer-events-none flex h-3.5 w-3.5 items-center justify-center">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-gold opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-gold shadow-[0_0_8px_rgba(201,169,97,0.9)]" />
+              </span>
+            )}
+          </div>
         </div>
       )}
 

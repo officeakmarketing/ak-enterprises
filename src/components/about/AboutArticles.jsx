@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from "react";
 import Link from "next/link";
-import ScrollReveal from "@/components/ui/ScrollReveal";
 
 function IconAll(props) {
   return (
@@ -20,7 +19,7 @@ function IconIntl(props) {
   );
 }
 
-function FlagUS({ className = "w-4 h-3" }) {
+const FlagUS = React.memo(function FlagUS({ className = "w-4 h-3" }) {
   return (
     <svg className={className} viewBox="0 0 640 480" aria-label="United States flag">
       <path fill="#bd3d44" d="M0 0h640v480H0z" />
@@ -39,9 +38,9 @@ function FlagUS({ className = "w-4 h-3" }) {
       </g>
     </svg>
   );
-}
+});
 
-function FlagUK({ className = "w-4 h-3" }) {
+const FlagUK = React.memo(function FlagUK({ className = "w-4 h-3" }) {
   return (
     <svg className={className} viewBox="0 0 640 480" aria-label="United Kingdom flag">
       <path fill="#012169" d="M0 0h640v480H0z"/>
@@ -51,9 +50,9 @@ function FlagUK({ className = "w-4 h-3" }) {
       <path fill="#C8102E" d="M272 0h96v480h-96zM0 192h640v96H0z"/>
     </svg>
   );
-}
+});
 
-function FlagAE({ className = "w-4 h-3" }) {
+const FlagAE = React.memo(function FlagAE({ className = "w-4 h-3" }) {
   return (
     <svg className={className} viewBox="0 0 640 480" aria-label="United Arab Emirates flag">
       <path fill="#00732f" d="M0 0h640v160H0z"/>
@@ -62,18 +61,18 @@ function FlagAE({ className = "w-4 h-3" }) {
       <path fill="#c8102e" d="M0 0h160v480H0z"/>
     </svg>
   );
-}
+});
 
-function FlagQA({ className = "w-4 h-3" }) {
+const FlagQA = React.memo(function FlagQA({ className = "w-4 h-3" }) {
   return (
     <svg className={className} viewBox="0 0 640 480" aria-label="Qatar flag">
       <path fill="#8d1b3d" d="M0 0h640v480H0z"/>
       <path fill="#fff" d="M0 0h160l80 26.67-80 26.66 80 26.67-80 26.67 80 26.66-80 26.67 80 26.67-80 26.66 80 26.67-80 26.67 80 26.66-80 26.67 80 26.67-80 26.66 80 26.67H0z"/>
     </svg>
   );
-}
+});
 
-function FlagRO({ className = "w-4 h-3" }) {
+const FlagRO = React.memo(function FlagRO({ className = "w-4 h-3" }) {
   return (
     <svg className={className} viewBox="0 0 640 480" aria-label="Romania flag">
       <path fill="#002b7f" d="M0 0h213.3v480H0z"/>
@@ -81,7 +80,7 @@ function FlagRO({ className = "w-4 h-3" }) {
       <path fill="#ce1126" d="M426.7 0H640v480H426.7z"/>
     </svg>
   );
-}
+});
 
 const FLAG_MAP = {
   US: FlagUS,
@@ -260,10 +259,11 @@ export default function AboutArticles() {
   const [activeCategory, setActiveCategory] = useState("all");
   const sliderRef = useRef(null);
 
-  const filteredLocations =
-    activeCategory === "all"
+  const filteredLocations = React.useMemo(() => {
+    return activeCategory === "all"
       ? LOCATIONS
       : LOCATIONS.filter((loc) => loc.category === activeCategory);
+  }, [activeCategory]);
 
   const scrollSlider = (direction) => {
     if (sliderRef.current) {
@@ -275,11 +275,10 @@ export default function AboutArticles() {
   return (
     <section className="py-12 sm:py-16 lg:py-20 border-b border-muted-grey/20 relative bg-ink-black overflow-hidden select-none">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
-        <ScrollReveal>
-          {/* Main Enclosure Console Frame */}
-          <div className="relative w-full rounded-2xl sm:rounded-3xl border border-brand-gold/30 bg-[#060609] p-5 sm:p-8 lg:p-10 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.95)] overflow-hidden">
-            {/* Top ambient highlight line */}
-            <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-brand-gold/60 to-transparent pointer-events-none" />
+        {/* Main Enclosure Console Frame */}
+        <div className="relative w-full rounded-2xl sm:rounded-3xl border border-brand-gold/30 bg-[#060609] p-5 sm:p-8 lg:p-10 shadow-2xl overflow-hidden [contain:content]">
+          {/* Top ambient highlight line */}
+          <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-brand-gold/60 to-transparent pointer-events-none" />
 
             {/* Header: Title and Hardware Controls */}
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-6 mb-6 border-b border-brand-gold/20">
@@ -355,7 +354,7 @@ export default function AboutArticles() {
             {/* The Horizontal Telemetry Slider - Clean Cards with Flag Badges */}
             <div
               ref={sliderRef}
-              className="relative z-10 flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 pt-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              className="relative z-10 flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 pt-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden overscroll-x-contain"
             >
               {filteredLocations.map((item, idx) => {
                 const ItemFlag = FLAG_MAP[item.badge] || FlagUS;
@@ -363,7 +362,8 @@ export default function AboutArticles() {
                   <Link
                     key={item.id}
                     href={item.href}
-                    className="flex-shrink-0 w-[270px] sm:w-[300px] md:w-[320px] snap-start rounded-xl border border-brand-gold/25 bg-[#0d0d12] hover:bg-[#14141c] p-4.5 sm:p-5 transition-all duration-200 hover:border-brand-gold/70 hover:-translate-y-1 shadow-lg group relative overflow-hidden flex flex-col justify-between will-change-transform"
+                    prefetch={false}
+                    className="flex-shrink-0 w-[270px] sm:w-[300px] md:w-[320px] snap-start rounded-xl border border-brand-gold/25 bg-[#0d0d12] hover:bg-[#14141c] p-4.5 sm:p-5 hover:border-brand-gold/70 group relative overflow-hidden flex flex-col justify-between"
                   >
                     {/* Subtle top edge accent on hover */}
                     <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-brand-gold/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -435,6 +435,7 @@ export default function AboutArticles() {
                     <Link
                       key={`index-pill-${loc.id}`}
                       href={loc.href}
+                      prefetch={false}
                       className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0b0b10] border border-brand-gold/25 hover:border-brand-gold/70 text-[11px] font-mono text-warm-grey/85 hover:text-white hover:bg-brand-gold/10 transition-all duration-200 shadow-sm"
                     >
                       <LocFlag className="w-3.5 h-2.5 rounded-[2px] object-cover shrink-0 shadow-sm" />
@@ -446,7 +447,6 @@ export default function AboutArticles() {
               </div>
             </div>
           </div>
-        </ScrollReveal>
       </div>
     </section>
   );
