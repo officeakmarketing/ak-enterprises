@@ -31,8 +31,8 @@ export default function PrivacyPage() {
           </p>
           <p>
             Registered office: 29 Highland Drive, Bushey, Hertfordshire, WD23 4HH, United Kingdom. Trading as AK Enterprises. Contact:{" "}
-            <a href="mailto:office@akmarketing.agency" className="text-brand-gold hover:underline">
-              office@akmarketing.agency
+            <a href="mailto:office@akenterprises.io" className="text-brand-gold hover:underline">
+              office@akenterprises.io
             </a>.
           </p>
           <p>
@@ -55,8 +55,8 @@ export default function PrivacyPage() {
             </h2>
             <p>
               AK Marketing Consulting Ltd, trading as AK Enterprises, is the data controller for personal data collected through the Website and the Services. United States sales and support activities are managed by Christopher Strobach (Director of Sales, Wisconsin, USA) on our behalf. Privacy questions and requests:{" "}
-              <a href="mailto:office@akmarketing.agency" className="text-brand-gold hover:underline">
-                office@akmarketing.agency
+              <a href="mailto:office@akenterprises.io" className="text-brand-gold hover:underline">
+                office@akenterprises.io
               </a>
               , or by post to 29 Highland Drive, Bushey, Hertfordshire, WD23 4HH, United Kingdom.
             </p>
@@ -121,8 +121,8 @@ export default function PrivacyPage() {
             </h2>
             <p>
               We send marketing messages only where permitted. For UK and EU contacts, business-to-business email marketing relies on legitimate interests and is only sent to corporate email addresses with an unsubscribe option. For US contacts, we comply with the CAN-SPAM Act: all commercial email includes our physical postal address and a functioning unsubscribe mechanism, honored within 10 business days. Where we send SMS, we only do so with prior express consent (including consent required by the US Telephone Consumer Protection Act and similar rules); you may opt out at any time by replying STOP. You can withdraw consent or unsubscribe at any time via{" "}
-              <a href="mailto:office@akmarketing.agency" className="text-brand-gold hover:underline">
-                office@akmarketing.agency
+              <a href="mailto:office@akenterprises.io" className="text-brand-gold hover:underline">
+                office@akenterprises.io
               </a>{" "}
               or the unsubscribe link in any message.
             </p>
@@ -170,8 +170,8 @@ export default function PrivacyPage() {
             </h2>
             <p>
               Wherever you are, you may ask to access, correct, delete, restrict, or object to the processing of your personal data, request portability of data provided to us, and withdraw consent at any time. To exercise any right, email{" "}
-              <a href="mailto:office@akmarketing.agency" className="text-brand-gold hover:underline">
-                office@akmarketing.agency
+              <a href="mailto:office@akenterprises.io" className="text-brand-gold hover:underline">
+                office@akenterprises.io
               </a>
               . UK and EU residents may also lodge a complaint with their supervisory authority; in the UK this is the Information Commissioner&apos;s Office (ico.org.uk).
             </p>
@@ -190,8 +190,8 @@ export default function PrivacyPage() {
               </p>
               <p>
                 <strong className="text-white font-medium">How to request:</strong> email{" "}
-                <a href="mailto:office@akmarketing.agency" className="text-brand-gold hover:underline">
-                  office@akmarketing.agency
+                <a href="mailto:office@akenterprises.io" className="text-brand-gold hover:underline">
+                  office@akenterprises.io
                 </a>{" "}
                 from any address, describing your request. We verify requests reasonably (for example by matching the email address used with our records) and respond within the statutory timeframe (generally 45 days, extendable by 45 days). We do not knowingly process data of children under 16 for marketing, and we do not knowingly collect data from children under 13.
               </p>
@@ -224,8 +224,8 @@ export default function PrivacyPage() {
               <p className="text-white font-medium">AK Marketing Consulting Ltd, trading as AK Enterprises.</p>
               <p>
                 Email:{" "}
-                <a href="mailto:office@akmarketing.agency" className="text-brand-gold hover:underline">
-                  office@akmarketing.agency
+                <a href="mailto:office@akenterprises.io" className="text-brand-gold hover:underline">
+                  office@akenterprises.io
                 </a>{" "}
                 • Web:{" "}
                 <a href="https://www.akenterprises.io" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:underline">

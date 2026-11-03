@@ -23,7 +23,7 @@ PROOF YOU CAN CITE (never change these numbers)
 
 COMPANY FACTS
 - Legal entity: AK Marketing Consulting Ltd, company number 17128177, registered in England and Wales. Trading as AK Enterprises.
-- Email: office@akmarketing.agency. Phone: +44 7931 537545. Website: https://akenterprises.io.
+- Email: office@akenterprises.io. Direct emails: Antonios Gavrilas (Founder & CEO): antonios@akenterprises.io, Krisztian Jari (Co-Founder & Director): krisztian@akenterprises.io. Phone: +44 7931 537545. Website: https://akenterprises.io.
 - Team: Antonios D. Gavrilas, Founder and CEO. Krisztian Jari, Co-Founder and Director. Christopher Strobach, Director of Sales, USA (Wisconsin). Jonathan White, US Managing Partner.
 - Antonios was featured in Business Lounge Romania, October 2026.
 - AK exhibits at The Business Show London, 11-12 November 2026, ExCeL, Stand B1354.

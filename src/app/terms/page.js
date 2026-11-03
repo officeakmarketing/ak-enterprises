@@ -31,8 +31,8 @@ export default function TermsPage() {
           </p>
           <p>
             Registered office: 29 Highland Drive, Bushey, Hertfordshire, WD23 4HH, United Kingdom. Trading as AK Enterprises. Contact:{" "}
-            <a href="mailto:office@akmarketing.agency" className="text-brand-gold hover:underline">
-              office@akmarketing.agency
+            <a href="mailto:office@akenterprises.io" className="text-brand-gold hover:underline">
+              office@akenterprises.io
             </a>.
           </p>
           <p>
@@ -160,8 +160,8 @@ export default function TermsPage() {
             </h2>
             <p>
               Complaints can be sent to{" "}
-              <a href="mailto:office@akmarketing.agency" className="text-brand-gold hover:underline">
-                office@akmarketing.agency
+              <a href="mailto:office@akenterprises.io" className="text-brand-gold hover:underline">
+                office@akenterprises.io
               </a>
               . We aim to acknowledge complaints within 3 business days and resolve them within 14 days. If you are a UK consumer and remain dissatisfied, you may seek redress through your statutory rights; if you are a US consumer, through applicable state consumer protection channels.
             </p>
