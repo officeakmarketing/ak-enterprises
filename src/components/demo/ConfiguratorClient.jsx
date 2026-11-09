@@ -206,6 +206,19 @@ export default function ConfiguratorClient() {
           >
             Full Page &nearr;
           </Link>
+
+          {/* Live Board Link */}
+          <Link
+            href="/demo/board"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg border border-emerald-500/30 bg-emerald-950/40 hover:bg-emerald-900/50 text-emerald-300 text-[11px] sm:text-xs font-mono uppercase tracking-wider transition-all shrink-0"
+            title="Open Live Exhibition Booking Stream Board"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Board</span>
+            <span className="hidden sm:inline">&nearr;</span>
+          </Link>
         </div>
       </header>
 
