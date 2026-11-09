@@ -67,15 +67,8 @@ export const viewport = {
 };
 
 import dynamic from "next/dynamic";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import SmoothScroll from "@/components/ui/SmoothScroll";
+import AppShell from "@/components/layout/AppShell";
 import CalendlyWidget from "@/components/ui/CalendlyWidget";
-
-// Code-split deferred client widgets to keep initial critical bundle minimal
-const AriaWidget = dynamic(() => import("@/components/ui/AriaWidget"));
-const CookieConsent = dynamic(() => import("@/components/ui/CookieConsent"));
-const ScrollToTop = dynamic(() => import("@/components/ui/ScrollToTop"));
 
 // JSON-LD structured data for Agentic Browsing and SEO
 const organizationSchema = {
@@ -127,14 +120,7 @@ export default function RootLayout({ children }) {
         >
           Skip to main content
         </a>
-        <SmoothScroll>
-          <Navbar />
-          <main id="main-content" className="flex-1">{children}</main>
-          <Footer />
-        </SmoothScroll>
-        <CookieConsent />
-        <AriaWidget />
-        <ScrollToTop />
+        <AppShell>{children}</AppShell>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-M2Y7SW4D4B"
           strategy="afterInteractive"
