@@ -117,15 +117,15 @@ export default function DallasBusinessOperatingSystemsPage() {
         {/* Hero Actions */}
         <SeoHeroActions />
 
-        {/* Featured In-Page SEO Image */}
-        <SeoFeaturedImage
-          src="/most-effective-business-operating-systems-in-dallas.png"
-          alt="Most Effective Business Operating Systems In Dallas"
-        />
+          {/* Featured In-Page SEO Image */}
+          <SeoFeaturedImage
+            src="/most-effective-business-operating-systems-in-dallas.png"
+            alt="Most Effective Business Operating Systems In Dallas"
+          />
 
-        {/* Editorial Body Content Flow */}
-        <div className="space-y-16 text-warm-grey/90 text-base sm:text-lg leading-[1.8] font-light">
-          <SeoOperatingSystemExplainer />
+          {/* Editorial Body Content Flow */}
+          <div className="space-y-16 text-warm-grey/90 text-base sm:text-lg leading-[1.8] font-light">
+            <SeoOperatingSystemExplainer />
 
           {/* Section: The Proof */}
           <section className="pt-8 border-t border-muted-grey/15">

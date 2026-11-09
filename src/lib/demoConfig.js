@@ -4,11 +4,12 @@ export const TRADE_PRESETS = [
     label: "Barber",
     businessName: "King & Crown Grooming",
     trade: "Master Barbers & Grooming",
-    tagline: "Precision craftsmanship, hot towel rituals & beard sculpting.",
+    tagline: "Precision craftsmanship, hot towel rituals & bespoke styling.",
     location: "Mayfair, London",
     accent: "#C9A961", // Gold
     icon: "scissors",
-    coverGradient: "from-amber-950/40 via-stone-900 to-[#0A0A0B]",
+    coverImage: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80",
+    themeStyle: "dark",
     slotLength: 30,
     services: [
       {
@@ -47,7 +48,8 @@ export const TRADE_PRESETS = [
     location: "Knightsbridge, London",
     accent: "#E29578", // Parisian Rose Bronze
     icon: "sparkles",
-    coverGradient: "from-rose-950/40 via-stone-900 to-[#0A0A0B]",
+    coverImage: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80",
+    themeStyle: "dark",
     slotLength: 45,
     services: [
       {
@@ -86,7 +88,8 @@ export const TRADE_PRESETS = [
     location: "Harley Street, London",
     accent: "#06B6D4", // Clinical Cyan
     icon: "shield",
-    coverGradient: "from-cyan-950/40 via-slate-900 to-[#0A0A0B]",
+    coverImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
+    themeStyle: "dark",
     slotLength: 30,
     services: [
       {
@@ -125,7 +128,8 @@ export const TRADE_PRESETS = [
     location: "Marylebone, London",
     accent: "#38BDF8", // Clean Sky Blue
     icon: "activity",
-    coverGradient: "from-sky-950/40 via-slate-900 to-[#0A0A0B]",
+    coverImage: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80",
+    themeStyle: "dark",
     slotLength: 30,
     services: [
       {
@@ -164,7 +168,8 @@ export const TRADE_PRESETS = [
     location: "Canary Wharf, London",
     accent: "#10B981", // Emerald
     icon: "heart",
-    coverGradient: "from-emerald-950/40 via-stone-900 to-[#0A0A0B]",
+    coverImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+    themeStyle: "dark",
     slotLength: 45,
     services: [
       {
@@ -203,7 +208,8 @@ export const TRADE_PRESETS = [
     location: "Shoreditch, London",
     accent: "#F97316", // Kinetic Orange
     icon: "dumbbell",
-    coverGradient: "from-orange-950/40 via-stone-900 to-[#0A0A0B]",
+    coverImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
+    themeStyle: "dark",
     slotLength: 60,
     services: [
       {
@@ -242,7 +248,8 @@ export const TRADE_PRESETS = [
     location: "Shoreditch Studio, London",
     accent: "#A855F7", // Purple
     icon: "camera",
-    coverGradient: "from-purple-950/40 via-stone-900 to-[#0A0A0B]",
+    coverImage: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80",
+    themeStyle: "dark",
     slotLength: 60,
     services: [
       {
@@ -281,7 +288,8 @@ export const TRADE_PRESETS = [
     location: "Bloomsbury, London",
     accent: "#FBBF24", // Amber Gold
     icon: "book",
-    coverGradient: "from-amber-950/40 via-stone-900 to-[#0A0A0B]",
+    coverImage: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    themeStyle: "dark",
     slotLength: 60,
     services: [
       {
@@ -320,7 +328,8 @@ export const TRADE_PRESETS = [
     location: "Greater London & Surrey",
     accent: "#34D399", // Mint
     icon: "car",
-    coverGradient: "from-emerald-950/40 via-slate-900 to-[#0A0A0B]",
+    coverImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80",
+    themeStyle: "dark",
     slotLength: 90,
     services: [
       {
@@ -359,7 +368,8 @@ export const TRADE_PRESETS = [
     location: "London & Surrey 24/7",
     accent: "#EF4444", // Crimson Red
     icon: "wrench",
-    coverGradient: "from-red-950/40 via-stone-900 to-[#0A0A0B]",
+    coverImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80",
+    themeStyle: "dark",
     slotLength: 60,
     services: [
       {
@@ -391,15 +401,50 @@ export const TRADE_PRESETS = [
   },
 ];
 
+// Curated stock photography gallery for quick 1-click swaps
+export const CURATED_HERO_PHOTOS = [
+  { label: "Barber Studio", url: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80" },
+  { label: "Luxury Salon", url: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80" },
+  { label: "Modern Clinic", url: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" },
+  { label: "Cosmetic Dental", url: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" },
+  { label: "Physio Clinic", url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" },
+  { label: "Strength Gym", url: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" },
+  { label: "Photo Studio", url: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80" },
+  { label: "Study Room", url: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" },
+  { label: "Driving Fleet", url: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80" },
+  { label: "Engineers Van", url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80" },
+  { label: "Modern Loft", url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" },
+  { label: "Executive Suite", url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80" },
+];
+
 export function encodeDemoParams(config) {
   const params = new URLSearchParams();
   if (config.name) params.set("name", config.name);
   if (config.trade) params.set("trade", config.trade);
   if (config.accent) params.set("accent", config.accent.replace("#", ""));
+  if (config.currency) params.set("curr", config.currency);
   if (config.service) params.set("service", config.service);
-  if (config.price !== undefined) params.set("price", String(config.price));
+  if (config.price !== undefined && config.price !== null) params.set("price", String(config.price));
   if (config.slot) params.set("slot", String(config.slot));
   if (config.preset) params.set("preset", config.preset);
+  if (config.coverImage) params.set("cover", encodeURIComponent(config.coverImage));
+  if (config.themeStyle) params.set("style", config.themeStyle);
+  if (config.token) params.set("token", config.token);
+  if (config.services && Array.isArray(config.services) && config.services.length > 0) {
+    try {
+      // Store compact representation of services [{name, price, duration, desc}]
+      const compactServices = config.services.map((s) => ({
+        name: s.name,
+        price: Number(s.price) || 0,
+        duration: Number(s.duration) || 30,
+        desc: s.desc || "",
+        popular: !!s.popular,
+      }));
+      params.set("services_data", encodeURIComponent(JSON.stringify(compactServices)));
+    } catch {
+      // ignore
+    }
+  }
   return params.toString();
 }
 
@@ -416,22 +461,87 @@ export function decodeDemoParams(searchParams) {
       : `#${rawAccent}`
     : matchedPreset.accent;
 
+  const currency = searchParams.get("curr") || "£";
   const name = searchParams.get("name") || matchedPreset.businessName;
   const trade = searchParams.get("trade") || matchedPreset.trade;
-  const service = searchParams.get("service") || matchedPreset.services[0].name;
-  const price = searchParams.get("price") !== null ? Number(searchParams.get("price")) : matchedPreset.services[0].price;
-  const slot = searchParams.get("slot") !== null ? Number(searchParams.get("slot")) : matchedPreset.slotLength;
+  
+  // Explicitly check for query params
+  const hasServiceParam = searchParams.has("service");
+  const service = hasServiceParam ? searchParams.get("service") : matchedPreset.services[0].name;
+
+  const hasPriceParam = searchParams.has("price");
+  const rawPrice = searchParams.get("price");
+  const parsedPrice = hasPriceParam && rawPrice !== "" ? Number(rawPrice) : NaN;
+  const price = !isNaN(parsedPrice) ? parsedPrice : matchedPreset.services[0].price;
+
+  const hasSlotParam = searchParams.has("slot");
+  const rawSlot = searchParams.get("slot");
+  const parsedSlot = hasSlotParam && rawSlot !== "" ? Number(rawSlot) : NaN;
+  const slot = !isNaN(parsedSlot) ? parsedSlot : matchedPreset.slotLength;
+
+  const rawCover = searchParams.get("cover");
+  const coverImage = rawCover ? decodeURIComponent(rawCover) : matchedPreset.coverImage;
+
+  const themeStyle = searchParams.get("style") || matchedPreset.themeStyle || "dark";
+  const token = searchParams.get("token") || "demo-stand";
+
+  // Check if explicit services_data was passed
+  let servicesFromParam = null;
+  const rawServicesData = searchParams.get("services_data");
+  if (rawServicesData) {
+    try {
+      const parsed = JSON.parse(decodeURIComponent(rawServicesData));
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        servicesFromParam = parsed;
+      }
+    } catch {
+      // ignore
+    }
+  }
+
+  // Re-build allServices list ensuring custom service name & price are included and take precedence
+  const baseServices = servicesFromParam || matchedPreset.services || [];
+  let customServiceFound = false;
+  const mergedServices = baseServices.map((s, index) => {
+    if (s.name === service) {
+      customServiceFound = true;
+      return { ...s, price, duration: slot };
+    }
+    // If first item and service was explicitly overridden
+    if (index === 0 && hasServiceParam && !servicesFromParam) {
+      customServiceFound = true;
+      return { ...s, name: service, price, duration: slot };
+    }
+    return s;
+  });
+
+  if (!customServiceFound && hasServiceParam && !servicesFromParam) {
+    mergedServices.unshift({
+      name: service,
+      price: price,
+      duration: slot,
+      desc: "Custom requested service.",
+      popular: true,
+    });
+  }
 
   return {
     name,
     trade,
     accent,
+    currency,
     service,
-    price: isNaN(price) ? matchedPreset.services[0].price : price,
-    slot: isNaN(slot) ? matchedPreset.slotLength : slot,
+    price,
+    slot,
     preset: presetId || defaultPreset.id,
-    allServices: matchedPreset.services,
-    presetMeta: matchedPreset,
+    coverImage,
+    themeStyle,
+    token,
+    allServices: mergedServices,
+    presetMeta: {
+      ...matchedPreset,
+      services: mergedServices,
+    },
   };
 }
 
