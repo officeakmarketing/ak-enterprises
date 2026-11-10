@@ -9,21 +9,24 @@ export default function LiveDemoIframe() {
     const scrollToDemo = () => {
       if (typeof window !== "undefined" && (window.location.hash === "#demo" || window.location.hash === "#property-demo")) {
         const performScroll = () => {
-          const el = document.getElementById("demo-iframe") || document.getElementById("property-demo") || document.getElementById("demo");
+          const el = document.getElementById("demo") || document.getElementById("demo-iframe") || document.getElementById("property-demo");
           if (el) {
-            el.scrollIntoView({ behavior: "smooth", block: "center" });
-            const rect = el.getBoundingClientRect();
-            const targetScroll = Math.max(0, rect.top + window.pageYOffset + (rect.height / 2) - (window.innerHeight / 2));
+            // Scroll directly to the top of the demo element with an offset for the fixed navbar
+            const navOffset = 90; // comfortable navbar clearance
+            const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+            const targetScroll = Math.max(0, elementPosition - navOffset);
             window.scrollTo({ top: targetScroll, behavior: "smooth" });
           }
         };
 
         performScroll();
-        const t1 = setTimeout(performScroll, 120);
-        const t2 = setTimeout(performScroll, 350);
+        const t1 = setTimeout(performScroll, 150);
+        const t2 = setTimeout(performScroll, 450);
+        const t3 = setTimeout(performScroll, 800);
         return () => {
           clearTimeout(t1);
           clearTimeout(t2);
+          clearTimeout(t3);
         };
       }
     };
